@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
 	<title>page d'inscription</title>
 </head>
-
 <body>
 
 	<header>
 		<p>
-			<a href="../images/LogoHabilis.png">								<!--lien vers le logo habilis en grand -->
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">	<!--lien vers le logo habilis -->
+			<a href="../images/LogoHabilis.png">
+				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
 			</a>
-			<br /> 
+			<br />
 				un produit de Domisep
 		</p>
 	</header>
-	<h1>
-		page d'inscription
-	</h1>
+		<h1>
+			page d'inscription
+		</h1>
 	<div id="conteneur2">
-		<form method="post" action="traitement.php">									<!--mise en place du formulaire -->
-			<script src="https://www.google.com/recaptcha/api.js" async defer></script>	<!--mise en place du recaptcha (vérifation que tu n'es pas un robot) -->
-			<p>																			<!--bloc nom d'utilisateur-->
-				<label for="nom_d'utilisateur">
+		<form method="post" action="traitement.php">
+			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+			<p>
+       			<label for="nom_d'utilisateur">
        				nom d'utilisateur :
        				<em>
        					*
@@ -34,8 +32,8 @@
        			<br />
        				<input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" required />
        		</p>
-       		<p>																			<!--bloc mdp-->
-				<label for="password">
+       		<p>
+       			<label for="password">
        				mot de passe :
        				<em>
        					*
@@ -44,8 +42,8 @@
        			<br />
        				<input type="password" name="password" id="password" required />
        		</p>
-       		<p>																			<!--bloc confirmation mdp-->
-				<label for="confirmed_password">
+       		<p>
+       			<label for="confirmed_password">
        				confirmer le mot de passe :
        				<em>
        					*
@@ -55,7 +53,7 @@
        				<input type="password" name="confirmed_password" id="confirmed_password" required />
        		</p>
        		<p>
-				<label for="mail">
+       			<label for="mail">
        				adresse mail :
        				<em>
        					*
@@ -64,47 +62,47 @@
        			<br />
        				<input type="email" name="mail" id="mail" required />
        		</p>
-       		<p>																			<!--bloc num de tel-->
-				<label for="numero_de_tel">
+       		<p>
+       			<label for="numero_de_tel">
        				numéro de téléphone :
        			</label>
        			<br />
        				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
        		</p>
        		<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div> <!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
-			<p>																			<!--bloc condition d'utilisation-->
+			<p>
 				<label for="accept_use_condition">
        				j'accepte les conditions d'utilisation :
        				<em>
        					*
        				</em>
        			</label>
-				<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
-			</p>
-			<p>
-				<input type="submit" value="valider" />
-			</p>
+       			<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
+       		</p>
+       		<p>
+       		<input type="submit" value="valider" />
+       		</p>	
 		</form>
 	</div>
 	<p class="obligatoire">
 		* : champs obligatoires
 	</p>
 	<footer>
-		<p class="bordure1">															<!--bloc faq-->
+		<p class="bordure1">
 			<a href="faq.html">
 				<strong>FAQ</strong>
 			</a>
 		</p>
 		<p>
-			<a href="condition_d'utilisation.html">										<!--bloc condition générales d'utilisation-->
+			<a href="condition_d'utilisation.html">
 				condition générales d'utilisation
 			</a>
 		</p>
-		<p>																				<!--bloc mentions légales-->
+		<p>
 			<a href="mentions_legales.html">
 				mentions légales
 			</a>
-		</p>																			<!--bloc date et heure a mettre en php-->
+		</p>
 		<div>
 			date et heure
 		</div>

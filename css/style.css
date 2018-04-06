@@ -1,15 +1,18 @@
 header, footer
 {
-	background:RGB(192, 192, 192);
+	background-color:grey;
 	padding:10px;
-	display:flex;
-	justify-content: space-between;
 }
 body
 {
-	background:RGB(22, 85, 233);
+	background-color: blue;
 	text-align: center;
-	font-size: 20px;
+	font-size: 2em;
+}
+header,footer
+{
+	display:flex;
+	justify-content: space-between;
 }
 p
 {
@@ -32,12 +35,12 @@ a
 }
 .bordure1
 {
-	border: 2px solid black;
+	border: 3px solid black;
 	border-radius: 10px;
 }
 .bordure2
 {
-	border: 2px solid black;
+	border: 3px solid black;
 	border-radius: 20px;
 }
 a:hover
@@ -51,7 +54,7 @@ em
 }
 #conteneur2
 {
-
+	font-size: 0.9em;
 }
 .obligatoire
 {
