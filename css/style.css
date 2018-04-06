@@ -1,18 +1,38 @@
 header, footer
 {
-	background-color:grey;
+	background:RGB(192, 192, 192);
 	padding:10px;
+	display:flex;
+	justify-content: space-between;
 }
 body
 {
-	background-color: blue;
-	text-align: center;
-	font-size: 2em;
+	background:RGB(22, 85, 233);
+	/*text-align: center;*/
+	font-size: 20px;
 }
-header,footer
-{
-	display:flex;
-	justify-content: space-between;
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background:RGB(90, 150, 250);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background:RGB(22, 85, 233);
 }
 p
 {
@@ -33,16 +53,7 @@ a
 	flex-direction: column;
 	justify-content: space-around;
 }
-.bordure1
-{
-	border: 3px solid black;
-	border-radius: 10px;
-}
-.bordure2
-{
-	border: 3px solid black;
-	border-radius: 20px;
-}
+
 a:hover
 {
    text-decoration: underline;
@@ -54,7 +65,7 @@ em
 }
 #conteneur2
 {
-	font-size: 0.9em;
+
 }
 .obligatoire
 {
