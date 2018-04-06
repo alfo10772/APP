@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
 	<title>page d'inscription</title>
 </head>
+
 <body>
 
 	<header>
@@ -12,64 +14,64 @@
 			<a href="../images/LogoHabilis.png">
 				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
 			</a>
-			<br />
-				un produit de Domisep
+			<br /> un produit de Domisep
 		</p>
 	</header>
-		<h1>
-			page d'inscription
-		</h1>
+	<h1>
+		page d'inscription
+	</h1>
 	<div id="conteneur2">
 		<form method="post" action="traitement.php">
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 			<p>
-       			<label for="nom_d'utilisateur">
+				<label for="nom_d'utilisateur">
        				nom d'utilisateur :
        				<em>
        					*
        				</em>
        			</label>
-       			<br />
-       				<input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" required />
-       		</p>
-       		<p>
-       			<label for="password">
+				<br />
+				<input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" required />
+			</p>
+			<p>
+				<label for="password">
        				mot de passe :
        				<em>
        					*
        				</em>
        			</label>
-       			<br />
-       				<input type="password" name="password" id="password" required />
-       		</p>
-       		<p>
-       			<label for="confirmed_password">
+				<br />
+				<input type="password" name="password" id="password" required />
+			</p>
+			<p>
+				<label for="confirmed_password">
        				confirmer le mot de passe :
        				<em>
        					*
        				</em>
        			</label>
-       			<br />
-       				<input type="password" name="confirmed_password" id="confirmed_password" required />
-       		</p>
-       		<p>
-       			<label for="mail">
+				<br />
+				<input type="password" name="confirmed_password" id="confirmed_password" required />
+			</p>
+			<p>
+				<label for="mail">
        				adresse mail :
        				<em>
        					*
        				</em>
        			</label>
-       			<br />
-       				<input type="email" name="mail" id="mail" required />
-       		</p>
-       		<p>
-       			<label for="numero_de_tel">
+				<br />
+				<input type="email" name="mail" id="mail" required />
+			</p>
+			<p>
+				<label for="numero_de_tel">
        				numéro de téléphone :
        			</label>
-       			<br />
-       				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
-       		</p>
-       		<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div> <!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
+				<br />
+				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
+			</p>
+			<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div>
+			<!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->
 			<p>
 				<label for="accept_use_condition">
        				j'accepte les conditions d'utilisation :
@@ -77,11 +79,11 @@
        					*
        				</em>
        			</label>
-       			<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
-       		</p>
-       		<p>
-       		<input type="submit" value="valider" />
-       		</p>	
+				<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
+			</p>
+			<p>
+				<input type="submit" value="valider" />
+			</p>
 		</form>
 	</div>
 	<p class="obligatoire">
