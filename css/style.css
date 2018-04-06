@@ -9,7 +9,7 @@ body
 {
 	background:RGB(22, 85, 233);
 	text-align: center;
-	font-size: 2em;
+	font-size: 20px;
 }
 p
 {
@@ -32,12 +32,12 @@ a
 }
 .bordure1
 {
-	border: 3px solid black;
+	border: 2px solid black;
 	border-radius: 10px;
 }
 .bordure2
 {
-	border: 3px solid black;
+	border: 2px solid black;
 	border-radius: 20px;
 }
 a:hover
@@ -51,7 +51,7 @@ em
 }
 #conteneur2
 {
-	font-size: 0.9em;
+
 }
 .obligatoire
 {
