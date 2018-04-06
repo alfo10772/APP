@@ -9,8 +9,8 @@
 
 	<header>
 		<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
+			<a href="../images/LogoHabilis.png">								<!--lien vers le logo habilis en grand -->
+				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">	<!--lien vers le logo habilis -->
 			</a>
 			<br />
 				un produit de Domisep
@@ -20,9 +20,9 @@
 			page d'inscription
 		</h1>
 	<div id="conteneur2">
-		<form method="post" action="traitement.php">
-			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<p>
+		<form method="post" action="traitement.php">									<!--mise en place du formulaire -->
+			<script src="https://www.google.com/recaptcha/api.js" async defer></script>	<!--mise en place du recaptcha (vérifation que tu n'es pas un robot) -->
+			<p>																			<!--bloc nom d'utilisateur-->
        			<label for="nom_d'utilisateur">
        				nom d'utilisateur :
        				<em>
@@ -32,7 +32,7 @@
        			<br />
        				<input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" required />
        		</p>
-       		<p>
+       		<p>																			<!--bloc mdp-->
        			<label for="password">
        				mot de passe :
        				<em>
@@ -42,7 +42,7 @@
        			<br />
        				<input type="password" name="password" id="password" required />
        		</p>
-       		<p>
+       		<p>																			<!--bloc confirmation mdp-->
        			<label for="confirmed_password">
        				confirmer le mot de passe :
        				<em>
@@ -52,7 +52,7 @@
        			<br />
        				<input type="password" name="confirmed_password" id="confirmed_password" required />
        		</p>
-       		<p>
+       		<p>																			<!--bloc mail-->
        			<label for="mail">
        				adresse mail :
        				<em>
@@ -62,7 +62,7 @@
        			<br />
        				<input type="email" name="mail" id="mail" required />
        		</p>
-       		<p>
+       		<p>																			<!--bloc num de tel-->
        			<label for="numero_de_tel">
        				numéro de téléphone :
        			</label>
@@ -70,7 +70,7 @@
        				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
        		</p>
        		<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div> <!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
-			<p>
+			<p>																			<!--bloc condition d'utilisation-->
 				<label for="accept_use_condition">
        				j'accepte les conditions d'utilisation :
        				<em>
@@ -88,21 +88,21 @@
 		* : champs obligatoires
 	</p>
 	<footer>
-		<p class="bordure1">
+		<p class="bordure1">															<!--bloc faq-->
 			<a href="faq.html">
 				<strong>FAQ</strong>
 			</a>
 		</p>
 		<p>
-			<a href="condition_d'utilisation.html">
+			<a href="condition_d'utilisation.html">										<!--bloc condition générales d'utilisation-->
 				condition générales d'utilisation
 			</a>
 		</p>
-		<p>
+		<p>																				<!--bloc mentions légales-->
 			<a href="mentions_legales.html">
 				mentions légales
 			</a>
-		</p>
+		</p>																			<!--bloc date et heure a mettre en php-->
 		<div>
 			date et heure
 		</div>
