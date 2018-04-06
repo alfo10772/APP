@@ -5,16 +5,36 @@ header, footer
 	display:flex;
 	justify-content: space-between;
 }
+
+footer
+{
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	position: fixed;;
+}
+
+header
+{
+	up: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+}
 body
 {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 	background:RGB(22, 85, 233);
-	/*text-align: center;*/
-	font-size: 20px;
+	font-size: 15px;
+	font-family: cantarell;
 }
+
 input[type=text], select {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 10px 20px;
+    margin: 2px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -24,7 +44,7 @@ input[type=submit] {
     width: 100%;
     background:RGB(90, 150, 250);
     color: white;
-    padding: 14px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
@@ -47,26 +67,26 @@ a
 	text-decoration:none;
 	color:black;
 }
-#conteneur1
-{
-	display:flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
 
 a:hover
 {
    text-decoration: underline;
    color: red;
 }
+
+#conteneur1
+{
+	text-align: center;
+	font-size: 15px;
+	color: white;
+	overflow: visible;
+}
+
 em
 {
 	color:red;
 }
-#conteneur2
-{
 
-}
 .obligatoire
 {
 	color: red;
