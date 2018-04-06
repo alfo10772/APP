@@ -2,47 +2,48 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../css/style.css">
-	<title>page de connexion</title>
+	<link rel="stylesheet" href="../css/style.css">        <!-- lien vers style-->
+	<title>page de connexion</title>                       <!-- titre page-->
 </head>
 <body>
 
 	<header>
 		<p>
 			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
+				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">      <!-- logo habilis-->
 			</a>
 			<br />
 				un produit de Domisep
 		</p>
 	<div id="conteneur1">
-	   <form method="post" action="traitement.php">
-	   		<p class="bordure1">
-       			<label for="mail">
+	   <form method="post" action="traitement.php">       <!-- début formulaire -->
+	   		<p class="bordure1">         
+       			<label for="mail">                         <!-- texte adresse mail -->
        				adresse mail :
        			</label>
        			<br />
-       				<input type="email" name="mail" id="mail" required />
+       				<input type="email" name="mail" id="mail" required />      <!-- entrer mail -->
        		</p>
        		<p class="bordure1">
-       			<label for="password">
+       			<label for="password">                         <!-- texte mot de passe-->
        				mot de passe :
        			</label>
        			<br />
-       				<input type="password" name="password" id="password" required />
+       				<input type="password" name="password" id="password" required />        <!-- entrer mot de passe -->
        		</p>
+			   
        		<p>
        			<a href="tableau_de_bord.html">
-       				<input type="submit" value="connexion" />
+       				<input type="submit" value="connexion" />                   <!-- lien vers connexion -->
        			</a>
        		</p>
        		<p class="bordure2">
-       			<a href="page_d'inscriptionn.html">
+       			<a href="page_d'inscriptionn.html">                       <!-- lien vers page d'inscription -->
        				inscription
        			</a>
        		</p>
        		<p>
-       			<a href="recuperation_mdp.html">
+       			<a href="recuperation_mdp.html">                      <!-- lien vers la page de récup mdp -->
        				mot de passe oublié
        			</a>
        		</p>
@@ -64,26 +65,27 @@
 	<br />
 	</article>
 	
-	<footer>
+	<footer>                               <!-- début du bas de page -->
 		<p class="bordure1">
-			<a href="faq.html">
+			<a href="faq.html">               <!-- lien vers la FAQ-->
 				<strong>
 					FAQ
 				</strong>
 			</a>
 		</p>
 		<p>
-			<a href="condition_d'utilisation.html">
+			<a href="condition_d'utilisation.html">            <!--lien vers les conditions d'utilisations-->
 				condition générales d'utilisation
 			</a>
 		</p>
 		<p>
-			<a href="mentions_legales.html">
+			<a href="mentions_legales.html">                   <!--lien vers les mentions légales-->
 				mentions légales
 			</a>
 		</p>
 		<div>
-			date et heure
+			date et heure                                <!--affichage date et heure (à faire avec php)-->
 		</div>
-	</footer>
+	</footer> 
+
 </body>
