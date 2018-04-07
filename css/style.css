@@ -5,21 +5,27 @@ header, footer
 	display:flex;
 	justify-content: space-between;
 }
-
-footer
-{
-  	bottom: 0;
-  	left: 0;
-  	right: 0;
-  	position: fixed;;
-}
-
 header
 {
-	up: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
+	position: sticky;
+	top:0px;
+	
+}
+article
+{
+	
+	background:RGB(22, 85, 133);
+	text-align: center;
+	font-size: 15px;
+	color: white;
+}
+footer
+{
+  	position: relative;
+  	left: 0px;
+  	right: 0px;
+  	bottom: 0px;
+
 }
 body
 {
@@ -31,7 +37,8 @@ body
 	font-family: cantarell;
 }
 
-input[type=text], select {
+
+input, select {
     width: 100%;
     padding: 10px 20px;
     margin: 2px 0;
@@ -40,6 +47,8 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+ 
+
 input[type=submit] {
     width: 100%;
     background:RGB(90, 150, 250);
@@ -58,10 +67,7 @@ p
 {
 	text-align:center;
 }
-article
-{
-	height:370px;
-}
+
 a
 {
 	text-decoration:none;
@@ -72,14 +78,6 @@ a:hover
 {
    text-decoration: underline;
    color: red;
-}
-
-#conteneur1
-{
-	text-align: center;
-	font-size: 15px;
-	color: white;
-	overflow: visible;
 }
 
 em
