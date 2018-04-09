@@ -13,8 +13,7 @@ header
 }
 article
 {
-	
-	background:RGB(22, 85, 133);
+	background:RGB(22, 85, 233);
 	text-align: center;
 	font-size: 15px;
 	color: white;
@@ -32,7 +31,7 @@ body
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background:RGB(22, 85, 233);
+	background:RGB(192, 192, 192);
 	font-size: 15px;
 	font-family: cantarell;
 }
