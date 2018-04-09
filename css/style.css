@@ -88,3 +88,24 @@ em
 	color: red;
 	font-size: 0.8em
 }
+
+#cercle{
+	
+	position: relative;
+	background: orange;
+	border-radius:50%;
+	width: 100px;
+	height: 100px;
+	 
+}
+	
+section {
+	background:RGB(22, 85, 233);
+	padding:20px;
+	display:flex;
+}
+
+p1 {
+	font-color: white;
+	
+}
