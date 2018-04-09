@@ -39,7 +39,7 @@ body
 
 
 input, select {
-    width: auto;
+    width: 100%;
     padding: 10px 20px;
     margin: 2px 0;
     display: inline-block;
@@ -50,7 +50,7 @@ input, select {
  
 
 input[type=submit] {
-    width: auto;
+    width: 100%;
     background:RGB(90, 150, 250);
     color: white;
     padding: 10px 20px;
