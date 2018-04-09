@@ -101,5 +101,11 @@ em
 	
 section {
 	background:RGB(22, 85, 233);
+	padding:20px;
 	display:flex;
+}
+
+p1 {
+	font-color: white;
+	
 }
