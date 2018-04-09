@@ -21,7 +21,7 @@ article
 }
 footer
 {
-  	position: relative;
+  	position: sticky;
   	left: 0px;
   	right: 0px;
   	bottom: 0px;
