@@ -9,6 +9,8 @@ header
 {
 	position: sticky;
 	top:0px;
+	
+	
 }
 article
 {
@@ -30,13 +32,13 @@ body
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background:RGB(192, 192, 192);
+	background:RGB(22, 85,233);
 	font-size: 15px;
 	font-family: cantarell;
 }
 
 
-input, select {
+/*input, select {
     width: 100%;
     padding: 10px 20px;
     margin: 2px 0;
@@ -47,8 +49,7 @@ input, select {
 }
  
 
-input[type=submit] {
-    width: 100%;
+.formulaire1 {
     background:RGB(90, 150, 250);
     color: white;
     padding: 10px 20px;
@@ -58,9 +59,41 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+.formulaire1 {
     background:RGB(22, 85, 233);
+}*/
+.formulaire1
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	height: 100%;
 }
+form{
+	height: 100%;
+}
+#conteneur1 
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	width:25%;
+}
+
+#conteneur2
+{
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: column;
+}
+
+#conteneur3
+{
+	display: flex;
+}
+
 p
 {
 	text-align:center;
@@ -75,7 +108,7 @@ a
 a:hover
 {
    text-decoration: underline;
-
+   color: red;
 }
 
 em
@@ -87,19 +120,4 @@ em
 {
 	color: red;
 	font-size: 0.8em
-}
-
-#cercle{
-	
-	position: relative;
-	background: orange;
-	border-radius:50%;
-	width: 100px;
-	height: 100px;
-	 
-}
-	
-section {
-	background:RGB(22, 85, 233);
-	display:flex;
 }

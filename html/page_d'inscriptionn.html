@@ -16,6 +16,7 @@
 				Un produit de Domisep
 		</p>
 	</header>
+	<section class="conteneur2">
 		<h1>
 			page d'inscription
 		</h1>
@@ -88,6 +89,7 @@
 	<p class="obligatoire">
 		* : champs obligatoires
 	</p>
+	</section>
 	<footer>
 		<p class="bordure1">
 			<a href="faq.html">
@@ -106,6 +108,14 @@
 		</p>
 		<div>
 			date et heure
+			<div id="afficherheure">
+			</div>
+			<script type="text/javascript">
+			setInterval(function(){
+    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+			</script>
+		</div>
 		</div>
 	</footer>
 </body>

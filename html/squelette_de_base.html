@@ -42,6 +42,14 @@
 		</p>
 		<div>
 			Date et heure
+			<div id="afficherheure">
+			</div>
+			<script type="text/javascript">
+			setInterval(function(){
+    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+			</script>
+		</div>
 		</div>
 	</footer>
 </body>
