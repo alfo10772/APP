@@ -19,7 +19,9 @@ p {
     </a>
     </td>
     <td>
-    Nom d'utilisateur
+    <?php
+    echo $_SESSION[’nom’];
+    ?>
     </td>
   </tr>
   </table>
