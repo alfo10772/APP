@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/style.css">
 	<title>Page de connexion</title>
 </head>
 <body>
 
 	<header>
-		<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
-			</a>
-			<br />
-				Un produit de Domisep
-		</p>
+	<?php
+require("en_tete_connexion.php");
+	?>
 	<div id="conteneur1">
 	   
 	</div>
+	
 	</header>
 	
 	<article>
@@ -25,6 +22,11 @@
 	id="cercle"
 			
 			</a>
+			<br>
+			<br>
+			<br />
+			<br />
+			
 	</article>
 	<section>
 	
