@@ -163,16 +163,16 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				condition générales d'utilisation
+				Condition générales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
-				mentions légales
+				Mentions légales
 			</a>
 		</p>
 		<div>
-			date et heure								<!--  affichage de la date et l'heure -->
+			Date et heure								<!--  affichage de la date et l'heure -->
 			<div id="afficherheure">
 			</div>
 			<script type="text/javascript">

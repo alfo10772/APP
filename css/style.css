@@ -111,6 +111,7 @@ form{
 	display: flex;
 }
 
+
 p
 {
 	text-align:center;
@@ -136,4 +137,37 @@ em
 {
 	color: red;
 	font-size: 0.8em
+}
+
+#cercle{
+	position: relative;
+	background: RGB(255,182, 108);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	
+}
+
+#cercleprofil{
+	border-radius:50%;
+  	width:160px;
+ 	height:160px;
+ 	border:2px solid #679403; 
+	background: white;
+}
+
+#DeuxiemeSection{
+	justify-content: space-around;
+	
+}
+
+#PremiereSection{
+	justify-content: space-between;
+}
+
+section{
+	background: RGB(22,85, 233);
+	padding: 20px;
+	display: flex;
+	
 }
