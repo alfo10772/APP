@@ -18,25 +18,25 @@
 					<img  src="../images/LogoHabilis.png" alt="Logo Habilis"  width="200">		<!--  logo Habilis -->
 				</a>
 				<br/>
-					un produit de Domisep
+					Un produit de Domisep
 			</p>
 			<div id="conteneur1">
 				<form  method="post" action="traitement.php">		<!-- début formulaire -->
 					<div type="formulaire1">
 					<label for="mail">								<!-- texte adresse mail -->
-						adresse mail
+						Adresse mail
 					</label>
 					<br />
 						<input type="text" name="mail" placeholder="ex: nom.prenom@gmail.com" id="mail" required />	<!-- entrer l'adresse mail -->					
 					<label for="password">							<!--  mot de passe -->
 					<br />
-						mot de passe
+						Mot de passe
 					</label>
 					<br />
 						<input type="password" name="password" id="password" required />	<!--  entrer le mot de passe -->
 					<a href="recuperation_mdp.html">				<!--  lien vers la page de récupération de mot de passe -->
 					<br />
-						mot de passe oublié
+						Mot de passe oublié
 					</a>
 					<br />
 					<a href="tableau_de_bord.html">					<!--  lien pour la page de tableau de bord -->
