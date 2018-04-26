@@ -162,7 +162,7 @@ em
 }
 
 #PremiereSection{
-	justify-content: space-between;
+	
 }
 
 section{
@@ -170,4 +170,43 @@ section{
 	padding: 20px;
 	display: flex;
 	
+}
+
+nav > ul{
+	margin:Opx;
+	padding: 0px;
+}
+
+nav > ul > li{
+	float: left;
+	position: relative;
+}
+
+nav li {
+	list-style-type: none;
+}
+
+.submenu{
+	display: none;
+}
+
+nav{
+	width: 50%;
+	background-color:white;
+}
+
+nav > ul :: after{
+	content:"";
+	display: block;
+	clear: both;
+}
+
+nav a{
+	display: inline-block;
+	text-decoration:none;
+}
+
+nav > ul > li > a{
+	padding: 20px 30px;
+	color: #FFF;
 }
