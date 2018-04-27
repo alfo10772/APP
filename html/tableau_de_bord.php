@@ -19,7 +19,7 @@ require("en_tete_connexion.php");
 	
 	<article>
 	<a href="maisons.html">
-	id="cercle"
+	
 			
 			</a>
 			<br>
