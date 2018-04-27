@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>Page de connexion</title>
+	<title>Tableau de bord</title>
 </head>
 <body>
 
