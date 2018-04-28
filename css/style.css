@@ -16,7 +16,7 @@ article
 	background:RGB(22, 85, 233);
 	text-align: center;
 	font-size: 15px;
-	color: white;
+	color: red;
 }
 footer
 {
@@ -118,13 +118,13 @@ form{
 }
 
 #conteneurcercle > div {
-	position: relative;
+	position: auto;
 	background: RGB(255,182, 108);
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
   	margin: 10px;
-  	line-height: 90px;
+  	line-height: 100px;
   	color: black;
 
 }
