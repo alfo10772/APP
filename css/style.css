@@ -106,6 +106,29 @@ form{
 	width: 33%;
 }
 
+#conteneurcercle
+{
+	font-size: 0.9em;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: 90%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#conteneurcercle > div {
+	position: relative;
+	background: RGB(255,182, 108);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+  	margin: 10px;
+  	line-height: 90px;
+  	color: black;
+
+}
+
 #conteneur3
 {
 	display: flex;
