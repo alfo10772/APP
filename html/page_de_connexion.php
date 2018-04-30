@@ -7,16 +7,13 @@
 
 
 
-		<title>page de connexion</title>				<!--  titre de la page -->
+		<title>Page de connexion</title>				<!--  titre de la page -->
 	</head>
 	<body>
 	
 		<header>
 			<p>
-
-				<a href="../images/LogoHabilis.png">
 					<img  src="../images/LogoHabilis.png" alt="Logo Habilis"  width="200">		<!--  logo Habilis -->
-				</a>
 				<br/>
 					Un produit de Domisep
 			</p>
