@@ -13,8 +13,8 @@ header
 }
 article
 {
+	margin: 1%;
 	background:RGB(22, 85, 233);
-	text-align: center;
 	font-size: 15px;
 	color: white;
 }
@@ -104,6 +104,35 @@ form{
 	margin-left: auto;
   	margin-right: auto;
 	width: 33%;
+}
+
+#conteneurcercle
+{
+	font-size: 0.9em;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+#conteneurcercle > div {
+	position: auto;
+	background: RGB(255,182, 108);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+  	margin: 25px;
+  	line-height: 100px;
+  	color: RGB(22, 85, 233);
+}
+
+#profil{
+	margin-right:2%;
+	margin-top:3%;
+	display: flex;
+	flex-direction: column;
 }
 
 #conteneur3
