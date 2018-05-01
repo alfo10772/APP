@@ -2,7 +2,7 @@
 
 // juste pour se connecter à la base de donées
 
-$pdo = new PDO('mysql:dbname=test; host=localhost','root','');
+$pdo = new PDO('mysql:dbname=bdd_app; host=localhost','root','');
 
 $pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // quand on a une erreur, on a une exception dans PDO::
 
