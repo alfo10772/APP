@@ -106,6 +106,14 @@ form{
 	width: 33%;
 }
 
+#conteneur3
+{
+	display: block;
+	flex-direction: column;
+	margin-left: 150px;
+  	margin-right: 45px;
+}
+
 #conteneurcercle
 {
 	font-size: 0.9em;
@@ -126,6 +134,7 @@ form{
   	margin: 25px;
   	line-height: 100px;
   	color: RGB(22, 85, 233);
+  	
 }
 
 #profil{
@@ -136,15 +145,9 @@ form{
 	
 }
 
-#conteneur3
-{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	/*text-align: center;*/
-	width:25%;
+#bandeau > div{
+	margin: 15px;
 }
-
 
 p
 {
@@ -190,57 +193,4 @@ em
 	background: white;
 }
 
-#DeuxiemeSection{
-	justify-content: space-around;
-	
-}
 
-#PremiereSection{
-	
-}
-
-section{
-	background: RGB(22,85, 233);
-	padding: 20px;
-	display: flex;
-	
-}
-
-nav > ul{
-	margin:Opx;
-	padding: 0px;
-}
-
-nav > ul > li{
-	float: left;
-	position: relative;
-}
-
-nav li {
-	list-style-type: none;
-}
-
-.submenu{
-	display: none;
-}
-
-nav{
-	width: 50%;
-	background-color:white;
-}
-
-nav > ul :: after{
-	content:"";
-	display: block;
-	clear: both;
-}
-
-nav a{
-	display: inline-block;
-	text-decoration:none;
-}
-
-nav > ul > li > a{
-	padding: 20px 30px;
-	color: #FFF;
-}
