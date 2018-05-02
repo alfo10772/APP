@@ -120,7 +120,7 @@ form{
 
 #conteneurcercle
 {
-	font-size: 0.9em;
+	font-size: 1em;
 	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -137,8 +137,7 @@ form{
 	height: 100px;
   	margin: 25px;
   	line-height:100px;
-  	color: RGB(22, 85, 233);
-  	
+  	color: black;
 }
 
 #profil{
