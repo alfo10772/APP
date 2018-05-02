@@ -24,7 +24,7 @@
 	<div id="conteneur2">
 		<form method="post" action="traitement.php">
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<p>
+			
        			<label for="nom_d'utilisateur">
        				Nom d'utilisateur :
        				<em>
@@ -33,8 +33,8 @@
        			</label>
        			<br />
        				<input type="text" name="nom_d'utilisateur" id="nom_d'utilisateur" required />
-       		</p>
-       		<p>
+				<br />
+				<br />
        			<label for="password">
        				Mot de passe :
        				<em>
@@ -43,8 +43,8 @@
        			</label>
        			<br />
        				<input type="password" name="password" id="password" required />
-       		</p>
-       		<p>
+       			<br />
+       			<br />
        			<label for="confirmed_password">
        				Confirmer le mot de passe :
        				<em>
@@ -53,8 +53,8 @@
        			</label>
        			<br />
        				<input type="password" name="confirmed_password" id="confirmed_password" required />
-       		</p>
-       		<p>
+       			<br />
+       			<br />
        			<label for="mail">
        				Adresse mail :
        				<em>
@@ -63,28 +63,27 @@
        			</label>
        			<br />
        				<input type="email" name="mail" id="mail" required />
-       		</p>
-       		<p>
+       			<br />
+       			<br />
        			<label for="numero_de_tel">
        				Numéro de téléphone :
        			</label>
        			<br />
        				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
-       		</p>
+       			<br />
        		<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div> <!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
-			<p>
+				
 				<label for="accept_use_condition">
-       				J'accepte les conditions d'utilisation :
+					<p>
+       				J'accepte les conditions d'utilisation
        				<em>
        					*
        				</em>
+       				</p>
        			</label>
-				<br />
        			<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
-       		</p>
-       		<p>
-       		<input type="submit" value="Valider" />
-       		</p>	
+				<br />
+       		<input type="submit" value="Valider" />	
 		</form>
 	</div>
 	<p class="obligatoire">
@@ -117,7 +116,6 @@
     		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
 			}, 1000);
 			</script>
-		</div>
 		</div>
 	</footer>
 </body>
