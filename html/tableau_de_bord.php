@@ -6,14 +6,10 @@
 	<title>Tableau de bord</title>
 </head>
 <body>
-
 	<header>
 	<?php
 require("en_tete_connexion.php");
 	?>
-	<div id="conteneur1">
-	   
-	</div>
 	
 	</header>
 	
