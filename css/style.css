@@ -13,7 +13,8 @@ header
 }
 article
 {
-	margin: 1%;
+	padding:1%;
+	margin: 0%;
 	background:RGB(22, 85, 233);
 	font-size: 15px;
 	color: white;
@@ -31,7 +32,7 @@ body
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background:RGB(22, 85,233);
+	background:RGB(192, 192, 192);
 	font-size: 15px;
 	font-family: cantarell;
 }
