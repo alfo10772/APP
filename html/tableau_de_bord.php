@@ -11,9 +11,6 @@
 	<?php
 require("en_tete_connexion.php");
 	?>
-	<div id="conteneur1">
-	   
-	</div>
 	
 	</header>
 	
