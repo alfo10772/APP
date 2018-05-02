@@ -137,7 +137,7 @@ form{
 	height: 100px;
   	margin: 25px;
   	line-height:100px;
-  	color: black;
+  	color:black;
 }
 
 #profil{
@@ -146,10 +146,6 @@ form{
 	display: flex;
 	flex-direction: column;
 	
-}
-
-#bandeau > div{
-	margin: 15px;
 }
 
 p
@@ -196,4 +192,26 @@ em
 	background: white;
 }
 
+#supprimer{
+	padding:1%;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left:auto;
+	text-align:center;
+	width:50%;
+}
 
+input[id="supprimer"] {
+    width: 100%;
+    background:RGB(192, 192, 192);
+    color: black;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[id="supprimer"]:hover {
+    background:RGB(170, 170, 170);
+}

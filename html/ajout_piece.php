@@ -21,7 +21,7 @@
 			<div id="conteneur3">
 				<br />
 				<br />
-				<a href="informations.html">			
+				<a href="informations.php">			
 					Mes informations
 				</a>
 				<br />
