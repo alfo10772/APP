@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="../css/style.css">	
-		<title>ajout_piece</title>
+		<title>ajout_maison</title>
 	</head>
 
 	<body>
@@ -47,7 +47,7 @@
 
 	<article>
 		
-		<h1>Ajout d'une pièce</h1>
+		<h1>Ajout d'une maison</h1>
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
@@ -60,47 +60,36 @@
 		
 		<div id="conteneur2">
 			
-			<form method="post" action="traitement.php"> 
-   				<div type="formulaire1">
-   					<label for="maison">Maison</label><br /> 
-       				<select name="maison" id="maison"> 
-       					<option value="france">Nom de la maison</option> 
-       					<option value="espagne">Maison principale</option>
-           				<option value="espagne">Maison de campagne</option> 
-           				<option value="italie">Maison de vacances</option> 
-           			</select> 
-  				 </div>
-			</form>
-			
-			<br />
-			<br />
-			
-			<form method="post" action="traitement.php"> 
-   				<div type="formulaire1">
-   					<label for="piece">Type</label><br /> 
-       				<select name="piece" id="piece"> 
-       					<option value="france">Type de piece</option> 
-       					<option value="espagne">Cuisine</option>
-           				<option value="espagne">Salon</option> 
-           				<option value="italie">Salle de bain</option> 
-           				<option value="italie">Chambre</option> 
-           				<option value="italie">Ajouter un type</option> 
-           			</select> 
-  				 </div>
+			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
+				<div id="formulaire1">
+					<label for="maison">								<!-- texte adresse mail -->
+						Nom
+					</label>
+					<br />
+						<input type="text" name="maison" placeholder="Nom de la maison" id="maison" required/>
+				</div>
 			</form>
 			
 			<br />
 			<br />
 			
 			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
-				<div type="formulaire1">
-					<label for="piece">								<!-- texte adresse mail -->
-						Superficie de la pièce (optionnelle)
+				<div id="formulaire1">
+					<label for="maison">								
+						Adresse
 					</label>
 					<br />
-						<input type="text" name="piece" placeholder="Superficie de la pièce" id="piece" />
+						<input type="text" name="maison" placeholder="Adresse de la maison" id="maison" required/>
 				</div>
 			</form>
+			
+			<br />
+			<br />
+			
+			<label for="photo">								
+					Ajouter une photo
+			</label>
+			<input type="file" name="photo" />
 			
 			<br />
 			<br />

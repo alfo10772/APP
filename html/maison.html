@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<link rel="stylesheet" href="../css/style.css">	
+		<title>Page des maisons</title>
+	</head>
+	
+	<body>
+		<header>
+			<p>
+			
+				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
+			
+			<br />
+				Un produit de Domisep
+			</p>
+			
+			<p>
+				<br />
+				
+			</p>
+						
+			<div id="conteneur3">
+				<br />
+				<br />
+				<a href="informations.html">			
+					Mes informations
+				</a>
+				
+				<a href="page_de_connexion.php">			
+					Se déconnecter
+				</a>
+				<br />
+				<br />
+				<br />
+			
+			</div>
+			
+			<div id="profil">
+	   		
+				<img src="../images/photo.png" alt="Photo profil" width="125">
+	   			<p>
+	   				Nom d'utilisateur
+	   			</p>	
+			</div>
+		</header>
+		
+		<article>
+		
+		<h1>Page des maisons</h1>
+		
+		<div id="bandeau">
+		
+		<div style="float:left">
+			<a href="tableau_de_bord.php">		
+				Retour à la page d'accueil
+			</a>
+		</div> 
+		
+		<div style="float:right">
+			<a href="suppression_piece.php">		
+				- Supprimer une maison
+			</a>
+		</div>
+		
+		</div>
+		
+		
+		<div id="conteneurcercle">
+			<div><strong>Maison principale</strong></div>
+			<div><strong>Maison de campagne</strong></div>
+			<div><strong>Maison de vacances</strong></div>
+			<div><strong>+</strong></div>
+		</div>
+	
+		
+	</article>
+	
+	<footer>						<!--  début du bas de la page -->
+		<p>
+			<a href="faq.html">		<!--  lien vers la FAQ -->
+				<strong>
+					FAQ
+				</strong>
+			</a>
+		</p>
+		<p>
+			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
+				Conditions générales d'utilisation
+			</a>
+		</p>
+		<p>
+			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
+				Mentions légales
+			</a>
+		</p>
+		<div>
+			
+			Date et heure								<!--  affichage de la date et l'heure -->
+			<div id="afficherheure">
+			</div>
+			<script type="text/javascript">
+			setInterval(function(){
+    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+			</script>
+		</div>
+		
+	</footer>
+
+
+	</body>
+</html>
