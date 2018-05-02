@@ -37,11 +37,11 @@
 					</a>
 					<br />
 					<a href="tableau_de_bord.html">					<!--  lien pour la page de tableau de bord -->
-						<input type="submit" value="connexion" />	<!--  bouton pour se connecter -->
+						<input type="submit" value="Connexion" />	<!--  bouton pour se connecter -->
 					</a>
 					<br />
 					<a href="page_d'inscriptionn.html">				<!--  lien vers la page d'incription -->
-						<input type="submit" value="inscription" />	<!--  bouton pour aller à la page de connexion -->
+						<input type="submit" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
 					</a>
 					<br />
 					</div>	

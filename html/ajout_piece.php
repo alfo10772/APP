@@ -49,23 +49,68 @@
 		
 		<h1>Ajout d'une pièce</h1>
 		
-		<div id="conteneur1">
+		<div style="float:left">
+			<a href="tableau_de_bord.php">		
+				Retour à la page d'accueil
+			</a>
+		</div> 
+		
+		<br />
+		<br />
+		
+		<div id="conteneur2">
 			
 			<form method="post" action="traitement.php"> 
-   				<p> 
+   				<div type="formulaire1">
    					<label for="maison">Maison</label><br /> 
        				<select name="maison" id="maison"> 
-       					<option value="france">Maison principale</option> 
+       					<option value="france">Nom de la maison</option> 
+       					<option value="espagne">Maison principale</option>
            				<option value="espagne">Maison de campagne</option> 
            				<option value="italie">Maison de vacances</option> 
+           			</select> 
+  				 </div>
+			</form>
+			
+			<br />
+			<br />
+			
+			<form method="post" action="traitement.php"> 
+   				<div type="formulaire1">
+   					<label for="piece">Type</label><br /> 
+       				<select name="piece" id="piece"> 
+       					<option value="france">Type de piece</option> 
+       					<option value="espagne">Cuisine</option>
+           				<option value="espagne">Salon</option> 
+           				<option value="italie">Salle de bain</option> 
+           				<option value="italie">Chambre</option> 
+           				<option value="italie">Ajouter un type</option> 
+           			</select> 
+  				 </div>
+			</form>
+			
+			<br />
+			<br />
+			
+			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
+				<div type="formulaire1">
+					<label for="piece">								<!-- texte adresse mail -->
+						Superficie de la pièce (optionnelle)
+					</label>
+					<br />
+						<input type="text" name="piece" placeholder="Superficie de la pièce" id="piece" />
+				</div>
+			</form>
+			
+			<br />
+			<br />
+			
+			<input type="submit" value="Ajouter" />
 		</div>
-		
-		
-		
 		
 	</article>
 		
-		<footer>						<!--  début du bas de la page -->
+	<footer>						<!--  début du bas de la page -->
 		<p>
 			<a href="faq.html">		<!--  lien vers la FAQ -->
 				<strong>
@@ -95,4 +140,4 @@
 			</script>
 		</div>
 		
-		</footer>
+	</footer>
