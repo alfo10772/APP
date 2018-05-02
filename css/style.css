@@ -110,7 +110,7 @@ form{
 
 #conteneur3
 {
-	display: block;
+	display: flex;
 	flex-direction: column;
 	margin-left: 150px;
   	margin-right: 45px;

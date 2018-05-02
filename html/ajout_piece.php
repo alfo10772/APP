@@ -33,54 +33,37 @@
 				<br />
 			
 			</div>
-			<div id="conteneur1">
+			<div id="profil">
 	   		
 	   			<a href="../images/photo.png">
 					<img src="../images/photo.png" alt="Photo profil" width="125">
 	   			</a>
-	   			
+	   			<p>
 	   				Nom d'utilisateur
-	   				
-	   			<br />
-	   			<br />
+	   			</p>
+	   		
 			</div>
 		</header>
 
-
-	<section id="PremiereSection">
-		<h1>
-			Ajout de pièce
-		</h1>
+	<article>
 		
-	</section>
-	
-	<section id="PremiereSection">	
-		<nav>
+		<h1>Ajout d'une pièce</h1>
 		
-		<ul> 
-
-  
-            <li class="menu_maison.html"> 
-            	<a href="maison.php">
-                	Maison 
-         		</a>
-         			
-         			<ul class="submenu">
-         			
-         				<li><a href="#"> Maison 1</a></li>
-         				<li><a href="#"> Maison 2</a></li>
-         				<li><a href="#"> Maison 3</a></li>
-         				
-         			</ul>
-                
-      		</li>
-        
-      		
-		</ul>
+		<div id="conteneur1">
+			
+			<form method="post" action="traitement.php"> 
+   				<p> 
+   					<label for="maison">Maison</label><br /> 
+       				<select name="maison" id="maison"> 
+       					<option value="france">Maison principale</option> 
+           				<option value="espagne">Maison de campagne</option> 
+           				<option value="italie">Maison de vacances</option> 
+		</div>
 		
-		</nav>
 		
-	</section>
+		
+		
+	</article>
 		
 		<footer>						<!--  début du bas de la page -->
 		<p>
