@@ -9,8 +9,8 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     /*$req->execute([$_POST['password']]);
     $req->execute([$_POST['numero_de_tel']]);  */
     }
-    header('location: tableau_de_bord.php');
-  /*  else(){
+  /*  header('location: tableau_de_bord.php');
+    else(){
         
     }*/
   
