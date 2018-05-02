@@ -18,21 +18,21 @@
 			</p>
 			
 			
-			<div id="conteneur1">
+			<div id="conteneur3">
 				<br />
 				<br />
 				<a href="informations.html">			
 					Mes informations
 				</a>
+				<br />
+				<br />
 				
 				<a href="page_de_connexion.php">			
 					Se déconnecter
 				</a>
-				<br />
-				<br />
-				<br />
 			
 			</div>
+			
 			<div id="profil">
 	   		
 	   			<a href="../images/photo.png">
