@@ -1,30 +1,41 @@
 <?php
 session_start();
 ?>
-<style>
-p {
-    float:left;
-    }
-</style>
-    <table style="width:100%">
-<tr>
-    <td style="width: 90%">
-    
-    <p>
-		<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis">
-		<br/>
-		Un produit de Domisep
-	</p>
-    </td>
-    <td style="width: 30%">
-    <a href="redirection.php">
-    <h2>Se déconnecter</h2>
-    </a>
-    </td>
-    <td>
-    <?php
-    echo $_SESSION['mail'];
-    ?>
-    </td>
-  </tr>
-  </table>
+ <p>
+			
+				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
+			
+			<br />
+				Un produit de Domisep
+			</p>
+			
+			<p>
+				<br />
+				
+			</p>
+						
+			<div id="conteneur3">
+				<br />
+				<br />
+				<a href="informations.html">			
+					Mes informations
+				</a>
+				<br />
+				<br />
+				
+				<a href="page_de_connexion.php">			
+					Se déconnecter
+				</a>
+			
+			</div>
+			
+			<div id="profil">
+	   		
+				<img src="../images/photo.png" alt="Photo profil" width="125">
+	   			<p>
+	   				<?php
+                 echo $_SESSION['mail'];
+                  ?>
+	   		</p>	
+			</div>
+  
