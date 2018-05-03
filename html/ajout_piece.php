@@ -51,7 +51,7 @@
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				Retour à la page d'accueil
+				<input type="submit" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		
@@ -64,10 +64,10 @@
    				<div type="formulaire1">
    					<label for="maison">Maison</label><br /> 
        				<select name="maison" id="maison"> 
-       					<option value="france">Nom de la maison</option> 
-       					<option value="espagne">Maison principale</option>
-           				<option value="espagne">Maison de campagne</option> 
-           				<option value="italie">Maison de vacances</option> 
+       					<option value="nom">Nom de la maison</option> 
+       					<option value="principale">Maison principale</option>
+           				<option value="campagne">Maison de campagne</option> 
+           				<option value="vacances">Maison de vacances</option> 
            			</select> 
   				 </div>
 			</form>
