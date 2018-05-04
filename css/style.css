@@ -108,7 +108,19 @@ form{
 
 }
 
-#conteneur3
+#conteneurinfo
+{
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	width: 33%;
+	background:orange;
+
+}
+
+#bandeauinfo
 {
 	display: flex;
 	flex-direction: column;
@@ -193,7 +205,7 @@ em
 }
 
 input[id="supprimer"] {	
-    width: auto;
+    width: 100%;
     background:RGB(192, 192, 192);
     color: black;
     padding: 10px 20px;
