@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="../css/style.css">		<!--  lien vers style -->
+
+
+
+		<title>condition general d'utilisation</title>				<!--  titre de la page -->
+	</head>
+	<body>
+	
+		<header>
+			<p>
+					<img  src="../images/LogoHabilis.png" alt="Logo Habilis"  width="200">		<!--logoha   -->
+				<br/>
+				Un produit de Domisep	
+			</p>
+			
+				<div id="conteneur3">
+				<br />
+				<br />
+				<a href="informations.php">			
+					Mes informations
+				</a>
+				<br />
+				<br />
+				<a href="page_de_connexion.php">			
+					Se déconnecter
+				</a>
+			
+			</div>
+		<div id="profil">
+			<img src="../images/photo.png" alt="Photo profil" width="125">
+	   			<p>
+	   			&nbsp;Nom d'utilisateur
+	   			</p>	
+		</div>
+	</header>
+	<article>
+	
+    
+	<a href="page d'accueil.html "  ><font color="white" size="5">Retour a la page d'accueil</font></a>
+	
+	<br/>
+	<div id="text"  align="center">
+		<textarea placeholder="Modifier le texte de la page" style="width:500px; height:125px"></textarea>
+		<br/>
+		<button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:425px">Enregistrer</button>
+		<br/>
+		<br/>
+		
+		<textarea placeholder="Modifier les conditions generales d'utilisation" style="width:500px; height:125px"></textarea>
+		<br/>
+		<button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:425px">Enregistrer</button>
+	</div>
+	
+	  <br/>
+	  <br/>
+	  <br/>
+		
+	</article>
+	<footer>						<!--  début du bas de la page -->
+		<p>
+			<a href="faq.html">		<!--  lien vers la FAQ -->
+				<strong>
+					FAQ
+				</strong>
+			</a>
+		</p>
+		<p>
+			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
+				Condition générales d'utilisation
+			</a>
+		</p>
+		<p>
+			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
+				Mentions légales
+			</a>
+		</p>
+		<div>
+			Date et heure								<!--  affichage de la date et l'heure -->
+			<div id="afficherheure">
+			</div>
+			<script type="text/javascript">
+			setInterval(function(){
+    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+			</script>
+		</div>
+	
+	
+	</footer>
+	</body>
+	</html>
