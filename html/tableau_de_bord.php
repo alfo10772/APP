@@ -22,7 +22,6 @@ require("en_tete_connexion.php");
 			<br>
 			<br />
 			<br />
-			
 	</article>
 	<section>
 	
