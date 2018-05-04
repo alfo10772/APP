@@ -218,3 +218,8 @@ input[id="supprimer"] {
 input[id="supprimer"]:hover {
     background:RGB(170, 170, 170);
 }
+
+#tableau_bord
+{
+	color: blue;
+}
