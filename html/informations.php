@@ -20,17 +20,16 @@
 			
 			<br />
 			
-			<div id="conteneurinfo">
-				<p>
-				Nom :
+			<div id="conteneur2">
+				
+				<font size="+1">Nom :</font>
 				<br />
-				Type de l'utilisateur :
+				<font size="+1">Type de l'utilisateur :</font>
 				<br />
-				Adresse mail : 
+				<font size="+1">Adresse mail : </font>
 				<br />
-				Photo :
+				<font size="+1">Photo : </font>
 			
-				</p>
 				<a href="modif_info.php">
 					<input type="submit" value="Modifier mes informations" />
 				</a>
