@@ -30,9 +30,11 @@
 				<br />
 				Photo :
 			
+				</p>
 				<a href="modif_info.php">
 					<input type="submit" value="Modifier mes informations" />
 				</a>
+				
 			</div>
 			
 		</article>

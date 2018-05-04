@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="../css/style.css">	
-		<title>piece</title>
+		<title>Nom piece</title>
 	</head>
 
 	<body>
@@ -48,7 +48,7 @@
 		
 	<article>
 		
-		<h1>Page des pièces</h1>
+		<h1>Nom pièce</h1>
 		
 		
 		
@@ -58,26 +58,16 @@
 			</a>
 		</div> 
 		
-		<div style="float:right">
-			<a href="suppression_piece.php">		
-				<input type="submit" value="Supprimer une piece" />
-				
-			</a>
+		<div style="float:right">		
+			<input type="submit" value="Supprimer la piece" />
 		</div>
-		
-		
-		
-		
+				
 		<div id="conteneurcercle">
-			<div>Cuisine</div>
-			<div>Salon</div>
-			<div>Salle de bain</div>
-			<div>Chambre 1</div>
-			<div>Chambre 2</div>
-			<div>Pièce</div>
-			<div>Pièce</div>
-			<div>Pièce</div>
-			<div><font size="+4"><a href="ajout_piece.php">+</a></font></div>
+			<div>Données</div>
+			<div>Données</div>
+			<div>Données</div>
+			<div>Données</div>
+			<div><font size="+4"><a href="ajout_composant.php">+</a></font></div>
 		</div>
 	
 		
