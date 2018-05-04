@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>                                                  <!--squelette pour en-tête et bas de page -->
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>squelette</title>
+</head>
+<body>
+
+	<header>
+		<p>
+			<a href="../images/LogoHabilis.png">
+				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="200">
+			</a>
+			<br />
+				Un produit de Domisep
+		</p>
+	<div id="conteneur1">
+	   
+	</div>
+	</header>
+	<section>
+	
+	</section>	
+	<footer>
+		<p class="bordure1">
+			<a href="faq.html">
+				<strong>
+					FAQ
+				</strong>
+			</a>
+		</p>
+		<p>
+			<a href="condition_d'utilisation.html">
+				Condition générales d'utilisation
+			</a>
+		</p>
+		<p>
+			<a href="mentions_legales.html">
+				Mentions légales
+			</a>
+		</p>
+		<div>
+			Date et heure
+			<div id="afficherheure">
+			</div>
+			<script type="text/javascript">
+			setInterval(function(){
+    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
+			}, 1000);
+			</script>
+		</div>
+		</div>
+	</footer>
+</body>

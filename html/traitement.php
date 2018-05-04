@@ -4,20 +4,23 @@
 if (!empty($_POST)) {   // les données du formulaires ont été complétées, on est dans la phase de traitement
     require_once 'db.php'; // on charge la base de données
 
-    $req = $pdo ->prepare('SELECT IDutilisateur FROM utilisateur WHERE mail = ?');
-    $req->execute([$_POST['mail']]);
-    $user = $req->fetch(); // on r�cup�re le premier element dans req
-
-   /* if (!empty($user)){
-    	$req = $pdo ->prepare('SELECT * FROM utilisateurs WHERE nom = ?');
-   		$req->execute([$_POST['nom']]);
-    	$hash = $req->fetch(); // on récupère le premier element dans req
-
-    	if (password_verify($_POST['password'], $hash -> password)) {*/
-    		session_start();
-    		$_SESSION['mail'] = $_POST['mail'];
+    $req = $pdo ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? AND motdepasse =?');
+    $req->execute(array($_POST['mail'],$_POST['password']));
+    $user = $req->fetch();  // on r�cup�re le premier element dans req
+    print_r($user);
+      
+   if (!empty($user)){
+    	session_start();
+    	$_SESSION['mail']= $_POST['mail']
+    	header('location: tableau_de_bord.php');
+   }
+   else{
+       header('location: page_de_connexion.php')
+   }
+    		//session_start();
+    	//$_SESSION['mail'] = $_POST['mail'];
     	//	$_SESSION['password'] = $_POST['password'];
-    		header('location: tableau_de_bord.php');
+    	//	header('location: tableau_de_bord.php');
 
    /*     	}
 

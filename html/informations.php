@@ -17,11 +17,25 @@
 		<article>
 		
 			<h1>Mes informations</h1>
-		
-			<a href="modif_info.php">
-				<input type="submit" value="Modifier mes informations" />
-			</a>
-		
+			
+			<br />
+			
+			<div id="conteneur2">
+				
+				<font size="+1">Nom :</font>
+				<br />
+				<font size="+1">Type de l'utilisateur :</font>
+				<br />
+				<font size="+1">Adresse mail : </font>
+				<br />
+				<font size="+1">Photo : </font>
+			
+				<a href="modif_info.php">
+					<input type="submit" value="Modifier mes informations" />
+				</a>
+				
+			</div>
+			
 		</article>
 
 		<footer>						<!--  début du bas de la page -->

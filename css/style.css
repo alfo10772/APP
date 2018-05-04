@@ -108,6 +108,16 @@ form{
 
 }
 
+#conteneurinfo
+{
+	font-size: 1.5em;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	width: 33%;
+}
+
 #conteneur3
 {
 	display: flex;
@@ -192,26 +202,22 @@ em
 	background: white;
 }
 
-#supprimer{
-	padding:1%;
-	margin-right: 0;
-	margin-bottom: 0;
-	margin-left:auto;
-	text-align:center;
-	width:50%;
-}
-
-input[id="supprimer"] {
+input[id="supprimer"] {	
     width: 100%;
     background:RGB(192, 192, 192);
     color: black;
     padding: 10px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 2px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 input[id="supprimer"]:hover {
     background:RGB(170, 170, 170);
+}
+
+#tableau_bord
+{
+	color: blue;
 }
