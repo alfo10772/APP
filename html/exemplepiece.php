@@ -22,7 +22,7 @@
 				
 			</p>
 						
-			<div id="bandeauinfo">
+			<div id="bconteneur3">
 				<br />
 				<br />
 				<a href="informations.php">			
@@ -54,7 +54,7 @@
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" value="Retour à la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		

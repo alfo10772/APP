@@ -14,14 +14,34 @@ require("en_tete_connexion.php");
 	</header>
 	
 	<article>
-	<a href="maisons.html">
 	
-			
+	<h1>Tableau de bord</h1>
+	
+	<div id="bandeau">
+		
+		
+	<div id="conteneurcercle">
+			<div>
+			    <a href="maison.html">	
+			    <strong id="tableau_bord">Maisons</strong>	
+				</a>
+		</div> 
+			<div>
+			<a href="piece.html">		
+				<strong id="tableau_bord">Pièces</strong>
 			</a>
-			<br>
-			<br>
-			<br />
-			<br />
+		</div>
+			
+			<div>
+			<a href="page des composants.html">		
+				<strong id="tableau_bord">Composants</strong>
+			</a>
+		</div>
+		
+    </div>
+		
+	
+	
 	</article>
 	<section>
 	
