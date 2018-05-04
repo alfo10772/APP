@@ -28,7 +28,7 @@ require("en_tete_connexion.php");
 		</div> 
 			<div>
 			<a href="piece.html">		
-				<strong id="tableau_bord">PiÃ¨ces</strong>
+				<strong id="tableau_bord">Pièces</strong>
 			</a>
 		</div>
 			
