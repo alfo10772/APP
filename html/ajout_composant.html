@@ -3,25 +3,119 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>squelette</title>
+	<title>Page d'ajout de composant</title>
 </head>
 <body>
 
 	<header>
 		<p>
 			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="200">
+				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
 			</a>
 			<br />
 				Un produit de Domisep
-		</p>
-	<div id="conteneur1">
-	   
-	</div>
+			</p>
+			
+			
+			<div id="conteneur3">
+				<br />
+				<br />
+				<a href="informations.php">			
+					Mes informations
+				</a>
+				<br />
+				<br />
+				
+				<a href="page_de_connexion.php">			
+					Se déconnecter
+				</a>
+			
+			</div>
+			
+			<div id="profil">
+	   		
+	   			<a href="../images/photo.png">
+					<img src="../images/photo.png" alt="Photo profil" width="125">
+	   			</a>
+	   			<p>
+	   				Nom d'utilisateur
+	   			</p>
+	   		
+			</div>
 	</header>
-	<section>
+
+	<article>
+		
+		<h1>Ajout d'un composant</h1>
+		
+		<div style="float:left">
+			<a href="tableau_de_bord.php">		
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
+			</a>
+		</div> 
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		<div id="conteneur2">
+			
+			<form method="post" action="traitement.php"> 
+   				<div type="formulaire1">
+   					<label for="composant">Composant</label><br /> 
+       				<select name="type" id="compoasnt"> 
+       					<option value="type">Type de composant</option> 
+       					<option value="temperature">Capteur de température</option>
+           				<option value="humidite">Capteur d'humidité</option> 
+           				<option value="presence">Capteur de présence</option>
+           				<option value="fumee">Capteur de fumée</option>
+           				<option value="lumiere">Capteur de luminosité</option> 
+           				<option value="pression">Capteur de pression</option>  
+           			</select> 
+  				 </div>
+			</form>
+			
+			<br />
+			<br />
+			
+			<form method="post" action="traitement.php"> 
+   				<div type="formulaire1">
+   					<label for="piece">Piece</label><br /> 
+       				<select name="piece" id="piece"> 
+       					<option value="Piece">Piece dans laquelle se trouve le composant</option> 
+       					<option value="cuisine">Cuisine</option>
+           				<option value="salon">Salon</option> 
+           				<option value="sdb">Salle de bain</option>
+           				<option value="sdb2">Salle de bain 2</option> 
+           				<option value="chambre1">Chambre</option> 
+           				<option value="chambre2">Chambre 2</option>
+           				<option value="bureau">Bureau</option> 
+           			</select> 
+  				 </div>
+			</form>
+			
+			<br />
+			
+			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
+				<div type="formulaire1">
+					<h2>Paramètres</h2>
+					<label for="seuil">Seuil</label>
+						<input type="number" placeholder="Valeur minimale"/>
+						<br />
+						<br />
+						<input type="number" placeholder="Valeur maximale"/>
+				</div>
+			</form>
+			
+			<br />
+			<br />
+			
+			<input type="submit" value="Ajouter" />
+		</div>
+		<br />
+		<br />
+	</article>
 	
-	</section>	
 	<footer>
 		<p class="bordure1">
 			<a href="faq.html">

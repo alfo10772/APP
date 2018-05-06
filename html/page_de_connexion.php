@@ -24,8 +24,9 @@
 						Adresse mail
 					</label>
 					<br />
-						<input type="text" name="mail" placeholder="ex: nom.prenom@gmail.com" id="mail" required />	<!-- entrer l'adresse mail -->					
-					<label for="password">							<!--  mot de passe -->
+						<input type="email" name="mail" placeholder="ex: nom.prenom@gmail.com" id="mail" required />	<!-- entrer l'adresse mail -->					
+					<label for="password">	
+					<br />						<!--  mot de passe -->
 					<br />
 						Mot de passe
 					</label>
