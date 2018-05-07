@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
  <p>
 			
 				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
