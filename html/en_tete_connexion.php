@@ -14,7 +14,7 @@ session_start();
 				
 			</p>
 						
-			<div id="bandeauinfo">
+			<div id="conteneur3">
 				<br />
 				<br />
 				<a href="informations.php">			

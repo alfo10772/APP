@@ -49,12 +49,15 @@
 		
 		<h1>Ajout d'une pièce</h1>
 		
+		
 		<div style="float:left">
-			<a href="tableau_de_bord.php">		
-				<input type="submit" value="Retour à la page d'accueil" />
+			<a href="piece.html">		
+				<input type="submit" id="supprimer" value="Retour à la page des pièces" />
 			</a>
 		</div> 
 		
+		<br />
+		<br />
 		<br />
 		<br />
 		
@@ -79,12 +82,12 @@
    				<div type="formulaire1">
    					<label for="piece">Type</label><br /> 
        				<select name="piece" id="piece"> 
-       					<option value="france">Type de piece</option> 
-       					<option value="espagne">Cuisine</option>
-           				<option value="espagne">Salon</option> 
-           				<option value="italie">Salle de bain</option> 
-           				<option value="italie">Chambre</option> 
-           				<option value="italie">Ajouter un type</option> 
+       					<option value="type">Type de piece</option> 
+       					<option value="cuisine">Cuisine</option>
+           				<option value="salon">Salon</option> 
+           				<option value="sdb">Salle de bain</option> 
+           				<option value="chambre">Chambre</option> 
+           				<option value="nouveau">Ajouter un type</option> 
            			</select> 
   				 </div>
 			</form>
