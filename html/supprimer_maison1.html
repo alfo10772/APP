@@ -61,6 +61,7 @@
                     
                     </select>
                     
+                   
                     </div> 
                     <br/>
                     <br/>
@@ -68,13 +69,22 @@
                     <br/>
                     <br/>
                     
+                    <script type="text/javascript">
+                    function del(){
+                    	if(!confirm("Etes-vous sur de vouloir supprimer cette maison?")){
+                    		window.event.returnValue=false;	
+                    	}
+                    }
                     
+                    </script>
                     <div id="button1" align="right">
-                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:500px">Supprimer</button>
+                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:500px"><a href="" onclick="javascript:return del();">Supprimer</a></button>
                     <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:50px">Annuler</button>
                     
 	
-    </div> 
+    </div>
+    
+    
     <br/>
     
      
