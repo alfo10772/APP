@@ -9,41 +9,9 @@
 	<body>
 
 		<header>
-			<p>
-			
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			<p>
-				<br />
-				
-			</p>
-						
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-				<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>	
-			</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
 		</header>
 		
 	<article>
@@ -54,13 +22,13 @@
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" value="Retour à la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		
 		<div style="float:right">
 			<a href="suppression_piece.php">		
-				<input type="submit" value="Supprimer une piece" />
+				<input type="submit" id="supprimer" value="Supprimer une piece" />
 				
 			</a>
 		</div>

@@ -5,9 +5,7 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     require_once 'db.php'; // on charge la base de données
 
     $req = $pdo ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? AND motdepasse =?');
-    $pass = $_POST['password'];
-    $hash = password_hash($pass,PASSWORD_BCRYPT);
-    $req->execute(array($_POST['mail'],$hash));
+    $req->execute(array($_POST['mail'],$_POST['password']));
     $user = $req->fetch();  // on r�cup�re le premier element dans req
     print_r($user);
       
@@ -16,11 +14,10 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	$_SESSION['mail']= $_POST['mail'];
     	//header('location: tableau_de_bord.php');
    }
-  /* else{
+   else{
        header('location: page_de_connexion.php');
-   }*/
-    
-}
+   }
+   
 
 
 ?>
