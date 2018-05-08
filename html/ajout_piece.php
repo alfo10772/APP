@@ -51,7 +51,7 @@
 		
 		
 		<div style="float:left">
-			<a href="piece.html">		
+			<a href="piece.php">		
 				<input type="submit" id="supprimer" value="Retour à la page des pièces" />
 			</a>
 		</div> 
@@ -63,52 +63,51 @@
 		
 		<div id="conteneur2">
 			
-			<form method="post" action="traitement.php"> 
+			<form method="post" action="traitementpiece.php" enctype="multipart/form-data"> 
+   				
    				<div type="formulaire1">
    					<label for="maison">Maison</label><br /> 
        				<select name="maison" id="maison"> 
        					<option value="nom">Nom de la maison</option> 
-       					<option value="principale">Maison principale</option>
-           				<option value="campagne">Maison de campagne</option> 
-           				<option value="vacances">Maison de vacances</option> 
+       					<option value="principale" selected="selected">1</option>
+           				<option value="campagne">2</option> 
+           				<option value="vacances">3</option> 
            			</select> 
   				 </div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
-			<form method="post" action="traitement.php"> 
+			
    				<div type="formulaire1">
-   					<label for="piece">Type</label><br /> 
-       				<select name="piece" id="piece"> 
-       					<option value="type">Type de piece</option> 
-       					<option value="cuisine">Cuisine</option>
-           				<option value="salon">Salon</option> 
-           				<option value="sdb">Salle de bain</option> 
-           				<option value="chambre">Chambre</option> 
-           				<option value="nouveau">Ajouter un type</option> 
-           			</select> 
+   					<label for="piece">
+   						Type
+   					</label>
+   					<br /> 
+       				<input type="text" name="nom" placeholder="Nom de la pièce" id="nom" />
   				 </div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
-			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
+				
 				<div type="formulaire1">
-					<label for="piece">								<!-- texte adresse mail -->
+					<label for="surface">								
 						Superficie de la pièce (optionnelle)
 					</label>
 					<br />
-						<input type="text" name="piece" placeholder="Superficie de la pièce" id="piece" />
+					<input type="text" name="surface" placeholder="Superficie de la pièce" id="piece" />
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
 			<input type="submit" value="Ajouter" />
+			
+			</form>
 		</div>
 		
 	</article>
