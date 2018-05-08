@@ -20,4 +20,5 @@ $req = $bdd->prepare('INSERT INTO piece(nom, surface, IDmaison) VALUES(:nom,:sur
 
 $result = $req->execute(array(':nom' => $nom,':surface' => $surface,':maison' => $maison));
     
+header('location: piece.php');
 ?>
