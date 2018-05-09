@@ -39,7 +39,7 @@
 		<h1>Suppression d'un composant</h1>
 	
 		<div style="float:left">
-			<a href="page des composants.html">		
+			<a href="page_des_composants.php">		
 				<input type="submit" id="supprimer" value="Retour à la page des composants" />
 			</a>
 		</div>
@@ -54,7 +54,7 @@
 			<br>
 			<br>
 			<div style="float:left">
-				<a href="page des composants.html">		
+				<a href="page_des_composants.php">		
 					<input type="submit" id="supprimer" value="Confirmer" />
 				</a>
 			</div> 

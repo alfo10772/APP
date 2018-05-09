@@ -47,7 +47,7 @@
 		</div> 
 		
 		<div style="float:right">
-			<a href="suppression_composant.html">		
+			<a href="suppression_composant.php">		
 				<input type="submit" id="supprimer" value="Supprimer un composant"> 
 			</a>
 		</div>
@@ -63,7 +63,7 @@
 		<div>Données</div>
 		<div>Données</div>
 		<div>
-		<a href="ajout_composant.html">
+		<a href="ajout_composant.php">
 			<font size="+4">+</font>
 		</a>
 		</div>
