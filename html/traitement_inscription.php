@@ -11,14 +11,16 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
+
 $nom = $_POST['username'];
 $mdp = $_POST['password'];
 $mail = $_POST['mail'];
 $tel= $_POST['numero_de_tel'];
 
+$hash = password_hash($mdp, PASSWORD_BCRYPT);
 $req = $bdd->prepare('INSERT INTO utilisateur(nom, motdepasse, mail, numerodetelephone) VALUES(:nom,:mdp,:mail,:tel)');
 
-$result = $req->execute(array(':nom' => $nom,':mdp' => $mdp, ':mail' => $mail,':tel' => $tel));
+$result = $req->execute(array(':nom' => $nom,':mdp' => $hash, ':mail' => $mail,':tel' => $tel));
 
-header('location: tableau_de_bord.php');
+header('location: page_de_connexion.php');
 ?>

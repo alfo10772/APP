@@ -4,10 +4,10 @@ header, footer
 	padding:10px;
 	display:flex;
 	justify-content: space-between;
+	position: auto;
 }
 header
 {
-	position: sticky;
 	top:0px;
 
 }
@@ -22,7 +22,6 @@ article
 }
 footer
 {
-  	position: sticky;
   	left: 0px;
   	right: 0px;
   	bottom: 0px;
@@ -135,7 +134,7 @@ form{
 	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
-	width: 90%;
+	width: 92%;
 	margin-left: auto;
   	margin-right: auto;
 }
@@ -221,4 +220,26 @@ input[id="supprimer"]:hover {
 #tableau_bord
 {
 	color: blue;
+}
+
+.confirmer{
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	font-size: 0.9em;
+	flex-direction: column;
+	margin-left:32%;
+  	margin-right: auto;
+	width: 33%;
+	background:white;
+	color:black;
+	display:none;
+	position:fixed;
+	padding:1%;
+	border: 2px solid #ddd;
+}
+
+.confirmer:target{
+	display:block;
 }
