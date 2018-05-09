@@ -33,7 +33,7 @@
 		</div>
 			
 			<div>
-			<a href="page des composants.php">		
+			<a href="page_des_composants.php">		
 				Composants
 			</a>
 		</div>
