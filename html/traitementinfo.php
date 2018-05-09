@@ -2,7 +2,7 @@
 
 require_once 'db.php';
 
-$req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur ');
+$req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = ? ');
 $req->execute([$_SESSION['ID']]);
 $info = $req->fetch(PDO::FETCH_NUM);
 $type=$info[1];
