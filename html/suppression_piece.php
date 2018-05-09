@@ -8,38 +8,16 @@
 
 
 
-<title>Suppression d'une pi�ce</title>
+<title>Suppression d'une pi&egrave;ce</title>
 </head>
 	<body>
 	
 		<header>
-			<p>
-					<img  src="../images/LogoHabilis.png" alt="Logo Habilis"  width="200">		<!--logoha   -->
-				<br/>
-				Un produit de Domisep	
-			</p>
-			
-				<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-		<div id="profil">
-			<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   			&nbsp;Nom d'utilisateur
-	   			</p>	
-		</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>	
+		</header>
 		
-	</header>
 	<article>
 	
     
@@ -47,15 +25,11 @@
 	<br/>
 	</h1>
 	<div style="float:left;width:250px;height:10px;">
-			<a href="supprimer_maison1.php">		
-				<input type="submit" id="supprimer" value="Retour à la suppression d'une maison" />
+			<a href="piece.php">		
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div>
-	<div style="float:right;width:250px;height:10px;">
-			<a href="suppression_composant.php">		
-				<input type="submit" id="supprimer" value="Retour à la suppression d'un composant" />
-			</a>
-	</div>
+	
 	<br/> 
 	<br/>
 	<br/>

@@ -20,6 +20,15 @@
 		
 			<h1>Mes informations</h1>
 			
+			<div style="float:left">
+				<a href="tableau_de_bord.php">		
+					<input type="submit" id="supprimer" value="Retour &agrave; la page d'accueil" />
+				</a>
+			</div> 
+			
+			<br />
+			<br />
+			<br />
 			<br />
 			
 			<div id="conteneur2">
@@ -41,7 +50,7 @@
 				<font size="+1">Photo :</font>
 			
 				<a href="modif_info.php">
-					<input type="submit" value="Modifier mes informations" />
+					<input type="submit" id="supprimer" value="Modifier mes informations" />
 				</a>
 			
 			</div>
