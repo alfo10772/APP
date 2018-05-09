@@ -8,8 +8,6 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     $req->execute(array($_POST['mail'],$_POST['password']));
     $user = $req->fetch(PDO::FETCH_NUM);  // on r�cup�re le premier element dans req
     print_r($user);
- 
-    
       
    if (!empty($user)){
     	session_start();

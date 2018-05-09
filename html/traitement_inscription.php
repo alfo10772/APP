@@ -11,6 +11,7 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
+
 $nom = $_POST['username'];
 $mdp = $_POST['password'];
 $mail = $_POST['mail'];

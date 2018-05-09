@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'db.php';
 
 $req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur ');
