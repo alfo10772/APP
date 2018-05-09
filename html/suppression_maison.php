@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 
 		<link rel="stylesheet" href="../css/style.css">		<!--  lien vers style -->
-		<title>suppression d'une maiso_1</title>
+		<title>Suppression d'une maison</title>
 	</head>
 	
 	<body>
@@ -23,8 +23,8 @@
        	?>
        	
 	<div style="float:left;width:250px;height:10px;">
-			<a href="supprimer_maison1.html">		
-				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
+			<a href="maison.php">		
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des maisons" />
 			</a>
 		</div>
 	

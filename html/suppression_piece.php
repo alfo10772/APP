@@ -8,7 +8,7 @@
 
 
 
-<title>Suppression d'une pi�ce</title>
+<title>Suppression d'une pi&egrave;ce</title>
 </head>
 	<body>
 	
@@ -25,15 +25,11 @@
 	<br/>
 	</h1>
 	<div style="float:left;width:250px;height:10px;">
-			<a href="supprimer_maison1.php">		
-				<input type="submit" id="supprimer" value="Retour à la suppression d'une maison" />
+			<a href="piece.php">		
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div>
-	<div style="float:right;width:250px;height:10px;">
-			<a href="suppression_composant.php">		
-				<input type="submit" id="supprimer" value="Retour à la suppression d'un composant" />
-			</a>
-	</div>
+	
 	<br/> 
 	<br/>
 	<br/>
