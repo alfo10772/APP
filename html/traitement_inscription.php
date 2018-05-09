@@ -21,5 +21,5 @@ $req = $bdd->prepare('INSERT INTO utilisateur(nom, motdepasse, mail, numerodetel
 
 $result = $req->execute(array(':nom' => $nom,':mdp' => $hash, ':mail' => $mail,':tel' => $tel));
 
-header('location: tableau_de_bord.php');
+header('location: page_de_connexion.php');
 ?>
