@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -48,18 +52,20 @@
 		
 	<article>
 		
-		<h1>Nom pièce</h1>
+		<h1>
+		Nom de la pièce
+        </h1>
 		
 		
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" value="Retour à la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		
 		<div style="float:right">		
-			<input type="submit" value="Supprimer la piece" />
+			<input type="submit" id="supprimer" value="Supprimer la piece" />
 		</div>
 				
 		<div id="conteneurcercle">

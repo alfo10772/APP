@@ -12,20 +12,12 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
    if (!empty($user)){
     	session_start();
     	$_SESSION['mail']= $_POST['mail'];
-    	header('location: tableau_de_bord.php');
+    	//header('location: tableau_de_bord.php');
    }
    else{
        header('location: page_de_connexion.php');
    }
-    		//session_start();
-    	//$_SESSION['mail'] = $_POST['mail'];
-    	//	$_SESSION['password'] = $_POST['password'];
-    	//	header('location: tableau_de_bord.php');
-
-   /*     	}
-
-    }*/
+   
 }
-
-
-?>
+}
+ ?>

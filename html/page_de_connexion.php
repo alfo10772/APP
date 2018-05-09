@@ -40,13 +40,12 @@
 					<a href="tableau_de_bord.php">					<!--  lien pour la page de tableau de bord -->
 						<input type="submit" value="Connexion" />	<!--  bouton pour se connecter -->
 					</a>
-					<br />
-					<a href="page_d'inscription.html">				<!--  lien vers la page d'incription -->
-						<input type="submit" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
-					</a>
-					<br />
+					
 					</div>	
 				</form>
+				<a href="page_d'inscription.html">				<!--  lien vers la page d'incription -->
+						<input type="submit" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
+				</a>
 			</div>
 	</header>
 	<article>
