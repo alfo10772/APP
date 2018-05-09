@@ -42,10 +42,11 @@
 	<article>
 	
     
-	<h1>suppression maison</h1>
+	<h1>Suppression maison</h1>
 	<br/>
 	<br/>
 	<br/>
+	
 	
 	<div id="Nom de la maison"  style="text-align:left;width:300px;height:50px;" >
 			        Nom:
