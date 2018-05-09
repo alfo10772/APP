@@ -9,47 +9,26 @@
 	<body>
 
 		<header>
-			<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-	   			<a href="../images/photo.png">
-					<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			</a>
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>
-	   		
-			</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
 		</header>
 
 	<article>
 		
 		<h1>Ajout d'une pièce</h1>
 		
-		
+		<?php 
+       		try
+       		{
+       		   $bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement
+       		}
+       		catch (Exception $e)
+       		{
+       		die('Erreur :' . $e->getMessage());
+       		}
+       	?>
+       				
 		<div style="float:left">
 			<a href="piece.php">		
 				<input type="submit" id="supprimer" value="Retour à la page des pièces" />
@@ -68,11 +47,19 @@
    				<div type="formulaire1">
    					<label for="maison">Maison</label><br /> 
        				<select name="maison" id="maison"> 
-       					<option value="nom">Nom de la maison</option> 
-       					<option value="principale" selected="selected">1</option>
-           				<option value="campagne">2</option> 
-           				<option value="vacances">3</option> 
-           			</select> 
+       					<?php 
+       					
+       					$reponse = $bdd->query('SELECT * FROM maison');
+       					
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees['IDmaison']; ?>"></option>
+       					<?php
+                        }
+                        ?>
+					</select>
+       					
   				 </div>
 			
 			
