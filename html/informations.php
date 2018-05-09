@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,19 +25,27 @@
 			<br />
 			
 			<div id="conteneur2">
-				
-				<font size="+1">Nom :</font>
+				<?php 
+				    require('traitementinfo.php')
+				?>
+				<font size="+1">Nom : <?php echo $nom; ?>
+                </font>
 				<br />
-				<font size="+1">Type de l'utilisateur :</font>
+				<font size="+1">Type de l'utilisateur : <?php echo $type; ?>
+				</font>
 				<br />
-				<font size="+1">Adresse mail : </font>
+				<font size="+1">Adresse mail :  <?php echo $mail; ?>
+				</font>
 				<br />
-				<font size="+1">Photo : </font>
+				<font size="+1">Numéro de téléphone :  <?php echo $_tel; ?>
+				</font>
+				<br />
+				<font size="+1">Photo :</font>
 			
 				<a href="modif_info.php">
 					<input type="submit" value="Modifier mes informations" />
 				</a>
-				
+			
 			</div>
 			
 		</article>

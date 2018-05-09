@@ -35,8 +35,8 @@ session_start();
 				<img src="../images/photo.png" alt="Photo profil" width="125">
 	   			<p>
 	   				<?php
-                 echo $_SESSION['mail'];
-                  ?>
+                         echo $_SESSION['mail'];
+                    ?>
 	   		</p>	
 			</div>
   

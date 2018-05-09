@@ -8,7 +8,7 @@
 <body>
 	<header>
 	<?php
-require("en_tete_connexion.php");
+        require("en_tete_connexion.php");
 	?>
 	
 	</header>
@@ -23,18 +23,18 @@ require("en_tete_connexion.php");
 	<div id="conteneurcercle">
 			<div>
 			    <a href="maison.html">	
-			    <strong id="tableau_bord">Maisons</strong>	
+			    	Maisons	
 				</a>
 		</div> 
 			<div>
-			<a href="piece.html">		
-				<strong id="tableau_bord">Pièces</strong>
+			<a href="piece.php">		
+				Pièces
 			</a>
 		</div>
 			
 			<div>
 			<a href="page des composants.html">		
-				<strong id="tableau_bord">Composants</strong>
+				Composants
 			</a>
 		</div>
 		
