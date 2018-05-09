@@ -100,53 +100,6 @@
 	Texte représentatif de l'entreprise
 	<br />
 	<br />
-	Texte représentatif de l'entreprise
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-	Texte représentatif de l'entreprise
-
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-	<br />
-
-
-	Texte représentatif de l'entreprise
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	Texte représentatif de l'entreprise	
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
 	<br />
 
 
