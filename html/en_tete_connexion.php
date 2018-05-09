@@ -3,8 +3,9 @@ session_start()
 ?>
 
  <p>
-			
+			<a href="tableau_de_bord.php">
 				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
+			</a>	
 			
 			<br />
 				Un produit de Domisep
