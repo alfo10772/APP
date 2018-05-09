@@ -99,7 +99,7 @@
 		
 	</article>
 		
-	<footer>						<!--  début du bas de la page -->
+	<footer>						<!--  d&eacute;but du bas de la page -->
 		<p>
 			<a href="faq.html">		<!--  lien vers la FAQ -->
 				<strong>
@@ -109,12 +109,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Condition générales d'utilisation
+				Condition g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
-			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
-				Mentions légales
+			<a href="mentions_legales.html">			<!--  lien vers les mentions l&eacute;gales -->
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>
