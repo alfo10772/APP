@@ -4,75 +4,52 @@
 		<meta charset="utf-8">
 
 		<link rel="stylesheet" href="../css/style.css">		<!--  lien vers style -->
-
-
-
-
-<title>suppression d'une maiso_1</title>
-</head>
-	<body>
+		<title>suppression d'une maiso_1</title>
+	</head>
 	
+	<body>
 		<header>
-			<p>
-					<img  src="../images/LogoHabilis.png" alt="Logo Habilis"  width="200">		<!--logoha   -->
-				<br/>
-				Un produit de Domisep	
-		 </p>
-			
-				<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-		<div id="profil">
-			<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   			&nbsp;Nom d'utilisateur
-	   			</p>	
-		</div>
-	</header>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
+		</header>
+		
 	<article>
 	
-    
-	<h1>suppression maison</h1>
-	<br/>
-	<br/>
-	<br/>
+	<h1>Suppression d'une maison</h1>
+	
+	<?php 
+       		include('config_init.php');
+       	?>
+       	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="supprimer_maison1.html">		
 				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div>
-	<div style="float:right;width:250px;height:10px;">
-			<a href="suppression_piece.html">		
-				<input type="submit" id="supprimer" value="Retour à la suppression d'une piece" />
-			</a>
-	</div>
+	
 	<br/> 
 	<br/>
 	<br/>
-	
+	<br/>
 	
 	<div id="conteneur2">
+	
 	<div id="Nom de la maison"  style="text-align:left;width:350px;height:50px;" >
 			        Nom:
 			        <br />
-			        <select>
-			        
-                    <option value ="Maison 1">Maison 1</option>
-                    <option value ="Maison 2">Maison 2</option>
-                    <option value ="Maison 3">Maison 3</option>
-                    <option value ="Maison 4">Maison 4</option>
-                    <option value ="Maison 5">Maison 5</option>
-                    <option value ="Maison 6">Maison 6</option>
+			        <select name="maison" id="maison">
+			        	<?php 
+       					
+       					$reponse = $bdd->query('SELECT * FROM maison');
+       					
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+                    		<option value ="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+                    	<?php 
+       					}
+                    	?>
                     
                     </select>
                     
