@@ -28,7 +28,7 @@
 		</div> 
 			<div>
 			<a href="piece.php">		
-				Pièces
+				Pi&egrave;ces
 			</a>
 		</div>
 			
