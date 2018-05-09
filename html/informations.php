@@ -37,7 +37,7 @@ session_start();
 				<font size="+1">Adresse mail :  <?php echo $mail; ?>
 				</font>
 				<br />
-				<font size="+1">Numéro de téléphone :  <?php echo $_tel; ?>
+				<font size="+1">Num&eacute;ro de t&eacute;l&eacute;phone :  <?php echo $_tel; ?>
 				</font>
 				<br />
 				<font size="+1">Photo :</font>
@@ -50,7 +50,7 @@ session_start();
 			
 		</article>
 
-		<footer>						<!--  début du bas de la page -->
+		<footer>						<!--  d&eacute;but du bas de la page -->
 		<p>
 			<a href="faq.html">		<!--  lien vers la FAQ -->
 				<strong>
@@ -60,12 +60,12 @@ session_start();
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Conditions générales d'utilisation
+				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
-			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
-				Mentions légales
+			<a href="mentions_legales.html">			<!--  lien vers les mentions l&eacute;gales -->
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>
