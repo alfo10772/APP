@@ -8,37 +8,16 @@
 <body>
 
 	<header>
-		<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-			
-				Un produit de Domisep
-				
-		</p>
-		<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-		<div id="profil">
-			<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   			&nbspNom d'utilisateur
-	   			</p>	
-		</div>
+		<?php
+            require("en_tete_connexion.php");
+        ?>
 	</header>
 	<article>
 	<h1>Page des composants</h1>
+	
+		<?php 
+       		include('config_init.php');
+       	?>
 	
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
@@ -53,15 +32,15 @@
 		</div>
 
 	<div id="conteneurcercle">
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
-		<div>Données</div>
+		<?php 			
+       		$reponse = $bdd->query('SELECT * FROM composant');		
+       		while ($donnees = $reponse->fetch())
+       			{
+       	?>
+				<div><?php echo $donnees['nom'] ?></div>
+		<?php
+                }
+        ?>
 		<div>
 		<a href="ajout_composant.php">
 			<font size="+4">+</font>

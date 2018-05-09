@@ -8,45 +8,18 @@
 <body>
 
 	<header>
-		<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-	   			<a href="../images/photo.png">
-					<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			</a>
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>
-	   		
-			</div>
+		<?php
+            require("en_tete_connexion.php");
+        ?>
 	</header>
 
 	<article>
 		
 		<h1>Ajout d'un composant</h1>
+		
+		<?php 
+       		include('config_init.php');
+       	?>
 		
 		<div style="float:left">
 			<a href="page_des_composants.php">		
@@ -59,12 +32,10 @@
 		<br />
 		
 		<div id="conteneur2">
-			
-			<form method="post" action="traitement.php"> 
+			<form method="post" action="traitement_composant.php" enctype="multipart/form-data"> 
    				<div type="formulaire1">
-   					<label for="composant">Composant</label><br /> 
-       				<select name="type" id="compoasnt"> 
-       					<option value="type">Type de composant</option> 
+   					<label for="type">Composant</label><br /> 
+       				<select name="type" id="type"> 
        					<option value="temperature">Capteur de température</option>
            				<option value="humidite">Capteur d'humidité</option> 
            				<option value="presence">Capteur de présence</option>
@@ -73,49 +44,41 @@
            				<option value="pression">Capteur de pression</option>  
            			</select> 
   				 </div>
-			</form>
-			
-			<br />
-			<br />
-			
-			<form method="post" action="traitement.php"> 
+				<br />
+				<br />
    				<div type="formulaire1">
    					<label for="piece">Piece</label><br /> 
        				<select name="piece" id="piece"> 
-       					<option value="Piece">Piece dans laquelle se trouve le composant</option> 
-       					<option value="cuisine">Cuisine</option>
-           				<option value="salon">Salon</option> 
-           				<option value="sdb">Salle de bain</option>
-           				<option value="sdb2">Salle de bain 2</option> 
-           				<option value="chambre1">Chambre</option> 
-           				<option value="chambre2">Chambre 2</option>
-           				<option value="bureau">Bureau</option> 
+       					<?php 
+       					$reponse = $bdd->query('SELECT * FROM piece');
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       					<?php
+                        }
+                        ?> 
            			</select> 
-  				 </div>
-			</form>
-			
-			<br />
-			<br />
-			
-			<label for="nom capteur">Nom du capteur</label> 
-			<input type="text"/>
-			<br />
-			
-			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
+  				</div>
+				<br />
+				<br />			
+				<label for="nom">Nom du capteur</label> 
+				<input type="text" name="nom"/>
+				<br />
 				<div type="formulaire1">
 					<h2>Paramètres</h2>
 					<label for="seuil">Seuil</label>
-						<input type="number" placeholder="Valeur minimale"/>
+						<input type="number" name="valeurmin" placeholder="Valeur minimale"/>
 						<br />
 						<br />
-						<input type="number" placeholder="Valeur maximale"/>
+						<input type="number" name="valeurmax" placeholder="Valeur maximale"/>
 				</div>
+			
+				<br />
+				<br />
+			
+				<input type="submit" value="Ajouter" />
 			</form>
-			
-			<br />
-			<br />
-			
-			<input type="submit" value="Ajouter" />
 		</div>
 		<br />
 		<br />

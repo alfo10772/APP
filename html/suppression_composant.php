@@ -3,37 +3,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="../css/style.css">
-<title>Insert title here</title>
+<title>Suppression d'un composant</title>
 </head>
 <body>
 
 	<header>
-		<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-				Un produit de Domisep
-		</p>
-	<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-		<div id="profil">
-			<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   			&nbspNom d'utilisateur
-	   			</p>	
-		</div>
+		<?php
+            require("en_tete_connexion.php");
+        ?>
 	</header>
 	<article>
 		<h1>Suppression d'un composant</h1>
