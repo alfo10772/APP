@@ -16,13 +16,16 @@
 		
 	<article>
 		
-		<h1>Page des pièces</h1>
+		<h1>Page des pi&egrave;ces</h1>
 		
-		
+		<?php 
+       		include('config_init.php');
+       	?>
+       				
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour &agrave; la page d'accueil" />
 			</a>
 		</div> 
 		
@@ -37,21 +40,26 @@
 		
 		
 		<div id="conteneurcercle">
-			<div>Cuisine</div>
-			<div>Salon</div>
-			<div>Salle de bain</div>
-			<div>Chambre 1</div>
-			<div>Chambre 2</div>
-			<div>Pièce</div>
-			<div>Pièce</div>
-			<div>Pièce</div>
+			<?php 
+       					
+       		$reponse = $bdd->query('SELECT * FROM piece');
+       					
+       		while ($donnees = $reponse->fetch())
+       			{
+       		?>
+     
+			<div><?php echo $donnees['nom'] ?></div>
+			
+			<?php
+                  }
+            ?>
 			<div><font size="+4"><a href="ajout_piece.php">+</a></font></div>
 		</div>
 	
 		
 	</article>
 	
-	<footer>						<!--  début du bas de la page -->
+	<footer>						<!--  d&eacute;but du bas de la page -->
 		<p>
 			<a href="faq.html">		<!--  lien vers la FAQ -->
 				<strong>
@@ -61,12 +69,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Conditions générales d'utilisation
+				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
-			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
-				Mentions légales
+			<a href="mentions_legales.html">			<!--  lien vers les mentions l&eacute;gales -->
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>

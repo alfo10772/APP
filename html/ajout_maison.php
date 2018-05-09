@@ -9,49 +9,22 @@
 	<body>
 
 		<header>
-			<p>
-			<a href="../images/LogoHabilis.png">
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.html">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-	   			<a href="../images/photo.png">
-					<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			</a>
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>
-	   		
-			</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
 		</header>
 
 	<article>
 		
 		<h1>Ajout d'une maison</h1>
 		
+		<?php 
+       		include('config_init.php');
+       	?>
+       	
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" value="Retour à la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		
@@ -62,15 +35,15 @@
 		
 		<div id="conteneur2">
 			
-			<form  method="post" action="traitement.php">		
+			<form  method="post" action="traitement_maison.php">		
 				<div id="formulaire1">
 					<label for="maison">								
 						Nom
 					</label>
 					<br />
-						<input type="text" name="maison" placeholder="Nom de la maison" id="maison" required/>
+						<input type="text" name="nom" placeholder="Nom de la maison" id="maison" required/>
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
@@ -81,9 +54,9 @@
 						Adresse
 					</label>
 					<br />
-						<input type="text" name="maison" placeholder="Adresse de la maison" id="maison" required/>
+						<input type="text" name="adresse" placeholder="Adresse de la maison" id="maison" required/>
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
@@ -96,7 +69,8 @@
 			<br />
 			<br />
 			
-			<input type="submit" value="Ajouter" />
+			<input type="submit" id="supprimer" value="Ajouter" />
+			</form>
 		</div>
 		
 	</article>

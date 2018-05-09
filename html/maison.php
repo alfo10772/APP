@@ -3,52 +3,24 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="../css/style.css">	
-		<title>Ajout d'une maison</title>
+		<title>Page des maisons</title>
 	</head>
 	
 	<body>
 		<header>
-			<p>
-			
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			<p>
-				<br />
-				
-			</p>
-						
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se d&eacute;connecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-				<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>	
-			</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
 		</header>
 		
 		<article>
 		
 		<h1>Page des maisons</h1>
 		
+		<?php 
+       		include('config_init.php');
+       	?>
+       				
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
 				<input type="submit" id="supprimer" value="Retour &agrave; la page d'accueil" />
@@ -56,7 +28,7 @@
 		</div> 
 		
 		<div style="float:right">
-			<a href="suppression_piece.php">		
+			<a href="suppression_maison.php">		
 				<input type="submit" id="supprimer" value="Supprimer une maison" />
 				
 			</a>
@@ -64,10 +36,20 @@
 		
 		
 		<div id="conteneurcercle">
-			<div>Maison 1</div>
-			<div>Maison 2</div>
-			<div>Maison 3</div>
-			<div><font size="+4"><a href="ajout_maison.html">+</a></font></div>
+			<?php 
+       					
+       		$reponse = $bdd->query('SELECT * FROM maison');
+       					
+       		while ($donnees = $reponse->fetch())
+       			{
+       		?>
+       		
+			<div><?php echo $donnees['nom']?></div>
+			
+			<?php 
+       			}
+			?>
+			<div><font size="+4"><a href="ajout_maison.php">+</a></font></div>
 		</div>
 	
 		
