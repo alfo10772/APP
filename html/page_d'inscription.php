@@ -6,7 +6,6 @@
 	<title>Page d'inscription</title>
 </head>
 <body>
-
 	<header>
 		<p>
 			<a href="../images/LogoHabilis.png">
