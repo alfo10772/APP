@@ -18,7 +18,5 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
    else{
        header('location: page_de_connexion.php');
    }
-   
 }
-
  ?>

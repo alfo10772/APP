@@ -56,12 +56,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition générales d'utilisation
+				Condition g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions légales
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>
