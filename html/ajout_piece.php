@@ -16,7 +16,7 @@
 
 	<article>
 		
-		<h1>Ajout d'une pièce</h1>
+		<h1>Ajout d'une pi&egrave;ce</h1>
 		
 		<?php 
        		try
@@ -31,7 +31,7 @@
        				
 		<div style="float:left">
 			<a href="piece.php">		
-				<input type="submit" id="supprimer" value="Retour à la page des pièces" />
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div> 
 		
@@ -72,7 +72,7 @@
    						Type
    					</label>
    					<br /> 
-       				<input type="text" name="nom" placeholder="Nom de la pièce" id="nom" />
+       				<input type="text" name="nom" placeholder="Nom de la pi&egrave;ce" id="nom" />
   				 </div>
 			
 			
@@ -82,10 +82,10 @@
 				
 				<div type="formulaire1">
 					<label for="surface">								
-						Superficie de la pièce (optionnelle)
+						Superficie de la pi&egrave;ce (optionnelle)
 					</label>
 					<br />
-					<input type="text" name="surface" placeholder="Superficie de la pièce" id="piece" />
+					<input type="text" name="surface" placeholder="Superficie de la pi&egrave;ce" id="piece" />
 				</div>
 			
 			
