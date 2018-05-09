@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>                                                  <!--squelette pour en-tÃªte et bas de page -->
+<html>                                                  <!--squelette pour en-tête et bas de page -->
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
@@ -26,7 +26,7 @@
 				<br />
 				<br />
 				<a href="page_de_connexion.php">			
-					Se dÃ©connecter
+					Se déconnecter
 				</a>
 			
 			</div>
@@ -42,7 +42,7 @@
 	
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
-				<input type="submit" id="supprimer" value="Retour Ã  la page d'accueil" />
+				<input type="submit" id="supprimer" value="Retour à la page d'accueil" />
 			</a>
 		</div> 
 		
@@ -53,15 +53,15 @@
 		</div>
 
 	<div id="conteneurcercle">
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
-		<div>DonnÃ©es</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
+		<div>Données</div>
 		<div>
 		<a href="ajout_composant.html">
 			<font size="+4">+</font>
@@ -79,12 +79,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition gÃ©nÃ©rales d'utilisation
+				Condition générales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions lÃ©gales
+				Mentions légales
 			</a>
 		</p>
 		<div>

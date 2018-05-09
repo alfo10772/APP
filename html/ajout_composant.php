@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>                                                  <!--squelette pour en-tÃªte et bas de page -->
+<html>                                                  <!--squelette pour en-tête et bas de page -->
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
@@ -27,7 +27,7 @@
 				<br />
 				
 				<a href="page_de_connexion.php">			
-					Se dÃ©connecter
+					Se déconnecter
 				</a>
 			
 			</div>
@@ -50,7 +50,7 @@
 		
 		<div style="float:left">
 			<a href="page des composants.html">		
-				<input type="submit" id="supprimer" value="Retour Ã  la page des composants" />
+				<input type="submit" id="supprimer" value="Retour à la page des composants" />
 			</a>
 		</div> 
 		<br />
@@ -65,11 +65,11 @@
    					<label for="composant">Composant</label><br /> 
        				<select name="type" id="compoasnt"> 
        					<option value="type">Type de composant</option> 
-       					<option value="temperature">Capteur de tempÃ©rature</option>
-           				<option value="humidite">Capteur d'humiditÃ©</option> 
-           				<option value="presence">Capteur de prÃ©sence</option>
-           				<option value="fumee">Capteur de fumÃ©e</option>
-           				<option value="lumiere">Capteur de luminositÃ©</option> 
+       					<option value="temperature">Capteur de température</option>
+           				<option value="humidite">Capteur d'humidité</option> 
+           				<option value="presence">Capteur de présence</option>
+           				<option value="fumee">Capteur de fumée</option>
+           				<option value="lumiere">Capteur de luminosité</option> 
            				<option value="pression">Capteur de pression</option>  
            			</select> 
   				 </div>
@@ -101,9 +101,9 @@
 			<input type="text"/>
 			<br />
 			
-			<form  method="post" action="traitement.php">		<!-- dÃƒÂ©but formulaire -->
+			<form  method="post" action="traitement.php">		<!-- dÃ©but formulaire -->
 				<div type="formulaire1">
-					<h2>ParamÃ¨tres</h2>
+					<h2>Paramètres</h2>
 					<label for="seuil">Seuil</label>
 						<input type="number" placeholder="Valeur minimale"/>
 						<br />
@@ -131,12 +131,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition gÃ©nÃ©rales d'utilisation
+				Condition générales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions lÃ©gales
+				Mentions légales
 			</a>
 		</p>
 		<div>
