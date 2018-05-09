@@ -45,8 +45,26 @@
 	<h1>Suppression d'une piece
 	<br/>
 	</h1>
+	<div style="float:left;width:250px;height:10px;">
+			<a href="supprimer_maison1.html">		
+				<input type="submit" id="supprimer" value="Retour à la suppression d'une maison" />
+			</a>
+		</div>
+	<div style="float:right;width:250px;height:10px;">
+			<a href="suppression_capteur.html">		
+				<input type="submit" id="supprimer" value="Retour à la suppression d'un capteur" />
+			</a>
+		</div>
+	<br/> 
+	<br/>
+	<br/>
 	
-	<div id="Nom de la maison"  style="text-align:left;width:300px;height:50px;" >
+	
+	<div id="conteneur2">
+	<br/>
+	<br/>
+	
+	<div id="Nom de la maison"  style="width:350px;height:50px;"  >
 			        Nom de la maison:
 			        <br />
 			        <select>
@@ -64,7 +82,7 @@
                     </div> 
                     <br/>
                     
-                    <div id="Piece"  style="text-align:left;width:300px;height:50px;" >
+                    <div id="Piece"  style="width:350px;height:50px;"  >
 			        Piece :
 			        <br />
 			        <select>
@@ -75,11 +93,11 @@
                     <option value ="Piece 4">Piece 4</option>
                     <option value ="Piece 5">Piece 5</option>
                     <option value ="Piece 6">Piece 6</option>
-                    
+                
                     </select>
                     
                     </div> 
-                   
+                    </div>
                     <br/>
                     <br/>
                     <br/>
@@ -87,20 +105,20 @@
                    
                     <script type="text/javascript">
                     function del(){
-                    	if(!confirm("Etes-vous sur de vouloir supprimer ce capteur?")){
+                    	if(!confirm("Etes-vous sur de vouloir supprimer cette piece?")){
                     		window.event.returnValue=false;	
                     	}
                     }
                     
                     </script>
-                    <div id="button1" align="right">
+                    <div id="button1" text-align="center">
                     <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:500px"><a href="" onclick="javascript:return del();">Supprimer</a></button>
                     <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:50px">Annuler</button>
                     
 	
     </div>
     
-    
+   
     <br/>
     
      
