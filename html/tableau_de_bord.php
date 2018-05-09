@@ -20,9 +20,9 @@
 	<div id="bandeau">
 		
 		
-	<div id="conteneurcercle">
+	<div id="conteneurcercle1">
 			<div>
-			    <a href="maison.html">	
+			    <a href="maison.php">	
 			    	Maisons	
 				</a>
 		</div> 
@@ -33,7 +33,7 @@
 		</div>
 			
 			<div>
-			<a href="page des composants.html">		
+			<a href="page des composants.php">		
 				Composants
 			</a>
 		</div>

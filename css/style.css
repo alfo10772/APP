@@ -137,7 +137,7 @@ form{
 	width: 92%;
 	margin-left: auto;
 	margin-right: auto;
-	justify-content: space-around;
+	
 }
 
 #conteneurcercle > div {
@@ -148,8 +148,7 @@ form{
 	height: 100px;
   	margin: 25px;
   	line-height:100px;
-	color:black;
-	text-align: center;	  
+	color:black;  
 }
 
 #profil{
@@ -322,4 +321,26 @@ margin-bottom:2%;
 .titre_condition
 {
 	font-size: 2em;
+}
+
+#conteneurcercle1
+{
+	font-size: 1em;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: space-around;
+}
+#conteneurcercle1 > div {
+	position: auto;
+	background: RGB(255,182, 108);
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+  	margin: 25px;
+  	line-height:100px;
+	color:black;  
 }
