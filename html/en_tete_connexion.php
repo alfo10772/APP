@@ -25,7 +25,7 @@ session_start();
 				<br />
 				
 				<a href="redirection.php">			
-					Se déconnecter
+					Se d&eacute;connecter
 				</a>
 			
 			</div>
