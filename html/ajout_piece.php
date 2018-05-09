@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<link rel="stylesheet" href="../css/style.css">	
-		<title>ajout_piece</title>
+		<title>Ajout_piece</title>
 	</head>
 
 	<body>
