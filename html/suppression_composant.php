@@ -20,7 +20,7 @@
        	
 		<div style="float:left">
 			<a href="page_des_composants.php">		
-				<input type="submit" id="supprimer" value="Retour à la page des composants" />
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des composants" />
 			</a>
 		</div>
 		
@@ -29,8 +29,7 @@
 		<br />
 		<br />
 		<form method="post" action="traitement_suppression_composant.php" enctype="multipart/form-data">
-		<div id="conteneur2">
-			<form method="post" action="traitement.php"> 
+			<div id="conteneur2"> 
    				<div type="formulaire1">
    					<label for="maison">Maison</label><br /> 
        				<select id="maison" name="maison"> 
@@ -44,11 +43,11 @@
                         }
                         ?> 
            			</select> 
-  				 </div>
+  				</div>
 			<br />
 			<br /> 
    				<div type="formulaire1">
-   					<label for="piece">Pièce</label><br /> 
+   					<label for="piece">Pi&egrave;ce</label><br /> 
        				<select name="piece" id="piece"> 
        					<?php 
        					$reponse = $bdd->query('SELECT * FROM piece');
@@ -113,12 +112,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition générales d'utilisation
+				Condition g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions légales
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>

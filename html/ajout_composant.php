@@ -23,7 +23,7 @@
 		
 		<div style="float:left">
 			<a href="page_des_composants.php">		
-				<input type="submit" id="supprimer" value="Retour à la page des composants" />
+				<input type="submit" id="supprimer" value="Retour &agrave; la page des composants" />
 			</a>
 		</div> 
 		<br />
@@ -36,11 +36,11 @@
    				<div type="formulaire1">
    					<label for="type">Composant</label><br /> 
        				<select name="type" id="type"> 
-       					<option value="temperature">Capteur de température</option>
-           				<option value="humidite">Capteur d'humidité</option> 
-           				<option value="presence">Capteur de présence</option>
-           				<option value="fumee">Capteur de fumée</option>
-           				<option value="lumiere">Capteur de luminosité</option> 
+       					<option value="temperature">Capteur de temp&eacute;rature</option>
+           				<option value="humidite">Capteur d'humidit&eacute;</option> 
+           				<option value="presence">Capteur de pr&eacute;sence</option>
+           				<option value="fumee">Capteur de fum&eacute;e</option>
+           				<option value="lumiere">Capteur de luminosit&eacute;</option> 
            				<option value="pression">Capteur de pression</option>  
            			</select> 
   				 </div>
@@ -66,7 +66,7 @@
 				<input type="text" name="nom"/>
 				<br />
 				<div type="formulaire1">
-					<h2>Paramètres</h2>
+					<h2>Param&egrave;tres</h2>
 					<label for="seuil">Seuil</label>
 						<input type="number" name="valeurmin" placeholder="Valeur minimale"/>
 						<br />
@@ -94,12 +94,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition générales d'utilisation
+				Condition g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions légales
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>
