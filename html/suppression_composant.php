@@ -84,21 +84,6 @@
 				</a>
 			</div>
 		</div>
-		<div class="confirmer" id="confirmation">
-			Etes-vous sûr de supprimer ce composant?
-			<br>
-			<br>
-			<div style="float:left">
-				<a href="page_des_composants.php">		
-					<input type="submit" id="supprimer" value="Confirmer" />
-				</a>
-			</div> 
-		
-			<div style="float:right">
-				<a href="#">		
-					<input type="submit" id="supprimer" value="Annuler"> 
-				</a>
-			</div>
 		</div>
 		</form>
 	</article>
