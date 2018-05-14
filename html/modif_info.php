@@ -20,7 +20,7 @@
 			
 			<div id="conteneur2">
 		
-			<form  method="post" action="traitement.php">		
+			<form  method="post" action="traitement_modif_info.php">		
 				<div id="formulaire1">
 					<label for="utilisateur">								
 						Nom

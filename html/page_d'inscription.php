@@ -65,12 +65,12 @@
        			<br />
        			<br />
        			<label for="numero_de_tel">
-       				Numéro de téléphone :
+       				Num&eacute;ro de t&eacute;l&eacute;phone :
        			</label>
        			<br />
        				<input type="tel" name="numero_de_tel" id="numero_de_tel" />
        			<br />
-       		<div class="g-recaptcha" data-sitekey="la_clé_du_site"></div> <!-- rentrer les informations dans la balise après avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
+       		<div class="g-recaptcha" data-sitekey="la_cl&eacute;_du_site"></div> <!-- rentrer les informations dans la balise apr&egrave;s avoir rempli les champs sur ce site https://www.google.com/recaptcha/admin#list -->	
 				
 				<label for="accept_use_condition">
 					<p>
@@ -100,12 +100,12 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Conditions générales d'utilisation
+				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>
 			<a href="mentions_legales.html">
-				Mentions légales
+				Mentions l&eacute;gales
 			</a>
 		</p>
 		<div>
