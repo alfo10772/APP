@@ -43,7 +43,7 @@
 					
 					</div>	
 				</form>
-				<a href="page_d'inscription.html">				<!--  lien vers la page d'incription -->
+				<a href="page_d'inscription.php">				<!--  lien vers la page d'incription -->
 						<input type="submit" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
 				</a>
 			</div>

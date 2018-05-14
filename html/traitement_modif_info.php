@@ -16,6 +16,11 @@ $mdp = $_POST['password'];
 $mail = $_POST['mail'];
 $tel= $_POST['numero_de_tel'];
 
+$req = "UPDATE utilisateur SET nom = :nom, motdepasse = :mdp, mail= :mail, numerodetelephone = :tel' WHERE IDutilisateur = $_SESSION['ID']"; 
+$result = $bdd ->prepare($req);
+$result = $req->execute(array(':nom' => $nom,':mdp' => $mdp, ':mail' => $mail,':tel' => $tel));
+?>
+
 
 
 
