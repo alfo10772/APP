@@ -74,7 +74,9 @@
 				
 				<label for="accept_use_condition">
 					<p>
-       				J'accepte les conditions d'utilisation
+						<a href="condition_d'utilisation.html">
+       						J'accepte les conditions g&eacute;n&eacute;rales d'utilisation
+       					</a>
        				<em>
        					*
        				</em>

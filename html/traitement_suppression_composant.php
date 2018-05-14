@@ -16,7 +16,7 @@ $piece = $_POST['piece'];
 $composant = $_POST['composant'];
 
 
-$req = $bdd->prepare('DELETE FROM composant WHERE(nom="composant")');
-$result = $req->execute(array('nom' => $composant));
+$req = $bdd->prepare('DELETE FROM composant WHERE "nom=$composant"');
+$req->execute();
 header('location: page_des_composants.php');
 ?>

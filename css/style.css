@@ -1,6 +1,6 @@
 header, footer
 {
-	background:RGB(192, 192, 192);
+	background:RGB(255, 255, 255);
 	padding:10px;
 	display:flex;
 	justify-content: space-between;
@@ -15,7 +15,7 @@ article
 {
 	padding:1%;
 	margin: 0%;
-	background:RGB(22, 85, 233);
+	background:RGB(22, 85, 250);
 	font-size: 15px;
 	color: white;
 	min-height:370px;
@@ -205,7 +205,7 @@ em
 
 input[id="supprimer"] {	
     width: 100%;
-    background:RGB(192, 192, 192);
+    background:RGB(255, 255, 255);
     color: black;
     padding: 10px 20px;
     margin: 8px 0;
@@ -215,7 +215,7 @@ input[id="supprimer"] {
 }
 
 input[id="supprimer"]:hover {
-    background:RGB(170, 170, 170);
+    background:RGB(185, 204, 249);
 }
 
 #tableau_bord
