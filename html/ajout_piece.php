@@ -72,19 +72,6 @@
 			<br />
 			<br />
 			
-				
-				<div type="formulaire1">
-					<label for="surface">								
-						Superficie de la pi&egrave;ce (optionnelle)
-					</label>
-					<br />
-					<input type="text" name="surface" placeholder="Superficie de la pi&egrave;ce" id="piece" />
-				</div>
-			
-			
-			<br />
-			<br />
-			
 			<input type="submit" value="Ajouter" />
 			
 			</form>

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -22,66 +26,62 @@
 		
 			<form  method="post" action="traitement_modif_info.php">		
 				<div id="formulaire1">
-					<label for="utilisateur">								
+					<label for="nom">								
 						Nom
 					</label>
 					<br />
-						<input type="text" name="utilisateur" placeholder="Nom de l'utilisateur" id="utilisateur" />
+						<input type="text" name="username" placeholder="Nom de l'utilisateur" />
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
-			<form method="post" action="traitement.php"> 
-   				<div type="formulaire1">
-   					<label for="utilisateur">Type de l'utilisateur</label><br /> 
-       				<select name="utilisateur" id="utilisateur"> 
-       					<option value="type">Type d'utilisateur</option> 
-       					<option value="principal">Utilisateur principal</option>
-           				<option value="secondaire">Utilisateur secondaire</option> 
-           			</select> 
-  				 </div>
-			</form>
-			
-			<br />
-			<br />
-			
-			<form  method="post" action="traitement.php">		
+				
 				<div id="formulaire1">
-					<label for="utilisateur">								
+					<label for="mail">								
 						Adresse mail
 					</label>
 					<br />
-						<input type="text" name="utilisateur" placeholder="Adresse mail" id="utilisateur" />
+						<input type="text" name="mail" placeholder="Adresse mail" />
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
-			<form  method="post" action="traitement.php">		
+				
 				<div id="formulaire1">
-					<label for="utilisateur">								
+					<label for="password">								
 						Mot de passe
 					</label>
 					<br />
-						<input type="password" name="utilisateur" placeholder="Mot de passe" id="utilisateur" />
+						<input type="password" name="password" placeholder="Mot de passe" />
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
 			
-			<form  method="post" action="traitement.php">		
 				<div id="formulaire1">
-					<label for="utilisateur">								
+					<label for="tel">								
+						Numéro de téléphone
+					</label>
+					<br />
+						<input type="text" name="numero_de_tel" placeholder="Numéro de téléphone" />
+				</div>
+			
+			<br />
+			<br />
+			
+				<div id="formulaire1">
+					<label for="mdp">								
 						Confirmation du mot de passe
 					</label>
 					<br />
-						<input type="password" name="utilisateur" placeholder="Mot de passe" id="utilisateur" />
+						<input type="password" name="mdp" placeholder="Mot de passe" />
 				</div>
-			</form>
+			
 			
 			<br />
 			<br />
@@ -95,8 +95,8 @@
 			<br />
 			
 			<input type="submit" value="Enregistrer les modifications" />
-		
-			</div>
+		</form>
+		</div>
 			
 		</article>
 

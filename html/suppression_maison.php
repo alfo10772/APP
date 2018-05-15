@@ -31,14 +31,15 @@
 	<br/> 
 	<br/>
 	<br/>
-	<br/>
 	
 	<div id="conteneur2">
 	
-	<div id="Nom de la maison"  style="text-align:left;width:350px;height:50px;" >
+		<form action="traitement_suppression_maison.php" method="post">
+			<div type=formulaire1>
 			        Nom:
 			        <br />
-			        <select name="maison" id="maison">
+			        <select name="nom_maison">
+			        
 			        	<?php 
        					
        					$reponse = $bdd->query('SELECT * FROM maison');
@@ -52,33 +53,20 @@
                     	?>
                     
                     </select>
-                    
-                   
-                    </div> 
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    </div>
+              </div> 
               
-                    <script type="text/javascript">
-                    function del(){
-                    	if(!confirm("Etes-vous sur de vouloir supprimer cette maison?")){
-                    		window.event.returnValue=false;	
-                    	}
-                    }
+              <br/>
+              <br/>
                     
-                    </script>
-                    <div id="button1" text-align="center">
-                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:500px"><a href="" onclick="javascript:return del();">Supprimer</a></button>
-                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:50px">Annuler</button>
+              <input type="submit" id="supprimer" value="Supprimer" />
+              <input type="submit" id="supprimer" value="Annuler" />
+              
+         </form>
                     
-	                </div>
-    
-    
-    
-    <br/>
+       </div>
+       
+   		<br/>
+   		<br/>
     
      
     

@@ -8,7 +8,7 @@
 <body>
 	<header>
 		<p>
-			<a href="../images/LogoHabilis.png">
+			<a href="page_de_connexion.php">
 				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="150">
 			</a>
 			<br />

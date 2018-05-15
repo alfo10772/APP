@@ -21,9 +21,12 @@
 	<article>
 	
     
-	<h1>Suppression d'une piece
-	<br/>
-	</h1>
+	<h1>Suppression d'une piece	</h1>
+	
+		<?php 
+       		include('config_init.php');
+       	?>
+       	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="piece.php">		
 				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
@@ -36,68 +39,66 @@
 	
 	
 	<div id="conteneur2">
-	<br/>
-	<br/>
+		<br/>
+		<br/>
 	
-	<div id="Nom de la maison"  style="width:350px;height:50px;"  >
+	
+		<div type="formulaire1">
 			        Nom de la maison:
 			        <br />
 			        <select>
 			        
-                    <option value ="Maison 1">Maison 1</option>
-                    <option value ="Maison 2">Maison 2</option>
-                    <option value ="Maison 3">Maison 3</option>
-                    <option value ="Maison 4">Maison 4</option>
-                    <option value ="Maison 5">Maison 5</option>
-                    <option value ="Maison 6">Maison 6</option>
+                    <?php 
+       					
+       					$reponse = $bdd->query('SELECT * FROM maison');
+       					
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       					<?php
+                        }
+                     ?>
                     
                     </select>
                     
                    
-                    </div> 
+        </div> 
                     <br/>
                     
-                    <div id="Piece"  style="width:350px;height:50px;"  >
+        <form action="traitementsuppression.php" method="post">      
+             <div type="formulaire1">
 			        Piece :
 			        <br />
-			        <select>
+			        <select name="nom_piece">
 			        
-                    <option value ="Piece 1">Piece 1</option>
-                    <option value ="Piece 2">Piece 2</option>
-                    <option value ="Piece 3">Piece 3</option>
-                    <option value ="Piece 4">Piece 4</option>
-                    <option value ="Piece 5">Piece 5</option>
-                    <option value ="Piece 6">Piece 6</option>
+                   <?php 
+       					
+       					$reponse = $bdd->query('SELECT * FROM piece');
+       					
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       					<?php
+                        }
+                    ?>
                 
                     </select>
                     
-                    </div> 
-                    </div>
-                    <br/>
-                    <br/>
-                    <br/>
-                   
-                   
-                    <script type="text/javascript">
-                    function del(){
-                    	if(!confirm("Etes-vous sur de vouloir supprimer cette piece?")){
-                    		window.event.returnValue=false;	
-                    	}
-                    }
+              </div> 
                     
-                    </script>
-                    <div id="button1" text-align="center">
-                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:500px"><a href="" onclick="javascript:return del();">Supprimer</a></button>
-                    <button type="button" style="background-color:lightgray;width:75px;height:30px; margin-left:50px">Annuler</button>
+                    <br/>
+                    <br/>
                     
-	
-    </div>
-    
-   
-    <br/>
-    
-     
-    
+                    <input type="submit" id="supprimer" value="Supprimer" />
+                    <input type="submit" id="supprimer" value="Annuler" />
+                    
+		</form>
+     </div>
+      
+     <br/>
+     <br/>
 	
 	</article>
 	<footer>						<!--  début du bas de la page -->
