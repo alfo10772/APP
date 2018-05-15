@@ -29,7 +29,7 @@
        	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="piece.php">		
-				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
+				<input type="submit" id="retour" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div>
 	
@@ -69,6 +69,8 @@
                     <br/>
                     
                     <input type="submit" id="supprimer" value="Supprimer" />
+                    <br/>
+                    <br/>
                     <input type="submit" id="supprimer" value="Annuler" />
                     
 		</form>
@@ -78,9 +80,9 @@
      <br/>
 	
 	</article>
-	<footer>						<!--  début du bas de la page -->
+	<footer>						
 		<p>
-			<a href="faq.html">		<!--  lien vers la FAQ -->
+			<a href="faq.html">		
 				<strong>
 					FAQ
 				</strong>

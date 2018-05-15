@@ -20,7 +20,7 @@
        	
 		<div style="float:left">
 			<a href="page_des_composants.php">		
-				<input type="submit" id="supprimer" value="Retour &agrave; la page des composants" />
+				<input type="submit" id="retour" value="Retour &agrave; la page des composants" />
 			</a>
 		</div>
 		
