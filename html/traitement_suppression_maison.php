@@ -11,12 +11,12 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$nom = $_POST['nom_piece'];
+$nom = $_POST['nom_maison'];
 
-$req = $bdd ->prepare('DELETE FROM piece WHERE nom = :nom ');
+$req = $bdd ->prepare('DELETE FROM maison WHERE nom = :nom ');
 
 $req-> execute(array(':nom' => $nom));
 
-header('location: piece.php');
+header('location: maison.php');
 
 ?>
