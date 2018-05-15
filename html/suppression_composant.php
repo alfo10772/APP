@@ -31,22 +31,6 @@
 		<form method="post" action="traitement_suppression_composant.php" enctype="multipart/form-data">
 			<div id="conteneur2"> 
    				<div type="formulaire1">
-   					<label for="maison">Maison</label><br /> 
-       				<select id="maison" name="maison"> 
-       					<?php 
-       					$reponse = $bdd->query('SELECT * FROM maison');
-       					while ($donnees = $reponse->fetch())
-       					{
-       					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-       					<?php
-                        }
-                        ?> 
-           			</select> 
-  				</div>
-			<br />
-			<br /> 
-   				<div type="formulaire1">
    					<label for="piece">Pi&egrave;ce</label><br /> 
        				<select name="piece" id="piece"> 
        					<?php 

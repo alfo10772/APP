@@ -34,14 +34,17 @@
 		<div id="conteneur2">
 			<form method="post" action="traitement_composant.php" enctype="multipart/form-data"> 
    				<div type="formulaire1">
-   					<label for="type">Composant</label><br /> 
+   					<label for="type">Type de composant</label><br /> 
        				<select name="type" id="type"> 
-       					<option value="temperature">Capteur de temp&eacute;rature</option>
-           				<option value="humidite">Capteur d'humidit&eacute;</option> 
-           				<option value="presence">Capteur de pr&eacute;sence</option>
-           				<option value="fumee">Capteur de fum&eacute;e</option>
-           				<option value="lumiere">Capteur de luminosit&eacute;</option> 
-           				<option value="pression">Capteur de pression</option>  
+       					<?php 
+       					$reponse = $bdd->query('SELECT * FROM typeComposant');
+       					while ($donnees = $reponse->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       					<?php
+                        }
+                        ?> 
            			</select> 
   				 </div>
 				<br />
@@ -62,7 +65,7 @@
   				</div>
 				<br />
 				<br />			
-				<label for="nom">Nom du capteur</label> 
+				<label for="nom">Nom du composant</label> 
 				<input type="text" name="nom"/>
 				<br />
 				<div type="formulaire1">

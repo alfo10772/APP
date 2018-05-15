@@ -11,12 +11,11 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$maison = $_POST['maison'];
 $piece = $_POST['piece'];
 $composant = $_POST['composant'];
 
 
-$req = $bdd->prepare('DELETE FROM composant WHERE "nom=$composant"');
-$req->execute();
+$req = $bdd->prepare('DELETE FROM composant WHERE (nom= :composant)');
+$req->execute(array(':composant' => $composant));
 header('location: page_des_composants.php');
 ?>
