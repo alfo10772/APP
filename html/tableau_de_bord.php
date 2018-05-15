@@ -36,10 +36,18 @@
 			</a>
 		</div>
 			
-			<div>
+		<div>
 			<a href="page_des_composants.php">	
 				<div>	
 					Composants
+				</div>
+			</a>
+		</div>
+
+		<div>
+			<a href="page_des_paramètres.php">
+				<div>
+					Param&egrave;tres
 				</div>
 			</a>
 		</div>
