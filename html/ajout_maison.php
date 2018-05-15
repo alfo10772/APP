@@ -24,7 +24,7 @@
        	
 		<div style="float:left">
 			<a href="maison.php">		
-				<input type="submit" id="supprimer" value="Retour &agrave; la page des maisons" />
+				<input type="submit" id="retour" value="Retour &agrave; la page des maisons" />
 			</a>
 		</div> 
 		

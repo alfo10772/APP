@@ -29,7 +29,7 @@
        	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="piece.php">		
-				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
+				<input type="submit" id="retour" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div>
 	

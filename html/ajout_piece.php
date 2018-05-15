@@ -24,7 +24,7 @@
        				
 		<div style="float:left">
 			<a href="piece.php">		
-				<input type="submit" id="supprimer" value="Retour &agrave; la page des pi&egrave;ces" />
+				<input type="submit" id="retour" value="Retour &agrave; la page des pi&egrave;ces" />
 			</a>
 		</div> 
 		
@@ -36,25 +36,6 @@
 		<div id="conteneur2">
 			
 			<form method="post" action="traitementpiece.php" enctype="multipart/form-data"> 
-   				
-   				<div type="formulaire1">
-   					<label for="maison">Maison</label><br /> 
-       				<select name="maison" id="maison"> 
-       					<?php 
-       					
-       					$reponse = $bdd->query('SELECT * FROM maison');
-       					
-       					while ($donnees = $reponse->fetch())
-       					{
-       					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-       					<?php
-                        }
-                        ?>
-					</select>
-       					
-  				 </div>
-			
 			
 			<br />
 			<br />
@@ -72,9 +53,14 @@
 			<br />
 			<br />
 			
-			<input type="submit" value="Ajouter" />
+			<input type="submit" id="supprimer" value="Ajouter" />
+			
+			<br />
+			<br />
 			
 			</form>
+			
+			<input type="submit" id="supprimer" value="Annuler" />
 		</div>
 		
 	</article>

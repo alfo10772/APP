@@ -22,7 +22,7 @@
 			
 			<div style="float:left">
 				<a href="tableau_de_bord.php">		
-					<input type="submit" id="supprimer" value="Retour &agrave; la page d'accueil" />
+					<input type="submit" id="retour" value="Retour &agrave; la page d'accueil" />
 				</a>
 			</div> 
 			
