@@ -351,33 +351,27 @@ margin-bottom:2%;
 }
 
 .menu-vertical{
-	background-color:RGB(255, 255, 255);
-	width: 300px;
+	background-color:RGB(22, 85, 250);
+	width: 200px;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 }
 
-.menu-vertical .avatar{
-	background-image: url(../images/LogoHabilisPetit.png);
-	width: 128px;
-	height: 128px;
-	margin: 25px auto 15px auto;
-	
-}
 
 .menu-vertical .menu{
-	background-color: RGB(90, 150, 250);
-	width: 270px;
+	background-color: RGB(255, 255, 255);
+	width: 160px;
 	padding: 15px;
 	margin-bottom: 10px;
+	border: 4px solid RGB(22, 85, 250);;
 	
 }
 
 #article2{
 
 	margin: 0%;
-	background:RGB(22, 85, 250);
+	background:RGB(255, 255, 255);
 	font-size: 15px;
 	color: white;
 	min-height:700px;
