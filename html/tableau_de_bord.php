@@ -22,19 +22,25 @@
 		
 	<div id="conteneurcercle1">
 			<div>
-			    <a href="maison.php">	
-			    	Maisons	
+			    <a href="maison.php">
+					<div>	
+						Maisons
+					</div>
 				</a>
 		</div> 
 			<div>
-			<a href="piece.php">		
-				Pi&egrave;ces
+			<a href="piece.php">
+				<div>		
+					Pi&egrave;ces
+				</div>
 			</a>
 		</div>
 			
 			<div>
-			<a href="page_des_composants.php">		
-				Composants
+			<a href="page_des_composants.php">	
+				<div>	
+					Composants
+				</div>
 			</a>
 		</div>
 		
