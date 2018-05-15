@@ -17,8 +17,6 @@
 	
 	<h1>Tableau de bord</h1>
 	
-	<div id="bandeau">
-		
 		
 	<div id="conteneurcercle1">
 			<div>
@@ -27,33 +25,34 @@
 						Maisons
 					</div>
 				</a>
-		</div> 
+			</div> 
 			<div>
 			<a href="piece.php">
 				<div>		
 					Pi&egrave;ces
 				</div>
 			</a>
-		</div>
+			</div>
 			
-		<div>
+			<div>
 			<a href="page_des_composants.php">	
 				<div>	
 					Composants
 				</div>
 			</a>
-		</div>
+			</div>
 
-		<div>
+			<div>
 			<a href="page_des_paramètres.php">
 				<div>
 					Param&egrave;tres
 				</div>
 			</a>
-		</div>
+			</div>
 		
     </div>
-		
+	
+	</div>	
 	
 	
 	</article>
@@ -70,7 +69,7 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition g&eacute;n&eacute;rales d'utilisation
+				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>

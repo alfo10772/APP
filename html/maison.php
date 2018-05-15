@@ -34,7 +34,12 @@
 			</a>
 		</div>
 		
-		
+		<br/>
+        <br/>
+        <br/>
+        
+		<h2> Cliquez sur une maison pour la sélectionner </h2>
+        
 		<div id="conteneurcercle">
 			<?php 
        					

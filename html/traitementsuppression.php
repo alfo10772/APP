@@ -11,6 +11,7 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
+$maison = $_POST['nom_maison'];
 $nom = $_POST['nom_piece'];
 
 $req = $bdd ->prepare('DELETE FROM piece WHERE nom = :nom ');

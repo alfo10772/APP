@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -64,22 +60,23 @@
 			<br />
 			
 				<div id="formulaire1">
-					<label for="tel">								
-						Numéro de téléphone
-					</label>
-					<br />
-						<input type="text" name="numero_de_tel" placeholder="Numéro de téléphone" />
-				</div>
-			
-			<br />
-			<br />
-			
-				<div id="formulaire1">
 					<label for="mdp">								
 						Confirmation du mot de passe
 					</label>
 					<br />
 						<input type="password" name="mdp" placeholder="Mot de passe" />
+				</div>
+			
+			
+			<br />
+			<br />
+			
+				<div id="formulaire1">
+					<label for="tel">								
+						Numéro de téléphone
+					</label>
+					<br />
+						<input type="text" name="numero_de_tel" placeholder="Numéro de téléphone" />
 				</div>
 			
 			

@@ -42,31 +42,8 @@
 		<br/>
 		<br/>
 	
-	
-		<div type="formulaire1">
-			        Nom de la maison:
-			        <br />
-			        <select>
-			        
-                    <?php 
-       					
-       					$reponse = $bdd->query('SELECT * FROM maison');
-       					
-       					while ($donnees = $reponse->fetch())
-       					{
-       					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-       					<?php
-                        }
-                     ?>
-                    
-                    </select>
-                    
-                   
-        </div> 
-                    <br/>
-                    
-        <form action="traitementsuppression.php" method="post">      
+		<form action="traitementsuppression.php" method="post"> 
+		             
              <div type="formulaire1">
 			        Piece :
 			        <br />
@@ -111,7 +88,7 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Condition générales d'utilisation
+				Conditions générales d'utilisation
 			</a>
 		</p>
 		<p>

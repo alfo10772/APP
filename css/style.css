@@ -164,6 +164,11 @@ p
 	text-align:center;
 }
 
+h2
+{
+	font-size: 1.2em;
+}
+
 a
 {
 	text-decoration:none;
@@ -343,4 +348,37 @@ margin-bottom:2%;
   	margin: 25px;
   	line-height:100px;
 	color:black;  
+}
+
+.menu-vertical{
+	background-color:RGB(255, 255, 255);
+	width: 300px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+}
+
+.menu-vertical .avatar{
+	background-image: url(../images/LogoHabilisPetit.png);
+	width: 128px;
+	height: 128px;
+	margin: 25px auto 15px auto;
+	
+}
+
+.menu-vertical .menu{
+	background-color: RGB(90, 150, 250);
+	width: 270px;
+	padding: 15px;
+	margin-bottom: 10px;
+	
+}
+
+#article2{
+
+	margin: 0%;
+	background:RGB(22, 85, 250);
+	font-size: 15px;
+	color: white;
+	min-height:700px;
 }
