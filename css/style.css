@@ -147,9 +147,21 @@ form{
 	border-radius: 50%;
 	width: 100px;
 	height: 100px;
+	line-height:normal;
   	margin: 25px;
-  	line-height:100px;
 	color:black;  
+}
+
+#textecercle1{
+	margin-top:40%;
+}
+
+#textecercle2{
+	margin-top:32%;
+}
+
+#textecercle3{
+	margin-top:26%;
 }
 
 #profil{
