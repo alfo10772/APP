@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $bdd = NULL;
 
 try
@@ -12,38 +13,16 @@ catch (Exception $e)
 
 $id= $_SESSION['ID'];
 
-$req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = $id ');
-$req->execute([$_SESSION['ID']]);
-$info = $req->fetch(PDO::FETCH_NUM);
-
-$nom = $info[2];
-$tel = $info[5];
-$mdp = $info[4];
-$mail = $_SESSION['mail'];
-
-
-if (isset($_POST['username'])) {
-    $nom = $_POST['username'];
-}
-
-if (isset($_POST['password'])) {
-    $mdp = $_POST['password'];
-}
-
-if (isset($_POST['mail'])) {
-    $mail = $_POST['mail'];
-}
-
-if (isset($_POST['numero_de_tel'])) {
-    $tel = $_POST['numero_de_tel'];
-}
+$nom = $_POST['username'];
+$mdp = $_POST['password'];
+$mail = $_POST['mail'];
 
 
 
 
-$req = "UPDATE utilisateur SET nom = :nom, motdepasse = :mdp, mail= :mail, numerodetelephone = :tel' WHERE IDutilisateur = $id"; 
+$req = 'UPDATE utilisateur SET nom = :nom, mail=:mail WHERE IDutilisateur = :id'; 
 $result = $bdd ->prepare($req);
-$result = $req->execute(array(':nom' => $nom,':mdp' => $mdp, ':mail' => $mail,':tel' => $tel));
+$result = $result->execute(array(':nom' => $nom, ':mail'=>$mail, ':id'=>$id ));
 
 ?>
 
