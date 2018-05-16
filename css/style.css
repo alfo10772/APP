@@ -379,7 +379,7 @@ margin-bottom:2%;
 
 
 .menu-vertical .menu{
-	background-color: RGB(255, 255, 255);
+	background-color: RGB(191, 223, 255);
 	width: 160px;
 	padding: 15px;
 	margin-bottom: 10px;
@@ -394,4 +394,20 @@ margin-bottom:2%;
 	font-size: 15px;
 	color: white;
 	min-height:700px;
+	top: 0;
+	bottom: 0;
+	padding: 0px;
+}
+
+.contenu{
+	margin-left:220px;
+	color: black;
+}
+
+table{
+	border-collapse: collapse; 
+}
+
+td, th{
+	border: 1px solid black;
 }
