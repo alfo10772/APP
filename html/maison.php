@@ -73,7 +73,7 @@
 			         {
 			             ?>
 						<div>
-							<div id=textecercle2>
+							<div id=textecercle3>
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
@@ -81,7 +81,7 @@
 			         }
 			}
 			?>
-			<div><font size="+3"><div id=textecercle2><a href="ajout_maison.php">+</a></div></font></div>
+			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
 		</div>
 	
 		

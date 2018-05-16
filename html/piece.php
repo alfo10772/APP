@@ -36,24 +36,47 @@
 			</a>
 		</div>
 		
-		
-		
-		
 		<div id="conteneurcercle">
-			<?php 
-       					
+			<?php	
        		$reponse = $bdd->query('SELECT * FROM piece');
        					
        		while ($donnees = $reponse->fetch())
        			{
-       		?>
-     
-			<div><?php echo $donnees['nom'] ?></div>
-			
-			<?php
-                  }
-            ?>
-			<div><font size="+4"><a href="ajout_piece.php">+</a></font></div>
+       			    $nom=strval($donnees['nom']);
+       			    $len=strlen($nom);
+       			    if ($len<13)
+       			    {
+       		        ?>
+						<div>
+							<div id=textecercle1>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php 
+			         }
+			         if ($len>12 AND $len<27)
+       			    {
+       		        ?>
+						<div>
+							<div id=textecercle2>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php 
+			         }
+			         if ($len>26 AND $len<39)
+			         {
+			             ?>
+						<div>
+							<div id=textecercle3>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php
+			         }
+			}
+			?>
+			<div><div id=textecercle><font size="+4"><a href="ajout_piece.php">+</a></font></div></div>
 		</div>
 	
 		
