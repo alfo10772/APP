@@ -29,9 +29,10 @@
        		        
        		    <table>
        		     	<tr>
-       		       		<th>Nom</td>
-       		        	<th>Adresse mail</td>
-       		        	<th>Numéro de téléphone</td>
+       		       		<th>Nom</th>
+       		        	<th>Adresse mail</th>
+       		        	<th>Numéro de téléphone</th>
+       		      
        		        </tr>
        		        
        		      <?php 
@@ -43,6 +44,7 @@
      					<td><?php echo $donnees['nom'];?></td>
      					<td><?php echo $donnees['mail'];?></td>
      					<td><?php echo $donnees['numerodetelephone'];?></td>
+     					<td><input type="submit" id="admin" value="Supprimer le client" /></td>
   					</tr>
   					
   					<?php

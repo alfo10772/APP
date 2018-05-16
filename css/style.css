@@ -239,7 +239,24 @@ input[id="supprimer"] {
 }
 
 input[id="supprimer"]:hover {
-    background:RGB(185, 204, 249);
+    background:RGB(255, 255, 255);
+}
+
+input[id="admin"] {	
+    width: 100%;
+    background:RGB(255, 255, 255);
+    color: black;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    
+}
+
+input[id="admin"]:hover {
+    background:RGB(191, 223, 255);
 }
 
 #tableau_bord
@@ -405,9 +422,20 @@ margin-bottom:2%;
 }
 
 table{
+	border: 1px solid black;
 	border-collapse: collapse; 
+	width: 70%;
+	margin: auto;
 }
 
-td, th{
+th {
 	border: 1px solid black;
+	width: 50%;
+	padding: 7px;
+	background-color: RGB(191, 223, 255);
+}
+td {
+	border: 1px solid black;
+	width: 50%;
+	padding: 5px;
 }
