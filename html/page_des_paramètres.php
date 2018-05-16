@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-
+	
 		<header>
 			<?php
         require("en_tete_connexion.php");
@@ -15,7 +15,7 @@
         </header>
         
     <article>
-          <h1>Param&egrave;tres du tableau de bord<h1>
+          <h1>Param&egrave;tres du tableau de bord + test<h1>
 
 			  <?php 
        		include('config_init.php');
