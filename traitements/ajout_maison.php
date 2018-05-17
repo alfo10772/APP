@@ -21,5 +21,5 @@ $req = $bdd->prepare('INSERT INTO maison(nom, IDadresse) VALUES(:nom,:adresse)')
 
 $result = $req->execute(array(':nom' => $nom,':adresse' => $adresse));
 
-header('location: maison.php');
+header('location: ../html/maison.php');
 ?>

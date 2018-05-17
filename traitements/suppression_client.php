@@ -21,6 +21,6 @@ $req = $bdd ->prepare('DELETE FROM utilisateur WHERE IDutilisateur = :id');
 
 $req-> execute(array(':id' => $id));
 
-header('location: client.php');
+header('location: ../html/client.php');
 
 ?>

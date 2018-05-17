@@ -19,7 +19,7 @@
 		<h1>Ajout d'une maison</h1>
 		
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        	
 		<div style="float:left">
@@ -35,7 +35,7 @@
 		
 		<div id="conteneur2">
 			
-			<form  method="post" action="traitement_maison.php">		
+			<form  method="post" action="../traitements/ajout_maison.php">		
 				<div id="formulaire1">
 					<label for="maison">								
 						Nom

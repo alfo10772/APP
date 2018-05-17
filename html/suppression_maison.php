@@ -19,7 +19,7 @@
 	<h1>Suppression d'une maison</h1>
 	
 	<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        	
 	<div style="float:left;width:250px;height:10px;">
@@ -34,7 +34,7 @@
 	
 	<div id="conteneur2">
 	
-		<form action="traitement_suppression_maison.php" method="post">
+		<form action="../traitements/suppression_maison.php" method="post">
 			<div type=formulaire1>
 			        Nom:
 			        <br />

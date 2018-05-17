@@ -18,7 +18,7 @@
 		<h1>Page des maisons</h1>
 		
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        				
 		<div style="float:left">

@@ -17,7 +17,7 @@
 	        ?>
 			
 			<?php 
-       		   include('config_init.php');
+       		   include('../modele/config_init.php');
        	    ?>
 			<div class="contenu">
 				<h1>Liste des clients</h1>
@@ -40,7 +40,7 @@
        		        foreach ($reponse->fetchAll() as $donnees) {
        		           
        		       ?>
-				<form action="traitement_suppression_client.php" method="post"> 
+				<form action="../traitements/suppression_client.php" method="post"> 
   					<tr>
      					<td><?php echo $donnees['nom'];?></td>
      					<td><?php echo $donnees['mail'];?></td>

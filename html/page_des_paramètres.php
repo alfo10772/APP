@@ -18,7 +18,7 @@
           <h1>Param&egrave;tres du tableau de bord<h1>
 
 			  <?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
 
 		<div id="conteneur2">
