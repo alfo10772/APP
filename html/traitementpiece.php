@@ -12,12 +12,11 @@ catch (Exception $e)
 }
 
 $nom = $_POST['nom'];
-$maison = $_POST['maison'];
 
 
-$req = $bdd->prepare('INSERT INTO piece(nom, IDmaison) VALUES(:nom,:maison)');
+$req = $bdd->prepare('INSERT INTO piece(nom) VALUES(:nom)');
 
-$result = $req->execute(array(':nom' => $nom,':maison' => $maison));
+$result = $req->execute(array(':nom' => $nom));
     
 header('location: piece.php');
 ?>
