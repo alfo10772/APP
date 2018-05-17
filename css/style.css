@@ -255,7 +255,7 @@ input[id="supprimer"] {
 }
 
 input[id="supprimer"]:hover {
-    background:RGB(255, 255, 255);
+    background:RGB(191, 223, 255);
 }
 
 input[id="admin"] {	
@@ -323,6 +323,17 @@ margin-bottom:2%;
 	margin-left:10%;
 	margin-top:2%;
 	margin-bottom:2%;
+}
+
+#conteneurtexte
+{
+	width:500px; 
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	
+	
 }
 #conteneur5
 {
