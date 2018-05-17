@@ -26,17 +26,18 @@
        					
        		        $reponse = $bdd->query('SELECT * FROM utilisateur');
        			?>	
-       		        
+       		<form action="traitement_suppression_client.php" method="post">   
        		    <table>
        		     	<tr>
        		       		<th>Nom</th>
        		        	<th>Adresse mail</th>
        		        	<th>Numéro de téléphone</th>
-       		      
+
        		        </tr>
        		        
        		      <?php 
-       		         while ($donnees = $reponse->fetch())
+       		        $compt=0;
+       		        while ($donnees = $reponse->fetch())
        		           {
        		       ?>
 				
@@ -44,13 +45,19 @@
      					<td><?php echo $donnees['nom'];?></td>
      					<td><?php echo $donnees['mail'];?></td>
      					<td><?php echo $donnees['numerodetelephone'];?></td>
-     					<td><input type="submit" id="admin" value="Supprimer le client" /></td>
+     					<td><input type="submit" name=<?php echo $compt;?> value="Supprimer le client" /></td>
+     					<td><input type="hidden" name="compt" value="<?php echo $compt;?>" /></td>
+     					<td><?php echo $compt;?></td>
+     					<?php 
+     					  $compt+=1;
+     					?>
   					</tr>
   					
   					<?php
                         }
                     ?>
   				</table>
+  			</form>  
 			</div>
 		</div>
 		

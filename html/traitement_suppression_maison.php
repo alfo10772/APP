@@ -1,5 +1,6 @@
 <?php 
 
+
 $bdd = NULL; 
 
 try 
