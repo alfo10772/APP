@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 09 avr. 2018 à 10:18
+-- Généré le :  ven. 18 mai 2018 à 11:31
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `bdd app`
+-- Base de données :  `bdd_a`
 --
 
 -- --------------------------------------------------------
@@ -55,29 +55,19 @@ CREATE TABLE `adresse` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cemac`
---
-
-CREATE TABLE `cemac` (
-  `IDcemac` int(11) NOT NULL,
-  `nombre composants` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `composant`
 --
 
 CREATE TABLE `composant` (
   `IDcomposant` int(11) NOT NULL,
-  `IDcemac` int(11) NOT NULL,
+  `IDmaison` int(11) NOT NULL,
+  `IDpiece` int(11) NOT NULL,
   `type` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL,
   `etat` tinyint(1) NOT NULL,
-  `unite` varchar(30) NOT NULL,
-  `valeur min` int(11) NOT NULL,
-  `valeur max` int(11) NOT NULL
+  `nom` varchar(26) NOT NULL,
+  `unite` varchar(20) NOT NULL,
+  `valeurmin` int(11) NOT NULL,
+  `valeurmax` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -120,6 +110,27 @@ CREATE TABLE `maison` (
   `photo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `maison`
+--
+
+INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`) VALUES
+(1, 6, 0, 'Résidence principale', ''),
+(2, 25, 0, 'Vacances', ''),
+(3, 0, 0, 'Chalet de ski de papy et mamy', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `notification`
+--
+
+CREATE TABLE `notification` (
+  `IDnotification` int(11) NOT NULL,
+  `etat` tinyint(1) NOT NULL,
+  `texte` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -146,6 +157,16 @@ CREATE TABLE `piece` (
   `surface` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Déchargement des données de la table `piece`
+--
+
+INSERT INTO `piece` (`IDpiece`, `IDmaison`, `nom`, `surface`) VALUES
+(1, 0, 'Chambre parents', 25),
+(2, 0, 'Chambre enfants', 26),
+(3, 0, 'Cuisine', 36),
+(4, 0, 'Salle de jeu des enfants', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -171,6 +192,25 @@ CREATE TABLE `reponse` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `typecomposant`
+--
+
+CREATE TABLE `typecomposant` (
+  `IDtypeComposant` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `typecomposant`
+--
+
+INSERT INTO `typecomposant` (`IDtypeComposant`, `nom`) VALUES
+(1, 'Capteur de température'),
+(2, 'Capteur de fumée');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateur`
 --
 
@@ -185,6 +225,15 @@ CREATE TABLE `utilisateur` (
   `etat de connexion` tinyint(1) NOT NULL,
   `date de naissance` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`IDutilisateur`, `type`, `nom`, `mail`, `motdepasse`, `numerodetelephone`, `photo`, `etat de connexion`, `date de naissance`) VALUES
+(2, 0, 'naca10767', 'n@yahoo.fr', '$2y$10$0ComSgkX.a67RhwX7Z4EBuQ3c', 0, '', 0, '0000-00-00'),
+(3, 0, 'a', 'n@yahoo.fr', '$2y$10$apXrUZ5a4nWo7zXTinxf2.heY', 0, '', 0, '0000-00-00'),
+(4, 0, 'nono', 'no@yahoo.fr', '$2y$10$qEcDSOBMTZ5PZpzbltJnCugPJ', 0, '', 0, '0000-00-00');
 
 --
 -- Index pour les tables déchargées
@@ -206,17 +255,12 @@ ALTER TABLE `adresse`
   ADD KEY `IDutilisateur` (`IDutilisateur`);
 
 --
--- Index pour la table `cemac`
---
-ALTER TABLE `cemac`
-  ADD PRIMARY KEY (`IDcemac`);
-
---
 -- Index pour la table `composant`
 --
 ALTER TABLE `composant`
   ADD PRIMARY KEY (`IDcomposant`),
-  ADD KEY `IDpiece` (`IDcemac`);
+  ADD KEY `IDpiece` (`IDpiece`),
+  ADD KEY `IDmaison` (`IDmaison`);
 
 --
 -- Index pour la table `contact`
@@ -237,6 +281,12 @@ ALTER TABLE `donnees`
 ALTER TABLE `maison`
   ADD PRIMARY KEY (`IDmaison`),
   ADD KEY `IDadresse` (`IDadresse`);
+
+--
+-- Index pour la table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`IDnotification`);
 
 --
 -- Index pour la table `panne`
@@ -265,6 +315,12 @@ ALTER TABLE `reponse`
   ADD PRIMARY KEY (`IDreponse`);
 
 --
+-- Index pour la table `typecomposant`
+--
+ALTER TABLE `typecomposant`
+  ADD PRIMARY KEY (`IDtypeComposant`);
+
+--
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
@@ -285,12 +341,6 @@ ALTER TABLE `action`
 --
 ALTER TABLE `adresse`
   MODIFY `IDadresse` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `cemac`
---
-ALTER TABLE `cemac`
-  MODIFY `IDcemac` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `composant`
@@ -314,7 +364,13 @@ ALTER TABLE `donnees`
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `IDmaison` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDmaison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `IDnotification` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `panne`
@@ -326,7 +382,7 @@ ALTER TABLE `panne`
 -- AUTO_INCREMENT pour la table `piece`
 --
 ALTER TABLE `piece`
-  MODIFY `IDpiece` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDpiece` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `question`
@@ -341,10 +397,27 @@ ALTER TABLE `reponse`
   MODIFY `IDreponse` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `typecomposant`
+--
+ALTER TABLE `typecomposant`
+  MODIFY `IDtypeComposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `IDutilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDutilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `composant`
+--
+ALTER TABLE `composant`
+  ADD CONSTRAINT `IDmaison` FOREIGN KEY (`IDmaison`) REFERENCES `maison` (`IDmaison`),
+  ADD CONSTRAINT `IDpiece` FOREIGN KEY (`IDpiece`) REFERENCES `piece` (`IDpiece`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
