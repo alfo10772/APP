@@ -13,41 +13,9 @@ session_start();
 	<body>
 
 		<header>
-			<p>
-			
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			
-			<br />
-				Un produit de Domisep
-			</p>
-			
-			<p>
-				<br />
-				
-			</p>
-						
-			<div id="conteneur3">
-				<br />
-				<br />
-				<a href="informations.php">			
-					Mes informations
-				</a>
-				<br />
-				<br />
-				
-				<a href="page_de_connexion.php">			
-					Se déconnecter
-				</a>
-			
-			</div>
-			
-			<div id="profil">
-	   		
-				<img src="../images/photo.png" alt="Photo profil" width="125">
-	   			<p>
-	   				Nom d'utilisateur
-	   			</p>	
-			</div>
+			<?php
+        require("en_tete_connexion.php");
+        	?>
 		</header>
 		
 	<article>
@@ -80,33 +48,8 @@ session_start();
 	</article>
 	
 	<footer>						<!--  début du bas de la page -->
-		<p>
-			<a href="faq.html">		<!--  lien vers la FAQ -->
-				<strong>
-					FAQ
-				</strong>
-			</a>
-		</p>
-		<p>
-			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Conditions générales d'utilisation
-			</a>
-		</p>
-		<p>
-			<a href="mentions_legales.html">			<!--  lien vers les mentions légales -->
-				Mentions légales
-			</a>
-		</p>
-		<div>
-			
-			Date et heure								<!--  affichage de la date et l'heure -->
-			<div id="afficherheure">
-			</div>
-			<script type="text/javascript">
-			setInterval(function(){
-    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
-			}, 1000);
-			</script>
-		</div>
+		<?php
+        require("footer.php");
+        	?>
 		
 	</footer>

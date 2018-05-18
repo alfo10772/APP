@@ -19,7 +19,7 @@
 		<h1>Ajout d'une pi&egrave;ce</h1>
 		
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        				
 		<div style="float:left">
@@ -35,7 +35,7 @@
 		
 		<div id="conteneur2">
 			
-			<form method="post" action="traitementpiece.php" enctype="multipart/form-data"> 
+			<form method="post" action="../traitements/ajout_piece.php" enctype="multipart/form-data"> 
 			
 			<br />
 			<br />

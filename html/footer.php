@@ -7,7 +7,7 @@
 		</p>
 		<p>
 			<a href="condition_d'utilisation.html">
-				Condition g&eacute;n&eacute;rales d'utilisation
+				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
 		<p>

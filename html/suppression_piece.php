@@ -24,7 +24,7 @@
 	<h1>Suppression d'une piece	</h1>
 	
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        	
 	<div style="float:left;width:250px;height:10px;">
@@ -42,7 +42,7 @@
 		<br/>
 		<br/>
 	
-		<form action="traitementsuppression.php" method="post"> 
+		<form action="../traitements/suppression_piece.php" method="post"> 
 		             
              <div type="formulaire1">
 			        Piece :
@@ -69,6 +69,8 @@
                     <br/>
                     
                     <input type="submit" id="supprimer" value="Supprimer" />
+                    <br/>
+					<br/>
                     <input type="submit" id="supprimer" value="Annuler" />
                     
 		</form>

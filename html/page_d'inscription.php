@@ -21,8 +21,10 @@
 	</h1>
 	<section class="conteneur2">
 	<div id="conteneur2">
-		<form method="post" action="traitement_inscription.php">
+		<form method="post" action="../traitements/inscription.php">
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+			<script src=../javascript/inscription.js></script>
+					
 			
        		<label for="nom_d'utilisateur">
        				Nom d'utilisateur :

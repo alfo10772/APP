@@ -17,8 +17,6 @@ session_start()
 			</p>
 						
 			<div id="conteneur3">
-				<br />
-				<br />
 				<a href="informations.php">			
 					Mes informations
 				</a>
@@ -27,6 +25,11 @@ session_start()
 				
 				<a href="redirection.php">			
 					Se d&eacute;connecter
+				</a>
+				<br />
+				<br />
+				<a href="notification.php">			
+					Notifications
 				</a>
 			
 			</div>

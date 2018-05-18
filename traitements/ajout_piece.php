@@ -11,13 +11,12 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$maison = $_POST['nom_maison'];
-$nom = $_POST['nom_piece'];
+$nom = $_POST['nom'];
 
-$req = $bdd ->prepare('DELETE FROM piece WHERE nom = :nom ');
 
-$req-> execute(array(':nom' => $nom));
+$req = $bdd->prepare('INSERT INTO piece(nom) VALUES(:nom)');
 
-header('location: piece.php');
-
+$result = $req->execute(array(':nom' => $nom));
+    
+header('location: ../html/piece.php');
 ?>
