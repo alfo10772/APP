@@ -51,7 +51,7 @@
 			<br />
 			<br />
 			<?php
-			$reponse = $bdd->query('SELECT * FROM utilisateur');
+			$reponse = $bdd->query('SELECT * FROM type_capteur');
 			$user = array();
 			$i = 0;
 			while ($donnees = $reponse->fetch())

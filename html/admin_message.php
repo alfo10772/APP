@@ -7,14 +7,39 @@
     </head>
 
     <body>
-
+    <?php 
+       		include('config_init.php');
+       	?>
     <div id="article2">
 	
 	<?php 
 	   require("menu_admin.php");
 	?>
+    
 
+     <div class="imagemessage">
+    <a href="messages_recus.php">
+    <img src="../images/message.png" alt="Logo message" width="200">
+    <div class="conteneurcercle1">
+    <?php
+            $umess = array();
+            $i = 0;
+            $reponse = $bdd->query('SELECT * FROM utilisateur');
+            while ($donnees = $reponse->fetch()){
+            $umess[$i] = $donnees['nom'];
+            $i++;
+            }
+            echo count($umess);
+            ?>
+            </div>
+    </a>
+   
     </div>
+    </div>
+   
+    
+   
+
 
     </body>
 
