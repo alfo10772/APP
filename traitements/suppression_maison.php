@@ -1,5 +1,6 @@
 <?php 
 
+
 $bdd = NULL; 
 
 try 
@@ -17,6 +18,6 @@ $req = $bdd ->prepare('DELETE FROM maison WHERE nom = :nom ');
 
 $req-> execute(array(':nom' => $nom));
 
-header('location: maison.php');
+header('location: ../html/maison.php');
 
 ?>

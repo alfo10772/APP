@@ -19,7 +19,7 @@
 		<h1>Page des pi&egrave;ces</h1>
 		
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        				
 		

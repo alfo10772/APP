@@ -11,14 +11,16 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$nom = $_POST['nom'];
-$adresse = $_POST['adresse'];
+$reponse = $bdd->query('SELECT * FROM utilisateur');
+$donnees = $reponse->fetch();
+
+$id = $_POST['id'];
 
 
+$req = $bdd ->prepare('DELETE FROM utilisateur WHERE IDutilisateur = :id');
 
-$req = $bdd->prepare('INSERT INTO maison(nom, IDadresse) VALUES(:nom,:adresse)');
+$req-> execute(array(':id' => $id));
 
-$result = $req->execute(array(':nom' => $nom,':adresse' => $adresse));
+header('location: ../html/client.php');
 
-header('location: maison.php');
 ?>
