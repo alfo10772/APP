@@ -14,7 +14,8 @@ catch (Exception $e)
 $nom = $_POST['nom'];
 $type = $_POST['type'];
 
-if($type=='capteurs'){
+
+if($type=='capteur'){
     $id=0;
 }
 else{

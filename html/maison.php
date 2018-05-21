@@ -43,17 +43,20 @@
 		<div id="conteneurcercle">
 			
 			<?php	
-       		$reponse = $bdd->query('SELECT * FROM maison');
+       		$reponse = $bdd->query('SELECT nom FROM maison');
        					
-       		while ($donnees = $reponse->fetch())
+       		foreach ($reponse->fetchAll() as $donnees)
        			{
        			    $nom=strval($donnees['nom']);
        			    $len=strlen($nom);
+       			    
        			    if ($len<13)
        			    {
        		        ?>
-						<div>
-							<div id=textecercle1>
+						<div onclick="select();">
+						
+							<div id=textecercle1 >
+								
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
@@ -62,8 +65,10 @@
 			         if ($len>12 AND $len<27)
        			    {
        		        ?>
-						<div>
+						<div onclick="select();">
+						
 							<div id=textecercle2>
+								
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
@@ -72,22 +77,33 @@
 			         if ($len>26 AND $len<39)
 			         {
 			             ?>
-						<div>
-							<div id=textecercle3>
+						<div onclick="select();">
+						
+							<div id=textecercle3 >
+								
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
 					<?php
 			         }
+			         ?>
+			<script type="text/javascript">
+				var select = function() { 
+					var nom = '<?php echo $nom; ?>';
+					document.write(nom);
+				}
+			</script>
+			<?php 
 			}
 			?>
 			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
 		</div>
-	
+		
+		
 		
 	</article>
 	
-	<footer>						<!--  d&eacute;but du bas de la page -->
+	<footer>						
 		<p>
 			<a href="faq.html">		<!--  lien vers la FAQ -->
 				<strong>
