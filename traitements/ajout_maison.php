@@ -14,12 +14,12 @@ catch (Exception $e)
 
 $nom = $_POST['nom'];
 $adresse = $_POST['adresse'];
+$id=$_SESSION['ID'];
 
 
+$req = $bdd->prepare('INSERT INTO maison(nom, IDadresse, IDutilisateur) VALUES(:nom,:adresse,:id)');
 
-$req = $bdd->prepare('INSERT INTO maison(nom, IDadresse) VALUES(:nom,:adresse)');
-
-$result = $req->execute(array(':nom' => $nom,':adresse' => $adresse));
+$result = $req->execute(array(':nom' => $nom,':adresse' => $adresse, ':id' => $id));
 
 header('location: ../html/maison.php');
 ?>

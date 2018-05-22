@@ -518,11 +518,13 @@ th {
 	padding: 7px;
 	background-color: RGB(191, 223, 255);
 }
+
 td {
 	border: 1px solid black;
 	width: 50%;
 	padding: 5px;
 }
+
 #CGU
 {
 	height: 70%;

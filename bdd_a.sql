@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 22 mai 2018 à 09:29
+-- Généré le :  mar. 22 mai 2018 à 22:04
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -44,13 +44,19 @@ CREATE TABLE `action` (
 
 CREATE TABLE `adresse` (
   `IDadresse` int(11) NOT NULL,
-  `IDutilisateur` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
   `rue` varchar(30) NOT NULL,
   `code postal` int(11) NOT NULL,
   `ville` varchar(30) NOT NULL,
   `pays` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `adresse`
+--
+
+INSERT INTO `adresse` (`IDadresse`, `numero`, `rue`, `code postal`, `ville`, `pays`) VALUES
+(1, 12, 'essai', 23405, 'test', 'blabla');
 
 -- --------------------------------------------------------
 
@@ -115,17 +121,17 @@ CREATE TABLE `maison` (
   `IDadresse` int(11) NOT NULL,
   `selection` tinyint(1) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `photo` longtext NOT NULL
+  `photo` longtext NOT NULL,
+  `IDutilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `maison`
 --
 
-INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`) VALUES
-(2, 2, 0, 'Maison 2', ''),
-(3, 0, 0, 'Maison de vacances', ''),
-(5, 2, 0, 'test', '');
+INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`, `IDutilisateur`) VALUES
+(6, 1, 0, 'Maison 1', '', 9),
+(8, 1, 0, 'test', '', 9);
 
 -- --------------------------------------------------------
 
@@ -282,8 +288,7 @@ ALTER TABLE `action`
 -- Index pour la table `adresse`
 --
 ALTER TABLE `adresse`
-  ADD PRIMARY KEY (`IDadresse`),
-  ADD KEY `IDutilisateur` (`IDutilisateur`);
+  ADD PRIMARY KEY (`IDadresse`);
 
 --
 -- Index pour la table `composant`
@@ -310,7 +315,8 @@ ALTER TABLE `donnees`
 --
 ALTER TABLE `maison`
   ADD PRIMARY KEY (`IDmaison`),
-  ADD KEY `IDadresse` (`IDadresse`);
+  ADD KEY `IDadresse` (`IDadresse`),
+  ADD KEY `IDutilisateur` (`IDutilisateur`);
 
 --
 -- Index pour la table `notification`
@@ -376,7 +382,7 @@ ALTER TABLE `action`
 -- AUTO_INCREMENT pour la table `adresse`
 --
 ALTER TABLE `adresse`
-  MODIFY `IDadresse` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDadresse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `composant`
@@ -400,7 +406,7 @@ ALTER TABLE `donnees`
 -- AUTO_INCREMENT pour la table `maison`
 --
 ALTER TABLE `maison`
-  MODIFY `IDmaison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDmaison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `notification`
@@ -449,6 +455,17 @@ ALTER TABLE `typecomposant`
 --
 ALTER TABLE `utilisateur`
   MODIFY `IDutilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `maison`
+--
+ALTER TABLE `maison`
+  ADD CONSTRAINT `maison_ibfk_1` FOREIGN KEY (`IDutilisateur`) REFERENCES `utilisateur` (`IDutilisateur`),
+  ADD CONSTRAINT `maison_ibfk_2` FOREIGN KEY (`IDadresse`) REFERENCES `adresse` (`IDadresse`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
