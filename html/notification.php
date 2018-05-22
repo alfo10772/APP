@@ -33,10 +33,12 @@
        		      <?php 
        		        foreach ($not->fetchAll() as $donnees) {
        		           
-       		       ?> 
+       		       ?>
+       		       <form action="../traitements/traitement_vu.php" method="post">
   					<tr>
      					<td id="not2"><?php echo $donnees['texte'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
+     					<input type="hidden" name="ID" value=<?php echo $donnees['IDnotification'] ?>></input>
      					<td id="not2">       		        	
        		        	<?php
        		        	if($donnees['etat'])
@@ -54,6 +56,7 @@
        		        	?>
      					</td>
      				</tr>
+     				</form>
   					<?php
                         }
                     ?>

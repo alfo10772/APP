@@ -535,7 +535,7 @@ th#not{
 	width: 80%;
 	padding: 5px;
 	height: 70px;
-	background:RGB(22, 85, 180);
+	background:RGB(22, 85, 150);
 }
 
 
@@ -543,29 +543,29 @@ th#date{
 	width: 15%;
 	padding: 5px;
 	height: 70px;
-	background:RGB(22, 85, 180);
+	background:RGB(22, 85, 150);
 }
 
 th#vu{
 	width: auto;
 	padding: 5px;
 	height: 70px;
-	background:RGB(22, 85, 180);
+	background:RGB(22, 85, 150);
 }
 
 td#not2{
 	width: auto;
 	padding: 7px;
-	height: 50px;
-	background:RGB(22, 85, 180);
+	height: 60px;
+	background:RGB(22, 85, 150);
 }
 
 input[id="vu"] {
-    background:RGB(22, 85, 250);
+    background-color:RGB(22, 85, 250);
     color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
     cursor: pointer;
     padding:20% 15% 20% 20%;
     font-size: 15px;
