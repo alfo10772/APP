@@ -40,8 +40,9 @@
         
 		<h2> Cliquez sur une maison pour la s&eacute;lectionner </h2>
         
+        
 		<div id="conteneurcercle">
-			
+				
 			<?php	
        		$reponse = $bdd->query('SELECT nom FROM maison');
        					
@@ -54,85 +55,55 @@
        			    {
        		        ?>
 						<div onclick="select();">
-						
-							<div id=textecercle1 >
-								
+							<div id=textecercle1>
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
 					<?php 
 			         }
+			         
 			         if ($len>12 AND $len<27)
        			    {
        		        ?>
 						<div onclick="select();">
-						
 							<div id=textecercle2>
-								
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
 					<?php 
 			         }
+			         
 			         if ($len>26 AND $len<39)
 			         {
 			             ?>
 						<div onclick="select();">
-						
-							<div id=textecercle3 >
-								
+							<div id=textecercle3>
 								<?php echo $donnees['nom']?>
 							</div>
 						</div>
 					<?php
-			         }
-			         ?>
-			<script type="text/javascript">
-				var select = function() { 
-					var nom = '<?php echo $nom; ?>';
-					document.write(nom);
-				}
-			</script>
-			<?php 
+			         }		
+			         
 			}
 			?>
+			
+			
 			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
 		</div>
 		
-		
+		<script type="text/javascript">
+			var select = function() { 
+				var nom = '<?php echo $nom; ?>';
+				document.write(nom);
+			}
+		</script>
 		
 	</article>
 	
 	<footer>						
-		<p>
-			<a href="faq.html">		<!--  lien vers la FAQ -->
-				<strong>
-					FAQ
-				</strong>
-			</a>
-		</p>
-		<p>
-			<a href="condition_d'utilisation.html">		<!--  lien vers les conditions d'utilisations -->
-				Conditions g&eacute;n&eacute;rales d'utilisation
-			</a>
-		</p>
-		<p>
-			<a href="mentions_legales.html">			<!--  lien vers les mentions l&eacute;gales -->
-				Mentions l&eacute;gales
-			</a>
-		</p>
-		<div>
-			
-			Date et heure								<!--  affichage de la date et l'heure -->
-			<div id="afficherheure">
-			</div>
-			<script type="text/javascript">
-			setInterval(function(){
-    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
-			}, 1000);
-			</script>
-		</div>
-		
+		<?php
+            require("footer.php");
+        ?>
 	</footer>
 
 
