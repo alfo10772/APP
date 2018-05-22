@@ -18,7 +18,7 @@
 		<h1>Ajout d'un composant</h1>
 		
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
 		
 		<div style="float:left">
@@ -32,7 +32,7 @@
 		<br />
 		
 		<div id="conteneur2">
-			<form method="post" action="traitement_composant.php" enctype="multipart/form-data"> 
+			<form method="post" action="../traitements/traitement_composant.php" enctype="multipart/form-data"> 
    				<div type="formulaire1">
    					<label for="type">Type de composant</label><br /> 
        				<select name="type" id="type"> 

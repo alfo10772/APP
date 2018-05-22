@@ -13,8 +13,11 @@ $nom = $_POST['nom'];
 $valeurmin = $_POST['valeurmin'];
 $valeurmax = $_POST['valeurmax'];
 $piece = $_POST['piece'];
+$requetepiece = $bdd->query("SELECT IDpiece FROM piece WHERE nom='". $piece ."' ;");
+$piece = $requetepiece ->fetch();
+$piece = $piece['IDpiece'];
 
-$req = $bdd->prepare('INSERT INTO composant(type, nom, valeurmin, valeurmax, IDcemac) VALUES(:type,:nom,:valeurmin,:valeurmax,:piece)');
+$req = $bdd->prepare('INSERT INTO composant(type, nom, valeurmin, valeurmax, IDpiece) VALUES(:type,:nom,:valeurmin,:valeurmax,:piece)');
 $result = $req->execute(array(':type' => $type, ':nom' => $nom,':valeurmin' => $valeurmin,':valeurmax' => $valeurmax, ':piece' => $piece));
-header('location: page_des_composants.php');
+header('location: ../html/page_des_composants.php');
 ?>
