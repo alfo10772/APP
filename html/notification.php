@@ -25,8 +25,8 @@
        		  
        		    <table id="notification">
        		     	<tr>
-       		       		<th id="not1">Notifications</th>
-       		        	<th id="not1">date</th>
+       		       		<th id="not">Notifications</th>
+       		        	<th id="date">date</th>
       	    		</tr>
        		        
        		      <?php 
@@ -41,7 +41,7 @@
                         }
                     ?>
   				</table>
-?>
+
        	
     </article>
 	

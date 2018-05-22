@@ -526,23 +526,34 @@ td {
 
 table#notification{
 	border: 1px solid black;
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	
 }
 
-td#not2{
-	border: 1px solid black;
-	width: 50%;
-	padding: 7px;
+
+th#not{
+	width: 85%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 180);
 }
 
-th#not1{
-	width: 50%;
+th#date{
+	width: 15%;
 	padding: 5px;
-	height: 130px;
-	background:RGB(22, 85, 250);
+	height: 70px;
+	background:RGB(22, 85, 180);
 }
+
+td#not2{
+	width: 50%;
+	padding: 7px;
+	height: 50px;
+	background:RGB(22, 85, 180);
+}
+
+
 #CGU
 {
 	height: 70%;
