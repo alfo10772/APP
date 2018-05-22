@@ -523,3 +523,23 @@ td {
 	width: 50%;
 	padding: 5px;
 }
+
+table#notification{
+	border: 1px solid black;
+	width: 80%;
+	margin: auto;
+	
+}
+
+td#not2{
+	border: 1px solid black;
+	width: 50%;
+	padding: 7px;
+}
+
+th#not1{
+	width: 50%;
+	padding: 5px;
+	height: 130px;
+	background:RGB(22, 85, 250);
+}
