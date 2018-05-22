@@ -37,7 +37,22 @@
   					<tr>
      					<td id="not2"><?php echo $donnees['texte'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
-     					<td id="not2"><input type="submit" id="vu" value="vu"></td>
+     					<td id="not2">       		        	
+       		        	<?php
+       		        	if($donnees['etat'])
+       		        	{
+       		            ?>
+     					<input type="submit" id="vu" value="Vu">
+     					<?php
+       		        	}
+     					else
+     					{
+     					?>
+     					Vu
+     					<?php
+       		        	}
+       		        	?>
+     					</td>
      				</tr>
   					<?php
                         }
