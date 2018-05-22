@@ -38,52 +38,31 @@
         <br/>
         <br/>
         
-		<h2> Cliquez sur une maison pour la s&eacute;lectionner </h2>
+        <?php	
+       		$reponse = $bdd->query('SELECT * FROM maison');
+       		$selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1');
+       		$selected = $selection->fetch()[0];
+       		
+        ?>
+        
+        <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
+		<h2> Cliquez sur une autre maison pour changer de maison </h2>
         
         
 		<div id="conteneurcercle">
 				
-			<?php	
-       		$reponse = $bdd->query('SELECT nom FROM maison');
+			<?php 
        					
        		foreach ($reponse->fetchAll() as $donnees)
        			{
-       			    $nom=strval($donnees['nom']);
-       			    $len=strlen($nom);
-       			    
-       			    if ($len<13)
-       			    {
-       		        ?>
-						<div onclick="select();">
-							<div id=textecercle1>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php 
-			         }
-			         
-			         if ($len>12 AND $len<27)
-       			    {
-       		        ?>
-						<div onclick="select();">
-							<div id=textecercle2>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php 
-			         }
-			         
-			         if ($len>26 AND $len<39)
-			         {
-			             ?>
-						<div onclick="select();">
-							<div id=textecercle3>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php
-			         }		
-			         
+       			    ?>
+       			    <form action="../traitements/selection_maison.php" method="post"> 
+       			   
+       		        	<input type="hidden" name="id" value=<?php echo $donnees['IDmaison'] ?>></input>
+						<input type="submit" id="bouton" name=<?php echo $donnees['IDmaison'] ?> value="<?php echo $donnees['nom']?>">
+							
+			        </form>
+			        <?php    
 			}
 			?>
 			
@@ -91,12 +70,6 @@
 			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
 		</div>
 		
-		<script type="text/javascript">
-			var select = function() { 
-				var nom = '<?php echo $nom; ?>';
-				document.write(nom);
-			}
-		</script>
 		
 	</article>
 	
