@@ -48,9 +48,11 @@
        			    {
        		        ?>
 						<div>
+							<a href="../html/exemplepiece.php">	
 							<div id=textecercle1>
 								<?php echo $donnees['nom']?>
 							</div>
+							</a>
 						</div>
 					<?php 
 			         }
@@ -58,9 +60,11 @@
        			    {
        		        ?>
 						<div>
+							<a href="../html/exemplepiece.php">	
 							<div id=textecercle2>
 								<?php echo $donnees['nom']?>
 							</div>
+							</a>
 						</div>
 					<?php 
 			         }
@@ -68,9 +72,11 @@
 			         {
 			             ?>
 						<div>
+							<a href="../html/exemplepiece.php">	
 							<div id=textecercle3>
 								<?php echo $donnees['nom']?>
 							</div>
+							</a>
 						</div>
 					<?php
 			         }
