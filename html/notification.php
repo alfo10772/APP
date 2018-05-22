@@ -26,7 +26,8 @@
        		    <table id="notification">
        		     	<tr>
        		       		<th id="not">Notifications</th>
-       		        	<th id="date">date</th>
+       		        	<th id="date">Date</th>
+       		       		<th id="vu"></th>
       	    		</tr>
        		        
        		      <?php 
@@ -36,6 +37,7 @@
   					<tr>
      					<td id="not2"><?php echo $donnees['texte'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
+     					<td id="not2"><input type="submit" id="vu" value="vu"></td>
      				</tr>
   					<?php
                         }
