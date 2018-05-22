@@ -518,11 +518,62 @@ th {
 	padding: 7px;
 	background-color: RGB(191, 223, 255);
 }
-
 td {
 	border: 1px solid black;
 	width: 50%;
 	padding: 5px;
+}
+
+
+table#notification{
+	border: 1px solid black;
+	width: 100%;
+	margin: auto;
+	
+}
+
+th#not{
+	width: 80%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+
+th#date{
+	width: 15%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+th#vu{
+	width: auto;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+td#not2{
+	width: auto;
+	padding: 7px;
+	height: 60px;
+	background:RGB(22, 85, 150);
+}
+
+input[id="vu"] {
+    background-color:RGB(22, 85, 250);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding:20% 15% 20% 20%;
+    font-size: 15px;
+}
+
+input[id="vu"]:hover {
+    background:RGB(90, 150, 250);
 }
 
 #CGU
