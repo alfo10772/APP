@@ -20,7 +20,7 @@
 		<?php 
        		include('../modele/config_init.php');
        	
-       		$not = $bdd->query('SELECT * FROM notification');
+       		$not = $bdd->query('SELECT * FROM notification ORDER BY IDnotification DESC');
        		?>
        		  
        		    <table id="notification">
