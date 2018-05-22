@@ -1,5 +1,5 @@
 <p class="bordure1">
-			<a href="faq.html">
+			<a href="faq.php">
 				<strong>
 					FAQ
 				</strong>
