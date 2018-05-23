@@ -7,9 +7,10 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     $req = $pdo ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? ');
     $req->execute([$_POST['mail']]);
     $user = $req->fetch(PDO::FETCH_NUM);  // on r�cup�re le premier element dans req
-    print_r($user);
-    print_r($_POST);
-    var_dump (password_verify($_POST['password'],$user[1]));
+   // print_r($user);
+    //print_r($_POST);
+  
+   var_dump (password_verify($_POST['password'],$user[1]));
       
    if (!empty($user)){
        if(password_verify($_POST['password'],$user[1])){
