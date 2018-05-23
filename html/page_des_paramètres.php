@@ -61,11 +61,12 @@
 				$i++;
 				
 			}
+			$incr = "affichage0";
 			for ($j = 0,$size = count($user);$j<$size;$j++)
 			{
 			echo implode (" ",$user[$j]);
 			?>
-			<select name="<?php echo $donnees['vu']; ?>">
+			<select name="<?php echo ++$incr ?>">
 			<option value="moyenne"> En moyenne </option>
 			<?php 
        					
