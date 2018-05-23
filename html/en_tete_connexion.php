@@ -28,8 +28,23 @@ session_start()
 				</a>
 				<br />
 				<br />
-				<a href="notification.php">			
-					Notifications
+				<a href="notification.php">
+					Notifications	
+					<?php
+					include('../modele/config_init.php');
+					
+					$not = $bdd->query('SELECT * FROM notification');
+					$sum=0;
+					foreach ($not->fetchAll() as $donnees) {
+					    $sum+=$donnees['etat'];
+					}
+					if($sum!=0)
+					{
+                    ?>		
+					<img src="../images/alarm2.png" alt="Photo profil" width="18">
+					<?php
+					}
+					?>
 				</a>
 			
 			</div>
