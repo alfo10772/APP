@@ -38,49 +38,19 @@
 		
 		<div id="conteneurcercle">
 			<?php	
-       		$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE selection = 1');
+       		$reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE selection = 1');
        					
-       		while ($donnees = $reponse->fetch())
+       		foreach ($reponse->fetchAll() as $donnees)
        			{
-       			    $nom=strval($donnees['nom']);
-       			    $len=strlen($nom);
-       			    if ($len<13)
-       			    {
+       			    
        		        ?>
-						<div>
-							<a href="../html/exemplepiece.php">	
-							<div id=textecercle1>
-								<?php echo $donnees['nom']?>
-							</div>
-							</a>
-						</div>
-					<?php 
-			         }
-			         if ($len>12 AND $len<27)
-       			    {
-       		        ?>
-						<div>
-							<a href="../html/exemplepiece.php">	
-							<div id=textecercle2>
-								<?php echo $donnees['nom']?>
-							</div>
-							</a>
-						</div>
-					<?php 
-			         }
-			         if ($len>26 AND $len<39)
-			         {
-			             ?>
-						<div>
-							<a href="../html/exemplepiece.php">	
-							<div id=textecercle3>
-								<?php echo $donnees['nom']?>
-							</div>
-							</a>
-						</div>
-					<?php
-			         }
-			}
+       		        	<form action="../traitements/exemple_piece.php" method="post">
+							<input type="hidden" name="id" value="<?php echo $donnees['IDpiece']?>">
+							<input type="submit" id="bouton" name=<?php echo $donnees['IDpiece'] ?> value="<?php echo $donnees['nom']?>">
+			
+						</form>
+						<?php 
+       			}
 			?>
 			<div><div id=textecercle><font size="+4"><a href="ajout_piece.php">+</a></font></div></div>
 		</div>
