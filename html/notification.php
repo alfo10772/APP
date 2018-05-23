@@ -20,7 +20,7 @@
 		<?php 
        		include('../modele/config_init.php');
        	
-       		$not = $bdd->query('SELECT * FROM notification ORDER BY IDnotification DESC');
+       		$not = $bdd->query('SELECT * FROM notification ORDER BY date DESC');
        		?>
        		  
        		    <table id="notification">
@@ -44,13 +44,13 @@
        		        	if($donnees['etat'])
        		        	{
        		            ?>
-     					<input type="submit" id="vu" value="Vu">
+     					Vu
      					<?php
        		        	}
      					else
      					{
      					?>
-     					Vu
+     					<input type="submit" id="vu" value="Vu">
      					<?php
        		        	}
        		        	?>

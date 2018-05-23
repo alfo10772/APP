@@ -13,7 +13,7 @@ $donnees = $reponse->fetch();
 
 $id = $_POST['ID'];
 
-$req = $bdd ->prepare('UPDATE notification SET etat=0 WHERE IDnotification = :ID');
+$req = $bdd ->prepare('UPDATE notification SET etat=1 WHERE IDnotification = :ID');
 
 $req-> execute(array(':ID' => $id));
 
