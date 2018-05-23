@@ -17,6 +17,9 @@
 	
 	<h1>Tableau de bord</h1>
 	
+	<?php 
+       		include('../modele/config_init.php');
+       	?>
 		
 	<div id="conteneurcercle1">
 			<div>
@@ -52,7 +55,22 @@
 		
     </div>
 	
-	</div>	
+	<div id="conteneurcercle1">
+	<?php 
+       					
+       	$reponse = $bdd->query('SELECT * FROM type_capteur');
+       					
+		   while ($donnees = $reponse->fetch())
+       	{
+			   ?>
+			   <div>
+				   <?php echo $donnees['vu'] ?>
+		   </div>
+		   <?php
+		   }
+		   ?>
+		</div>
+
 	
 	
 	</article>

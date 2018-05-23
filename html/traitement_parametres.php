@@ -10,3 +10,5 @@ catch (Exception $e)
 {
     die('Erreur :' . $e->getMessage());
 }
+
+echo $_POST[$donnees['vu']];

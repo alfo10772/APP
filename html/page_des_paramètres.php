@@ -23,7 +23,7 @@
 
 		<div id="conteneur2">
 
-		
+		<form  method="post" action="traitement_parametres.php">
 
 		<div type="formulaire1">
 			        Maison principale:
@@ -65,7 +65,7 @@
 			{
 			echo implode (" ",$user[$j]);
 			?>
-			<select name="nom_piece">
+			<select name="<?php echo $donnees['vu']; ?>">
 			<option value="moyenne"> En moyenne </option>
 			<?php 
        					
@@ -83,6 +83,9 @@
 			} 
 			?>     
         </div>  
+		<input type="submit" value="Enregistrer les modifications" />
+		</form>
+		</div>
 					
 
 	</article>
