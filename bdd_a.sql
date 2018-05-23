@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 23 mai 2018 à 09:34
+-- Généré le :  mer. 23 mai 2018 à 10:14
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -265,7 +265,7 @@ CREATE TABLE `utilisateur` (
   `type` int(11) NOT NULL,
   `nom` varchar(100) DEFAULT NULL,
   `mail` varchar(100) DEFAULT NULL,
-  `motdepasse` varchar(32) DEFAULT NULL,
+  `motdepasse` varchar(100) DEFAULT NULL,
   `numerodetelephone` int(11) NOT NULL,
   `photo` longtext NOT NULL,
   `etat de connexion` tinyint(1) NOT NULL,
