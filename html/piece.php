@@ -38,7 +38,7 @@
 		
 		<div id="conteneurcercle">
 			<?php	
-       		$reponse = $bdd->query('SELECT * FROM piece');
+       		$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE selection = 1');
        					
        		while ($donnees = $reponse->fetch())
        			{
