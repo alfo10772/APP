@@ -28,25 +28,25 @@
  
  				<div id=conteneurtexte>
  
- 					<form  method="post" action=".php">
+ 					<form  method="post" action="../traitements/modif_texte.php">
  						<div id="formulaire1">
- 							<input type="admin" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" >
+ 							<input type="admin" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" >
  							<br/>
  							<br/>
- 							<input type="submit2" value="Enregistrer" />
+ 							<input type="submit" id="ajout" value="Enregistrer" />
  	
  						</div>
- 					</form>
+ 					
  					
  					<br/>
  					<br/>
 
- 					<form  method="post" action=".php">
+ 					
  						<div id="formulaire1">
- 							<input type="admin" placeholder="Modifier les conditions générales d'utilisation" >
+ 							<input type="admin" name="cgu" placeholder="Modifier les conditions générales d'utilisation" >
  							<br/>
  							<br/>
- 							<input type="submit2" value="Enregistrer" />
+ 							<input type="submit" id="ajout" value="Enregistrer" />
  						</div>
  					</form>
  					

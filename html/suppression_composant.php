@@ -15,7 +15,7 @@
 	<article>
 		<h1>Suppression d'un composant</h1>
 		<?php 
-       		include('config_init.php');
+       		include('../modele/config_init.php');
        	?>
        	
 		<div style="float:left">
@@ -28,7 +28,7 @@
 		<br />
 		<br />
 		<br />
-		<form method="post" action="traitement_suppression_composant.php" enctype="multipart/form-data">
+		<form method="post" action="../traitements/traitement_suppression_composant.php" enctype="multipart/form-data">
 			<div id="conteneur2"> 
    				<div type="formulaire1">
    					<label for="piece">Pi&egrave;ce</label><br /> 

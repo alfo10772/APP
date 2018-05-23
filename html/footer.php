@@ -1,5 +1,5 @@
 <p class="bordure1">
-			<a href="faq.html">
+			<a href="faq.php">
 				<strong>
 					FAQ
 				</strong>
@@ -15,14 +15,9 @@
 				Mentions l&eacute;gales
 			</a>
 		</p>
-		<div>
-			Date et heure
-			<div id="afficherheure">
-			</div>
-			<script type="text/javascript">
-			setInterval(function(){
-    		document.getElementById('afficherheure').innerHTML = new Date().toLocaleTimeString();
-			}, 1000);
-			</script>
-		</div>
-		</div>
+		
+		<p>
+			<a href="contact.php">
+				Contact
+			</a>
+		</p>

@@ -11,15 +11,20 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-
 $nom = $_POST['nom'];
-$adresse = $_POST['adresse'];
-$id=$_SESSION['ID'];
+$type = $_POST['type'];
 
 
-$req = $bdd->prepare('INSERT INTO maison(nom, IDadresse, IDutilisateur) VALUES(:nom,:adresse,:id)');
+if($type=='capteur'){
+    $id=0;
+}
+else{
+    $id=1;
+}
 
-$result = $req->execute(array(':nom' => $nom,':adresse' => $adresse, ':id' => $id));
+$req = $bdd->prepare('INSERT INTO typecomposant(nom, type) VALUES(:nom, :type)');
 
-header('location: ../html/maison.php');
+$result = $req->execute(array(':nom' => $nom, ':type' => $id));
+
+header('location: ../html/modif_article.php');
 ?>

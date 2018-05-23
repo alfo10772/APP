@@ -8,43 +8,84 @@
     <link rel="stylesheet" href="../css/style.css">		<!--  lien vers style -->
 
  	<title>modifier le texte</title>				<!--  titre de la page -->
-</head>
- <body>
-
-	
-		
-<div id="conteneur3">
- <header>
- 	<p>
- 	<a href="../images/LogoHabilis.png">
-		<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="200">
-	</a>
- 	<br />
- 		Un produit de Domisep
- 	</p>
-	<div id="bandeauinfo">
-  				<br />
-  				<br />
-  				<a href="informations.php">			
-  					Mes informations
-  				</a>
-  				<br />
-  				<br />
- 			
- 			<a href="redirection.php">			
-  					Se déconnecter
-  				</a>
-  			
-  			</div>
  	
- 	<div id="profil">
- 
- 	<img src="../images/photo.png" alt="Photo profil" width="125">
-  	   			<p>
- 	&nbsp;Nom d'utilisateur
-   			</p>	
-	</div>
- 	</header>
+  <header>
+		<p>
+			<a href="tableau_de_bord.php">
+				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="200">
+			</a>
+			<br />
+				Un produit de Domisep
+		</p>
+	<div id="bandeauinfo">
+				<br />
+				<br />
+				<a href="informations.php">			
+					Mes informations
+				</a>
+				<br />
+				<br />
+				
+				<a href="redirection.php">			
+					Se déconnecter
+				</a>
+			
+			</div>
+			
+		<style>
+*{ margin:0; padding:0}
+.box{ height:50px; width:125px; position:relative}
+.mask{ position:absolute; height:100%; width:100%; top:5; left:0; background:#000; opacity:.3; display:none}
+.sub{ position:absolute;top:5; left:0; padding:20px; color:#fff; font-size:12px; line-height:2; display:none}
+.txtShow .mask,.txtShow .sub{ display:block;}
+</style>
+
+
+<script>
+window.onload=function(){
+var oDiv=document.getElementById('imgBox');
+
+oDiv.onmouseover=function(){
+this.className='box txtShow';
+};
+oDiv.onmouseout=function(){
+this.className='box';
+}
+
+
+}
+</script>
+</head>
+
+
+<body>
+
+
+<div id="imgBox" class="box">
+<a href="modif_info.php">
+<img src="../images/photo.png" alt="Photo profil" width="125"></a>
+				
+    <div class="mask"></div> 
+    <p class="sub">Changer la photo</p>
+
+			
+		
+		
+			
+	
+	   			<p>
+	   			
+	   				<?php
+                 echo $_SESSION['mail'];
+                  ?>
+	   		</p>	
+			
+	</div>	
+	
+	
+	
+	
+	</header>
   	
   	
   	

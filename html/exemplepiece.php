@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -47,7 +43,7 @@ session_start();
 		
 	</article>
 	
-	<footer>						<!--  début du bas de la page -->
+	<footer>						
 		<?php
         require("footer.php");
         	?>
