@@ -17,7 +17,7 @@ catch (Exception $e)
 $nom = $_POST['nom'];
 $adresse = $_POST['adresse'];
 $id=$_SESSION['ID'];
-$notif='Votre maison a bien &eacute;t&eacute; ajout&eacute;e';
+$notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
 
 $req = $bdd->prepare('INSERT INTO maison(nom, IDadresse, IDutilisateur) VALUES(:nom,:adresse,:id)');
 $req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
