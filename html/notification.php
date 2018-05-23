@@ -44,13 +44,12 @@
        		        	if($donnees['etat'])
        		        	{
        		            ?>
-     					Vu
+       		            <input type="submit" id="vu" value="Vu">
      					<?php
        		        	}
      					else
      					{
      					?>
-     					<input type="submit" id="vu" value="Vu">
      					<?php
        		        	}
        		        	?>
