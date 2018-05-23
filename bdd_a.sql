@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 22 mai 2018 à 22:04
+-- Généré le :  mer. 23 mai 2018 à 09:34
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -44,6 +44,7 @@ CREATE TABLE `action` (
 
 CREATE TABLE `adresse` (
   `IDadresse` int(11) NOT NULL,
+  `IDutilisateur` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
   `rue` varchar(30) NOT NULL,
   `code postal` int(11) NOT NULL,
@@ -55,8 +56,8 @@ CREATE TABLE `adresse` (
 -- Déchargement des données de la table `adresse`
 --
 
-INSERT INTO `adresse` (`IDadresse`, `numero`, `rue`, `code postal`, `ville`, `pays`) VALUES
-(1, 12, 'essai', 23405, 'test', 'blabla');
+INSERT INTO `adresse` (`IDadresse`, `IDutilisateur`, `numero`, `rue`, `code postal`, `ville`, `pays`) VALUES
+(1, 0, 12, 'essai', 23405, 'test', 'blabla');
 
 -- --------------------------------------------------------
 
@@ -66,11 +67,11 @@ INSERT INTO `adresse` (`IDadresse`, `numero`, `rue`, `code postal`, `ville`, `pa
 
 CREATE TABLE `composant` (
   `IDcomposant` int(11) NOT NULL,
-  `IDcemac` int(11) NOT NULL,
+  `IDpiece` int(11) NOT NULL,
   `type` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL,
   `etat` tinyint(1) NOT NULL,
-  `unite` varchar(30) NOT NULL,
+  `nom` varchar(26) NOT NULL,
+  `unite` varchar(20) NOT NULL,
   `valeurmin` int(11) NOT NULL,
   `valeurmax` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -79,10 +80,9 @@ CREATE TABLE `composant` (
 -- Déchargement des données de la table `composant`
 --
 
-INSERT INTO `composant` (`IDcomposant`, `IDcemac`, `type`, `nom`, `etat`, `unite`, `valeurmin`, `valeurmax`) VALUES
-(2, 0, 0, 'temp cuisine', 0, '', 0, 0),
-(3, 0, 0, 'lum chambre', 0, '', 0, 0),
-(4, 0, 0, 'fum sal', 0, '', 0, 0);
+INSERT INTO `composant` (`IDcomposant`, `IDpiece`, `type`, `etat`, `nom`, `unite`, `valeurmin`, `valeurmax`) VALUES
+(2, 1, 0, 0, 'Temp parents', '', 0, 0),
+(5, 3, 0, 0, 'fumée cuisine', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -121,17 +121,17 @@ CREATE TABLE `maison` (
   `IDadresse` int(11) NOT NULL,
   `selection` tinyint(1) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `photo` longtext NOT NULL,
-  `IDutilisateur` int(11) NOT NULL
+  `photo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `maison`
 --
 
-INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`, `IDutilisateur`) VALUES
-(6, 1, 0, 'Maison 1', '', 9),
-(8, 1, 0, 'test', '', 9);
+INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`) VALUES
+(1, 6, 0, 'Résidence principale', ''),
+(2, 25, 0, 'Vacances', ''),
+(3, 0, 0, 'Chalet de ski de papy et mamy', '');
 
 -- --------------------------------------------------------
 
@@ -142,8 +142,18 @@ INSERT INTO `maison` (`IDmaison`, `IDadresse`, `selection`, `nom`, `photo`, `IDu
 CREATE TABLE `notification` (
   `IDnotification` int(11) NOT NULL,
   `etat` tinyint(1) NOT NULL,
-  `texte` varchar(200) NOT NULL
+  `texte` varchar(200) NOT NULL,
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `notification`
+--
+
+INSERT INTO `notification` (`IDnotification`, `etat`, `texte`, `date`) VALUES
+(1, 0, 'La maison a bien été ajoutée', '2018-05-22 10:06:17'),
+(2, 0, 'La pièce cuisine a bien été ajoutée', '2018-05-22 10:07:19'),
+(3, 0, 'Le capteur temp1 est en panne', '2018-05-24 15:14:30');
 
 -- --------------------------------------------------------
 
@@ -167,17 +177,22 @@ CREATE TABLE `panne` (
 CREATE TABLE `piece` (
   `IDpiece` int(11) NOT NULL,
   `IDmaison` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL
+  `nom` varchar(30) NOT NULL,
+  `surface` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `piece`
 --
 
-INSERT INTO `piece` (`IDpiece`, `IDmaison`, `nom`) VALUES
-(13, 0, 'essai'),
-(14, 0, 'test'),
-(15, 0, 'essai ');
+INSERT INTO `piece` (`IDpiece`, `IDmaison`, `nom`, `surface`) VALUES
+(1, 0, 'Chambre parents', 25),
+(2, 0, 'Chambre enfants', 26),
+(3, 0, 'Cuisine', 36),
+(4, 0, 'Salle de jeu des enfants', 0),
+(13, 0, 'essai', 0),
+(14, 0, 'test', 0),
+(15, 0, 'essai ', 0);
 
 -- --------------------------------------------------------
 
@@ -228,21 +243,16 @@ INSERT INTO `texte` (`IDtexte`, `presentation`, `cgu`) VALUES
 
 CREATE TABLE `typecomposant` (
   `IDtypeComposant` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL,
-  `type` tinyint(1) NOT NULL
+  `nom` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `typecomposant`
 --
 
-INSERT INTO `typecomposant` (`IDtypeComposant`, `nom`, `type`) VALUES
-(1, 'Capteur de température', 0),
-(2, 'Capteur de fumée', 0),
-(3, 'essai ', 0),
-(4, 'essai 2', 0),
-(11, 'volet', 1),
-(14, 'Essai', 1);
+INSERT INTO `typecomposant` (`IDtypeComposant`, `nom`) VALUES
+(1, 'Capteur de température'),
+(2, 'Capteur de fumée');
 
 -- --------------------------------------------------------
 
@@ -268,6 +278,8 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`IDutilisateur`, `type`, `nom`, `mail`, `motdepasse`, `numerodetelephone`, `photo`, `etat de connexion`, `date de naissance`) VALUES
 (2, 0, 'Albane', 'albane.f@hotmail.fr', '$2y$10$H6wTR9t27LhDE88l9KKmPOUX1', 0, '', 0, '0000-00-00'),
+(3, 0, 'a', 'n@yahoo.fr', '$2y$10$apXrUZ5a4nWo7zXTinxf2.heY', 0, '', 0, '0000-00-00'),
+(4, 0, 'nono', 'no@yahoo.fr', '$2y$10$qEcDSOBMTZ5PZpzbltJnCugPJ', 0, '', 0, '0000-00-00'),
 (7, 0, 'Alb', 'test@essai.fr', 'test', 0, '', 0, '0000-00-00'),
 (8, 0, 'tes', 'al@e.fr', '$2y$10$RRtgWvs8xqiUkdk9YrOt7.3iL', 0, '', 0, '0000-00-00'),
 (9, 0, 'alfo10772', 'alfo@gmail.fr', '098f6bcd4621d373cade4e832627b4f6', 0, '', 0, '0000-00-00');
@@ -288,14 +300,15 @@ ALTER TABLE `action`
 -- Index pour la table `adresse`
 --
 ALTER TABLE `adresse`
-  ADD PRIMARY KEY (`IDadresse`);
+  ADD PRIMARY KEY (`IDadresse`),
+  ADD KEY `IDutilisateur` (`IDutilisateur`);
 
 --
 -- Index pour la table `composant`
 --
 ALTER TABLE `composant`
   ADD PRIMARY KEY (`IDcomposant`),
-  ADD KEY `IDpiece` (`IDcemac`);
+  ADD KEY `IDpiece` (`IDpiece`);
 
 --
 -- Index pour la table `contact`
@@ -315,8 +328,7 @@ ALTER TABLE `donnees`
 --
 ALTER TABLE `maison`
   ADD PRIMARY KEY (`IDmaison`),
-  ADD KEY `IDadresse` (`IDadresse`),
-  ADD KEY `IDutilisateur` (`IDutilisateur`);
+  ADD KEY `IDadresse` (`IDadresse`);
 
 --
 -- Index pour la table `notification`
@@ -388,7 +400,7 @@ ALTER TABLE `adresse`
 -- AUTO_INCREMENT pour la table `composant`
 --
 ALTER TABLE `composant`
-  MODIFY `IDcomposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IDcomposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `contact`
@@ -412,7 +424,7 @@ ALTER TABLE `maison`
 -- AUTO_INCREMENT pour la table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `IDnotification` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDnotification` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `panne`
@@ -439,16 +451,10 @@ ALTER TABLE `reponse`
   MODIFY `IDreponse` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `texte`
---
-ALTER TABLE `texte`
-  MODIFY `IDtexte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT pour la table `typecomposant`
 --
 ALTER TABLE `typecomposant`
-  MODIFY `IDtypeComposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `IDtypeComposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
@@ -461,11 +467,10 @@ ALTER TABLE `utilisateur`
 --
 
 --
--- Contraintes pour la table `maison`
+-- Contraintes pour la table `composant`
 --
-ALTER TABLE `maison`
-  ADD CONSTRAINT `maison_ibfk_1` FOREIGN KEY (`IDutilisateur`) REFERENCES `utilisateur` (`IDutilisateur`),
-  ADD CONSTRAINT `maison_ibfk_2` FOREIGN KEY (`IDadresse`) REFERENCES `adresse` (`IDadresse`);
+ALTER TABLE `composant`
+  ADD CONSTRAINT `IDpiece` FOREIGN KEY (`IDpiece`) REFERENCES `piece` (`IDpiece`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
