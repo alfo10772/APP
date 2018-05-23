@@ -13,11 +13,12 @@ catch (Exception $e)
 
 $maison = $_POST['nom_maison'];
 $nom = $_POST['nom_piece'];
+$notif=$nom.' a bien &eacute;t&eacute; supprim&eacute;e';
 
 $req = $bdd ->prepare('DELETE FROM piece WHERE nom = :nom ');
-
+$req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
 $req-> execute(array(':nom' => $nom));
-
+$result2 = $req2->execute(array(':notif' => $notif));
 header('location: ../html/piece.php');
 
 ?>
