@@ -21,9 +21,9 @@
 	</h1>
 	<section class="conteneur2">
 	<div id="conteneur2">
-		<form method="post" action="traitement2.php">
+		<form name="myForm" method="post" action="traitement_inscription.php" onsubmit="return validateForm()">
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<script src=../javascript/inscription.js></script>
+			<script src="../javascript/inscription.js"></script>
 					
 			
        		<label for="nom_d'utilisateur">
@@ -53,6 +53,7 @@
        				</em>
        			</label>
        			<br />
+       			<span id='result'> </span>
        				<input type="password" name="confirmed_password" id="confirmed_password" required />
        			<br />
        			<br />
