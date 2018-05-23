@@ -43,7 +43,7 @@
 			
    				<div type="formulaire1">
    					<label for="piece">
-   						Type
+   						Nom 
    					</label>
    					<br /> 
        				<input type="text" name="nom" placeholder="Nom de la pi&egrave;ce" id="nom" />

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $bdd = NULL;
 
@@ -14,7 +15,7 @@ catch (Exception $e)
 $reponse = $bdd->query('SELECT * FROM maison');
 $donnees = $reponse->fetch();
 
-$id = $_POST['id'];
+$_SESSION['maisonselect']= $_POST['id'];
 $selection=0;
 $selected=1;
 
@@ -23,7 +24,7 @@ $req = 'UPDATE maison SET selection = :selection';
 $result = $bdd ->prepare($req);
 $result = $result->execute(array(':selection' => $selection));
 
-$req2 = 'UPDATE maison SET selection = :selection WHERE IDmaison= "'.$id.'"';
+$req2 = 'UPDATE maison SET selection = :selection WHERE IDmaison= "'.$_SESSION['maisonselect'].'"';
 $resultat = $bdd ->prepare($req2);
 $resultat = $resultat->execute(array(':selection' => $selected));
 

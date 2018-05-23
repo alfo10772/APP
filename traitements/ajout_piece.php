@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $bdd = NULL; 
 
 try 
@@ -13,10 +15,9 @@ catch (Exception $e)
 
 $nom = $_POST['nom'];
 
-
-$req = $bdd->prepare('INSERT INTO piece(nom) VALUES(:nom)');
+$req = $bdd->prepare('INSERT INTO piece(nom) VALUES(nom)');
 
 $result = $req->execute(array(':nom' => $nom));
     
-header('location: ../html/piece.php');
+//header('location: ../html/piece.php');
 ?>
