@@ -51,20 +51,23 @@
 			<br />
 			<br />
 			<?php
-			$reponse = $bdd->query('SELECT * FROM type_capteur');
+			$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
 			$user = array();
+			
 			$i = 0;
 			while ($donnees = $reponse->fetch())
 			{
 
-				$user[$i] = array($donnees['nom']);
+				$user[$i] = $donnees['nom'];
+				$idtyp[$i] = $donnees['IDtypeComposant'];
 				$i++;
 				
 			}
 			$incr = "affichage0";
 			for ($j = 0,$size = count($user);$j<$size;$j++)
 			{
-			echo implode (" ",$user[$j]);
+			//echo implode (" ",$user[$j]);
+			echo $user[$j];
 			?>
 			<select name="<?php echo ++$incr ?>">
 			<option value="moyenne"> En moyenne </option>
