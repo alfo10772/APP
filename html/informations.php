@@ -31,7 +31,7 @@
 			
 			<div id="conteneurinfo">
 				<?php 
-				    require('../traitements/traitementinfo.php')
+				    require('../traitements/info.php')
 				?>
 				
 				<table id="modif" >
@@ -49,8 +49,8 @@
        		     <div id="modif_nom" style="display:none;">
        		     		<p>Entrer le nouveau nom d'utilisateur</p>
        		     		<div id="conteneur2">
-       		     			<form action="" method="post">
-       		      				<input type="text" name="username"  />
+       		     			<form action="../traitements/modif_info.php" method="post">
+       		      				<input type="text" name="name"  />
        		      				<input type="submit" value="Valider" />	
        		      			</form>
        		      			<br />
@@ -72,7 +72,7 @@
    				<div id="modif_type" style="display:none;">
    						<p>S&eacute;l&eacute;ctionner le type de l'utilisateur</p>
        		        	<div id="conteneur2">
-       		     			<form action="" method="post">
+       		     			<form action="../traitements/modif_info.php" method="post">
        		     				<select name="type" id="type">
        		     					<option value="principal">Utilisateur principal</option>
        		     					<option value="secondaire">Utilisateur secondaire</option>
@@ -100,7 +100,7 @@
        		     		<p>Entrer votre nouvelle adresse mail</p>
        		     		<div id="conteneurmodif">
        		     				
-       		     			<form action="" method="post">
+       		     			<form action="../traitements/modif_info.php" method="post">
        		      				<input type="text" name="mail"  />
        		      				<input type="submit" value="Valider" />	
        		      			</form>
@@ -123,7 +123,7 @@
        		     		<p>Entrer votre nouveau num&eacute;ro de t&eacute;l&eacute;phone</p>
        		     		<div id="conteneur2">
        		     				
-       		     			<form action="" method="post">
+       		     			<form action="../traitements/modif_info.php" method="post">
        		      				<input type="text" name="tel"  />
        		      				<input type="submit" value="Valider" />	
        		      			</form>

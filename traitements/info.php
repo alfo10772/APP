@@ -15,17 +15,10 @@ else{
 }
 $nom = $info[2];
 $_tel = $info[5];
-//$type = $_SESSION['type'];
 $mail = $_SESSION['mail'];
-/*$tel = $_SESSION['numerodetelephone'];
 
-if($nom = "")
-    $nom = 'Nom';
-
-if($type = "")
-    $type = 'Type';
-
-if($tel = "")
-    $tel = 'Numéro de téléphone';*/
+if($_tel == "0") {
+    $_tel = "Aucun";
+}
 
 ?>
