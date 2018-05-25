@@ -7,15 +7,15 @@ var x = document.forms["myForm"]["password"].value;
  
  return false;
  }
+ if (x===y){
+	 if (x.length <8){
+		 document.getElementById("results").innerHTML="Votre mot de passe doit contenir au moins 8 caracteres";
+		 return false;
+	 }
+	 else{
+		 return true;
+	 }
+ }
 }
 
- 
- /*function validateFor() {
-		var a = validatePassword();
-		if (a){
-			return false;
-		}
-		else{
-			return true;
-		}
-	}*/
+

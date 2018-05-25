@@ -11,18 +11,33 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$maison_principale = $_POST['nom_maison'];
+$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
+$idtyp = array();
+$rim = 'typ00';
+$i = 0;
+while ($donnees = $reponse->fetch())
+			{
+				$idtyp[$i] =  $donnees['IDtypeComposant'];
+				$i++;
+            }
+            
+//'SELECT * FROM composant WHERE typec == $idty
 
+$maison_principale = $_POST['nom_maison'];
+$rim = 'type00';
 $incr = "affichage0";
-for ($i = 1; $i<(count($_POST)); $i++) {
-    $id = $i;
+for ($i = 0; $i<(count($_POST))-1; $i++) {
+    try {
     $affich = $_POST[++$incr];
-    echo $id;
-    $req = 'UPDATE type_capteur SET vu = :vu WHERE id = :id';
+
+    $req = 'UPDATE composant SET affichage = :affichage WHERE typec = :id'; 
     $result = $bdd ->prepare($req);
-    $result = $result->execute(array(':vu' => $affich, ':id'=>$id ));
+    $result = $result->execute(array(':affichage' => $affich, ':id'=>$idtyp[$i] ));
+    }
+    catch (Exception $e)
+    {
+        die('Erreur :'.$e->getMessage());
+    }
 
 }
-//echo $_POST['affichage1'];
-//echo count($_POST);
 

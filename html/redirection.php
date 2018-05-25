@@ -1,4 +1,5 @@
 <?php
+//Fichier permettant la deconnexion de l'utilasateur
 // On démarre la session
 session_start ();
 
@@ -7,6 +8,7 @@ session_unset ();
 
 // On détruit notre session
 session_destroy ();
+
 
 // On redirige le visiteur vers la page d'accueil
 header ('location: page_de_connexion.php');
