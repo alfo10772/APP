@@ -40,7 +40,7 @@
         
         <?php
             $id=$_SESSION['ID'];
-       		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'",)');
+       		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
        		$selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1');
        		$selected = $selection->fetch()[0];
        		
