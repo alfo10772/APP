@@ -31,7 +31,7 @@
 			
 			<div id="conteneurinfo">
 				<?php 
-				    require('traitementinfo.php')
+				    require('../traitements/traitementinfo.php')
 				?>
 				
 				<table id="modif" >
@@ -47,61 +47,100 @@
        		     <hr width="100%">
        		     
        		     <div id="modif_nom" style="display:none;">
-       		     		Entrer le nouveau nom d'utilisateur
-       		      		<input type="text" name="username" id="nom_d'utilisateur" />
+       		     		<p>Entrer le nouveau nom d'utilisateur</p>
+       		     		<div id="conteneur2">
+       		     			<form action="" method="post">
+       		      				<input type="text" name="username"  />
+       		      				<input type="submit" value="Valider" />	
+       		      			</form>
+       		      			<br />
+       		      		</div>
        		      		<hr width="100%">
        		      </div>
        		       
-       		     <table id="modif" >      		        
-       		        <tr>
+       		    <table id="modif" >      		        
+       		    	<tr>
        		        	<th id="modif">Type de l'utilisateur</th>
        		        	<td id="modif"><?php echo $type; ?></td>
        		        	<input type="hidden" name="id" value=<?php echo $type ?>></input>
-       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_type');"id="modif" name=<?php echo $type ;?> value="Modifier" /></td>
+       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_type');" id="modif" name=<?php echo $type ;?> value="Modifier" /></td>
        		        </tr>
-       		     </table>
+       		    </table>
        		     
-       		     <hr width="100%">
+       		    <hr width="100%">
        		     
    				<div id="modif_type" style="display:none;">
-       		        	
+   						<p>S&eacute;l&eacute;ctionner le type de l'utilisateur</p>
+       		        	<div id="conteneur2">
+       		     			<form action="" method="post">
+       		     				<select name="type" id="type">
+       		     					<option value="principal">Utilisateur principal</option>
+       		     					<option value="secondaire">Utilisateur secondaire</option>
+       		     				</select>
+       		     				<input type="submit" value="Valider" />
+       		     			</form>
+       		     			<br />
+       		     		</div>
        		        	<hr width="100%">
        		    </div>
        		       
        		        
-       		     <table id="modif" >          		        
+       		    <table id="modif" >          		        
        		        <tr>
        		        	<th id="modif">Adresse mail</th>
        		        	<td id="modif"><?php echo $mail; ?></td>
        		        	<input type="hidden" name="id" value=<?php echo $mail ?>></input>
-       		        	<td id="modif"><input type="submit" id="modif" name=<?php echo $mail ;?> value="Modifier" /></td>
+       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_mail');" id="modif" name=<?php echo $mail ;?> value="Modifier" /></td>
        		        </tr>
-       		     </table>
+       		    </table>
        		     
-       		     <hr width="100%">
+       		    <hr width="100%">
+       		     
+       		    <div id="modif_mail" style="display:none;">
+       		     		<p>Entrer votre nouvelle adresse mail</p>
+       		     		<div id="conteneurmodif">
+       		     				
+       		     			<form action="" method="post">
+       		      				<input type="text" name="mail"  />
+       		      				<input type="submit" value="Valider" />	
+       		      			</form>
+       		      			<br />
+       		      		</div>
+       		      		<hr width="100%">
+       		     </div>
        		     
        		    <table id="modif" >       		        
        		        <tr>
        		        	<th id="modif">Num&eacute;ro de t&eacute;l&eacute;phone</th>
        		        	<td id="modif"><?php echo $_tel; ?></td>
        		        	<input type="hidden" name="id" value=<?php echo $_tel ?>></input>
-       		        	<td id="modif"><input type="submit" id="modif" name=<?php echo $_tel ;?> value="Modifier" /></td>
+       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_tel');" id="modif" name=<?php echo $_tel ;?> value="Modifier" /></td>
 					</tr>
 				</table>
 		
+				<div id="modif_tel" style="display:none;">
+       		     		<hr width="100%">
+       		     		<p>Entrer votre nouveau num&eacute;ro de t&eacute;l&eacute;phone</p>
+       		     		<div id="conteneur2">
+       		     				
+       		     			<form action="" method="post">
+       		      				<input type="text" name="tel"  />
+       		      				<input type="submit" value="Valider" />	
+       		      			</form>
+       		      			<br />
+       		      		</div>
+       		     </div>
 			
 			</div>
 			
 			<script type="text/javascript">
-				function toggle_div(bouton, id) { // On déclare la fonction toggle_div qui prend en param le bouton et un id
-  					var div = document.getElementById(id); // On récupère le div ciblé grâce à l'id
- 					if(div.style.display=="none") { // Si le div est masqué...
-   						div.style.display = "block"; // ... on l'affiche...
-   						bouton.innerHTML = "-"; // ... et on change le contenu du bouton.
+				function toggle_div(bouton, id) { 
+  					var div = document.getElementById(id); // on recupère le div grace à son id 
+ 					if(div.style.display=="none") {  // s'il est caché, on l'affiche
+   						div.style.display = "block"; 
   					} 
- 					else { // S'il est visible...
- 					    div.style.display = "none"; // ... on le masque...
- 					    bouton.innerHTML = "+"; // ... et on change le contenu du bouton.
+ 					else { 
+ 					    div.style.display = "none"; 
  					}
 				}
 			</script>

@@ -422,6 +422,7 @@ margin-bottom:2%;
 	justify-content:space-around;
 }
 
+
 .bonhomme1
 {
 	margin-top:5%;
@@ -585,22 +586,32 @@ table#modif{
 }
 
 th#modif{
-	width: auto;
-	padding: 13px;
+	width: 90px;
+	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
 	border: none;
 }
 
 td#modif{
-	width: auto;
-	padding: 7px;
-	height: 5px;
+	width: 90px;
+	padding: 3px;
+	height: 50px;
 	background:RGB(22, 85, 250);
 	text-align:center;
 	border:none;
 }
 
+#conteneurmodif
+{
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	width: 53%;
+
+}
 
 input[id="modif"] {	
     width: 60%;
@@ -619,6 +630,7 @@ input[id="modif"]:hover {
     background:RGB(255, 255, 255);
     color: black;
 }
+
 
 input[id="vu"] {
     background-color:RGB(22, 85, 250);
