@@ -11,6 +11,7 @@ session_start()
 		<div class="menu"><a href="admin_message.php">Messages</a></div>
 		<div class="menu"><a href="modif_texte.php">Modifier les textes</a></div>
 		<div class="menu"><a href="modif_article.php">Modifier les articles</a></div>
+		<div class="menu"><a href="répondre_FAQ.php">répondres aux question</a></div>
 		
 </div>
 
