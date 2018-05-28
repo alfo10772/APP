@@ -19,8 +19,9 @@
 		
 		<?php 
        		include('../modele/config_init.php');
-       	
-       		$not = $bdd->query('SELECT * FROM notification ORDER BY date DESC');
+
+       		$id=$_SESSION['ID'];
+       		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
        		?>
        		  
        		    <table id="notification">
