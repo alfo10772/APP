@@ -13,6 +13,7 @@ catch (Exception $e)
 
 $id= $_SESSION['ID'];
 
+
 if(!empty($_POST['name'])){
     $req1 = 'UPDATE utilisateur SET nom = :nom WHERE IDutilisateur = :id';
     $result = $bdd ->prepare($req1);
@@ -28,7 +29,6 @@ if(!empty($_POST['type'])){
     else {
         $type=1;
     }
-    var_dump($type);
     $result = $bdd ->prepare($req2);
     $result = $result->execute(array(':type' => $type, ':id'=>$id ));
 }
@@ -45,6 +45,15 @@ if(!empty($_POST['tel'])){
     $result = $result->execute(array(':tel' => $_POST['tel'], ':id'=>$id ));
 }
 
+if(!empty($_POST['password']) && !empty($_POST['mdp'])){
+    $mdp = $_POST['password'];
+    $hash1 = password_hash($mdp, PASSWORD_BCRYPT);
+    $req5 = 'UPDATE utilisateur SET motdepasse = :mdp WHERE IDutilisateur = :id';
+    $result = $bdd -> prepare($req5);
+    $result = $result->execute(array(':mdp' => $hash1, ':id'=>$id ));
+    
+}
+    
 header("location: ../html/informations.php");
 ?>
 

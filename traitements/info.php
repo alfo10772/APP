@@ -15,6 +15,7 @@ else{
 }
 $nom = $info[2];
 $_tel = $info[5];
+
 $mail = $_SESSION['mail'];
 
 if($_tel == "0") {
