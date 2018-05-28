@@ -20,7 +20,7 @@ this.className='box';
 
 
 }
-    //</script>
+ //</script>
 //<div id="imgBox" class="box">
 //<a href="modif_info.php">
 //<img src="../images/photo.png" alt="Photo profil" width="125"></a>
