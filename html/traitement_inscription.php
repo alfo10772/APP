@@ -29,9 +29,7 @@ if (empty($user)){
     $result = $req->execute(array(':nom' => $nom,':mdp' => $hash, ':mail' => $mail,':tel' => $tel));
     
     
-    
-
-    /*$to = $mail;
+      /*$to = $mail;
     $subject = "My subject";
     $txt = "Hello world!";
     $headers = "From: rik.chi@hotmail.fr";
