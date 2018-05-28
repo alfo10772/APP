@@ -25,5 +25,5 @@ this.className='box';
 //<a href="modif_info.php">
 //<img src="../images/photo.png" alt="Photo profil" width="125"></a>
 				
-    //<div class="mask"></div> 
-    //<p class="sub">Changer la photo</p>
+  //<div class="mask"></div> 
+  //<p class="sub">Changer la photo</p>
