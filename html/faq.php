@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>                                                  
+<html>                                                  <!--squelette pour en-tête et bas de page -->
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>FAQ</title>
+	<title>page des composants</title>
 </head>
 <body>
 
@@ -54,7 +54,7 @@
 			</p>
 		</aside>
 	</div>
-	<footer>
+	<footer>						
 		<?php
             require("footer.php");
         ?>

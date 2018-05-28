@@ -18,13 +18,14 @@ $donnees = $reponse->fetch();
 $_SESSION['maisonselect']= $_POST['id'];
 $selection=0;
 $selected=1;
+$id=$_SESSION['ID'];
 
 
-$req = 'UPDATE maison SET selection = :selection';
+$req = 'UPDATE maison SET selection = :selection WHERE IDutilisateur= "'.$id.'"';
 $result = $bdd ->prepare($req);
 $result = $result->execute(array(':selection' => $selection));
 
-$req2 = 'UPDATE maison SET selection = :selection WHERE IDmaison= "'.$_SESSION['maisonselect'].'"';
+$req2 = 'UPDATE maison SET selection = :selection WHERE IDmaison= "'.$_SESSION['maisonselect'].'" AND IDutilisateur= "'.$id.'"';
 $resultat = $bdd ->prepare($req2);
 $resultat = $resultat->execute(array(':selection' => $selected));
 

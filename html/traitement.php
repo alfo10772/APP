@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 if (!empty($_POST)) {   // les données du formulaires ont été complétées, on est dans la phase de traitement
     require_once 'db.php'; // on charge la base de données
