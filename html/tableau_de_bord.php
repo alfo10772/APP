@@ -57,17 +57,71 @@
 	
 	<div id="conteneurcercle1">
 	<?php 
+
+	$affich = array();
+	$idt = array();
+	$i = 0;
+		$rep = $bdd->prepare ('SELECT * FROM typecomposantuser WHERE type1 = :ind AND userID = :id');
+   		$rep->execute(array(':ind' => 0, ':id' => $_SESSION['ID']));
+		while ($piece = $rep->fetch()) {	
+		$affich[$i] = $piece['affichage'];
+		//$idt[$i] = $piece['typec'];
+		$i++;
+		
+
+		}
        					
-       	$reponse = $bdd->query('SELECT * FROM type_capteur');
-       					
+       	$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
+       	$i = 0;			
 		   while ($donnees = $reponse->fetch())
        	{
-			   ?>
+
+			$rep = $bdd->query('SELECT * FROM composant' );
+			?>
+			<p>
+			<?php
+				echo $donnees['nom'];
+			   ?> :
+			   </p>
+			   <br/>
+			   <br/>
+
+		   <?php
+		   $i++;
+		   }
+		   $size = $i;
+		   ?>
+		</div>
+
+		<div id="conteneurcercle1">
+	<?php 
+		
+			?>
+			<div>
+			<?php
+			echo $piece['affichage'];
+			?>
+			</div>
+			<?php
+
+
+
+		   	
+		   while ($donnees = $reponse->fetch())
+       	{
+
+			$rep = $bdd->query('SELECT * FROM composant' );
+			?>
+		
+
+			   
 			   <div>
 				   <?php echo $donnees['vu'] ?>
 		   </div>
 		   <?php
+		   $i++;
 		   }
+		
 		   ?>
 		</div>
 
@@ -83,3 +137,5 @@
             ?>
 	</footer>
 </body>
+
+

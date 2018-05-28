@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $bdd = NULL;
 
 try
@@ -23,6 +23,7 @@ while ($donnees = $reponse->fetch())
             
 //'SELECT * FROM composant WHERE typec == $idty
 
+$id = $_SESSION['ID'];
 $maison_principale = $_POST['nom_maison'];
 $rim = 'type00';
 $incr = "affichage0";
@@ -30,14 +31,14 @@ for ($i = 0; $i<(count($_POST))-1; $i++) {
     try {
     $affich = $_POST[++$incr];
 
-    $req = 'UPDATE composant SET affichage = :affichage WHERE typec = :id'; 
+    $req = 'UPDATE typecomposantuser SET affichage = :affichage WHERE (IDtypeComposant = :idt AND userID = :id)' ; 
     $result = $bdd ->prepare($req);
-    $result = $result->execute(array(':affichage' => $affich, ':id'=>$idtyp[$i] ));
+    $result = $result->execute(array(':affichage' => $affich, ':idt'=>$idtyp[$i] , ':id' => $id));
     }
     catch (Exception $e)
     {
         die('Erreur :'.$e->getMessage());
     }
-
+echo count($idtyp);
 }
 
