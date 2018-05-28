@@ -108,6 +108,33 @@
        		      		</div>
        		      		<hr width="100%">
        		     </div>
+       		    
+       		    <table id="modif" >          		        
+       		        <tr>
+       		        	<th id="modif">Mot de passe</th>
+       		        	<td id="modif" type="password">*******</td>
+       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_mdp');" id="modif" name=<?php echo $mail ;?> value="Modifier" /></td>
+       		        </tr>
+       		    </table>
+       		    
+       		    <hr width="100%">
+       		     
+       		    <div id="modif_mdp" style="display:none;">
+       		     		<p>Entrer votre nouveau mot de passe</p>
+       		     		<div id="conteneurmodif">
+       		     				
+       		     			<form name="myForm" action="../traitements/modif_info.php" method="post" onsubmit="return validateForm()">
+       		      				<span id='result'> </span>
+       		      				<input type="password" name="password" placeholder="Mot de passe" id="password" required />
+       		      				<span id='result'> </span>
+       		      				<input type="password" name="confirmed_password" placeholder="Confirmation du mot de passe" id="confirmed_password" required />
+       		      				
+       		      				<input type="submit" value="Valider" />	
+       		      			</form>
+       		      			<br />
+       		      		</div>
+       		      		<hr width="100%">
+       		     </div>
        		     
        		    <table id="modif" >       		        
        		        <tr>
@@ -133,16 +160,7 @@
 			
 			</div>
 			
-			<script type="text/javascript">
-				function toggle_div(bouton, id) { 
-  					var div = document.getElementById(id); // on recupère le div grace à son id 
- 					if(div.style.display=="none") {  // s'il est caché, on l'affiche
-   						div.style.display = "block"; 
-  					} 
- 					else { 
- 					    div.style.display = "none"; 
- 					}
-				}
+			<script type="text/javascript" src="../javascript/affichage_bloc.js">
 			</script>
 			
 		</article>
