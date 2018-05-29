@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>page des composants</title>
+	<title>FAQ</title>
 </head>
 <body>
 
@@ -30,9 +30,8 @@
 			{
 			        die('Erreur : '.$e->getMessage());
 			}
-			$reponse = $bdd->query('SELECT * FROM question');
+			$reponse = $bdd->query('SELECT * FROM reponse');
 			
-			// On affiche chaque entrée une à une
 			while ($donnees = $reponse->fetch())
 			{
 			?>
