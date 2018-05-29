@@ -79,7 +79,7 @@ this.className='box';
 }
 </script>
 <div id="imgBox" class="box">
-<a href="modif_info.php">
+<a href="informations.php">
 <img src="../images/photo.png" alt="Photo profil" width="125"></a>
 				
     <div class="mask"></div> 
