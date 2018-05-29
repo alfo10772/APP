@@ -35,25 +35,24 @@ if (empty($user)){
     $headers = "From: rik.chi@hotmail.fr";
     
     mail($to,$subject,$txt,$headers);*/
+    $req = $bdd ->prepare('SELECT * FROM typecomposant ');
+    $req->execute();
+    $info = $req->fetchAll();
+    $req = $bdd ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? ');
+    $req->execute([$_POST['mail']]);
+    $user = $req->fetch(PDO::FETCH_NUM);
+    $id = $user[0];
+    $r = count($info[0]);
+    for ($i=0 ; $i<$r; $i++ ){
+        $req = $bdd->prepare('INSERT INTO typecomposantuser(IDtypecomposant,nom,type1,userID) VALUES(:ID,:nom,:type,:userID)');
+        $result = $req->execute(array(':ID'=>$info[$i][0], ':nom'=>$info[$i][1], ':type'=>$info[$i][2], ':userID'=>$id));
+    }
        header('location: page_de_connexion.php');
 }
 else {
-    echo "Mail d&eacute;j&agrave; existant";
-   header("location: page_d'inscription.php");
+   header("location: page_d'inscriptionbis.php");
     
 }
-$req = $bdd ->prepare('SELECT * FROM typecomposant ');
-$req->execute();
-$info = $req->fetchAll();
-$req = $bdd ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? ');
-$req->execute([$_POST['mail']]);
-$user = $req->fetch(PDO::FETCH_NUM); 
-$id = $user[0];
-$r = count($info[0]);
-print_r($r);
-for ($i=0 ; $i<$r; $i++ ){
-    $req = $bdd->prepare('INSERT INTO typecomposantuser(IDtypecomposant,nom,type1,userID) VALUES(:ID,:nom,:type,:userID)');
-    $result = $req->execute(array(':ID'=>$info[$i][0], ':nom'=>$info[$i][1], ':type'=>$info[$i][2], ':userID'=>$id));    
-}
+
 
 ?>
