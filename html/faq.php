@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>page des composants</title>
+	<title>FAQ</title>
 </head>
 <body>
 
@@ -32,7 +32,6 @@
 			}
 			$reponse = $bdd->query('SELECT * FROM question');
 			
-			// On affiche chaque entrée une à une
 			while ($donnees = $reponse->fetch())
 			{
 			?>
