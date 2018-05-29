@@ -33,15 +33,51 @@
 
 	<div id="conteneurcercle">
 		<?php	
-       		$reponse = $bdd->query('SELECT * FROM composant');
-       					
-       		while ($donnees = $reponse->fetch())
+       		$reponse1 = $bdd->query('SELECT * FROM capteur');
+       		$reponse2 = $bdd->query('SELECT * FROM actionneur');
+       		
+       		while ($donnees = $reponse1->fetch())
        			{
        			    $nom=strval($donnees['nom']);
        			    $len=strlen($nom);
        			    if ($len<13)
        			    {
        		        ?>
+						<div>
+							<div id=textecercle1>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php 
+			         }
+			         if ($len>12 AND $len<27)
+       			    {
+       		        ?>
+						<div>
+							<div id=textecercle2>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php 
+			         }
+			         if ($len>26 AND $len<39)
+			         {
+			             ?>
+						<div>
+							<div id=textecercle3>
+								<?php echo $donnees['nom']?>
+							</div>
+						</div>
+					<?php
+			         }
+			}
+			while ($donnees = $reponse2->fetch())
+			{
+			    $nom=strval($donnees['nom']);
+			    $len=strlen($nom);
+			    if ($len<13)
+			    {
+			        ?>
 						<div>
 							<div id=textecercle1>
 								<?php echo $donnees['nom']?>

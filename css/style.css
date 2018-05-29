@@ -396,6 +396,7 @@ margin-bottom:2%;
 	
 }
 
+
 #conteneurarticle
 {
 	margin-left: auto;
@@ -651,4 +652,10 @@ input[id="vu"]:hover {
 {
 	height: 70%;
 	width: 80%;
+}
+
+#conteneurtxt {
+	font-size: 23px;
+	margin-left: 5px;
+	margin-right: 5px;
 }

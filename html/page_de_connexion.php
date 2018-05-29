@@ -10,65 +10,25 @@
 		<title>Page de connexion</title>				<!--  titre de la page -->
 	</head>
 	<body>
-	
+		<?php 
+       		include('../modele/config_init.php');
+       	?>
 		<header>
 			<?php
 				require('header_connexion.php');
 			?>
 	</header>
 	<article>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-
-	Texte représentatif de l'entreprise
-
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-
-	Texte représentatif de l'entreprise
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	Texte représentatif de l'entreprise
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	Texte représentatif de l'entreprise
-	<br />
-	<br />
-	<br />
-
+		<br />
+		<br />
+		<div id=conteneurtxt>
+		<?php	
+            $reponse = $bdd->query('SELECT * FROM texte ');
+       		$donnees = $reponse->fetch();	
+       		
+       		echo $donnees[1];
+        ?>
+		</div>
 
 	</article>
 	<footer>

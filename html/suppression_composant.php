@@ -49,12 +49,20 @@
    				<div type="formulaire1">
    					<label for="composant">Nom du composant</label><br /> 
        				<select name="composant" id="composant"> 
-       					<?php 
-       					$reponse = $bdd->query('SELECT * FROM composant');
+       					<?php
+       					$reponse = $bdd->query('SELECT * FROM capteur');
+       					$reponse1 = $bdd->query('SELECT * FROM actionneur');
        					while ($donnees = $reponse->fetch())
        					{
        					?>
        						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       					<?php
+                        }
+                        
+                        while ($donnees1 = $reponse1->fetch())
+       					{
+       					?>
+       						<option value="<?php echo $donnees1['nom']; ?>"><?php echo $donnees1['nom'] ?></option>
        					<?php
                         }
                         ?>  

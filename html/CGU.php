@@ -5,7 +5,7 @@
 
 		<link rel="stylesheet" href="../css/style.css">		
 
-		<title>Contacts</title>
+		<title>Conditions générales d'utilisation</title>
 	</head>
 	
 	<body>
@@ -23,9 +23,8 @@
 	</header>
 	
 	<article>
-		<h1> Page des contacts </h1>
-	
-		<br />
+		<h1> Conditions générales d'utilisation </h1>
+
 		<br />
 		<br />
 		
@@ -33,28 +32,17 @@
        		include('../modele/config_init.php');
        	?>
        	
-		<div id="conteneurinfo">
+		<div id="conteneurtxt">
 			<?php	
-       		   $reponse = $bdd->query('SELECT * FROM contact ');
+       		   $reponse = $bdd->query('SELECT * FROM texte');
        		   $donnees = $reponse->fetch();
        		   
+       		   echo $donnees[2];
        	    ?>
-       	    
-       	    Num&eacute;ro de t&eacute;l&eacute;phone : <?php echo $donnees[1];?>
-       	    
-       	    <br />
-       	    <br />
-       	    
-       	    Mail : <?php echo $donnees[2];?>
-       	    
-       	    <br />
-       	    <br />
-       	    
-       	    Service apr&egrave;s vente : <?php echo $donnees[3];?>
-       	
        	</div>
-	
+       	
 	</article>
+	
 	
 	<footer>
 						

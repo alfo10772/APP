@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 
 $bdd = NULL; 
 
@@ -14,11 +14,12 @@ catch (Exception $e)
 
 $nom = $_POST['nom_maison'];
 $notif=$nom.' a bien &eacute;t&eacute; supprim&eacute;e';
+$id=$_SESSION['ID'];
 
 $req = $bdd ->prepare('DELETE FROM maison WHERE nom = :nom ');
-$req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
+$req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');
 $req-> execute(array(':nom' => $nom));
-$result2 = $req2->execute(array(':notif' => $notif));
+$result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 header('location: ../html/maison.php');
 
 ?>

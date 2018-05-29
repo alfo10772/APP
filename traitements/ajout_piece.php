@@ -15,12 +15,13 @@ catch (Exception $e)
 
 $nom = $_POST['nom'];
 $id=$_SESSION['maisonselect'];
+$iduser=$_SESSION['ID'];
 $notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
 
 $req = $bdd->prepare('INSERT INTO piece(nom, IDmaison) VALUES(:nom, :id)');
-$req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
+$req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :iduser)');
 $result = $req->execute(array(':nom' => $nom, ':id' => $id));
-$result2 = $req2->execute(array(':notif' => $notif));
+$result2 = $req2->execute(array(':notif' => $notif, ':iduser' => $iduser));
     
 header('location: ../html/piece.php');
 ?>

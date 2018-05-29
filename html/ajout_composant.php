@@ -35,7 +35,7 @@
 			<form method="post" action="../traitements/traitement_composant.php" enctype="multipart/form-data"> 
    				<div type="formulaire1">
    					<label for="type">Type de composant</label><br /> 
-       				<select name="type" id="type"> 
+       				<select name="type" id="type" onchange="form(this,'formcapteur');"> 
        					<?php 
        					$reponse = $bdd->query('SELECT * FROM typeComposant');
        					while ($donnees = $reponse->fetch())
@@ -68,16 +68,6 @@
 				<label for="nom">Nom du composant</label> 
 				<input type="text" name="nom"/>
 				<br />
-				<div type="formulaire1">
-					<h2>Param&egrave;tres</h2>
-					<label for="seuil">Seuil</label>
-						<input type="number" name="valeurmin" placeholder="Valeur minimale"/>
-						<br />
-						<br />
-						<input type="number" name="valeurmax" placeholder="Valeur maximale"/>
-				</div>
-			
-				<br />
 				<br />
 			
 				<input type="submit" value="Ajouter" />
@@ -85,6 +75,8 @@
 		</div>
 		<br />
 		<br />
+		<script type="text/javascript" src="../javascript/form_composant.js">
+			</script>
 	</article>
 	
 	<footer>
