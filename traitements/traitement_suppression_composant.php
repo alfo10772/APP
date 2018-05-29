@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $bdd = NULL;
 
 try
@@ -13,11 +13,32 @@ catch (Exception $e)
 
 $piece = $_POST['piece'];
 $composant = $_POST['composant'];
-$notif=$nom.' a bien &eacute;t&eacute; supprim&eacute;e';
+$notif=$composant.' a bien &eacute;t&eacute; supprim&eacute;e';
+$id=$_SESSION['ID'];
 
-$req = $bdd->prepare('DELETE FROM composant WHERE (nom= :composant)');
-$req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
-$req->execute(array(':composant' => $composant));
-$result2 = $req2->execute(array(':notif' => $notif));
-header('location: page_des_composants.php');
+$reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" ');
+$idtype=$reqid1->fetch();
+$idtype= $idtype['type'];
+if($idtype == NULL)
+{
+    $reqid1 = $bdd->query('SELECT type FROM actionneur WHERE nom= "'. $composant .'" ');
+    $idtype=$reqid1->fetch();
+    $idtype= $idtype['type'];
+}
+
+
+if($idtype == 0)
+{
+    $req = $bdd->prepare('DELETE FROM capteur WHERE (nom= :composant)');
+    $req->execute(array(':composant' => $composant));
+}
+else
+{
+    $req = $bdd->prepare('DELETE FROM actionneur WHERE (nom= :composant)');
+    $req->execute(array(':composant' => $composant));
+}
+$req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');
+$result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
+
+header('location: ../html/page_des_composants.php');
 ?>

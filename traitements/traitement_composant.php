@@ -1,4 +1,5 @@
 <?php
+session_start();
 $bdd = NULL;
 try
 {
@@ -9,18 +10,28 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 $type = $_POST['type'];
+$reqid1 = $bdd->query('SELECT type FROM typecomposant WHERE nom= "'. $type .'" ');
+$idtype=$reqid1->fetch();
+$idtype= $idtype['type'];
 $nom = $_POST['nom'];
-$valeurmin = $_POST['valeurmin'];
-$valeurmax = $_POST['valeurmax'];
 $piece = $_POST['piece'];
-$requetepiece = $bdd->query("SELECT IDpiece FROM piece WHERE nom='". $piece ."' ;");
+$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE nom="'. $piece .'" ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
 $notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
+$id=$_SESSION['ID'];
 
-$req = $bdd->prepare('INSERT INTO composant(type, nom, valeurmin, valeurmax, IDpiece) VALUES(:type,:nom,:valeurmin,:valeurmax,:piece)');
-$req2 = $bdd->prepare('INSERT INTO notification(texte) VALUES(:notif)');
-$result = $req->execute(array(':type' => $type, ':nom' => $nom,':valeurmin' => $valeurmin,':valeurmax' => $valeurmax, ':piece' => $piece));
-$result2 = $req2->execute(array(':notif' => $notif));
+if($idtype==0)
+{
+    $req = $bdd->prepare('INSERT INTO capteur(nom, IDpiece, nomtype) VALUES(:nom,:piece,:type)');
+    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type));
+}
+else
+{
+    $req = $bdd->prepare('INSERT INTO actionneur(nom, IDpiece, nomtype) VALUES(:nom,:piece, :type)');
+    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type));
+}
+$req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');
+$result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 header('location: ../html/page_des_composants.php');
 ?>

@@ -21,7 +21,7 @@
        		include('../modele/config_init.php');
 
        		$id=$_SESSION['ID'];
-       		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
+       		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")  ORDER BY IDnotification DESC');
        		?>
        		  
        		    <table id="notification">
@@ -48,11 +48,6 @@
        		            <input type="submit" id="vu" value="Vu">
      					<?php
        		        	}
-     					else
-     					{
-     					?>
-     					<?php
-       		        	}
        		        	?>
      					</td>
      				</tr>
@@ -61,7 +56,8 @@
                         }
                     ?>
   				</table>
-
+				<script type="text/javascript" src="../javascript/form_composant.js">
+			</script>
        	
     </article>
 	
