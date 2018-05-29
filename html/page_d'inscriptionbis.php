@@ -65,7 +65,7 @@
        				</em>
        			</label>
        			<br />
-       			<span> Cet email existe d&eacute;j&agrave;, veuillez utiliser un autre</span>
+       			<span> Cet email existe d&eacute;j&agrave;, veuillez utiliser un autre </span>
        				<input type="email" name="mail" id="mail" required />
        			<br />
        			<br />

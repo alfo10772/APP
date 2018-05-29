@@ -33,8 +33,8 @@ if (empty($user)){
     $subject = "My subject";
     $txt = "Hello world!";
     $headers = "From: rik.chi@hotmail.fr";
+     mail($to,$subject,$txt,$headers);*/
     
-    mail($to,$subject,$txt,$headers);*/
     $req = $bdd ->prepare('SELECT * FROM typecomposant ');
     $req->execute();
     $info = $req->fetchAll();
