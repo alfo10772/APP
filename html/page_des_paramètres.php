@@ -51,7 +51,7 @@
 			<br />
 			<br />
 			<?php
-			$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
+			$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type = 0');
 			$user = array();
 			
 			$i = 0;
