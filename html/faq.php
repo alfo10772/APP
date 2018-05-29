@@ -30,7 +30,7 @@
 			{
 			        die('Erreur : '.$e->getMessage());
 			}
-			$reponse = $bdd->query('SELECT * FROM question');
+			$reponse = $bdd->query('SELECT * FROM reponse');
 			
 			while ($donnees = $reponse->fetch())
 			{
