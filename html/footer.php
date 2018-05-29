@@ -6,7 +6,7 @@
 			</a>
 		</p>
 		<p>
-			<a href="condition_d'utilisation.html">
+			<a href="CGU.php">
 				Conditions g&eacute;n&eacute;rales d'utilisation
 			</a>
 		</p>
