@@ -22,6 +22,7 @@
 						administrateur	
 				</p>
 			</aside>
+			<section id="conteneur_question_reponse">
 				<?php
 				try
 				{
@@ -36,11 +37,11 @@
 				while ($donnees = $reponse->fetch())
 				{
 				?>
-					<div class="question">
-				   		<?php echo $donnees['question']; ?>
+					<div class="question">	
+				    	<?php echo $donnees['question']; ?>
 				    </div>
-				    <div class="reponse">	
-				    	<?php echo $donnees['reponse']; ?>
+					<div class="reponse">
+				   		<?php echo $donnees['reponse']; ?>
 				    </div>
 				<?php
 				}

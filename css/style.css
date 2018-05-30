@@ -358,8 +358,13 @@ input[id="admin"]:hover {
 .confirmer:target{
 	display:block;
 }
-
-.question
+#conteneur_question_reponse
+{
+	width:70%;
+	text-align: justify;
+	word-wrap: break-word;
+}
+.reponse
 {
 border: 2px solid green;
 border-radius: 10px;
@@ -370,7 +375,7 @@ margin-right:10%;
 margin-top:2%;
 margin-bottom:2%;	
 }
-.reponse
+.question
 {
 	border: 2px solid white;
 	border-radius: 10px;
@@ -402,9 +407,9 @@ margin-bottom:2%;
   	padding: 10px;
   	border-radius: 4px;
 }
-
 #conteneur5
 {
+	height:1000px;
 	display:flex;
 	justify-content:space-around;
 	background:RGB(22, 85, 233);
