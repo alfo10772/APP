@@ -172,7 +172,7 @@ form{
 	
 }
 
-#conteneurcercle > div
+#conteneurcompo
 {
 	display:inline-block;
 	vertical-align:top;
@@ -187,6 +187,7 @@ form{
 	line-height:normal;
   	margin: 25px;
 	color:black;  
+	text-align:center;
 }
 
 #texte{

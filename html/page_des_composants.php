@@ -40,7 +40,7 @@
        		while ($donnees = $reponse1->fetch())
        		{
        		        ?>
-       		        <div style="width: 150px;">
+       		        <div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle"></div>
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
@@ -50,7 +50,7 @@
 			while ($donnees = $reponse2->fetch())
 			{
 			    ?>
-			    	<div style="width: 150px;">
+			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle"></div>
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
@@ -59,7 +59,7 @@
 			?>
 		<div id="cercle">
 		<a href="ajout_composant.php">
-			<div id=textecercle><font size="+4">+</font></div>
+			<center><font size="+4">+</font></center>
 		</a>
 		</div>
 	</div>
