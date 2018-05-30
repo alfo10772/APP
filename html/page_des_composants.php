@@ -27,15 +27,17 @@
 		</div> 
 		
 		<div style="float:right">
-			<a href="suppression_composant.php">		
+			<a href="suppression_composant1.php">		
 				<input type="submit" id="retour" value="Supprimer un composant"> 
 			</a>
 		</div>
 
 	<div id="conteneurcercle">
-		<?php	
-       		$reponse1 = $bdd->query('SELECT * FROM capteur');
-       		$reponse2 = $bdd->query('SELECT * FROM actionneur');
+		<?php
+		    $id=$_SESSION['ID'];
+		    $idmaison = $_SESSION['maisonselect'];
+       		$reponse1 = $bdd->query('SELECT * FROM capteur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
+       		$reponse2 = $bdd->query('SELECT * FROM actionneur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
        		
        		while ($donnees = $reponse1->fetch())
        		{

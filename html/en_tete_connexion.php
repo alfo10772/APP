@@ -32,8 +32,8 @@ session_start()
 					Notifications	
 					<?php
 					include('../modele/config_init.php');
-					
-					$not = $bdd->query('SELECT * FROM notification');
+					$id=$_SESSION['ID'];
+					$not = $bdd->query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
 					$sum=0;
 					foreach ($not->fetchAll() as $donnees) {
 					    $sum+=$donnees['etat'];
