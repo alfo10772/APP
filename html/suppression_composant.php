@@ -30,28 +30,19 @@
 		<br />
 		<form method="post" action="../traitements/traitement_suppression_composant.php" enctype="multipart/form-data">
 			<div id="conteneur2"> 
-   				<div type="formulaire1">
-   					<label for="piece">Pi&egrave;ce</label><br /> 
-       				<select name="piece" id="piece"> 
-       					<?php 
-       					$reponse = $bdd->query('SELECT * FROM piece');
-       					while ($donnees = $reponse->fetch())
-       					{
-       					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-       					<?php
-                        }
-                        ?> 
-           			</select> 
-  				 </div>
-			<br />
-			<br />
+
    				<div type="formulaire1">
    					<label for="composant">Nom du composant</label><br /> 
        				<select name="composant" id="composant"> 
        					<?php
-       					$reponse = $bdd->query('SELECT * FROM capteur');
-       					$reponse1 = $bdd->query('SELECT * FROM actionneur');
+       					$id=$_SESSION['ID'];
+       					$idmaison = $_SESSION['maisonselect'];
+       					$piece = $_SESSION['piececomposant'];
+       					$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'") ');
+       					$piece = $requetepiece ->fetch();
+       					$piece = $piece['IDpiece'];
+       					$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');
+       					$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');
        					while ($donnees = $reponse->fetch())
        					{
        					?>
