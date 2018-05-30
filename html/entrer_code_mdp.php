@@ -18,7 +18,7 @@
 		<h1>
 		R&eacute;cup&eacute;ration du Mot de Passe
 		</h1>
-        <?php $boll = true; ?>
+        
 
 		<section class='conteneur2'>
 		<div id='conteneur2'>
@@ -36,12 +36,7 @@
 				
 				<input type="int" name="code" required />
 				<br />
-                <?php 
-                if ($boll == false) {
-                    ?> Code non valide
-                    <?php
-                }
-                ?>
+               
 				<br />
 				<input type='submit' value='Suivant'>
 			</form>
