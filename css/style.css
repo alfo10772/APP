@@ -172,7 +172,13 @@ form{
 	
 }
 
-#conteneurcercle > div {
+#conteneurcercle > div
+{
+	display:inline-block;
+	vertical-align:top;
+}
+
+#cercle {
 	position: auto;
 	background: RGB(255,182, 108);
 	border-radius: 50%;
@@ -181,6 +187,11 @@ form{
 	line-height:normal;
   	margin: 25px;
 	color:black;  
+}
+
+#texte{
+	width: auto;
+	font-size: 1.2em;
 }
 
 input[id="bouton"] {
