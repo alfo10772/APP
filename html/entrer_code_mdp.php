@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="../css/style.css">	
 		<title>R&eacute;cup&eacute;ration du Mot de Passe</title>
 	</head>
