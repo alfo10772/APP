@@ -9,17 +9,19 @@ catch (Exception $e)
 {
     die('Erreur :' . $e->getMessage());
 }
+$id=$_SESSION['ID'];
+$idmaison = $_SESSION['maisonselect'];
 $type = $_POST['type'];
 $reqid1 = $bdd->query('SELECT type FROM typecomposant WHERE nom= "'. $type .'" ');
 $idtype=$reqid1->fetch();
 $idtype= $idtype['type'];
 $nom = $_POST['nom'];
+
 $piece = $_POST['piece'];
-$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE nom="'. $piece .'" ');
+$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
 $notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
-$id=$_SESSION['ID'];
 
 if($idtype==0)
 {
