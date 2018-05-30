@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 29 mai 2018 à 14:39
+-- Généré le :  mer. 30 mai 2018 à 16:47
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -31,6 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `actionneur` (
   `IDactionneur` int(11) NOT NULL,
   `IDpiece` int(11) NOT NULL,
+  `IDutilisateur` int(11) NOT NULL,
+  `IDmaison` int(11) NOT NULL,
   `nomtype` varchar(30) NOT NULL,
   `nom` varchar(25) NOT NULL,
   `etat` tinyint(1) NOT NULL,
@@ -45,7 +47,8 @@ CREATE TABLE `actionneur` (
 -- Index pour la table `actionneur`
 --
 ALTER TABLE `actionneur`
-  ADD PRIMARY KEY (`IDactionneur`);
+  ADD PRIMARY KEY (`IDactionneur`),
+  ADD KEY `IDpiece` (`IDpiece`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -55,7 +58,17 @@ ALTER TABLE `actionneur`
 -- AUTO_INCREMENT pour la table `actionneur`
 --
 ALTER TABLE `actionneur`
-  MODIFY `IDactionneur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IDactionneur` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `actionneur`
+--
+ALTER TABLE `actionneur`
+  ADD CONSTRAINT `IDpiece` FOREIGN KEY (`IDpiece`) REFERENCES `piece` (`IDpiece`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
