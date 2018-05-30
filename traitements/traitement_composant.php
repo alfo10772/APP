@@ -23,13 +23,13 @@ $id=$_SESSION['ID'];
 
 if($idtype==0)
 {
-    $req = $bdd->prepare('INSERT INTO capteur(nom, IDpiece, nomtype) VALUES(:nom,:piece,:type)');
-    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type));
+    $req = $bdd->prepare('INSERT INTO capteur(nom, IDpiece, nomtype, IDutilisateur) VALUES(:nom,:piece,:type, :id)');
+    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type, ':id' => $id));
 }
 else
 {
-    $req = $bdd->prepare('INSERT INTO actionneur(nom, IDpiece, nomtype) VALUES(:nom,:piece, :type)');
-    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type));
+    $req = $bdd->prepare('INSERT INTO actionneur(nom, IDpiece, nomtype, IDutilisateur) VALUES(:nom,:piece, :type, :id)');
+    $result = $req->execute(array(':nom' => $nom, ':piece' => $piece, ':type' => $type, ':id' => $id));
 }
 $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
