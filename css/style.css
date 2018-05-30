@@ -587,7 +587,7 @@ table#modif{
 }
 
 th#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -595,7 +595,7 @@ th#modif{
 }
 
 td#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);

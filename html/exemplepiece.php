@@ -38,13 +38,20 @@
 				
 		<div id="conteneurcercle">
 			<?php 
-			$reponse = $bdd->query('SELECT composant.nom FROM piece JOIN composant ON (piece.IDpiece = composant.IDpiece) WHERE composant.IDpiece = "'.$_SESSION['idpiece'].'"');
-			
+			$reponse = $bdd->query('SELECT capteur.nom FROM piece JOIN capteur ON (piece.IDpiece = capteur.IDpiece) WHERE capteur.IDpiece = "'.$_SESSION['idpiece'].'"');
+			$reponse2 = $bdd->query('SELECT actionneur.nom FROM piece JOIN actionneur ON (piece.IDpiece = actionneur.IDpiece) WHERE actionneur.IDpiece = "'.$_SESSION['idpiece'].'"');
 			foreach ($reponse->fetchAll() as $donnees)
 			{
 			?>
 			
 			<input type="submit" id="bouton" name=<?php echo $donnees['nom'] ?> value="<?php echo $donnees['nom']?>">
+						
+			<?php 
+			}
+			foreach ($reponse2->fetchAll() as $donnees2)
+			{
+			?>
+			<input type="submit" id="bouton" name=<?php echo $donnees2['nom'] ?> value="<?php echo $donnees2['nom']?>">
 						
 			<?php 
 			}
@@ -61,3 +68,5 @@
         	?>
 		
 	</footer>
+</body>
+</html>
