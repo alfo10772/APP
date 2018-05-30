@@ -587,7 +587,7 @@ table#modif{
 }
 
 th#modif{
-	width: 180px;
+	width: 90px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -595,7 +595,7 @@ th#modif{
 }
 
 td#modif{
-	width: 180px;
+	width: 90px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -658,8 +658,4 @@ input[id="vu"]:hover {
 	font-size: 23px;
 	margin-left: 5px;
 	margin-right: 5px;
-}
-#titre_FAQ
-{
-	text-align: center;
 }
