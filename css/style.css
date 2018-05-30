@@ -172,7 +172,7 @@ form{
 	
 }
 
-#conteneurcercle > div
+#conteneurcompo
 {
 	display:inline-block;
 	vertical-align:top;
@@ -187,6 +187,7 @@ form{
 	line-height:normal;
   	margin: 25px;
 	color:black;  
+	text-align:center;
 }
 
 #texte{
@@ -452,6 +453,7 @@ margin-bottom:2%;
 	border: 1px solid black;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px grey;
+	padding:2%;
 }
 .article
 {
@@ -583,7 +585,7 @@ table#modif{
 }
 
 th#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -591,7 +593,7 @@ th#modif{
 }
 
 td#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -655,3 +657,8 @@ input[id="vu"]:hover {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+#titre_FAQ
+{
+	text-align: center;
+} 
