@@ -50,8 +50,8 @@
 			        <select name="nom_piece">
 			        
                    <?php 
-       					
-       					$reponse = $bdd->query('SELECT * FROM piece');
+                        $idmaison = $_SESSION['maisonselect'];
+                        $reponse = $bdd->query('SELECT * FROM piece WHERE IDmaison = "'. $idmaison .'" ');
        					
        					while ($donnees = $reponse->fetch())
        					{
@@ -71,7 +71,7 @@
                     <input type="submit" id="supprimer" value="Supprimer" />
                     <br/>
 					<br/>
-                    <input type="submit" id="supprimer" value="Annuler" />
+                    
                     
 		</form>
      </div>
