@@ -656,3 +656,8 @@ input[id="vu"]:hover {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+#titre_FAQ
+{
+	text-align: center;
+} 
