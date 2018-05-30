@@ -15,6 +15,7 @@
 	<article>
 	<h1>Page des composants</h1>
 	
+	<br />
 		<?php 
 		include('../modele/config_init.php');
        	?>
@@ -37,77 +38,26 @@
        		$reponse2 = $bdd->query('SELECT * FROM actionneur');
        		
        		while ($donnees = $reponse1->fetch())
-       			{
-       			    $nom=strval($donnees['nom']);
-       			    $len=strlen($nom);
-       			    if ($len<13)
-       			    {
+       		{
        		        ?>
-						<div>
-							<div id=textecercle1>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
+       		        <div style="width: 150px;">
+						<div id="cercle"></div>
+						<div id="texte"><?php echo $donnees['nom'];?></div>
+					</div>
 					<?php 
-			         }
-			         if ($len>12 AND $len<27)
-       			    {
-       		        ?>
-						<div>
-							<div id=textecercle2>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php 
-			         }
-			         if ($len>26 AND $len<39)
-			         {
-			             ?>
-						<div>
-							<div id=textecercle3>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php
-			         }
+			         
 			}
 			while ($donnees = $reponse2->fetch())
 			{
-			    $nom=strval($donnees['nom']);
-			    $len=strlen($nom);
-			    if ($len<13)
-			    {
-			        ?>
-						<div>
-							<div id=textecercle1>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
+			    ?>
+			    	<div style="width: 150px;">
+						<div id="cercle"></div>
+						<div id="texte"><?php echo $donnees['nom'];?></div>
+					</div>
 					<?php 
-			         }
-			         if ($len>12 AND $len<27)
-       			    {
-       		        ?>
-						<div>
-							<div id=textecercle2>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php 
-			         }
-			         if ($len>26 AND $len<39)
-			         {
-			             ?>
-						<div>
-							<div id=textecercle3>
-								<?php echo $donnees['nom']?>
-							</div>
-						</div>
-					<?php
-			         }
 			}
 			?>
-		<div>
+		<div id="cercle">
 		<a href="ajout_composant.php">
 			<div id=textecercle><font size="+4">+</font></div>
 		</a>

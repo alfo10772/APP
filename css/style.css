@@ -172,7 +172,13 @@ form{
 	
 }
 
-#conteneurcercle > div {
+#conteneurcercle > div
+{
+	display:inline-block;
+	vertical-align:top;
+}
+
+#cercle {
 	position: auto;
 	background: RGB(255,182, 108);
 	border-radius: 50%;
@@ -181,6 +187,11 @@ form{
 	line-height:normal;
   	margin: 25px;
 	color:black;  
+}
+
+#texte{
+	width: auto;
+	font-size: 1.2em;
 }
 
 input[id="bouton"] {
@@ -197,21 +208,6 @@ input[id="bouton"]:hover {
     background:RGB(255,197, 138);
 }
 
-#textecercle1{
-	margin-top:40%;
-}
-
-#textecercle2{
-	margin-top:32%;
-}
-
-#textecercle3{
-	margin-top:28%;
-}
-
-#textecercle{
-	margin-top:24%;
-}
 
 #profil{
 	margin-right:2%;
