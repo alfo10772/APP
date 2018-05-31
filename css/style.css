@@ -104,7 +104,6 @@ select[type=admin]{
     border-radius: 4px;
     cursor: pointer;
 }
-
 .formulaire1 {
     background:RGB(22, 85, 233);
 }*/
@@ -172,7 +171,7 @@ form{
 	
 }
 
-#conteneurcercle > div
+#conteneurcompo
 {
 	display:inline-block;
 	vertical-align:top;
@@ -187,6 +186,7 @@ form{
 	line-height:normal;
   	margin: 25px;
 	color:black;  
+	text-align:center;
 }
 
 #texte{
@@ -358,6 +358,7 @@ input[id="admin"]:hover {
 .confirmer:target{
 	display:block;
 }
+
 #conteneur_question_reponse
 {
 	width:70%;
@@ -386,7 +387,6 @@ margin-bottom:2%;
 	margin-top:2%;
 	margin-bottom:2%;
 }
-
 #conteneurtexte
 {
 	width:700px; 
@@ -437,6 +437,7 @@ margin-bottom:2%;
 	position: fixed;
 	right:0px;
 }
+
 @media screen and (max-width: 1000px)
 {
     	.bonhomme1
@@ -588,7 +589,7 @@ table#modif{
 }
 
 th#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -596,7 +597,7 @@ th#modif{
 }
 
 td#modif{
-	width: 90px;
+	width: 180px;
 	padding: 3px;
 	height: 50px;
 	background:RGB(22, 85, 250);
@@ -660,3 +661,8 @@ input[id="vu"]:hover {
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+#titre_FAQ
+{
+	text-align: center;
+} 

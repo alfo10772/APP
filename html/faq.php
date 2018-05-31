@@ -12,7 +12,24 @@
             require("en_tete_connexion.php");
         ?>
 	</header>
-	<aricle>
+	<aricle id="conteneur_FAQ">
+		
+			<h1>
+			Foire aux questions
+			</h1>
+			<p>
+			les questions réponses ci dessous
+			</br>
+			contiennent les différentes
+			</br>
+			interrogations qu'un utilisateur
+			</br>
+			peuvent se poser. La liste
+			</br> 
+			ci-dessous n'est pas exhaustive
+			</br>
+			
+			</p>
 		<div id="conteneur5">
 			<aside class="bonhomme1">
 			<section id="conteneur6">
