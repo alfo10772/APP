@@ -68,7 +68,7 @@
 			?>
 			
 			
-			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
+			<a href="ajout_maison.php"><div id=cercle><font size="+4"><div id=textecercle>+</div></font></div></a>
 		</div>
 		
 		

@@ -53,7 +53,7 @@
 						<?php 
        			}
 			?>
-			<div><div id=textecercle><font size="+4"><a href="ajout_piece.php">+</a></font></div></div>
+			<a href="ajout_piece.php"><div id=cercle><div id=textecercle><font size="+4">+</font></div></div></a>
 		</div>
 	
 		

@@ -53,17 +53,22 @@
 			{
 			    ?>
 			    	<div style="width: 150px;" id="conteneurcompo">
-						<div id="cercle"></div>
+						<div id="cercle">
+							<label class="switch">
+ 							<input type="checkbox" checked>
+  							<span class="slider round"></span>
+							</label>
+						</div>
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
 					<?php 
 			}
 			?>
-		<div id="cercle">
 		<a href="ajout_composant.php">
+		<div id="cercle">
 			<center><font size="+4">+</font></center>
-		</a>
 		</div>
+		</a>
 	</div>
 	</article>
 	<footer>

@@ -59,8 +59,6 @@
 			<br />
 			
 			</form>
-			
-			<input type="submit" id="supprimer" value="Annuler" />
 		</div>
 		
 	</article>
