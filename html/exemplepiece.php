@@ -66,7 +66,7 @@
 			<?php 
 			}
 			?>
-			<a href="ajout_composant.php"><div id=cercle><div id=textecercle><font size="+4">+</font></div></div></a>
+			
 		</div>
 	
 		

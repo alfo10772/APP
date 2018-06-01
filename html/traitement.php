@@ -17,7 +17,7 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	session_start();
     	$_SESSION['mail']= $_POST['mail'];
     	$_SESSION['ID']= $user[0];
-    	$type=$user[2];
+    	$_SESSION['utilisateur']=$user[2];
     	var_dump($type);
     	if($type==0){
     	    header('location: tableau_de_bord.php');

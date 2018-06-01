@@ -30,6 +30,10 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
 		<div style="float:right">
 			<a href="suppression_piece.php">		
 				<input type="submit" id="retour" value="Supprimer une piece" />
@@ -37,6 +41,9 @@
 			</a>
 		</div>
 		
+		<?php 
+		}
+		?>
 		<div id="conteneurcercle">
 			<?php
 			$id=$_SESSION['ID'];

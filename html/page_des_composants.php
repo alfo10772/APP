@@ -26,11 +26,20 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
+		
 		<div style="float:right">
 			<a href="suppression_composant1.php">		
 				<input type="submit" id="retour" value="Supprimer un composant"> 
 			</a>
 		</div>
+		
+		<?php 
+		}
+		?>
 
 	<div id="conteneurcercle">
 		<?php
