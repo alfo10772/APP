@@ -27,6 +27,7 @@
 		?>
         </h1>
         
+        <br />
 		
 		<div style="float:left">
 			<a href="piece.php">		
@@ -43,20 +44,29 @@
 			foreach ($reponse->fetchAll() as $donnees)
 			{
 			?>
-			
-			<input type="submit" id="bouton" name=<?php echo $donnees['nom'] ?> value="<?php echo $donnees['nom']?>">
-						
+				<div style="width: 150px;" id="conteneurcompo">
+						<div id="cercle"></div>
+						<div id="texte"><?php echo $donnees['nom'];?></div>
+				</div>			
 			<?php 
 			}
 			foreach ($reponse2->fetchAll() as $donnees2)
 			{
 			?>
-			<input type="submit" id="bouton" name=<?php echo $donnees2['nom'] ?> value="<?php echo $donnees2['nom']?>">
+				<div style="width: 150px;" id="conteneurcompo">
+					<div id="cercle">
+						<label class="switch">
+ 							<input type="checkbox" checked>
+  							<span class="slider round"></span>
+						</label>
+					</div>
+					<div id="texte"><?php echo $donnees['nom'];?></div>
+				</div>
 						
 			<?php 
 			}
 			?>
-			<div><div id=textecercle><font size="+4"><a href="ajout_composant.php">+</a></font></div></div>
+			<a href="ajout_composant.php"><div id=cercle><div id=textecercle><font size="+4">+</font></div></div></a>
 		</div>
 	
 		
