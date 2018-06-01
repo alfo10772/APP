@@ -55,12 +55,14 @@
 			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle">
 							<label class="switch">
- 							<input type="checkbox" checked>
-  							<span class="slider round"></span>
+ 							<input type="checkbox" <?php if ($donnees['etat']== 1) {?> checked <?php }?>>
+  							<span class="slider round">
+  							</span>
 							</label>
 						</div>
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
+				
 					<?php 
 			}
 			?>
