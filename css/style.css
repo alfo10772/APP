@@ -713,7 +713,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-<<<<<<< HEAD
 
 input[id=second] {
     width: 100%;
@@ -729,5 +728,3 @@ input[id=second] {
 input[id=second]:hover {
     background:RGB(22, 85, 183);
 }
-=======
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
