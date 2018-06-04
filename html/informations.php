@@ -18,6 +18,8 @@
 		
 			<h1>Mes informations</h1>
 			
+			<br />
+			
 			<div style="float:left">
 				<a href="tableau_de_bord.php">		
 					<input type="submit" id="retour" value="Retour &agrave; la page d'accueil" />
@@ -47,6 +49,7 @@
        		     <hr width="100%">
        		     
        		     <div id="modif_nom" style="display:none;">
+       		     		<br />
        		     		<p>Entrer le nouveau nom d'utilisateur</p>
        		     		<div id="conteneur2">
        		     			<form action="../traitements/modif_info.php" method="post">
@@ -70,6 +73,7 @@
        		    <hr width="100%">
        		     
    				<div id="modif_type" style="display:none;">
+   						<br />
    						<p>S&eacute;l&eacute;ctionner le type de l'utilisateur</p>
        		        	<div id="conteneur2">
        		     			<form action="../traitements/modif_info.php" method="post">
@@ -97,6 +101,7 @@
        		    <hr width="100%">
        		     
        		    <div id="modif_mail" style="display:none;">
+       		    		<br />
        		     		<p>Entrer votre nouvelle adresse mail</p>
        		     		<div id="conteneurmodif">
        		     				
@@ -120,6 +125,7 @@
        		    <hr width="100%">
        		     
        		    <div id="modif_mdp" style="display:none;">
+       		    		<br />
        		     		<p>Entrer votre nouveau mot de passe</p>
        		     		<div id="conteneurmodif">
        		     				
@@ -145,8 +151,10 @@
 					</tr>
 				</table>
 		
+				<hr width="100%">
+				
 				<div id="modif_tel" style="display:none;">
-       		     		<hr width="100%">
+       		     		<br />
        		     		<p>Entrer votre nouveau num&eacute;ro de t&eacute;l&eacute;phone</p>
        		     		<div id="conteneur2">
        		     				
@@ -156,8 +164,30 @@
        		      			</form>
        		      			<br />
        		      		</div>
+       		      		<hr width="100%">
        		     </div>
+       		     
+       		     <table id="modif">
+       		     	<tr>
+       		     		<th id="modif">Photo</th>
+       		     		<td id="modif"><p>Votre photo actuelle</p></td>
+       		     		<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_photo');" id="modif" name=<?php echo $_tel ;?> value="Modifier" /></td>
+       		     	</tr>
+       		     </table>
 			
+				<div id="modif_photo" style="display:none;">
+       		    		<hr width="100%">
+       		    		<br />
+       		     		<p>T&eacute;l&eacute;charger votre photo</p>
+       		     		<div id="conteneurmodif">
+       		     				
+       		     			<form action="../traitements/modif_info.php" method="post">
+       		      				<input type="file" name="photo" />
+       		      				<input type="submit" value="Valider" />	
+       		      			</form>
+       		      			<br />
+       		      		</div>
+       		     </div>
 			</div>
 			
 			<script type="text/javascript" src="../javascript/affichage_bloc.js">
