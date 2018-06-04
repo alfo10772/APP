@@ -18,11 +18,13 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	$_SESSION['mail']= $_POST['mail'];
     	$_SESSION['ID']= $user[0];
     	$_SESSION['utilisateur']=$user[2];
-    	var_dump($type);
-    	if($type==0){
+    	if($user[2]==0){
     	    header('location: tableau_de_bord.php');
     	}
-    	if($type==2){
+    	if($user[2]==1){
+    	    header('location: tableau_de_bord.php');
+    	}
+    	if($user[2]==2){
     	    header('location: client.php');
     	}
        
