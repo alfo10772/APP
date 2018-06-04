@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 30 mai 2018 à 16:48
+-- Généré le :  mar. 29 mai 2018 à 14:39
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -31,8 +31,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `capteur` (
   `IDcapteur` int(11) NOT NULL,
   `IDpiece` int(11) NOT NULL,
-  `IDutilisateur` int(11) NOT NULL,
-  `IDmaison` int(11) NOT NULL,
   `nomtype` varchar(30) NOT NULL,
   `nom` varchar(25) NOT NULL,
   `unite` varchar(10) NOT NULL,
@@ -40,6 +38,13 @@ CREATE TABLE `capteur` (
   `valeurmax` int(11) NOT NULL,
   `type` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `capteur`
+--
+
+INSERT INTO `capteur` (`IDcapteur`, `IDpiece`, `nomtype`, `nom`, `unite`, `valeurmin`, `valeurmax`, `type`) VALUES
+(6, 20, 'Capteur de température', 'temp cui', '', 0, 0, 0);
 
 --
 -- Index pour les tables déchargées
@@ -59,7 +64,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT pour la table `capteur`
 --
 ALTER TABLE `capteur`
-  MODIFY `IDcapteur` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDcapteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

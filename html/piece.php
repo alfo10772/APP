@@ -18,7 +18,6 @@
 		
 		<h1>Page des pi&egrave;ces</h1>
 		
-		<br />
 		<?php 
        		include('../modele/config_init.php');
        	?>
@@ -38,9 +37,8 @@
 		</div>
 		
 		<div id="conteneurcercle">
-			<?php
-			$id=$_SESSION['ID'];
-			$reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (selection = 1 AND piece.IDutilisateur = "'. $id .'") ');
+			<?php	
+       		$reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE selection = 1');
        					
        		foreach ($reponse->fetchAll() as $donnees)
        			{
@@ -54,7 +52,11 @@
 						<?php 
        			}
 			?>
-			<a href="ajout_piece.php"><div id=cercle><div id=textecercle><font size="+4">+</font></div></div></a>
+			<div id="cercle">
+				<a href="ajout_piece.php">
+					<font size="+4"><div id=textecercle>+</div></font>
+				</a>
+			</div>
 		</div>
 	
 		
