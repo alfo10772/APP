@@ -402,23 +402,21 @@ margin-bottom:2%;
   	padding: 10px;
   	border-radius: 4px;
 }
-
-#conteneur5
-{
-	display:flex;
-	justify-content:space-around;
-	background:RGB(22, 85, 233);
-	color:white;
-}
-
 #conteneur6
 {
 	width:60%;
 	display: flex;
 	flex-direction: column;
 	justify-content:space-around;
+	word-wrap: break-word;
 }
-
+#conteneur_faq
+{
+	display:flex;
+	justify-content:space-around;
+	background:RGB(22, 85, 233);
+	color:white;
+}
 
 .bonhomme1
 {

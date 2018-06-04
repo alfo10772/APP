@@ -12,34 +12,16 @@
             require("en_tete_connexion.php");
         ?>
 	</header>
-	<aricle id="conteneur_FAQ">
-		
-			<h1>
-			Foire aux questions
-			</h1>
-			<p>
-			les questions réponses ci dessous
-			</br>
-			contiennent les différentes
-			</br>
-			interrogations qu'un utilisateur
-			</br>
-			peuvent se poser. La liste
-			</br> 
-			ci-dessous n'est pas exhaustive
-			</br>
-			
-			</p>
-		<div id="conteneur5">
+	<article >
+		<section id="conteneur_faq">
 			<aside class="bonhomme1">
-			<section id="conteneur6">
 				<p>
 					<img src="../images/photo.png" alt="administrateur" width="200">
 					<br/>
 						administrateur	
 				</p>
 			</aside>
-			<section id="conteneur_question_reponse">
+			<section id="conteneur6">
 				<?php
 				try
 				{
@@ -66,17 +48,17 @@
 				$reponse->closeCursor(); 
 				
 				?>
-				</section>
+			</section>
 			
 			<aside class="bonhomme2">
 				<p>
 					<img src="../images/photo.png" alt="utilisateur" width="200">
-						<br/>
-					utilisateur	
+					<br/>
+						utilisateur	
 				</p>
 			</aside>
-		</div>
-	</aricle>
+		</section>
+	</article>
 	<footer>						
 		<?php
             require("footer.php");
