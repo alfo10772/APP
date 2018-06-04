@@ -40,9 +40,13 @@ if (empty($_SESSION)) {
 					$nom= $bdd->query('SELECT utilisateur.nom FROM utilisateur WHERE IDutilisateur = "'. $id .'" ');
 					$nom= $nom->fetch();
 					$nom= $nom['nom'];
+<<<<<<< HEAD
 					$not = $bdd-> query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
 				
 					
+=======
+					$not = $bdd->query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 
 					$sum=0;
 					foreach ($not->fetchAll() as $donnees) {
