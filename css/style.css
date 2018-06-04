@@ -713,3 +713,18 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+input[id=second] {
+    width: 100%;
+    background:RGB(22, 85, 250);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[id=second]:hover {
+    background:RGB(22, 85, 183);
+}
