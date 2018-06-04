@@ -40,7 +40,8 @@ if (empty($_SESSION)) {
 					$nom= $bdd->query('SELECT utilisateur.nom FROM utilisateur WHERE IDutilisateur = "'. $id .'" ');
 					$nom= $nom->fetch();
 					$nom= $nom['nom'];
-					$not = $bdd->query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
+					
+
 					$sum=0;
 					foreach ($not->fetchAll() as $donnees) {
 					    $sum+=$donnees['etat'];

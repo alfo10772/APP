@@ -32,7 +32,7 @@
 		?>
 		
 		<div style="float:right">
-			<a href="suppression_composant1.php">		
+			<a href="suppression_composant.php">		
 				<input type="submit" id="retour" value="Supprimer un composant"> 
 			</a>
 		</div>
@@ -42,16 +42,14 @@
 		?>
 
 	<div id="conteneurcercle">
-		<?php
-		    $id=$_SESSION['ID'];
-		    $idmaison = $_SESSION['maisonselect'];
-       		$reponse1 = $bdd->query('SELECT * FROM capteur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
-       		$reponse2 = $bdd->query('SELECT * FROM actionneur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
+		<?php	
+       		$reponse1 = $bdd->query('SELECT * FROM capteur');
+       		$reponse2 = $bdd->query('SELECT * FROM actionneur');
        		
        		while ($donnees = $reponse1->fetch())
        		{
        		        ?>
-       		        <div style="width: 150px;" id="conteneurcompo">
+       		        <div style="width: 150px;">
 						<div id="cercle"></div>
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
@@ -61,6 +59,7 @@
 			while ($donnees = $reponse2->fetch())
 			{
 			    ?>
+
 			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle">
 							<label class="switch">
@@ -69,17 +68,18 @@
   							</span>
 							</label>
 						</div>
+
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
 				
 					<?php 
 			}
 			?>
-		<a href="ajout_composant.php">
 		<div id="cercle">
-			<center><font size="+4">+</font></center>
-		</div>
+		<a href="ajout_composant.php">
+			<div id=textecercle><font size="+4">+</font></div>
 		</a>
+		</div>
 	</div>
 	</article>
 	<footer>

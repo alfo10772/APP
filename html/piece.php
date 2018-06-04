@@ -18,7 +18,6 @@
 		
 		<h1>Page des pi&egrave;ces</h1>
 		
-		<br />
 		<?php 
        		include('../modele/config_init.php');
        	?>
@@ -30,10 +29,6 @@
 			</a>
 		</div> 
 		
-		<?php 
-		if ($_SESSION['utilisateur']==0){
-		    
-		?>
 		<div style="float:right">
 			<a href="suppression_piece.php">		
 				<input type="submit" id="retour" value="Supprimer une piece" />
@@ -41,13 +36,9 @@
 			</a>
 		</div>
 		
-		<?php 
-		}
-		?>
 		<div id="conteneurcercle">
-			<?php
-			$id=$_SESSION['ID'];
-			$reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (selection = 1 AND piece.IDutilisateur = "'. $id .'") ');
+			<?php	
+       		$reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE selection = 1');
        					
        		foreach ($reponse->fetchAll() as $donnees)
        			{
@@ -61,7 +52,7 @@
 						<?php 
        			}
 			?>
-			<a href="ajout_piece.php"><div id=cercle><div id=textecercle><font size="+4">+</font></div></div></a>
+			<div><div id=textecercle><font size="+4"><a href="ajout_piece.php">+</a></font></div></div>
 		</div>
 	
 		

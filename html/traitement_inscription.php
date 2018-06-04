@@ -42,7 +42,7 @@ if (empty($user)){
     $req->execute([$_POST['mail']]);
     $user = $req->fetch(PDO::FETCH_NUM);
     $id = $user[0];
-    $r = count($info[0])-1;
+    $r = count($info[0]);
     for ($i=0 ; $i<$r; $i++ ){
         $req = $bdd->prepare('INSERT INTO typecomposantuser(IDtypecomposant,nom,type1,userID) VALUES(:ID,:nom,:type,:userID)');
         $result = $req->execute(array(':ID'=>$info[$i][0], ':nom'=>$info[$i][1], ':type'=>$info[$i][2], ':userID'=>$id));

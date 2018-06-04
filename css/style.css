@@ -104,7 +104,6 @@ select[type=admin]{
     border-radius: 4px;
     cursor: pointer;
 }
-
 .formulaire1 {
     background:RGB(22, 85, 233);
 }*/
@@ -399,27 +398,25 @@ margin-bottom:2%;
 	margin-left: auto;
   	margin-right: auto;
   	width:400px; 
-  	border: 2px solid RGB(191, 223, 255);
+  	border: 2px solid RGB(190, 223, 255);
   	padding: 10px;
   	border-radius: 4px;
 }
-
-#conteneur5
-{
-	display:flex;
-	justify-content:space-around;
-	background:RGB(22, 85, 233);
-	color:white;
-}
-
 #conteneur6
 {
 	width:60%;
 	display: flex;
 	flex-direction: column;
 	justify-content:space-around;
+	word-wrap: break-word;
 }
-
+#conteneur_faq
+{
+	display:flex;
+	justify-content:space-around;
+	background:RGB(22, 85, 233);
+	color:white;
+}
 
 .bonhomme1
 {
@@ -716,6 +713,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+<<<<<<< HEAD
 
 input[id=second] {
     width: 100%;
@@ -731,3 +729,5 @@ input[id=second] {
 input[id=second]:hover {
     background:RGB(22, 85, 183);
 }
+=======
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git

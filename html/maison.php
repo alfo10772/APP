@@ -27,11 +27,6 @@
 			</a>
 		</div> 
 		
-		
-		<?php 
-		if ($_SESSION['utilisateur']==0){
-		    
-		?>
 		<div style="float:right">
 			<a href="suppression_maison.php">		
 				<input type="submit" id="retour" value="Supprimer une maison" />
@@ -39,9 +34,6 @@
 			</a>
 		</div>
 		
-		<?php 
-		}
-		?>
 		<br/>
         <br/>
         <br/>
@@ -76,7 +68,7 @@
 			?>
 			
 			
-			<a href="ajout_maison.php"><div id=cercle><font size="+4"><div id=textecercle>+</div></font></div></a>
+			<div><font size="+4"><div id=textecercle><a href="ajout_maison.php">+</a></div></font></div>
 		</div>
 		
 		
