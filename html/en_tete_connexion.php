@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if (empty($_SESSION)) {
- header('location: page_de_connexion.php'); //Redirige l'utilisateur vers la page de connexion s'il n'est pas encore connecté
+ header('location: page_de_connexion.php'); //Redirige l'utilisateur vers la page de connexion s'il n'est pas encore connectï¿½
 }
 ?>
 
@@ -40,7 +40,9 @@ if (empty($_SESSION)) {
 					$nom= $bdd->query('SELECT utilisateur.nom FROM utilisateur WHERE IDutilisateur = "'. $id .'" ');
 					$nom= $nom->fetch();
 					$nom= $nom['nom'];
-					$not = $bdd->query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
+					$not= $bdd->query('SELECT * FROM notification WHERE IDutilisateur = "'. $id .'" ');
+				
+					
 
 					$sum=0;
 					foreach ($not->fetchAll() as $donnees) {
