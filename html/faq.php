@@ -9,7 +9,7 @@
 
 	<header>
 		<?php
-            require("en_tete_connexion.php");
+            require("en_tete_connexion.php"); //php
         ?>
 	</header>
 	<article >
