@@ -31,7 +31,8 @@
 				<input type="submit" id="retour" value="Supprimer un composant"> 
 			</a>
 		</div>
-
+	<br>
+	<br>
 	<div id="conteneurcercle">
 		<?php
 		    $id=$_SESSION['ID'];
@@ -68,8 +69,16 @@
 			?>
 		<a href="ajout_composant.php">
 		<div id="cercle">
-			<center><font size="+4">+</font></center>
+			<center><font size="+4"><div id=textecercle>+</div></font></center>
 		</div>
+		</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div id="parametre_composant">
+		<a href="parametre_composant">
+			Modifier les param&egrave;tres d'un composant
 		</a>
 	</div>
 	</article>

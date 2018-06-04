@@ -18,7 +18,7 @@ article
 	background:RGB(22, 85, 250);
 	font-size: 15px;
 	color: white;
-	min-height:370px;
+	min-height:390px;
 }
 footer
 {
@@ -715,4 +715,21 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#parametre_composant{
+	float:left;
+	margin-top:auto;
+	margin-bottom:0%;
+	padding:1%;
+}
+
+#textecercle{
+	padding:20%;
+	background-color:;
+}
+
+#textecercle:hover{
+	padding:20%;
+	color:red;
 }
