@@ -52,7 +52,11 @@
 						<?php 
        			}
 			?>
-			<div><div id=textecercle><font size="+4"><a href="ajout_piece.php">+</a></font></div></div>
+			<div id="cercle">
+				<a href="ajout_piece.php">
+					<font size="+4"><div id=textecercle>+</div></font>
+				</a>
+			</div>
 		</div>
 	
 		
