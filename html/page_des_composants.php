@@ -26,11 +26,20 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
+		
 		<div style="float:right">
 			<a href="suppression_composant.php">		
 				<input type="submit" id="retour" value="Supprimer un composant"> 
 			</a>
 		</div>
+		
+		<?php 
+		}
+		?>
 
 	<div id="conteneurcercle">
 		<?php	
@@ -50,10 +59,19 @@
 			while ($donnees = $reponse2->fetch())
 			{
 			    ?>
-			    	<div style="width: 150px;">
-						<div id="cercle"></div>
+
+			    	<div style="width: 150px;" id="conteneurcompo">
+						<div id="cercle">
+							<label class="switch">
+ 							<input type="checkbox" <?php if ($donnees['etat']== 1) {?> checked <?php }?>>
+  							<span class="slider round">
+  							</span>
+							</label>
+						</div>
+
 						<div id="texte"><?php echo $donnees['nom'];?></div>
 					</div>
+				
 					<?php 
 			}
 			?>

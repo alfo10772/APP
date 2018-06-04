@@ -1,6 +1,10 @@
 <?php 
-session_start()
+session_start();
+if (empty($_SESSION)) {
+ header('location: page_de_connexion.php'); //Redirige l'utilisateur vers la page de connexion s'il n'est pas encore connecté
+}
 ?>
+
 
  <p>
 			<a href="tableau_de_bord.php">
@@ -32,8 +36,12 @@ session_start()
 					Notifications	
 					<?php
 					include('../modele/config_init.php');
+					$id=$_SESSION['ID'];
+					$nom= $bdd->query('SELECT utilisateur.nom FROM utilisateur WHERE IDutilisateur = "'. $id .'" ');
+					$nom= $nom->fetch();
+					$nom= $nom['nom'];
 					
-					$not = $bdd->query('SELECT * FROM notification');
+
 					$sum=0;
 					foreach ($not->fetchAll() as $donnees) {
 					    $sum+=$donnees['etat'];
@@ -91,7 +99,7 @@ this.className='box';
 			
 	   				<?php
 	   				
-                         echo $_SESSION['mail'];
+                         echo $nom;
                     ?>
 	   		</p>	
 			</div>
