@@ -11,7 +11,7 @@ catch (Exception $e)
     die('Erreur :' . $e->getMessage());
 }
 
-$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
+$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type = 0');
 $idtyp = array();
 $rim = 'typ00';
 $i = 0;
@@ -27,18 +27,24 @@ $id = $_SESSION['ID'];
 $maison_principale = $_POST['nom_maison'];
 $rim = 'type00';
 $incr = "affichage0";
-for ($i = 0; $i<(count($_POST))-1; $i++) {
-    try {
-    $affich = $_POST[++$incr];
-
-    $req = 'UPDATE typecomposantuser SET affichage = :affichage WHERE (IDtypeComposant = :idt AND userID = :id)' ; 
-    $result = $bdd ->prepare($req);
-    $result = $result->execute(array(':affichage' => $affich, ':idt'=>$idtyp[$i] , ':id' => $id));
-    }
-    catch (Exception $e)
-    {
-        die('Erreur :'.$e->getMessage());
-    }
 echo count($idtyp);
+for ($i = 0; $i<count($idtyp); $i++) {
+    if (isset($_POST[++$incr])) {
+       
+        $affich = $_POST[$incr];
+        if ($affich[0]=='NULL') {
+            $aff = NULL;
+        }
+        else {
+            $aff = implode(',',$affich);
+            echo $aff;
+        }
+
+        $req = 'UPDATE typecomposantuser SET affichage = :affichage WHERE (IDtypeComposant = :idt AND userID = :id)' ; 
+        $result = $bdd ->prepare($req);
+        $result = $result->execute(array(':affichage' => $aff, ':idt'=>$idtyp[$i] , ':id' => $id));
+    }
+    
+
 }
 

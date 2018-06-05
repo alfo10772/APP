@@ -69,7 +69,8 @@
 			//echo implode (" ",$user[$j]);
 			echo $user[$j];
 			?>
-			<select name="<?php echo ++$incr ?>">
+			<select multiple name="<?php echo ++$incr ?>[]" size='4'>
+			<option value="NULL"> Ne pas afficher </option>
 			<option value="moyenne"> En moyenne </option>
 			<?php 
        					
