@@ -5,7 +5,7 @@
 
 		<link rel="stylesheet" href="../css/style.css">		
 
-		<title>Conditions générales d'utilisation</title>
+		<title>Conditions g&eacute;n&eacute;rales d'utilisation</title>
 	</head>
 	
 	<body>
@@ -23,7 +23,7 @@
 	</header>
 	
 	<article>
-		<h1> Conditions générales d'utilisation </h1>
+		<h1> Conditions g&eacute;n&eacute;rales d'utilisation </h1>
 
 		<br />
 		<br />

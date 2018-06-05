@@ -22,6 +22,7 @@
        		include('../modele/config_init.php');
        	?>
        				
+		<br />
 		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
