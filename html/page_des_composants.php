@@ -45,9 +45,17 @@
 	<div id="conteneurcercle">
 		<?php
 		    $id=$_SESSION['ID'];
-		    $idmaison = $_SESSION['maisonselect'];
-       		$reponse1 = $bdd->query('SELECT * FROM capteur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
-       		$reponse2 = $bdd->query('SELECT * FROM actionneur WHERE (IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'")');
+		    $id_principal=$_SESSION['principal'];
+		    
+		    if($_SESSION['utilisateur']==1){
+		        $reponse1 = $bdd->query('SELECT capteur.nom FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.IDutilisateur= "'. $id_principal .'" AND maison.selection = 1');
+		        $reponse2 = $bdd->query('SELECT actionneur.nom, actionneur.etat FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id_principal .'" AND maison.selection = 1');
+		    }
+		    else{
+		        $reponse1 = $bdd->query('SELECT capteur.nom FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.IDutilisateur= "'. $id .'" AND maison.selection = 1');
+		        $reponse2 = $bdd->query('SELECT actionneur.nom, actionneur.etat FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id .'" AND maison.selection = 1');
+		    }
+       		
        		
        		while ($donnees = $reponse1->fetch())
        		{
