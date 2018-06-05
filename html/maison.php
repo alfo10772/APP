@@ -20,7 +20,9 @@
 		<?php 
        		include('../modele/config_init.php');
        	?>
-       				
+       			
+       	<br />
+       		
 		<div style="float:left">
 			<a href="tableau_de_bord.php">		
 				<input type="submit" id="retour" value="Retour &agrave; la page d'accueil" />
@@ -45,19 +47,29 @@
         
         if($_SESSION['utilisateur']==1){
        		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(maison.IDutilisateur= "'.$id_principal.'")');
+       		$selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id_principal.'"');
         }
         
         else{
             $reponse = $bdd -> query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
+            $selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id.'"');
         }
         
-        $selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id.'"');
+        
         $selected = $selection->fetch()[0];
+        
         ?>
         
-        <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
-		<h2> Cliquez sur une autre maison pour changer de maison </h2>
+        <br />
         
+        <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
+        
+        <?php 
+        if($_SESSION['utilisateur']==0){ ?>
+        <br />
+		<h2> Cliquez sur une autre maison pour changer de maison </h2>
+		
+        <?php } ?>
         
 		<div id="conteneurcercle">
 				
