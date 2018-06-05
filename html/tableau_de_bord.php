@@ -59,19 +59,23 @@
 	<?php 
 
 	$affich = array();
+	$capt = array();
 	$idt = array();
 	$i = 0;
 		$rep = $bdd->prepare ('SELECT * FROM typecomposantuser WHERE type1 = :ind AND userID = :id');
    		$rep->execute(array(':ind' => 0, ':id' => $_SESSION['ID']));
 		while ($piece = $rep->fetch()) {	
-		$affich[$i] = $piece['affichage'];
+		$affich[$i] = explode(',',$piece['affichage']);
+		$capt[$i] = $piece['nom'];
 		//$idt[$i] = $piece['typec'];
+		print_r($affich[$i]);
 		$i++;
+			
 		
-
 		}
+		//print_r($affich);
        					
-       	$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type1 = 0');
+       	$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type = 0');
        	$i = 0;			
 		   while ($donnees = $reponse->fetch())
        	{
