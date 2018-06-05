@@ -40,11 +40,19 @@
         
         <?php
         
-            $id=$_SESSION['ID'];
-       		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
-       		$selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id.'"');
-       		$selected = $selection->fetch()[0];
-   
+        $id=$_SESSION['ID'];
+        $id_principal=$_SESSION['principal'];
+        
+        if($_SESSION['utilisateur']==1){
+       		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(maison.IDutilisateur= "'.$id_principal.'")');
+        }
+        
+        else{
+            $reponse = $bdd -> query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
+        }
+        
+        $selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id.'"');
+        $selected = $selection->fetch()[0];
         ?>
         
         <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
@@ -54,7 +62,7 @@
 		<div id="conteneurcercle">
 				
 			<?php 
-       					
+       		
        		foreach ($reponse->fetchAll() as $donnees)
        			{
        			    ?>
