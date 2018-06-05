@@ -86,7 +86,7 @@
 	<br>
 	<div id="parametre_composant">
 		<a href="parametre_composant.php">
-			Modifier les param&egrave;tres d'un composant
+			<input type="submit" id="second" value="Modifier les param&egrave;tres d'un composant">
 		</a>
 	</div>
 	</article>
