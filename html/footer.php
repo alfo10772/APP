@@ -11,7 +11,7 @@
 			</a>
 		</p>
 		<p>
-			<a href="mentions_legales.html">
+			<a href="mentions_legales.php">
 				Mentions l&eacute;gales
 			</a>
 		</p>
