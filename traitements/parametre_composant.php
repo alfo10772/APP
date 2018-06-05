@@ -32,6 +32,6 @@ $_SESSION['piececomposant'] = $_POST['piece'];
 
 
 
-header('location: ../html/suppression_composant.php');
+header('location: ../html/parametre_composant1.php');
 
 ?>

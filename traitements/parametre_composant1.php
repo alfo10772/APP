@@ -28,10 +28,10 @@ $id=$_SESSION['ID'];
 
 $idmaison = $_SESSION['maisonselect'];
 
-$_SESSION['piececomposant'] = $_POST['piece'];
+$_SESSION['composant'] = $_POST['composant'];
 
 
 
-header('location: ../html/suppression_composant.php');
+header('location: ../html/parametre_composant2.php');
 
 ?>

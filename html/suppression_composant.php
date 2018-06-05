@@ -29,12 +29,12 @@
 		<br />
 		<br />
 		<form method="post" action="../traitements/traitement_suppression_composant.php" enctype="multipart/form-data">
-			<div id="conteneur2"> 
-
+			<div id="conteneur2">
    				<div type="formulaire1">
    					<label for="composant">Nom du composant</label><br /> 
+   					<br />
        				<select name="composant" id="composant"> 
-       					<?php
+       					<?php 
        					$id=$_SESSION['ID'];
        					$idmaison = $_SESSION['maisonselect'];
        					$piece = $_SESSION['piececomposant'];
@@ -66,7 +66,6 @@
 					<input type="submit" id="supprimer" value="Supprimer" />
 				</a>
 			</div>
-		</div>
 		</div>
 		</form>
 	</article>

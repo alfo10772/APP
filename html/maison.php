@@ -39,11 +39,12 @@
         <br/>
         
         <?php
+        
             $id=$_SESSION['ID'];
        		$reponse = $bdd->query('SELECT maison.nom, maison.IDmaison FROM maison INNER JOIN utilisateur ON maison.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")');
        		$selection = $bdd ->query('SELECT nom FROM maison WHERE selection = 1 AND IDutilisateur = "'.$id.'"');
        		$selected = $selection->fetch()[0];
-       		
+   
         ?>
         
         <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
@@ -67,8 +68,11 @@
 			     }
 			?>
 			
-			
-			<a href="ajout_maison.php"><div id=cercle><font size="+4"><div id=textecercle>+</div></font></div></a>
+			<div id="cercle">
+				<a href="ajout_maison.php">
+					<font size="+4"><div id=textecercle>+</div></font>
+				</a>
+			</div>
 		</div>
 		
 		

@@ -9,19 +9,19 @@
 
 	<header>
 		<?php
-            require("en_tete_connexion.php");
+            require("en_tete_connexion.php"); //php
         ?>
 	</header>
-	<aricle>
-		<div id="conteneur5">
+	<article >
+		<section id="conteneur_faq">
 			<aside class="bonhomme1">
-			<section id="conteneur6">
 				<p>
 					<img src="../images/photo.png" alt="administrateur" width="200">
 					<br/>
 						administrateur	
 				</p>
 			</aside>
+			<section id="conteneur6">
 				<?php
 				try
 				{
@@ -36,11 +36,11 @@
 				while ($donnees = $reponse->fetch())
 				{
 				?>
-					<div class="question">
-				   		<?php echo $donnees['question']; ?>
+					<div class="question">	
+				    	<?php echo $donnees['question']; ?>
 				    </div>
-				    <div class="reponse">	
-				    	<?php echo $donnees['reponse']; ?>
+					<div class="reponse">
+				   		<?php echo $donnees['reponse']; ?>
 				    </div>
 				<?php
 				}
@@ -48,17 +48,17 @@
 				$reponse->closeCursor(); 
 				
 				?>
-				</section>
+			</section>
 			
 			<aside class="bonhomme2">
 				<p>
 					<img src="../images/photo.png" alt="utilisateur" width="200">
-						<br/>
-					utilisateur	
+					<br/>
+						utilisateur	
 				</p>
 			</aside>
-		</div>
-	</aricle>
+		</section>
+	</article>
 	<footer>						
 		<?php
             require("footer.php");

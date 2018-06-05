@@ -52,9 +52,8 @@
    				<div type="formulaire1">
    					<label for="piece">Piece</label><br /> 
        				<select name="piece" id="piece"> 
-       					<?php       					
-       					$idmaison = $_SESSION['maisonselect'];
-       					$reponse = $bdd->query('SELECT * FROM piece WHERE IDmaison = "'. $idmaison .'"');
+       					<?php 
+       					$reponse = $bdd->query('SELECT * FROM piece');
        					while ($donnees = $reponse->fetch())
        					{
        					?>

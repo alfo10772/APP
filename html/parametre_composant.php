@@ -1,131 +1,63 @@
 <!DOCTYPE html>
-
-<html>
-
+<html>                                                  <!--squelette pour en-tête et bas de page -->
 <head>
-
-<meta charset="ISO-8859-1">
-
-<link rel="stylesheet" href="../css/style.css">
-
-<title>Suppression d'un composant</title>
-
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/style.css">
+	<title>Param&eacute;trage des composants</title>
 </head>
-
 <body>
 
-
-
 	<header>
-
 		<?php
-
             require("en_tete_connexion.php");
-
         ?>
-
 	</header>
-
 	<article>
-
-		<h1>Suppression d'un composant</h1>
-
+	<h1>Param&eacute;trage des composants</h1>
+	
+	<br />
 		<?php 
-
-       		include('../modele/config_init.php');
-
+		include('../modele/config_init.php');
        	?>
-
-       	
-
+	
 		<div style="float:left">
-
 			<a href="page_des_composants.php">		
-
 				<input type="submit" id="retour" value="Retour &agrave; la page des composants" />
-
 			</a>
-
 		</div>
-
-		
-
-		<br />
-
-		<br />
-
-		<br />
-
-		<br />
-
-		<form method="post" action="../traitements/supp_composant1.php" enctype="multipart/form-data">
-
-			<div id="conteneur2"> 
-
-   				<div type="formulaire1">
-
-   					<label for="piece">S&egrave;lectionnez la pi&egrave;ce dans laquelle vous voulez supprimer un composant</label><br />
-
-   					<br />
-
-       				<select name="piece" id="piece"> 
+	<br>
+	<br>
+	<br>
+	<br>
+	<form action="../traitements/parametre_composant.php" method="post">
+	<div id="conteneur2">
+		<label for="composant">  S&eacute;lectionnez la pi&egrave;ce dans laquelle vous voulez param&eacute;trer un composant</label><br /> 
+   		<select name="piece" id="piece"> 
 
        					<?php
-
        					$idmaison = $_SESSION['maisonselect'];
-
        					$reponse = $bdd->query('SELECT * FROM piece WHERE IDmaison = "'. $idmaison .'" ');
-
        					while ($donnees = $reponse->fetch())
-
        					{
-
        					?>
-
        						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-
        					<?php
-
                         }
-
                         ?> 
-
            			</select> 
 
-  				 </div>
-
 			<div style="float:left">
-
 			<br />
-
 			<br />
-
 			<br />
-
-				
-
 					<input type="submit" id="supprimer" value="Confirmer" />
-
-				
-
 			</div>
-
-		</div>
-
-		</form>
-
+    </div>
+    </form>
 	</article>
-
 	<footer>
-
 			<?php
-
                 require("footer.php");
-
             ?>
-
 	</footer>
-
 </body>
-
-</html>

@@ -20,7 +20,7 @@ $rep->execute(array(':mail' => $mail));
 
 $don = $rep -> fetch();
 
-if ($don['reinitialisation'] == $code && $code > 9999999) {
+if ($don['reinitialisation'] == $code) {
     header('location: ../html/entrer_new_mdp.php');
 }
 else {

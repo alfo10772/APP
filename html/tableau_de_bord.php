@@ -20,6 +20,11 @@
 	<?php 
        		include('../modele/config_init.php');
        	?>
+     <div style="float:right">
+		<a href="ajout_secondaire.php">		
+			<input type="submit" id="second" value="Ajouter un utilisateur secondaire" />
+		</a>
+	</div>
 		
 	<div id="conteneurcercle1">
 			<div>
