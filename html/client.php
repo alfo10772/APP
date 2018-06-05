@@ -25,7 +25,7 @@
 			
 				<?php 
        					
-       		        $reponse = $bdd->query('SELECT * FROM utilisateur');
+       		        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');
        			?>	
        		  
        		    <table>
