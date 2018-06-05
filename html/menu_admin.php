@@ -1,5 +1,8 @@
 <?php 
-session_start()
+session_start();
+if (empty($_SESSION)) {
+    header('location: page_de_connexion.php'); //Redirige l'utilisateur vers la page de connexion s'il n'est pas encore connect�
+}
 ?>
 
 <div class="menu-vertical">
