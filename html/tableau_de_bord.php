@@ -67,6 +67,11 @@
 	$capt = array();
 	$idt = array();
 	$i = 0;
+	$rp = $bdd->prepare('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur = :id');
+	$rp->execute(array(':id' => $_SESSION['ID']));
+	$idmaison = $rp->fetch();
+	echo $idmaison[0];
+
 		$rep = $bdd->prepare ('SELECT * FROM typecomposantuser WHERE type1 = :ind AND userID = :id');
    		$rep->execute(array(':ind' => 0, ':id' => $_SESSION['ID']));
 		while ($piece = $rep->fetch()) {	
