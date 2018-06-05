@@ -5,7 +5,7 @@
 
 		<link rel="stylesheet" href="../css/style.css">		
 
-		<title>Conditions g�n�rales d'utilisation</title>
+		<title>Conditions g&eacute;n&eacute;rales d'utilisation</title>
 	</head>
 	
 	<body>
