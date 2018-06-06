@@ -749,3 +749,16 @@ input[id=second]:hover {
 	padding:20%;
 	color:red;
 }
+
+#stats
+{   width: 50%;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+	background: RGB(22,0,250);
+}

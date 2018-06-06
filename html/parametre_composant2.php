@@ -35,11 +35,14 @@
 		$piece = $_SESSION['piececomposant'];
 		$composant = $_SESSION['composant'];
 		
+		$reqidp = $bdd->query('SELECT IDpiece FROM piece WHERE nom= "'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'" ');
+		$piece=$reqidp->fetch();
+		$piece= $piece['IDpiece'];
+		
 		
 		$reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
 		$idtype=$reqid1->fetch();
-		$idtype1= $idtype['type'];
-		var_dump($idtype1);
+		$idtype= $idtype['type'];
 		
 		if($idtype == NULL)
 		
@@ -48,6 +51,7 @@
 		    $idtype=$reqid1->fetch();
 		    $idtype= $idtype['type'];
 		}
+		
 		if($idtype==0)
 		{
 		?>

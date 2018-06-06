@@ -13,7 +13,7 @@
 </header>
 <article>
 	 <div>
-		<form method="post" action="traitement.php">
+		<form method="post" action="action="../traitements/traitement_stats.php"">
 		
 			<p>  
 			    <h1>
@@ -86,6 +86,9 @@
 				    	<option value="valeur2"selected>Moyenne de ce mois</option>
 				    	<option value="valeur3">Moyenne de cette année</option>
 				</select>
+				<div id="formulaire_1">
+ 							<input type="submit" id="stats" value="valider" />
+ 				</div>
 		
 		</form>
 	</div>
