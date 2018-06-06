@@ -762,3 +762,12 @@ input[id=second]:hover {
     text-align: center;
 	background: RGB(22,0,250);
 }
+
+#conteneurparametre {
+	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	width: 70%;
+}

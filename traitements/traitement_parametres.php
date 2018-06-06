@@ -13,7 +13,6 @@ catch (Exception $e)
 
 $reponse = $bdd->query('SELECT * FROM typecomposant WHERE type = 0');
 $idtyp = array();
-$rim = 'typ00';
 $i = 0;
 while ($donnees = $reponse->fetch())
 			{
@@ -25,7 +24,11 @@ while ($donnees = $reponse->fetch())
 
 $id = $_SESSION['ID'];
 $maison_principale = $_POST['nom_maison'];
-$rim = 'type00';
+
+$req = 'UPDATE maison SET selectionauto = :selection WHERE IDutilisateur= "'.$id.'"';
+$result = $bdd ->prepare($req);
+$result = $result->execute(array(':selection' => $maison_principale));
+
 $incr = "affichage0";
 echo count($idtyp);
 for ($i = 0; $i<count($idtyp); $i++) {

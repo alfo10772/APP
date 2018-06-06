@@ -21,11 +21,11 @@
        		include('../modele/config_init.php');
        	?>
 
-		<div id="conteneur2">
+		<div id="conteneurparametre">
 
-		<form  method="post" action="traitement_parametres.php">
+		<form  method="post" action="../traitements/traitement_parametres.php">
 
-		<div type="formulaire1">
+		
 			        Maison principale:
 			        
 			        
@@ -47,15 +47,47 @@
                     </select>
 			<br />
 			<br />
-			Affichage dans le tableau de bord
+			Affichage dans le tableau de bord :
+			<br />
 			<br />
 			<br />
 			<?php
-			$reponse = $bdd->query('SELECT * FROM typecomposant WHERE type = 0');
-			$user = array();
 			
-			$i = 0;
-			while ($donnees = $reponse->fetch())
+			$liste_capteur = $bdd->query('SELECT nom FROM typecomposant WHERE type = 0');
+			
+			foreach ($liste_capteur->fetchAll() as $capt) {
+			    echo $capt[0];
+			    ?>
+			    <br />
+			    <?php 
+			    $pieces = $bdd -> query('SELECT piece.nom FROM capteur JOIN piece ON (piece.IDpiece = capteur.IDpiece) WHERE nomtype = "'.$capt[0].'"');
+			    ?>
+			    
+			    <input type="checkbox" name="case2" />En moyenne
+			    
+			    <?php 
+			    foreach ($pieces -> fetchAll() as $piece) {
+			        ?>
+			        
+			        <input type="checkbox" name="case2"/><?php echo $piece['nom']; ?>
+			        <br />
+			        
+			        <?php 
+			    }
+			    ?>
+			    <br />
+			    <hr width="100%">
+			    <br />
+			    <?php 
+			    //$reponse = $bdd->query('SELECT * FROM capteur WHERE nomtype = "'.$capt[0].'"');
+			    //$capteur = $reponse->fetchAll();
+			    //var_dump($capteur);
+			   
+			}
+			
+			//$reponse = $bdd->query('SELECT * FROM capteur JOIN typecomposant ON (capteur.nomtype=typecomposant.nom) WHERE type = 0');
+			
+			/*while ($donnees = $reponse->fetch())
 			{
 
 				$user[$i] = $donnees['nom'];
@@ -85,7 +117,7 @@
                     	?>      
             </select> 
 			<?php
-			} 
+			} */
 			?>     
         </div>  
 		<input type="submit" value="Enregistrer les modifications" />
