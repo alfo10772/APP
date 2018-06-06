@@ -14,27 +14,29 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
       
    
    if (!empty($user)){
-    if(password_verify($_POST['password'],$user[1])){
-    	session_start();
-    	$_SESSION['mail']= $_POST['mail'];
-    	$_SESSION['ID']= $user[0];
-    	$_SESSION['utilisateur']=$user[2];
-    	var_dump($_SESSION['utilisateur']);
-    	$_SESSION['principal']=$user[3];
+        if(password_verify($_POST['password'],$user[1])){
+        	session_start();
+        	$_SESSION['mail']= $_POST['mail'];
+        	$_SESSION['ID']= $user[0];
+        	$_SESSION['utilisateur']=$user[2];
+    	    $_SESSION['principal']=$user[3];
     	
-    	if($user[2]==0){
-    	    header('location: tableau_de_bord.php');
-    	}
-    	if($user[2]==1){
-    	    header('location: tableau_de_bord.php');
-    	}
-    	if($user[2]==2){
-    	    header('location: client.php');
-    	}
+    	    if($user[2]==0){
+    	        header('location: tableau_de_bord.php');
+    	    }
+    	    if($user[2]==1){
+    	        header('location: tableau_de_bord.php');
+    	    }
+    	    if($user[2]==2){
+    	        header('location: client.php');
+    	    }
+    	    
+    	    
+        }
+        else{
+            header('location: page_de_connexion.php');
+        }
    }
-   else{
-      header('location: page_de_connexion.php');
-   }
-  }
 }
+
  ?>

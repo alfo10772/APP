@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 28 mai 2018 à 11:34
+-- Généré le :  mer. 06 juin 2018 à 10:29
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -31,19 +31,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `typecomposant` (
   `IDtypeComposant` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
-  `type` tinyint(1) NOT NULL
+  `type` int(1) NOT NULL,
+  `unite` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `typecomposant`
 --
 
-INSERT INTO `typecomposant` (`IDtypeComposant`, `nom`, `type`) VALUES
-(1, 'Capteur de température', 0),
-(2, 'Capteur de fumée', 0),
-(3, 'essai ', 0),
-(11, 'volet', 1),
-(13, 'test', 1);
+INSERT INTO `typecomposant` (`IDtypeComposant`, `nom`, `type`, `unite`) VALUES
+(1, 'Capteur de température', 0, 'C°'),
+(2, 'Capteur de fumée', 0, ''),
+(11, 'volet', 1, ''),
+(14, 'Capteur de luminosité', 0, ''),
+(15, 'Lumière', 1, ''),
+(16, 'test', 1, '');
 
 --
 -- Index pour les tables déchargées
@@ -63,7 +65,7 @@ ALTER TABLE `typecomposant`
 -- AUTO_INCREMENT pour la table `typecomposant`
 --
 ALTER TABLE `typecomposant`
-  MODIFY `IDtypeComposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `IDtypeComposant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
