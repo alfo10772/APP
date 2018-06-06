@@ -35,8 +35,10 @@
 			<form method="post" action="../traitements/traitement_composant.php" enctype="multipart/form-data"> 
    				<div type="formulaire1">
    					<label for="type">Type de composant</label><br /> 
-       				<select name="type" id="type" onchange="form(this,'formcapteur');"> 
-       					<?php 
+       				<select name="type" id="type"> 
+       					<?php
+       					$id=$_SESSION['ID'];
+       					$idmaison = $_SESSION['maisonselect'];
        					$reponse = $bdd->query('SELECT * FROM typeComposant');
        					while ($donnees = $reponse->fetch())
        					{
@@ -53,7 +55,7 @@
    					<label for="piece">Piece</label><br /> 
        				<select name="piece" id="piece"> 
        					<?php 
-       					$reponse = $bdd->query('SELECT * FROM piece');
+       					$reponse = $bdd->query('SELECT * FROM piece WHERE IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'"');
        					while ($donnees = $reponse->fetch())
        					{
        					?>
