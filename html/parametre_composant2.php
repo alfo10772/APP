@@ -40,16 +40,18 @@
 		$piece= $piece['IDpiece'];
 		
 		
-		$reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
-		$idtype=$reqid1->fetch();
-		$idtype= $idtype['type'];
+		$reqid1 = $bdd->query('SELECT * FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
+		$compo=$reqid1->fetch();
+		$idtype= $compo['type'];
+		$idcompo= $compo['IDcapteur'];
 		
 		if($idtype == NULL)
 		
 		{
-		    $reqid1 = $bdd->query('SELECT type FROM actionneur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'"');
-		    $idtype=$reqid1->fetch();
-		    $idtype= $idtype['type'];
+		    $reqid1 = $bdd->query('SELECT * FROM actionneur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'"');
+		    $compo=$reqid1->fetch();
+		    $idtype= $compo['type'];
+		    $idcompo= $compo['IDactionneur'];
 		}
 		
 		if($idtype==0)
@@ -59,13 +61,14 @@
 				<div id="conteneur2">
 					<label for="composant">S&eacute;lectionnez vos param&egrave;tres</label><br />
 						<label for="valeurmin">Valeur minimale</label>
-						<input type="number" name="valeurmax">
+						<input type="number" name="valeurmin">
 						<br>
 						<br>
 						<label for="valeurmin">Valeur maximale</label>
 						<input type="number" name="valeurmax">
 						<br>
 						<br>
+						<input type="hidden" name="id" value=<?php echo $idcompo ?>>
 						<input type="submit" id="supprimer" value="Confirmer" />
 				</div>
 			</form>
@@ -86,6 +89,7 @@
 		    			<input type="time" name="heurefin">
 		    			<br>
 		    			<br>
+		    			<input type="hidden" name="id" value=<?php echo $idcompo ?>>
 		    			<input type="submit" id="supprimer" value="Confirmer" />
 		    	</div>
 		    </form>
