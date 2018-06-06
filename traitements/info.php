@@ -13,7 +13,7 @@ if($typ==0){
 else{
     $type="Utilisateur secondaire";
 }
-$nom = $info[2];
+$nom = $info[3];
 $_tel = $info[6];
 
 $mail = $_SESSION['mail'];
