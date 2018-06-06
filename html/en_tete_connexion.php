@@ -56,6 +56,9 @@ if (empty($_SESSION)) {
 					}
 					?>
 				</a>
+				<a href="message_client.php">
+					Mes Messages
+				</a>
 			
 			</div>
 			
