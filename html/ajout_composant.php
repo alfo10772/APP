@@ -55,7 +55,7 @@
    					<label for="piece">Piece</label><br /> 
        				<select name="piece" id="piece"> 
        					<?php 
-       					$reponse = $bdd->query('SELECT * FROM piece WHERE IDutilisateur= "'. $id .'" AND selection = 1');
+       					$reponse = $bdd->query('SELECT * FROM piece WHERE piece.IDutilisateur= "'. $id .'" AND piece.IDmaison= "'. $idmaison .'" ');
        					while ($donnees = $reponse->fetch())
        					{
        					?>
