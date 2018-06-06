@@ -47,4 +47,5 @@ for ($i = 0; $i<count($idtyp); $i++) {
     
 
 }
+header('location: tableau_de_bord.php');
 
