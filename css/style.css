@@ -189,6 +189,11 @@ form{
 	text-align:center;
 }
 
+#cercle > div {
+	padding :40% 3% 1%;
+	font-size : 19px;
+}
+
 #texte{
 	width: auto;
 	font-size: 1.2em;
@@ -738,13 +743,13 @@ input[id=second]:hover {
 
 #textecercle{
 	padding:20%;
-	background-color:;
 }
 
 #textecercle:hover{
 	padding:20%;
 	color:red;
 }
+
 #stats
 {   width: 50%;
     color: white;
@@ -755,5 +760,5 @@ input[id=second]:hover {
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-	background: RGB(22,0,250);;
+	background: RGB(22,0,250);
 }
