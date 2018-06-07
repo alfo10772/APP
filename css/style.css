@@ -764,10 +764,9 @@ input[id=second]:hover {
 }
 
 #conteneurparametre {
-	font-size: 1em;
-	display: flex;
-	flex-direction: column;
-	margin-left: auto;
-  	margin-right: auto;
-	width: 70%;
+	width: 60%;
+}
+
+#conteneurparametre > div {
+	font-size: 0.7em;
 }
