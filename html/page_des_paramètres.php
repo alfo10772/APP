@@ -26,11 +26,11 @@
 		
 		<div id="conteneurparametre">
 
-		<form  method="post" action="../traitements/traitement_parametres.php">	
+		<form  method="post" action="../traitements/parametres_tdb.php">	
 			Maison principale:
 			        
 			<br />
-			<select name="nom_maison">
+			<select name="nommaison">
 				<?php 
        					
        			$reponse = $bdd->query('SELECT * FROM maison');
@@ -48,35 +48,34 @@
 			<hr width="100%">
 			<br />
 			<h2>Affichage dans le tableau de bord :</h2>
-			<br />		
+				
 			<?php
+			$pieces = $bdd -> query('SELECT piece.nom, piece.IDpiece FROM piece JOIN maison ON piece.IDmaison = maison.IDmaison WHERE piece.IDutilisateur= "'. $id .'" AND selection = 1');
 			
-			$liste_capteur = $bdd->query('SELECT nom FROM typecomposant WHERE type = 0');
-			
-			
-			foreach ($liste_capteur->fetchAll() as $capt) {
-			    ?><h3><?php echo $capt[0]; ?></h3>
-			    <br />
-			    <?php 
-			    $pieces = $bdd -> query('SELECT piece.nom FROM capteur JOIN piece ON (piece.IDpiece = capteur.IDpiece) WHERE nomtype = "'.$capt[0].'"');
-			    ?>
+			foreach ($pieces -> fetchAll() as $piece) {
 			    
-			    <label><input type="checkbox" /> En moyenne</label>
+			    ?>
+			    <br />
+			    <h3><?php echo $piece[0]; ?></h3>
+			    
 			    <br />
 			    <?php 
-			    foreach ($pieces -> fetchAll() as $piece) {
+			    $liste_capteur = $bdd->query('SELECT capteur.nomtype FROM capteur JOIN piece ON piece.IDpiece = capteur.IDpiece WHERE piece.IDpiece = "'.$piece[1].'"');
+			    
+			    foreach ($liste_capteur -> fetchAll() as $capt) {
+			        $valeur = $bdd -> query('SELECT IDcapteur FROM capteur JOIN piece ON piece.IDpiece = capteur.IDpiece WHERE capteur.nomtype="'.$capt['nomtype'].'" AND piece.IDpiece = "'.$piece[1].'"');
+			        $val = $valeur -> fetchAll();
 			        ?>
 			        
-			        <label><input type="checkbox" /><?php echo $piece['nom']; ?></label>
+			        <label><input type="checkbox" name="checkbox[]" value=<?php echo $val[0]['IDcapteur'];?>><?php echo " " . $capt['nomtype']; ?></label>
 			        <br />
 			        
 			        <?php 
 			    }
 			    ?>
-			    
 			    <br />
+			    <?php 
 			    
-			    <?php 			   
 			}
 			?>
 		<input type="submit" value="Enregistrer les modifications" />

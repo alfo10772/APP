@@ -25,13 +25,12 @@ if (empty($_SESSION)) {
 					Mes informations
 				</a>
 				<br />
-				<br />
 				
 				<a href="redirection.php">			
 					Se d&eacute;connecter
 				</a>
 				<br />
-				<br />
+				
 				<a href="notification.php">
 					Notifications	
 					<?php
@@ -56,6 +55,8 @@ if (empty($_SESSION)) {
 					}
 					?>
 				</a>
+				<br />
+				
 				<a href="message_client.php">
 					Mes Messages
 				</a>
