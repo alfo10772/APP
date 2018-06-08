@@ -21,8 +21,8 @@
        		include('../modele/config_init.php');
        	?>
      <div style="float:right">
-		<a href="ajout_secondaire.php">		
-			<input type="submit" id="second" value="Ajouter un utilisateur secondaire" />
+		<a href="gestion_secondaire.php">		
+			<input type="submit" id="second" value="G&eacute;rer les utilisateurs secondaires" />
 		</a>
 	</div>
 		
