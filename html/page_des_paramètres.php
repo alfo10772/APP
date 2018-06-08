@@ -72,7 +72,20 @@
 			        
 			        <?php 
 			    }
+			    $liste_actionneur = $bdd -> query('SELECT actionneur.nomtype FROM actionneur JOIN piece ON piece.IDpiece = actionneur.IDpiece WHERE piece.IDpiece = "'.$piece[1].'"');
+			    
+			    foreach ($liste_actionneur -> fetchAll() as $action) {
+			        $valeur2 = $bdd -> query('SELECT IDactionneur FROM actionneur JOIN piece ON piece.IDpiece = actionneur.IDpiece WHERE actionneur.nomtype="'.$action['nomtype'].'" AND piece.IDpiece = "'.$piece[1].'"');
+			        $val2 = $valeur2 -> fetchAll();
+			        ?>
+			        
+			        <label><input type="checkbox" name="checkbox2[]" value=<?php echo $val2[0]['IDactionneur'];?>><?php echo " " . $action['nomtype']; ?></label>
+			        <br />
+			        
+			        <?php 
+			    }
 			    ?>
+			    
 			    <br />
 			    <?php 
 			    

@@ -89,8 +89,32 @@
 				<div id="texte"><?php echo $capt['nom'] . " (" . $piece[0]['nom'] . ")";?></div>
 			</div>
 			<?php        
-			}
-            ?>
+		}
+		$actionneur = $bdd -> query('SELECT actionneur.nom, actionneur.etat, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id .'" AND actionneur.selectiontdb = 1 AND maison.selection = 1');
+
+		foreach ($actionneur->fetchAll() as $action) {
+		    $idactionneur = $action['IDactionneur'];
+		    $req1 = $bdd->query('SELECT donnees.donnees FROM donnees JOIN actionneur ON (actionneur.IDactionneur = donnees.IDcomposant) WHERE actionneur.IDactionneur = "'. $idactionneur .'"');
+		    $rep1 = $req1->fetch();
+		    $req3 = $bdd->query('SELECT typecomposant.unite FROM typecomposant JOIN actionneur ON (typecomposant.nom = actionneur.nomtype) WHERE actionneur.IDactionneur = "'. $idactionneur .'"');
+		    $rep3 = $req3->fetch();
+		    $pieces1 = $bdd->query('SELECT piece.nom FROM piece JOIN actionneur ON (piece.IDpiece = actionneur.IDpiece) WHERE actionneur.IDactionneur = "'.$idactionneur.'"');
+		    $piece1 = $pieces1->fetchAll();
+		   
+			?>
+			<div style="width: 150px;" id="conteneurcompo"> 
+				<div id="cercle">
+					<label class="switch">
+ 						<input type="checkbox" <?php if ($action['etat']== 1) {?> checked <?php }?>>
+  						<span class="slider round">
+						</span>
+					</label>
+				</div>
+				<div id="texte"><?php echo $action['nom'] . " (" . $piece1[0]['nom'] . ")";?></div>
+			</div>
+			<?php        
+		}
+		?>
     </div>
 		
 	

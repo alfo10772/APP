@@ -29,4 +29,10 @@ foreach($_POST['checkbox'] as $valeur)
     $rep = $rep->execute(array(':id'=>$valeur));
 }
 
+foreach($_POST['checkbox2'] as $valeur2)
+{
+    $req2 = 'UPDATE actionneur SET selectiontdb = 1 WHERE IDactionneur = :id';
+    $rep2 = $bdd ->prepare($req2);
+    $rep2 = $rep2->execute(array(':id'=>$valeur2));
+}
 header('location: ../html/tableau_de_bord.php');
