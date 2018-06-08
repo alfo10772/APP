@@ -24,5 +24,9 @@ if(!empty($_POST['nommaison'])){
 
 foreach($_POST['checkbox'] as $valeur)
 {
-    echo "La checkbox $valeur a été cochée<br>";
+    $req = 'UPDATE capteur SET selectiontdb = 1 WHERE IDcapteur = :id';
+    $rep = $bdd ->prepare($req);
+    $rep = $rep->execute(array(':id'=>$valeur));
 }
+
+header('location: ../html/tableau_de_bord.php');
