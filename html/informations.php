@@ -179,12 +179,46 @@
        		    		<hr width="100%">
        		    		<br />
        		     		<p>T&eacute;l&eacute;charger votre photo</p>
-       		     		<div id="conteneurmodif">
-       		     				
-       		     			<form action="../traitements/modif_info.php" method="post">
-       		      				<input type="file" name="photo" />
-       		      				<input type="submit" value="Valider" />	
-       		      			</form>
+       		     		
+       		     		
+       		     		
+       		     		
+       		      		
+       		     		
+            <div class="modifphoto">
+            <form action="../traitements/modif_info.php" method="post">
+           <input name="photo" type="file" onchange="uploadImg(this,'imgBox')"  />
+           <span class="a" id="imgOrder_a" style="display: none;"></span>
+           <input type="submit" value="Valider" />	
+           </form>
+           </div>
+
+       		      			
+ <script>
+function uploadImg(file,imgNum){
+var widthImg = 125; //width
+var heightImg = 125; //height
+var div = document.getElementById(imgNum);
+if (file.files && file.files[0]){
+div.innerHTML ='<img id="upImg">'; //
+var img = document.getElementById('upImg'); //
+img.onload = function(){
+img.width = widthImg;
+img.height = heightImg;
+}
+var reader = new FileReader(); //
+reader.onload = function(evt){
+if(reader.readyState === 2){ //
+img.src = evt.target.result;
+}
+}
+reader.readAsDataURL(file.files[0]); 
+}
+}
+</script>
+       		      			
+       		      			
+       		      			
        		      			<br />
        		      		</div>
        		     </div>
