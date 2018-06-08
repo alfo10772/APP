@@ -779,7 +779,7 @@ table#secondaire{
 }
 
 th#nom{
-	width: 30%;
+	width: 20%;
 	padding: 5px;
 	height: 70px;
 	background:RGB(22, 85, 150);
@@ -787,7 +787,7 @@ th#nom{
 
 
 th#mail{
-	width: 30%;
+	width: 20%;
 	padding: 5px;
 	height: 70px;
 	background:RGB(22, 85, 150);
@@ -800,8 +800,16 @@ th#changer{
 	background:RGB(22, 85, 150);
 }
 
+th#type{
+	width: 20%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
 td#changer{
 	width: auto;
 	padding: 0% 1% 0% 1%;
 	height: 70px;
+	display:;
 }
