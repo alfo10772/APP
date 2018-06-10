@@ -32,7 +32,8 @@
        			<table>
        				<tr>
        		       		<th><p>Composant</p></th>
-       		       		<th><p>Type du composant</p></tr>
+       		       		<th><p>Type du composant</p></th>
+       		       		<th><p>Unite</p></th>
        		       	</tr>
        		       	
        		    
@@ -51,6 +52,7 @@
      					    echo '<p>Effecteur</p>';
      					}
      					?></td>
+     					<td><?php echo $donnees['unite'];?>
      					<input type="hidden" name="id" value=<?php echo $donnees['IDtypeComposant'] ?>></input>
      					<td><input type="submit" id="admin" name=<?php echo $donnees['IDtypeComposant'];?> value="Supprimer ce type de composant" /></td>
        		  		</tr>

@@ -34,25 +34,29 @@
 			
 						<br />	
 			
-   						<div type="formulaire1">
    							Nom du nouveau type
    							<br /> 
-       						<input type="admin2" name="nom" placeholder="Nom du type de composant" id="nom" />
-  				 		</div>
-			
+       						<input type="admin2" name="nom" placeholder="Nom du type de composant" required />
+  				 		
 						<br />
 						<br />
-						
-						<div type="formulaire1">
+						<br />
+					
 							Type du composant
 							<select name="type" type="admin">
 								<option value="capteur">Capteur</option>
 								<option value="effecteur">Effecteur</option>
 							
 							</select>
-						
-						</div>
 			
+						<br />
+						<br />
+						<br />
+						
+							Unit&eacute; (Uniquement s'il s'agit d'un capteur)
+							<input type="admin2" name="unite" placeholder="Unit&eacute;" />
+						
+						<br />
 						<br />
 						<br />
 						

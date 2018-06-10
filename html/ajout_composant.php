@@ -38,7 +38,6 @@
        				<select name="type" id="type"> 
        					<?php
        					$id=$_SESSION['ID'];
-       					$idmaison = $_SESSION['maisonselect'];
        					$reponse = $bdd->query('SELECT * FROM typeComposant');
        					while ($donnees = $reponse->fetch())
        					{
@@ -55,7 +54,7 @@
    					<label for="piece">Piece</label><br /> 
        				<select name="piece" id="piece"> 
        					<?php 
-       					$reponse = $bdd->query('SELECT * FROM piece WHERE piece.IDutilisateur= "'. $id .'" AND piece.IDmaison= "'. $idmaison .'" ');
+       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison )WHERE piece.IDutilisateur= "'. $id .'" AND maison.selection = 1');
        					while ($donnees = $reponse->fetch())
        					{
        					?>

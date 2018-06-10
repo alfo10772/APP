@@ -13,6 +13,7 @@ catch (Exception $e)
 
 $nom = $_POST['nom'];
 $type = $_POST['type'];
+$unite = $_POST['unite'];
 
 
 if($type=='capteur'){
@@ -22,9 +23,9 @@ else{
     $id=1;
 }
 
-$req = $bdd->prepare('INSERT INTO typecomposant(nom, type) VALUES(:nom, :type)');
+$req = $bdd->prepare('INSERT INTO typecomposant(nom, type, unite) VALUES(:nom, :type, :unite)');
 
-$result = $req->execute(array(':nom' => $nom, ':type' => $id));
+$result = $req->execute(array(':nom' => $nom, ':type' => $id, ':unite' => $unite));
 
 header('location: ../html/modif_article.php');
 ?>
