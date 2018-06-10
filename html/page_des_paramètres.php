@@ -48,6 +48,8 @@
 			<hr width="100%">
 			<br />
 			<h2>Affichage dans le tableau de bord :</h2>
+			<h4>Pour s&eacute;lectionner les composants d'une autre maison, veuillez changer la s&eacute;lection dans l'onglet maison du tableau de bord</h4>
+			
 				
 			<?php
 			$pieces = $bdd -> query('SELECT piece.nom, piece.IDpiece FROM piece JOIN maison ON piece.IDmaison = maison.IDmaison WHERE piece.IDutilisateur= "'. $id .'" AND selection = 1');

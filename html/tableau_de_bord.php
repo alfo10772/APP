@@ -85,7 +85,16 @@
     <div id="conteneurcercle1">
     	<?php 
     	$id=$_SESSION['ID'];
-    	$capteur = $bdd -> query('SELECT capteur.nom, capteur.IDcapteur FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.IDutilisateur= "'. $id .'" AND capteur.selectiontdb = 1 AND maison.selection = 1');
+    	
+    	$id_principal=$_SESSION['principal'];
+    	
+    	if($_SESSION['utilisateur']==1){
+    	    $capteur = $bdd -> query('SELECT capteur.nom, capteur.IDcapteur FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.IDutilisateur= "'. $id_principal .'" AND capteur.selectiontdb = 1 AND maison.selection = 1');
+    	}
+    	else {
+    	    $capteur = $bdd -> query('SELECT capteur.nom, capteur.IDcapteur FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.IDutilisateur= "'. $id .'" AND capteur.selectiontdb = 1 AND maison.selection = 1');
+    	}
+    	
     
         foreach ($capteur->fetchAll() as $capt) {
             $idcapteur = $capt[1];
@@ -106,7 +115,14 @@
 			</div>
 			<?php        
 		}
-		$actionneur = $bdd -> query('SELECT actionneur.nom, actionneur.etat, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id .'" AND actionneur.selectiontdb = 1 AND maison.selection = 1');
+		
+		if($_SESSION['utilisateur']==1){
+		    $actionneur = $bdd -> query('SELECT actionneur.nom, actionneur.etat, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id_principal .'" AND actionneur.selectiontdb = 1 AND maison.selection = 1');
+		}
+		else{
+		    $actionneur = $bdd -> query('SELECT actionneur.nom, actionneur.etat, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.IDutilisateur= "'. $id .'" AND actionneur.selectiontdb = 1 AND maison.selection = 1');
+		}
+		
 
 		foreach ($actionneur->fetchAll() as $action) {
 		    $idactionneur = $action['IDactionneur'];
