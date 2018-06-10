@@ -29,12 +29,19 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
 		<div style="float:right">
 			<a href="suppression_maison.php">		
 				<input type="submit" id="retour" value="Supprimer une maison" />
 				
 			</a>
 		</div>
+		<?php 
+		}
+		?>
 		
 		<br/>
         <br/>
@@ -86,13 +93,19 @@
 			        </form>
 			        <?php    
 			     }
-			?>
 			
+		    if ($_SESSION['utilisateur']==0){
+		    
+		?>
 			<div id="cercle">
 				<a href="ajout_maison.php">
 					<font size="+4"><div id=textecercle>+</div></font>
 				</a>
 			</div>
+			
+			<?php 
+		    }
+			?>
 		</div>
 		
 		

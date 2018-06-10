@@ -14,6 +14,7 @@ catch (Exception $e)
 }
 
 $id= $_SESSION['ID'];
+$selection = 0;
 
 
 if(!empty($_POST['nommaison'])){
@@ -21,6 +22,14 @@ if(!empty($_POST['nommaison'])){
     $result = $bdd ->prepare($req1);
     $result = $result->execute(array(':auto' => $_POST['nommaison'], ':id'=>$id ));
 }
+
+$requete1 = 'UPDATE capteur SET selectiontdb = :selectiontdb WHERE IDutilisateur= "'.$id.'"';
+$result1 = $bdd ->prepare($requete1);
+$result1 = $result1->execute(array(':selectiontdb' => $selection));
+
+$requete2 = 'UPDATE actionneur SET selectiontdb = :selectiontdb WHERE IDutilisateur= "'.$id.'"';
+$result2 = $bdd ->prepare($requete2);
+$result2 = $result2->execute(array(':selectiontdb' => $selection));
 
 foreach($_POST['checkbox'] as $valeur)
 {

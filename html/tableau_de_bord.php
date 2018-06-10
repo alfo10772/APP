@@ -19,12 +19,20 @@
 	
 	<?php 
        		include('../modele/config_init.php');
-       	?>
+     
+       	
+     if ($_SESSION['utilisateur']==0){
+       		    
+     ?>
      <div style="float:right">
 		<a href="gestion_secondaire.php">		
 			<input type="submit" id="second" value="G&eacute;rer les utilisateurs secondaires" />
 		</a>
 	</div>
+	
+	<?php 
+     }
+	?>
 		
 	<div id="conteneurcercle1">
 			<div id="tdb">
@@ -49,7 +57,11 @@
 				</div>
 			</a>
 			</div>
-
+			
+			<?php 
+		    if ($_SESSION['utilisateur']==0){
+		    
+		    ?>
 			<div id="tdb">
 			<a href="page_des_paramètres.php">
 				<div>
@@ -57,6 +69,10 @@
 				</div>
 			</a>
 			</div>
+			
+			<?php 
+		    }
+			?>
 		
     </div>
     <br />

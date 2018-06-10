@@ -30,6 +30,11 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
+		
 		<div style="float:right">
 			<a href="suppression_piece.php">		
 				<input type="submit" id="retour" value="Supprimer une piece" />
@@ -37,6 +42,9 @@
 			</a>
 		</div>
 		
+		<?php 
+		}
+		?>
 		<div id="conteneurcercle">
 			<?php	
 			
@@ -61,12 +69,20 @@
 						</form>
 						<?php 
        			}
-			?>
+			
+       		if ($_SESSION['utilisateur']==0){
+       			    
+       	   ?>
 			<div id="cercle">
 				<a href="ajout_piece.php">
 					<font size="+4"><div id=textecercle>+</div></font>
 				</a>
 			</div>
+			
+			<?php 
+       		}
+			?>
+			
 		</div>
 	
 		
