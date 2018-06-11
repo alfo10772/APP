@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,8 @@
 
 <div id='article2'>
     <?php 
-       require("menu_admin.php");
+	   require("menu_admin.php");
+	   include("../modele/config_init.php");
     ?>
 
     <div class='contenu'>
@@ -21,9 +25,9 @@
 	<br />
 	<br />
 	<?php 
-	print_r($_POST);
 	$mail = $_POST['mail'];
-	echo $mail; ?>
+	$_SESSION['envoi'] = $mail;
+	echo "Envoi à $mail"; ?>
 	<br />
 	<br />
 <textarea name='objet' placeholder='Objet du Message' style="height:2em; width:60%"></textarea>
@@ -38,7 +42,7 @@
 <textarea name='message' placeholder='Votre message' style="height:20em; width:60%"></textarea>
 <br />
 <br />
-<String mail= <?php $_POST['mail'] ?>>
+<String mail= <?php echo $mail; ?>>
 </tr>
 <tr>
 <div id='conteneur1'>
@@ -50,4 +54,5 @@
 </div>
 </div>
 
-</body>
+</body> 
+</html>
