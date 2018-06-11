@@ -51,7 +51,7 @@
 			        
                    <?php 
        					
-       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison on maison.IDmaison = piece.IDmaison WHERE maison.selection = 1');
+       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison on maison.IDmaison = piece.IDmaison WHERE maison.selection = 1 AND piece.IDutilisateur = "'. $id .'"');
        					
        					while ($donnees = $reponse->fetch())
        					{
