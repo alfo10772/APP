@@ -19,5 +19,5 @@ $req->execute(array(
 		'question' => $question,
 ));
 
-echo 'la question et la réponse ont bien été enregistrées!';
+header('location: ../html/vu_faq.php');
 ?>

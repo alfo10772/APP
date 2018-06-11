@@ -72,9 +72,7 @@
 
        					<?php
 
-       					$idmaison = $_SESSION['maisonselect'];
-
-       					$reponse = $bdd->query('SELECT * FROM piece WHERE IDmaison = "'. $idmaison .'" ');
+       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.selection = 1');
 
        					while ($donnees = $reponse->fetch())
 

@@ -30,6 +30,11 @@
 			</a>
 		</div> 
 		
+		<?php 
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
+		
 		<div style="float:right">
 			<a href="suppression_piece.php">		
 				<input type="submit" id="retour" value="Supprimer une piece" />
@@ -37,6 +42,9 @@
 			</a>
 		</div>
 		
+		<?php 
+		}
+		?>
 		<div id="conteneurcercle">
 			<?php	
 			
@@ -44,10 +52,10 @@
 			$id_principal=$_SESSION['principal'];
 			
 			if($_SESSION['utilisateur']==1){
-			    $reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.IDutilisateur= "'. $id_principal .'" AND selection = 1');
+			    $reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.IDutilisateur= "'. $id_principal .'" AND maison.selection = 1');
 			}
 			else {
-			    $reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.IDutilisateur= "'. $id .'" AND selection = 1');
+			    $reponse = $bdd->query('SELECT piece.nom, IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.IDutilisateur= "'. $id .'" AND maison.selection = 1');
 			}
        					
        		foreach ($reponse->fetchAll() as $donnees)
@@ -61,12 +69,20 @@
 						</form>
 						<?php 
        			}
-			?>
+			
+       		if ($_SESSION['utilisateur']==0){
+       			    
+       	   ?>
 			<div id="cercle">
 				<a href="ajout_piece.php">
 					<font size="+4"><div id=textecercle>+</div></font>
 				</a>
 			</div>
+			
+			<?php 
+       		}
+			?>
+			
 		</div>
 	
 		

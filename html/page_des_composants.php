@@ -64,16 +64,21 @@
        		    $rep = $req->fetch();
        		    $req2 = $bdd->query('SELECT typecomposant.unite FROM typecomposant JOIN capteur ON (typecomposant.nom = capteur.nomtype) WHERE capteur.IDcapteur = "'. $idcapteur .'"');
        		    $rep2 = $req2->fetch();
+       		    $pieces = $bdd->query('SELECT piece.nom FROM piece JOIN capteur ON (piece.IDpiece = capteur.IDpiece) WHERE capteur.IDcapteur = "'.$idcapteur.'"');
+       		    $piece = $pieces->fetchAll();
        		        ?>
        		        <div style="width: 150px;" id="conteneurcompo"> 
 						<div id="cercle"><div><?php echo $rep['donnees']. " " . $rep2['unite'];?></div></div>
-						<div id="texte"><?php echo $donnees['nom'];?></div>
+						<div id="texte"><?php echo $donnees['nom'] . " (" . $piece[0]['nom'] . ")";?></div>
 					</div>
 					<?php 
 			         
 			}
 			while ($donnees = $reponse2->fetch())
 			{
+			    $idactionneur= $donnees['IDactionneur'];
+			    $pieces1 = $bdd->query('SELECT piece.nom FROM piece JOIN actionneur ON (piece.IDpiece = actionneur.IDpiece) WHERE actionneur.IDactionneur = "'.$idactionneur.'"');
+			    $piece1 = $pieces1->fetchAll();
 			    ?>
 			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle">
@@ -83,25 +88,41 @@
   							</span>
 							</label>
 						</div>
-						<div id="texte"><?php echo $donnees['nom'];?></div>
+						<div id="texte"><?php echo $donnees['nom'] . " (" . $piece1[0]['nom'] . ")";?></div>
 					</div>
 				
 					<?php 
 			}
-			?>
+			
+		if ($_SESSION['utilisateur']==0){
+		    
+		?>
 		<a href="ajout_composant.php">
 		<div id="cercle">
 			<center><font size="+4"><div id=textecercle>+</div></font></center>
 		</div>
 		</a>
+		
+		<?php 
+		}
+		?>
 	</div>
 	<br>
 	<br>
+	
+	<?php 
+	if ($_SESSION['utilisateur']==0){
+		    
+	?>
 	<div id="parametre_composant">
 		<a href="parametre_composant.php">
 			<input type="submit" id="second" value="Modifier les param&egrave;tres d'un composant">
 		</a>
 	</div>
+	
+	<?php 
+	}
+	?>
 	</article>
 	<footer>
 			<?php

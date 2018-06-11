@@ -35,9 +35,8 @@
 		<select name="composant" id="composant"> 
 		<?php
 		$id=$_SESSION['ID'];
-		$idmaison = $_SESSION['maisonselect'];
 		$piece = $_SESSION['piececomposant'];
-		$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'") ');
+		$requetepiece = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (piece.nom="'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection=1) ');
 		$piece = $requetepiece ->fetch();
 		$piece = $piece['IDpiece'];
 		$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');

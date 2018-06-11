@@ -16,10 +16,15 @@ $id=$_SESSION['ID'];
 $idmaison = $_SESSION['maisonselect'];
 $piece = $_SESSION['piececomposant'];
 
+
+$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1');
+$maisons = $reponse->fetchAll();
+$maison = $maisons[0]['IDmaison'];
+
 $composant = $_POST['composant'];
 $notif=$composant.' a bien &eacute;t&eacute; supprim&eacute;e';
 
-$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'") ');
+$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $maison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
 $reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');

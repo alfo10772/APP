@@ -477,7 +477,8 @@ margin-bottom:2%;
 	margin-right: auto;
 	justify-content: space-around;
 }
-#conteneurcercle1 > div {
+
+#tdb {
 	position: auto;
 	background: RGB(255,182, 108);
 	border-radius: 50%;
@@ -761,4 +762,81 @@ input[id=second]:hover {
     cursor: pointer;
     text-align: center;
 	background: RGB(22,0,250);
+}
+
+#conteneurparametre {
+	width: 60%;
+}
+
+#conteneurparametre > div {
+	font-size: 0.7em;
+}
+
+table#secondaire{
+	border: 1px solid black;
+	width: 80%;
+	margin: auto;
+	
+}
+
+th#nom{
+	width: 20%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+
+th#mail{
+	width: 20%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+th#changer{
+	width: 40%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+th#type{
+	width: 20%;
+	padding: 5px;
+	height: 70px;
+	background:RGB(22, 85, 150);
+}
+
+td#changer{
+	width: auto;
+	padding: 0% 1% 0% 1%;
+	height: 70px;
+	display:;
+}
+
+input[id="seconda"] {	
+    width: 60%;
+    background:RGB(255, 255, 255);
+    color: black;
+    padding: 10px 20px;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    
+}
+
+input[id="seconda"]:hover {
+    background:RGB(191, 223, 255);
+}
+
+#conteneursecond{
+	font-size: 0.9em;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: auto;
+	width: 100%;
 }
