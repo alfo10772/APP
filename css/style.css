@@ -596,7 +596,7 @@ td#admin{
 
 table#notification{
 	border: 1px solid black;
-	width: 100%;
+	width: 80%;
 	margin: auto;
 	
 }
@@ -627,7 +627,6 @@ td#not2{
 	width: auto;
 	padding: 7px;
 	height: 60px;
-	background:RGB(22, 85, 150);
 }
 
 table#modif{
