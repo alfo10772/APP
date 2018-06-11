@@ -25,7 +25,6 @@ footer
   	left: 0px;
   	right: 0px;
   	bottom: 0px;
-
 }
 body
 {
@@ -731,10 +730,12 @@ input[id=second]:hover {
 }
 
 #parametre_composant{
-	float:right;
+	margin-right:1%;
+	margin-left:auto;
 	margin-top:auto;
-	margin-bottom:0%;
+	margin-bottom:1%;
 	padding:1%;
+	width:23%
 }
 
 #textecercle{
@@ -839,10 +840,10 @@ input[id="seconda"]:hover {
 input[id="cercleon"]{
 	position: absolute;
 	border-radius: 50%;
-	width: 35%;
-	height: 35%;
-	padding: 7px;
-    margin: 40% 40% 20% 33%;
+	width: 40%;
+	height: 40%;
+	padding: 10px;
+    margin: 30% 30% 20% 30%;
     line-height:120%;
     cursor: pointer;
     display: flex;
@@ -854,10 +855,10 @@ input[id="cercleon"]{
 input[id="cercleoff"]{
 	position: absolute;
 	border-radius: 50%;
-	width: 35%;
-	height: 35%;
-	padding: 6px;
-    margin: 40% 40% 20% 33%;
+	width: 40%;
+	height: 40%;
+	padding: 9px;
+    margin: 30% 30% 20% 30%;
     line-height:120%;
     cursor: pointer;
     display: flex;

@@ -42,8 +42,8 @@
 		?>
 	<br>
 	<br>
+	<br>
 	<div id="conteneurcercle">
-	
 		<?php
 		    $id=$_SESSION['ID'];
 		    $id_principal=$_SESSION['principal'];
@@ -115,18 +115,14 @@
 		}
 		?>
 	</div>
-	<br>
-	<br>
 	
 	<?php 
 	if ($_SESSION['utilisateur']==0){
 		    
 	?>
-	<div id="parametre_composant">
 		<a href="parametre_composant.php">
-			<input type="submit" id="second" value="Modifier les param&egrave;tres d'un composant">
+			<input type="submit" id="second" value="Modifier les param&egrave;tres d'un composant" style="margin-right:2%; margin-left:auto; margin-top:auto; margin-bottom:1%; padding:1%; width:21%">
 		</a>
-	</div>
 	
 	<?php 
 	}
