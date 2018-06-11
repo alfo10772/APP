@@ -18,19 +18,13 @@
 				<p>
 					<img src="../images/photo.png" alt="administrateur" width="200">
 					<br/>
-						administrateur	
+						Administrateur	
 				</p>
 			</aside>
 			<section id="conteneur6">
-				<?php
-				try
-				{
-					$bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement
-				}
-				catch (Exception $e)
-				{
-				        die('Erreur : '.$e->getMessage());
-				}
+				<?php 
+       		    include('../modele/config_init.php');
+				
 				$reponse = $bdd->query('SELECT * FROM reponse');
 				
 				while ($donnees = $reponse->fetch())
@@ -42,6 +36,8 @@
 					<div class="reponse">
 				   		<?php echo $donnees['reponse']; ?>
 				    </div>
+				    <br />
+				    <br />
 				<?php
 				}
 				
@@ -54,7 +50,7 @@
 				<p>
 					<img src="../images/photo.png" alt="utilisateur" width="200">
 					<br/>
-						utilisateur	
+						Utilisateur	
 				</p>
 			</aside>
 		</section>

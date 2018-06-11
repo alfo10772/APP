@@ -30,9 +30,9 @@
        		  
        		    <table>
        		     	<tr>
-       		       		<th>Nom</th>
-       		        	<th>Adresse mail</th>
-       		        	<th>Num&eacute;ro de t&eacute;l&eacute;phone</th>
+       		       		<th id="nom2">Nom</th>
+       		        	<th id="adresse">Adresse mail</th>
+       		        	<th id="tel">Num&eacute;ro de t&eacute;l&eacute;phone</th>
 
        		        </tr>
        		        
@@ -42,9 +42,9 @@
        		       ?>
 				<form action="../traitements/suppression_client.php" method="post"> 
   					<tr>
-     					<td><?php echo $donnees['nom'];?></td>
-     					<td><?php echo $donnees['mail'];?></td>
-     					<td><?php echo $donnees['numerodetelephone'];?></td>
+     					<td id="nom2"><?php echo $donnees['nom'];?></td>
+     					<td id="adresse"><?php echo $donnees['mail'];?></td>
+     					<td id="tel"><?php echo $donnees['numerodetelephone'];?></td>
      					<input type="hidden" name="id" value=<?php echo $donnees['IDutilisateur'] ?>></input>
      					<td><input type="submit" id="admin" name=<?php echo $donnees['IDutilisateur'];?> value="Supprimer le client" /></td>
 
