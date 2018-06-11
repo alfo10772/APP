@@ -23,7 +23,8 @@
        		$id=$_SESSION['ID'];
        		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")  ORDER BY IDnotification DESC');
        		?>
-       		  
+       		<br>
+       		<br>
        		    <table id="notification">
        		     	<tr>
        		       		<th id="not">Notifications</th>

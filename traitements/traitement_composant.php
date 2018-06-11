@@ -24,9 +24,6 @@ $maison = $maisons[0]['IDmaison'];
 
 
 $piece = $_POST['piece'];
-var_dump($piece);
-var_dump($id);
-var_dump($maison);
 $requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $maison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
