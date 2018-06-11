@@ -29,10 +29,12 @@
 
         <table id='notification'>
             <tr>
+                <th id="date"> &Eacute;metteur </th>
                 <th id="not"> Objet du Message </th>
                 <th id="date"> date </th>
             </tr>
             <tr>
+                <td id="not2"><?php echo $don['envoie'];?></td>
                 <td id="not2"><?php echo $don['Objet'];?></td>
                 <td id="not2"><?php echo $don['date'];?></td>
             </tr>

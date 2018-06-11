@@ -26,6 +26,7 @@
 
         <table id='notification'>
             <tr>
+				<th id="date"> &Eacute;metteur </th>
                 <th id="not"> Objet du Message </th>
                 <th id="date"> date </th>
                 <th id="vu"> Voir le Message </th>
@@ -37,6 +38,7 @@
        		       ?>
        		       <form action="vu_message_client.php" method="post">
   					<tr>
+						<td id="not2"><?php echo $donnees['envoie'];?></td>
      					<td id="not2"><?php echo $donnees['Objet'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
      					<input type="hidden" name="ID" value=<?php echo $donnees['IDmessage'] ?>></input>
@@ -54,9 +56,9 @@
         <br />
         <br />
         <div id='conteneur2'>
-            <a href="envoi_client_vers_admin.php">				
+            <form action="envoi_client_vers_admin.php" method="post">	
 				<input type="submit" value="Envoyer un message à l'administrateur" />	
-			</a>
+			</form>
 		</div>
 
 		</article>
