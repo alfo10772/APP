@@ -33,8 +33,8 @@
 </tr>
 <tr>
 <th>
-    <form method="post" action="vu_message_admin.php">
-    <select classe="réponse1" size='30'>
+    <form method="post" action="admin_vu_message.php">
+    <select name='selectmessage' classe="réponse1" size='30'>
     <?php
         $rep = $bdd->query('SELECT * FROM message');
         foreach ($rep->fetchAll() as $don) {
@@ -44,12 +44,12 @@
 
             if ($don['etatadmin']) {
                 ?>
-                <option value=<?php $don['IDmessage'] ?>> [Non Vu] <?php echo "[$date] < $emetteur > $objet";?> </option>
+                <option value=<?php echo $don['IDmessage']; ?>> [Non Vu] <?php echo "[$date] < $emetteur > $objet";?> </option>
                 <?php
             }
             else {
                 ?>
-                <option value=<?php $don['IDmessage'] ?>><?php echo "[$date] < $emetteur > $objet";?> </option>
+                <option value=<?php echo $don['IDmessage']; ?>><?php echo "[$date] < $emetteur > $objet";?> </option>
                 <?php
             }
 
@@ -64,17 +64,16 @@
 	</br>
     <th>
     <form method="post" action="envoi_admin_vers_client.php">
-	<select  name="mail" classe="réponse1" size='30'>
+	<select name='mail' class="réponse1" size='30'>
     <?php 
-        $message = "message000";
-    
+   
         $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');
            
        	foreach ($reponse->fetchAll() as $donnees) {
 
     ?>	
     
-	<option value=<?php $donnees['mail'] ?>><?php echo $donnees['mail']; ?></option> 
+	<option value=<?php echo $donnees['mail']; ?>><?php echo $donnees['mail'];?></option> 
     
 	
     <?php
@@ -87,7 +86,7 @@
     </form>
     </th>
 </tr>
-
+</table>
 
 
 </div>
