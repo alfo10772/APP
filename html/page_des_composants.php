@@ -43,6 +43,7 @@
 	<br>
 	<br>
 	<div id="conteneurcercle">
+	
 		<?php
 		    $id=$_SESSION['ID'];
 		    $id_principal=$_SESSION['principal'];
@@ -83,10 +84,16 @@
 			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle">
 						<?php if ($donnees['etat']== 0) {?>
-							<input type="submit" id="cercleon" value="on" >
-						<?php }?>
-						<?php if ($donnees['etat']== 1) {?>
-							<input type="submit" id="cercleoff" value="off" >
+						<form method="post" action="../traitements/etat_on.php">
+							<input type="submit" name="etat" id="cercleon" value="on" >
+							<input type="hidden" name="id" value="<?php echo $donnees['IDactionneur'];?>">
+						</form>
+						<?php }
+						if ($donnees['etat']== 1) {?>
+						<form method="post" action="../traitements/etat_off.php">
+							<input type="submit" name="etat" id="cercleoff" value="off" >
+							<input type="hidden" name="id" value="<?php echo $donnees['IDactionneur'];?>" >
+						</form>
 						<?php }?>
 						</div>
 						<div id="texte"><?php echo $donnees['nom'] . " (" . $piece1[0]['nom'] . ")";?></div>
