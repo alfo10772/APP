@@ -1,53 +1,3 @@
-<?php /*
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/style.css">		<!--  lien vers style -->
-        <title>Messages</title>
-    </head>
-
-    <body>
-    <?php 
-       		include('config_init.php');
-       	?>
-    <div id="article2">
-	
-	<?php 
-	   require("menu_admin.php");
-	?>
-    
-
-     <div class="imagemessage">
-    <a href="messages_recus.php">
-    <img src="../images/message.png" alt="Logo message" width="200">
-    <div class="conteneurcercle1">
-    <?php
-            $umess = array();
-            $i = 0;
-            $reponse = $bdd->query('SELECT * FROM utilisateur');
-            while ($donnees = $reponse->fetch()){
-            $umess[$i] = $donnees['nom'];
-            $i++;
-            }
-            echo count($umess);
-            ?>
-            </div>
-    </a>
-   
-    </div>
-    </div>
-   
-    
-   
-
-
-    </body>
-
-<html>
-
-*/
-?>
 
 <!DOCTYPE html>
 <html>
@@ -65,7 +15,7 @@
        include('../modele/config_init.php');
 	?>
     <div class='contenu'>
-<form method="post" action="traitement.php">
+
 
 <table>
 <tr>
@@ -83,39 +33,63 @@
 </tr>
 <tr>
 <th>
+    <form method="post" action="vu_message_admin.php">
     <select classe="réponse1" size='30'>
-	<option value="valeur1">Message de Bogdan Flair</option> 
-    <option value="valeur2">Message de Aristide Bambi</option>
-    <option value="valeur3">Message de Gigi Building</option>
-    <option value="valeur4">Message de Finlay Scarmouche</option> 
-    <option value="valeur5">Message de Miroslav Clutch</option>
-    <option value="valeur6">Message de Pénélope Launchpad</option>
-    <option value="valeur7"selected>Message de Youssef Carrouf</option>
-	</select>
+    <?php
+        $rep = $bdd->query('SELECT * FROM message');
+        foreach ($rep->fetchAll() as $don) {
+            $emetteur = $don['envoie'];
+            $objet = $don['Objet'];
+            $date = $don['date'];
+
+            if ($don['etatadmin']) {
+                ?>
+                <option value=<?php $don['IDmessage'] ?>> [Non Vu] <?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+            else {
+                ?>
+                <option value=<?php $don['IDmessage'] ?>><?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+
+
+        }
+        ?>
+    
+    </select>
+    <input type="submit" value="Voir le message">
     </th>
+    </form>
 	</br>
     <th>
-	<select classe="réponse1" size='30'>
+    <form method="post" action="envoi_admin_vers_client.php">
+	<select  name="mail" classe="réponse1" size='30'>
     <?php 
         $message = "message000";
+    
         $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');
            
        	foreach ($reponse->fetchAll() as $donnees) {
 
     ?>	
     
-	<option value=<?php echo ++$message; ?>><?php echo $donnees['mail']; ?></option> 
+	<option value=<?php $donnees['mail'] ?>><?php echo $donnees['mail']; ?></option> 
     
 	
     <?php
     }
     ?>
+    
+
     </select>
+    <input type="submit" value="&Eacute;crire un message">
+    </form>
     </th>
 </tr>
 
 
-</form>
+
 </div>
 </div>
 </body>
