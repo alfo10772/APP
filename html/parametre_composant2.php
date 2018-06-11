@@ -31,16 +31,15 @@
 	<br>
 		<?php
 		$id=$_SESSION['ID'];
-		$idmaison = $_SESSION['maisonselect'];
 		$piece = $_SESSION['piececomposant'];
 		$composant = $_SESSION['composant'];
 		
-		$reqidp = $bdd->query('SELECT IDpiece FROM piece WHERE nom= "'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'" ');
+		$reqidp = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE piece.nom= "'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection = 1');
 		$piece=$reqidp->fetch();
 		$piece= $piece['IDpiece'];
 		
 		
-		$reqid1 = $bdd->query('SELECT * FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
+		$reqid1 = $bdd->query('SELECT capteur.type, capteur.IDcapteur FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.nom= "'. $composant .'" AND capteur.IDutilisateur= "'. $id .'" AND capteur.IDpiece = "'. $piece .'" AND maison.selection = 1');
 		$compo=$reqid1->fetch();
 		$idtype= $compo['type'];
 		$idcompo= $compo['IDcapteur'];
@@ -48,7 +47,7 @@
 		if($idtype == NULL)
 		
 		{
-		    $reqid1 = $bdd->query('SELECT * FROM actionneur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'"');
+		    $reqid1 = $bdd->query('SELECT actionneur.type, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.nom= "'. $composant .'" AND actionneur.IDutilisateur= "'. $id .'" AND actionneur.IDpiece = "'. $piece .'" AND maison.selection = 1');
 		    $compo=$reqid1->fetch();
 		    $idtype= $compo['type'];
 		    $idcompo= $compo['IDactionneur'];
