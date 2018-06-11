@@ -71,9 +71,9 @@ if (empty($_SESSION)) {
 			
 <style>
 *{ margin:0; padding:0}
-.box{ height:50px; width:125px; position:relative}
-.mask{ position:absolute; height:100%; width:100%; top:5; left:0; background:#000; opacity:.3; display:none}
-.sub{ position:absolute;top:5; left:0; padding:20px; color:#fff; font-size:12px; line-height:2; display:none}
+.box{ height:155px; width:155px; position:relative;padding:20px;}
+.mask{ position:absolute; height:45px; width:150px; top:5; left:20px; background:#000; opacity:.3; display:none}
+.sub{ position:absolute;top:5; left:20px; padding:22px; color:#fff; font-size:15px; line-height:2; display:none}
 .txtShow .mask,.txtShow .sub{ display:block;}
 </style>
 
@@ -94,11 +94,12 @@ this.className='box';
 </script>
 <div id="imgBox" class="box">
 <a href="informations.php">
-<img src="../images/photo.png" alt="Photo profil" width="125"></a>
+<img src="../images/photo.png" alt="Photo profil" height="155" width="150"></a>
 				
     <div class="mask"></div> 
     <p class="sub">Changer la photo</p>
 
+			
 			
 		
 		<p>
