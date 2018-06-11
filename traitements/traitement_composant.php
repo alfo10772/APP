@@ -18,12 +18,15 @@ $idtype= $idtype['type'];
 $nom = $_POST['nom'];
 
 
-$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1');
+$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur= "'.$id .'"');
 $maisons = $reponse->fetchAll();
 $maison = $maisons[0]['IDmaison'];
 
 
 $piece = $_POST['piece'];
+var_dump($piece);
+var_dump($id);
+var_dump($maison);
 $requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $maison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];

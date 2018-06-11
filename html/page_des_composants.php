@@ -82,11 +82,12 @@
 			    ?>
 			    	<div style="width: 150px;" id="conteneurcompo">
 						<div id="cercle">
-							<label class="switch">
- 							<input type="checkbox" <?php if ($donnees['etat']== 1) {?> checked <?php }?>>
-  							<span class="slider round">
-  							</span>
-							</label>
+						<?php if ($donnees['etat']== 0) {?>
+							<input type="submit" id="cercleon" value="on" >
+						<?php }?>
+						<?php if ($donnees['etat']== 1) {?>
+							<input type="submit" id="cercleoff" value="off" >
+						<?php }?>
 						</div>
 						<div id="texte"><?php echo $donnees['nom'] . " (" . $piece1[0]['nom'] . ")";?></div>
 					</div>
