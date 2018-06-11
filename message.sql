@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 06 juin 2018 à 11:42
+-- Généré le :  lun. 11 juin 2018 à 13:33
 -- Version du serveur :  10.1.31-MariaDB
 -- Version de PHP :  7.2.3
 
@@ -31,19 +31,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `message` (
   `IDmessage` int(11) NOT NULL,
   `IDclient` int(11) NOT NULL,
+  `envoie` varchar(30) NOT NULL,
   `etatclient` tinyint(1) NOT NULL DEFAULT '1',
   `etatadmin` tinyint(1) NOT NULL DEFAULT '1',
   `message` varchar(1000) NOT NULL,
   `Objet` varchar(100) NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `message`
---
-
-INSERT INTO `message` (`IDmessage`, `IDclient`, `etatclient`, `etatadmin`, `message`, `Objet`, `date`) VALUES
-(1, 19, 1, 1, 'Ceci est un test de message depuis le client vers l\'admin. Je test aussi les accents é à è â ë.', 'Message du client vers l\'admin', '2018-06-06 11:05:00');
 
 --
 -- Index pour les tables déchargées
@@ -63,7 +57,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `IDmessage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDmessage` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
