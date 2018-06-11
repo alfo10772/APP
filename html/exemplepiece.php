@@ -69,7 +69,7 @@
 			?>
 			
 			<div id="cercle">
-				<a href="ajout_maison.php">
+				<a href="ajout_composant2.php">
 					<font size="+4"><div id=textecercle>+</div></font>
 				</a>
 			</div>
