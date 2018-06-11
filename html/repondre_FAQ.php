@@ -29,7 +29,7 @@
  
  					<form  method="post" action="../traitements/modif_FAQ.php">
  						<div id="formulaire1">
- 							<input type="admin" name="question" placeholder="ecrire une question" >
+ 							<input type="admin" name="question" placeholder="Ecrire une question" >
  							
  						</div>
  					
@@ -39,7 +39,7 @@
 
  					
  						<div id="formulaire1">
- 							<input type="admin" name="reponse" placeholder="ecrire une reponse" >
+ 							<input type="admin" name="reponse" placeholder="Ecrire une reponse" >
  							
  						</div>
  					

@@ -31,9 +31,9 @@
 			        
 			<br />
 			<select name="nommaison">
+			
 				<?php 
-       					
-       			$reponse = $bdd->query('SELECT * FROM maison');
+				$reponse = $bdd->query('SELECT nom FROM maison WHERE IDutilisateur = "'. $id .'"');       			
        					
        			while ($donnees = $reponse->fetch()){
        				?>

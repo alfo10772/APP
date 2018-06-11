@@ -28,26 +28,7 @@ if (empty($user)){
 
     $result = $req->execute(array(':nom' => $nom,':mdp' => $hash, ':mail' => $mail,':tel' => $tel));
     
-    
-      /*$to = $mail;
-    $subject = "My subject";
-    $txt = "Hello world!";
-    $headers = "From: rik.chi@hotmail.fr";
-     mail($to,$subject,$txt,$headers);*/
-    
-    $req = $bdd ->prepare('SELECT * FROM typecomposant ');
-    $req->execute();
-    $info = $req->fetchAll();
-    $req = $bdd ->prepare('SELECT IDutilisateur,motdepasse FROM utilisateur WHERE mail =? ');
-    $req->execute([$_POST['mail']]);
-    $user = $req->fetch(PDO::FETCH_NUM);
-    $id = $user[0];
-    $r = count($info[0]);
-    for ($i=0 ; $i<$r; $i++ ){
-        $req = $bdd->prepare('INSERT INTO typecomposantuser(IDtypecomposant,nom,type1,userID) VALUES(:ID,:nom,:type,:userID)');
-        $result = $req->execute(array(':ID'=>$info[$i][0], ':nom'=>$info[$i][1], ':type'=>$info[$i][2], ':userID'=>$id));
-    }
-       header('location: page_de_connexion.php');
+    header('location: page_de_connexion.php');
 }
 else {
    header("location: page_d'inscriptionbis.php");
