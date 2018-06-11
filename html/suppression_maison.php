@@ -42,7 +42,9 @@
 			        
 			        	<?php 
        					
-       					$reponse = $bdd->query('SELECT * FROM maison');
+			        	$id=$_SESSION['ID'];
+			        	
+       					$reponse = $bdd->query('SELECT * FROM maison WHERE IDutilisateur = "'. $id .'"');
        					
        					while ($donnees = $reponse->fetch())
        					{
