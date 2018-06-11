@@ -33,10 +33,9 @@
 		<?php 
 
        		include('../modele/config_init.php');
-
        	?>
 
-       	
+       	<br>
 
 		<div style="float:left">
 
@@ -71,8 +70,8 @@
        				<select name="piece" id="piece"> 
 
        					<?php
-
-       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.selection = 1');
+       					$id=$_SESSION['ID'];
+       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.selection = 1 AND maison.IDutilisateur= "'. $id .'" ');
 
        					while ($donnees = $reponse->fetch())
 

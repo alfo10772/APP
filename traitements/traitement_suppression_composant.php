@@ -17,7 +17,7 @@ $idmaison = $_SESSION['maisonselect'];
 $piece = $_SESSION['piececomposant'];
 
 
-$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1');
+$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur= "'. $id .'"');
 $maisons = $reponse->fetchAll();
 $maison = $maisons[0]['IDmaison'];
 
@@ -27,6 +27,7 @@ $notif=$composant.' a bien &eacute;t&eacute; supprim&eacute;e';
 $requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $maison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
+
 $reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
 $idtype=$reqid1->fetch();
 $idtype= $idtype['type'];
