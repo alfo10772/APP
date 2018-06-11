@@ -17,7 +17,7 @@ $nom = $_POST['nom'];
 $iduser=$_SESSION['ID'];
 $notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
 
-$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1');
+$reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur = "'. $iduser .'"');
 $maisons = $reponse->fetchAll();
 $maison = $maisons[0]['IDmaison'];
 
