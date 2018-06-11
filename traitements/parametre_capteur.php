@@ -13,9 +13,8 @@ catch (Exception $e)
 }
 
 $id=$_SESSION['ID'];
-$idmaison = $_SESSION['maisonselect'];
 $piece= $_SESSION['piececomposant'];
-$reqidp = $bdd->query('SELECT IDpiece FROM piece WHERE nom= "'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'" ');
+$reqidp = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE piece.nom= "'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection = 1');
 $piece=$reqidp->fetch();
 $piece= $piece['IDpiece'];
 $idcompo= $_POST['id'];
