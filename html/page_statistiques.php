@@ -13,7 +13,7 @@
 </header>
 <article>
 	 <div>
-		<form method="post" action="action="../traitements/traitement_stats.php"">
+		<form method="post" action="../traitements/traitement_stats.php">
 		
 			<p>  
 			    <h1>
@@ -30,7 +30,7 @@ Pour les b&eacute;b&eacute;s, 3 degr&eacute;s C de plus sont n&eacute;cessaires 
 				Pi&egrave;ces:
 				</label>
 				</br>
-				<select classe="réponse1">
+				<select classe="réponse1" name="piece_t">
 					
 					<?php
 					try
@@ -41,7 +41,7 @@ Pour les b&eacute;b&eacute;s, 3 degr&eacute;s C de plus sont n&eacute;cessaires 
 					{
 				        die('Erreur : '.$e->getMessage());
 					}
-					$reponse = $bdd->query('SELECT * FROM piece'); 
+					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE  selection = 1'); 
 				
 					while ($donnees = $reponse->fetch())
 					{
@@ -65,7 +65,7 @@ Pour les b&eacute;b&eacute;s, 3 degr&eacute;s C de plus sont n&eacute;cessaires 
 				Date:
 				</label>
 				</br>
-				<select classe="réponse1">
+				<select classe="réponse1" name="temps_t">
 					<option value="valeur1">Moyenne de ce jour</option> 
 				    	<option value="valeur2"selected>Moyenne de ce mois</option>
 				   	<option value="valeur3">Moyenne de cette ann&eacute;e</option>
@@ -88,7 +88,7 @@ ass&egrave;chement des muqueuses.">
 				Pi&egrave;ces:
 				</label>
 				</br>
-				<select classe="réponse1">
+				<select class="réponse1" name="piece_h">
 					
 					<?php
 					try
@@ -99,7 +99,7 @@ ass&egrave;chement des muqueuses.">
 					{
 				        die('Erreur : '.$e->getMessage());
 					}
-					$reponse = $bdd->query('SELECT * FROM piece');
+					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE  selection = 1');
 				
 					while ($donnees = $reponse->fetch())
 					{
@@ -121,7 +121,7 @@ ass&egrave;chement des muqueuses.">
 				Date:
 				</label>
 				</br>
-				<select classe="réponse1">
+				<select classe="réponse1" name="temps_h">
 					<option value="valeur1">Moyenne de ce jour</option> 
 				    	<option value="valeur2"selected>Moyenne de ce mois</option>
 				    	<option value="valeur3">Moyenne de cette ann&eacute;e</option>

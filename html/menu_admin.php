@@ -13,7 +13,7 @@ if (empty($_SESSION)) {
 		<div class="menu"><a href="admin_message.php">Messages</a></div>
 		<div class="menu"><a href="modif_texte.php">Modifier les textes</a></div>
 		<div class="menu"><a href="modif_article.php">Modifier les articles</a></div>
-		<div class="menu"><a href="repondre_FAQ.php">Modifier la FAQ</a></div>
+		<div class="menu"><a href="vu_faq.php">Modifier la FAQ</a></div>
 		<div class="menu"><a href="redirection.php">Se d&eacute;connecter</a></div>
 		
 </div>
