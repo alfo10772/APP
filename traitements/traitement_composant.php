@@ -1,15 +1,7 @@
 <?php
 session_start();
-$bdd = NULL;
-try
-{  
-    $bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement 
-}
+require_once '../modele/config_init.php'; //Connexion et chargement bdd
 
-catch (Exception $e)
-{   
-    die('Erreur :' . $e->getMessage());  
-}
 $id=$_SESSION['ID'];
 $type = $_POST['type'];
 $reqid1 = $bdd->query('SELECT type FROM typecomposant WHERE nom= "'. $type .'" ');
