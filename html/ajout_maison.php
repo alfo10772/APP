@@ -61,13 +61,6 @@
 			<br />
 			<br />
 			
-			<label for="photo">								
-					Ajouter une photo
-			</label>
-			<input type="file" name="photo" />
-			
-			<br />
-			<br />
 			
 			<input type="submit" id="supprimer" value="Ajouter" />
 			</form>

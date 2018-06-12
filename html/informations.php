@@ -61,6 +61,10 @@
        		      		<hr width="100%">
        		      </div>
        		       
+       		    <?php 
+		          if ($_SESSION['utilisateur']==0){
+		    
+		          ?>   
        		    <table id="modif" >      		        
        		    	<tr>
        		        	<th id="modif">Type de l'utilisateur</th>
@@ -87,7 +91,10 @@
        		     		</div>
        		        	<hr width="100%">
        		    </div>
-       		       
+       		     
+       		     <?php 
+		          }
+       		     ?>  
        		        
        		    <table id="modif" >          		        
        		        <tr>
