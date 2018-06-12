@@ -827,6 +827,15 @@ input[id="seconda"]:hover {
   	margin-right: auto;
 	width: 100%;
 }
+.forme_stats
+{
+	display:flex;
+	justify-content: space-between;
+}
+.selection_stats
+{
+	width: 20%;
+}
 
 input[id="cercleon"]{
 	position: absolute;
