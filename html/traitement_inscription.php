@@ -1,10 +1,10 @@
 <?php
 require_once '../modele/config_init.php';
 
-$nom = $_POST['username'];
-$mdp = $_POST['password'];
-$mail = $_POST['mail'];
-$tel= $_POST['numero_de_tel'];
+$nom = htmlspecialchars($_POST['username']);
+$mdp = htmlspecialchars($_POST['password']);
+$mail = htmlspecialchars($_POST['mail']);
+$tel= htmlspecialchars($_POST['numero_de_tel']);
 
 $req = $bdd ->prepare('SELECT mail FROM utilisateur WHERE mail =? ');
 $req->execute(array($mail));
