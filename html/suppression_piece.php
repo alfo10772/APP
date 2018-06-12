@@ -51,12 +51,12 @@
 			        
                    <?php 
        					
-       					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison on maison.IDmaison = piece.IDmaison WHERE maison.selection = 1 AND piece.IDutilisateur = "'. $id .'"');
+       					$reponse = $bdd->query('SELECT piece.nom, piece.IDpiece FROM piece JOIN maison on maison.IDmaison = piece.IDmaison WHERE maison.selection = 1 AND piece.IDutilisateur = "'. $id .'"');
        					
        					while ($donnees = $reponse->fetch())
        					{
        					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       						<option value="<?php echo $donnees['IDpiece']; ?>"><?php echo $donnees['nom'] ?></option>
        					<?php
                         }
                     ?>
