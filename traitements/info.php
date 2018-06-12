@@ -1,6 +1,6 @@
 <?php
 
-require_once 'db.php';
+require_once '../modele/config_init.php'; //Conexion à la bdd
 
 $req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = ? ');
 $req->execute([$_SESSION['ID']]);
