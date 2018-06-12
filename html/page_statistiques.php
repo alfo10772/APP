@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@ Enfin les chambres doivent &ecirc;tre &agrave; une temp&eacute;rature de 16 degr
 un sommeil r&eacute;parateur. 
 Pour les b&eacute;b&eacute;s, 3 degr&eacute;s C de plus sont n&eacute;cessaires du fait de leur fragilit&eacute;.">
 			    		Temp&eacute;rature
-			    	</abbr>.
+			    	</abbr>
 			    </h1>
 			
 			    <label for="nom">
@@ -35,16 +36,10 @@ Pour les b&eacute;b&eacute;s, 3 degr&eacute;s C de plus sont n&eacute;cessaires 
 				<select classe="réponse1" name="piece_t">
 					
 					<?php
-					try
-					{
-					$bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement
-					}
-					catch (Exception $e)
-					{
-				        die('Erreur : '.$e->getMessage());
-					}
-					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE  selection = 1'); 
-				
+					include('../modele/config_init.php');
+					$id=$_SESSION['ID']; // on récupère l'id de l'utilisateur connecté
+					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE  maison.selection = 1 AND maison.IDutilisateur= "'.$id.'"');
+					// permet de sélectionner les pièces de la maison sélectionnée uniquement (et de l'utilisateur connecté)
 					while ($donnees = $reponse->fetch())
 					{
 	    			?>
@@ -72,7 +67,7 @@ des probl&egrave;mes de sant&eacute;.
 Un air trop sec peut favoriser la pr&eacue;sence de poussi&egrave;re et cr&eacute;er un 
 ass&egrave;chement des muqueuses.">
 					Humidit&eacute;
-			    	</abbr>.
+			    	</abbr>
 			    </h1>
 			
 			    <label for="nom">
@@ -82,16 +77,8 @@ ass&egrave;chement des muqueuses.">
 				<select class="réponse1" name="piece_h">
 					
 					<?php
-					try
-					{
-					$bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement
-					}
-					catch (Exception $e)
-					{
-				        die('Erreur : '.$e->getMessage());
-					}
-					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE  selection = 1');
-				
+					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" ');
+					// permet de sélectionner les pièces de la maison sélectionnée uniquement (et de l'utilisateur connecté)
 					while ($donnees = $reponse->fetch())
 					{
 	    			?>
@@ -116,9 +103,261 @@ ass&egrave;chement des muqueuses.">
 	<div>
 		<?php 
 			
-			$temp = $_
-		
+			if(!empty($_POST['piece_t']))
+			{
+				$temp = $_POST['piece_t'];
+			}
+			if(!empty($_POST['piece_h']))
+			{
+				$humid = $_POST['piece_h'];
+			}
 		?>
+		<?php 
+		$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sqlQuery = "select month(dates) as mois, avg(donnee) as moyennetemp from donnee join piece
+where nom="'.$temp.'"  GROUP BY mois ORDER BY mois ASC";
+$sth = $conexion->prepare($sqlQuery, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+$sth->execute(array(':year' => 2018));
+
+$moisFr=array('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Decembre');
+$resultat=array();
+$i=0;
+foreach($sth->fetchAll(PDO::FETCH_OBJ) as $row)
+{
+    //Mettre la ligne dans le tableau
+    $resultat[$row->mois]=$row->moyennetemp;
+    //Prendre la température moyenne comme minimum et maximum
+    if($i==0)
+		{
+			$min=$row->moyennetemp;
+			$max=$row->moyennetemp;
+		}
+    //Tester si la température moyenne est inférieure au minimum et le prendre si il l'est
+    if($row->moyennetemp < $min)
+		{
+			$min=$row->moyennetemp;
+		}
+    //Tester si la température moyenne est inférieure au maximum et le prendre si il l'est
+    else
+		{
+			if($row->moyennetemp > $max)
+			 {
+			 	$max=$row->moyennetemp;
+			}
+		}
+    $i++;
+}
+	?>
+	<?php 
+	
+	//Type mime de l'image
+header('Content-type: image/png');
+//Chemin vers le police à utiliser
+$font_file = './arial.ttf';
+//Adapter la largeur de l'image avec le nombre de donnée
+$largeur=$i*50+90;
+$hauteur=400;
+//Hauteur de l'abscisse par rapport au bas de l'image
+$absis=80;
+//Création de l'image
+$courbe=imagecreatetruecolor($largeur, $hauteur);
+//Allouer les couleurs à utiliser
+$bleu=imagecolorallocate($courbe, 0, 0, 255);
+$ligne=imagecolorallocate($courbe, 220, 220, 220);
+$fond=imagecolorallocate($courbe, 250, 250, 250);
+$noir=imagecolorallocate($courbe, 0, 0, 0);
+$rouge=imagecolorallocate($courbe, 255, 0, 0);
+//Colorier le fond
+imagefilledrectangle($courbe,0 , 0, $largeur, $hauteur, $fond);
+//Tracer l'axe des abscisses
+imageline($courbe, 50, $hauteur-$absis, $largeur-10,$hauteur-$absis, $noir);
+//Tracer l'axe des ordonnées
+imageline($courbe, 50,$hauteur-$absis,50,20, $noir);
+//Decaler 10px vers le haut le si le minimum est différent de 0
+if($min!=0)
+{
+    $absis+=10;
+    $a=10;
+}
+//Nombres des grides verticales
+$nbOrdonne=10;
+//Calcul de l'echelle des abscisses
+$echelleX=($largeur-100)/$i;
+//Calcul de l'echelle des ordonnees
+$echelleY=($hauteur-$absis-20)/$nbOrdonne;
+$i=$min;
+//Calcul des ordonnees des grides
+$py=($max-$min)/$nbOrdonne;
+$pasY=$absis;
+while($pasY<($hauteur-19))
+{
+    //Affiche la valeur de l'ordonnee
+    imagestring($courbe, 2,10 , $hauteur-$pasY-6, round($i), $noir);
+    //Trace la gride
+    imageline($courbe, 50, $hauteur-$pasY, $largeur-20,$hauteur-$pasY, $ligne);
+    //Decaller vers le haut pour la prochaine gride
+    $pasY+=$echelleY;
+    //Valeur de l'ordonnee suivante
+    $i+=$py;
+}
+
+
+$j=-1;
+ //Position de la première mois de vente
+ $pasX=90;
+ //Parcourir le tableau pour le traçage de la diagramme
+ foreach ($resultat as $mois => $quantite) {
+   //calculer la hateur du point par rapport à sa valeur
+   $y=($hauteur) -(($quantite -$min) * ($echelleY/$py))-$absis;
+   //dessiner le point
+   imagefilledellipse($courbe, $pasX, $y, 6, 6, $rouge);
+   //Afficher le mois en français avec une inclinaison de 315°
+   imagefttext($courbe, 10, 315, $pasX, $hauteur-$absis+20, $noir, $font_file, $moisFr[$mois-1]);
+   //Tacer une ligne veticale de l'axe de l'abscisse vers le point
+   imageline($courbe, $pasX, $hauteur-$absis+$a, $pasX,$y, $noir);
+   if($j!==-1)
+    {
+      //liée le point actuel avec la précédente
+      imageline($courbe,($pasX-$echelleX),$yprev,$pasX,$y,$noir);
+    }
+    //Afficher la valeur au dessus du point
+   imagestring($courbe, 2, $pasX-15,$y-14 , $quantite, $bleu);
+   $j=$quantite;
+   //enregister la hauteur du point actuel pour la liaison avec la suivante
+   $yprev=$y;
+   //Decaller l'abscisse suivante par rapport à son echelle
+   $pasX+=$echelleX;
+}
+//Envoyer le flux de l'image
+imagepng($courbe);
+//Desallouer le memoire utiliser par l'image
+imagedestroy($courbe);
+	?>
+
+	<?php 
+	$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$sqlQuery = "select month(dates) as mois, avg(donnee) as moyennehumid from donnee join piece
+	where nom="'.$humid.'"   GROUP BY mois ORDER BY mois ASC";
+	$sth = $conexion->prepare($sqlQuery, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+	$sth->execute(array(':year' => 2018,));
+	
+	$moisFr=array('Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Decembre');
+	$resultat=array();
+	$i=0;
+	foreach($sth->fetchAll(PDO::FETCH_OBJ) as $row)
+	{
+		//Mettre la ligne dans le tableau
+		$resultat[$row->mois]=$row->moyennehumid;
+		//Prendre la température moyenne comme minimum et maximum
+		if($i==0)
+		{
+			$min=$row->moyennehumid;
+			$max=$row->moyennehumid;
+		}
+		//Tester si la température moyenne est inférieure au minimum et le prendre si il l'est
+		if($row->moyennehumid < $min)
+		{
+			$min=$row->moyennehumid;
+		}
+		//Tester si la température moyenne est inférieure au maximum et le prendre si il l'est
+		else
+		{
+			if($row->moyennehumid > $max)
+			{
+				$max=$row->moyennehumid;
+			}
+		}
+		$i++;
+	}
+	?>
+	<?php 
+	//Type mime de l'image
+header('Content-type: image/png');
+//Chemin vers le police à utiliser
+$font_file = './arial.ttf';
+//Adapter la largeur de l'image avec le nombre de donnée
+$largeur=$i*50+90;
+$hauteur=400;
+//Hauteur de l'abscisse par rapport au bas de l'image
+$absis=80;
+//Création de l'image
+$courbe=imagecreatetruecolor($largeur, $hauteur);
+//Allouer les couleurs à utiliser
+$bleu=imagecolorallocate($courbe, 0, 0, 255);
+$ligne=imagecolorallocate($courbe, 220, 220, 220);
+$fond=imagecolorallocate($courbe, 250, 250, 250);
+$noir=imagecolorallocate($courbe, 0, 0, 0);
+$rouge=imagecolorallocate($courbe, 255, 0, 0);
+//Colorier le fond
+imagefilledrectangle($courbe,0 , 0, $largeur, $hauteur, $fond);
+//Tracer l'axe des abscisses
+imageline($courbe, 50, $hauteur-$absis, $largeur-10,$hauteur-$absis, $noir);
+//Tracer l'axe des ordonnées
+imageline($courbe, 50,$hauteur-$absis,50,20, $noir);
+//Decaler 10px vers le haut le si le minimum est différent de 0
+if($min!=0)
+{
+    $absis+=10;
+    $a=10;
+}
+//Nombres des grides verticales
+$nbOrdonne=10;
+//Calcul de l'echelle des abscisses
+$echelleX=($largeur-100)/$i;
+//Calcul de l'echelle des ordonnees
+$echelleY=($hauteur-$absis-20)/$nbOrdonne;
+$i=$min;
+//Calcul des ordonnees des grides
+$py=($max-$min)/$nbOrdonne;
+$pasY=$absis;
+while($pasY<($hauteur-19))
+{
+    //Affiche la valeur de l'ordonnee
+    imagestring($courbe, 2,10 , $hauteur-$pasY-6, round($i), $noir);
+    //Trace la gride
+    imageline($courbe, 50, $hauteur-$pasY, $largeur-20,$hauteur-$pasY, $ligne);
+    //Decaller vers le haut pour la prochaine gride
+    $pasY+=$echelleY;
+    //Valeur de l'ordonnee suivante
+    $i+=$py;
+}
+
+
+$j=-1;
+ //Position de la première mois de vente
+ $pasX=90;
+ //Parcourir le tableau pour le traçage de la diagramme
+ foreach ($resultat as $mois => $quantite) {
+   //calculer la hateur du point par rapport à sa valeur
+   $y=($hauteur) -(($quantite -$min) * ($echelleY/$py))-$absis;
+   //dessiner le point
+   imagefilledellipse($courbe, $pasX, $y, 6, 6, $rouge);
+   //Afficher le mois en français avec une inclinaison de 315°
+   imagefttext($courbe, 10, 315, $pasX, $hauteur-$absis+20, $noir, $font_file, $moisFr[$mois-1]);
+   //Tacer une ligne veticale de l'axe de l'abscisse vers le point
+   imageline($courbe, $pasX, $hauteur-$absis+$a, $pasX,$y, $noir);
+   if($j!==-1)
+    {
+      //liée le point actuel avec la précédente
+      imageline($courbe,($pasX-$echelleX),$yprev,$pasX,$y,$noir);
+    }
+    //Afficher la valeur au dessus du point
+   imagestring($courbe, 2, $pasX-15,$y-14 , $quantite, $bleu);
+   $j=$quantite;
+   //enregister la hauteur du point actuel pour la liaison avec la suivante
+   $yprev=$y;
+   //Decaller l'abscisse suivante par rapport à son echelle
+   $pasX+=$echelleX;
+}
+//Envoyer le flux de l'image
+imagepng($courbe);
+//Desallouer le memoire utiliser par l'image
+imagedestroy($courbe);
+
+	?>
+
+
+
 	</div>
 </article>
 <footer>						<!--  d&eacute;but du bas de la page -->
