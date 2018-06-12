@@ -193,7 +193,7 @@
        		      		
        		     		
             <div class="modifphoto">
-            <form action="../traitements/modif_info.php" method="post">
+            <form action="../traitements/traitement_photo.php" method="post">
            <input name="photo" type="file" onchange="uploadImg(this,'imgBox')"  />
            <span class="a" id="imgOrder_a" style="display: none;"></span>
            <input type="submit" value="Valider" />	
@@ -203,8 +203,8 @@
        		      			
  <script>
 function uploadImg(file,imgNum){
-var widthImg = 125; //width
-var heightImg = 125; //height
+var widthImg = 150; //width
+var heightImg = 155; //height
 var div = document.getElementById(imgNum);
 if (file.files && file.files[0]){
 div.innerHTML ='<img id="upImg">'; //
