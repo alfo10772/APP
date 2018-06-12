@@ -136,11 +136,20 @@
 			?>
 			<div style="width: 150px;" id="conteneurcompo"> 
 				<div id="cercle">
-					<label class="switch">
- 						<input type="checkbox" <?php if ($action['etat']== 1) {?> checked <?php }?>>
-  						<span class="slider round">
-						</span>
-					</label>
+					<?php if ($action['etat']== 0) {?>
+						<form method="post" action="../traitements/etat_on.php">
+							<input type="submit" name="etat" id="cercleon" value="on" >
+							<input type="hidden" name="source" id="cercleon" value="3" >
+							<input type="hidden" name="id" id="cercleon" value="<?php echo $action['IDactionneur'];?>">
+						</form>
+					<?php }
+					if ($action['etat']== 1) {?>
+						<form method="post" action="../traitements/etat_off.php">
+							<input type="submit" name="etat" id="cercleoff" value="off" >
+							<input type="hidden" name="source" id="cercleoff" value="3" >
+							<input type="hidden" name="id" id="cercleoff" value="<?php echo $action['IDactionneur'];?>" >
+						</form>
+					<?php }?>
 				</div>
 				<div id="texte"><?php echo $action['nom'] . " (" . $piece1[0]['nom'] . ")";?></div>
 			</div>

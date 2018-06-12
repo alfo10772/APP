@@ -729,15 +729,6 @@ input[id=second]:hover {
     background:RGB(22, 85, 183);
 }
 
-#parametre_composant{
-	margin-right:1%;
-	margin-left:auto;
-	margin-top:auto;
-	margin-bottom:1%;
-	padding:1%;
-	width:23%
-}
-
 #textecercle{
 	padding:20%;
 }

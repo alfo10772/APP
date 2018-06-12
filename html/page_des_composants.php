@@ -86,12 +86,14 @@
 						<?php if ($donnees['etat']== 0) {?>
 						<form method="post" action="../traitements/etat_on.php">
 							<input type="submit" name="etat" id="cercleon" value="on" >
+							<input type="hidden" name="source" id="cercleon" value="1" >
 							<input type="hidden" name="id" value="<?php echo $donnees['IDactionneur'];?>">
 						</form>
 						<?php }
 						if ($donnees['etat']== 1) {?>
 						<form method="post" action="../traitements/etat_off.php">
 							<input type="submit" name="etat" id="cercleoff" value="off" >
+							<input type="hidden" name="source" id="cercleoff" value="1" >
 							<input type="hidden" name="id" value="<?php echo $donnees['IDactionneur'];?>" >
 						</form>
 						<?php }?>
