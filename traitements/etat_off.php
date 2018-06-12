@@ -24,7 +24,7 @@ if($source==1)
 }
 elseif($source==2)
 {
-    header('location: ../html/exemple_piece.php');
+    header('location: ../html/exemplepiece.php');
 }
 elseif($source==3)
 {
