@@ -4,8 +4,8 @@ session_start();
 require_once '../modele/config_init.php'; //Connexion à la bdd
 
 $id=$_SESSION['ID'];
-$nom = $_POST['name'];
-$mail = $_POST['mail'];
+$nom = htmlspecialchars($_POST['name']);
+$mail = htmlspecialchars($_POST['mail']);
 $type=1;
 $IDprincipal=$_SESSION['ID'];
 $mdp='utilisateur';
