@@ -7,7 +7,6 @@ $mail = $_POST['mail'];
 
 //$reponse = $bdd->prepare('SELECT * FROM utilisateur WHERE mail = :mail');
 //$reponse->execute(array(':mail' => $mail));
-if ()
 $code = rand(10000000, 99999999);
 $req = 'UPDATE utilisateur SET reinitialisation = :code WHERE mail =:mail' ; 
 $result = $bdd ->prepare($req);

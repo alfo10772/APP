@@ -11,23 +11,23 @@
 	<body>
 	
 		<div id="article2">
-	
+													<!--  Ajout menu vertical -->
 			<?php 
 	          require("menu_admin.php");
 	        ?>
-			
+												<!--  Connexion à la bdd -->
 			<?php 
        		   include('../modele/config_init.php');
        	    ?>
 			<div class="contenu">
 				<h1>Liste des clients</h1>
 				<br />
-			
+														<!--  Sélection de tous les utilisateurs existants -->
 				<?php 
-       					
+				
        		        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');
        			?>	
-       		  
+       		  															<!-- Création du tableau -->
        		    <table>
        		     	<tr>
        		       		<th id="nom2">Nom</th>
@@ -39,7 +39,7 @@
        		      <?php 
        		        foreach ($reponse->fetchAll() as $donnees) {
        		           
-       		       ?>
+       		       ?>																	<!--  Début du formulaire qui permet de supprimer un client en fonction de son ID -->
 				<form action="../traitements/suppression_client.php" method="post"> 
   					<tr>
      					<td id="nom2"><?php echo $donnees['nom'];?></td>

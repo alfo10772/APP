@@ -13,11 +13,11 @@
 		<div id="article2">
 	
 			<?php 
-	          require("menu_admin.php");
+	          require("menu_admin.php");       //Ajout du menu vertical
 	        ?>
 			
 			<?php 
-       		   include('../modele/config_init.php');
+       		   include('../modele/config_init.php');       //Connexion à la bdd
        	    ?>
 			<div class="contenu">
 				<h1>Liste des composants propos&eacute;s</h1>
@@ -29,7 +29,7 @@
        		        $reponse = $bdd->query('SELECT * FROM typecomposant');
        			?>	
        			
-       			<table>
+       			<table>			<!--  Création d'un tableau avec le type du composant, son nom et l'unite -->
        				<tr>
        		       		<th><p>Composant</p></th>
        		       		<th><p>Type du composant</p></th>
@@ -41,7 +41,7 @@
        		        foreach ($reponse->fetchAll() as $donnees) {
        		        ?>
        		        
-				<form action="../traitements/suppression_article.php" method="post"> 
+				<form action="../traitements/suppression_article.php" method="post"> 		<!--  Formulaire qui permet de supprimer un composant -->
   					<tr>
      					<td><?php echo $donnees['nom'];?></td>
      					<td><?php 

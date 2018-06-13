@@ -8,7 +8,7 @@
 
 	<body>
 
-		<header>
+		<header>					<!--  Ajout du header -->
 			<?php
         require("en_tete_connexion.php");
         	?>
@@ -20,7 +20,7 @@
 		<br>
 		<br>
 		<div id="conteneursecond">
-		<table id="secondaire">
+		<table id="secondaire">			<!--  Création d'un tableau avec les infos des utilisateurs secondaires -->
        		     	<tr>
        		       		<th id="nom">Nom</th>
        		        	<th id="mail">Adresse mail</th>
@@ -36,7 +36,7 @@
        		        foreach ($reponse->fetchAll() as $donnees) {
        		       ?>
   					<tr>
-					<form method="post" action="../traitements/gestion_secondaire.php">
+					<form method="post" action="../traitements/gestion_secondaire.php">		<!--  Début du formulaire pour changer le type d'un utilisateur secondaire -->
      					<td id="changer"><?php echo $donnees['nom'];?></td>
      					<td id="changer"><?php echo $donnees['mail'];?></td>
      					<td id="changer">
@@ -61,7 +61,7 @@ L'utilisateur secondaire peut uniquement voir les donn&eacute;es des composants 
 		<div style="float:right; margin-bottom:1%; margin-top:auto; width:40%; margin-left:auto; margin-right:auto;">
 		<br/>
 		<br/>
-		<a href="ajout_secondaire.php">		
+		<a href="ajout_secondaire.php">				<!--  Bouton qui permet d'aller sur la page pour ajouter un utilisateur secondaire -->
 			<input type="submit" id="seconda" value="Ajouter un utilisateur secondaire" />
 		</a>
 		</div>
@@ -69,7 +69,7 @@ L'utilisateur secondaire peut uniquement voir les donn&eacute;es des composants 
 	</article>
 	
 	
-	<footer>						<!--  d&eacute;but du bas de la page -->
+	<footer>						<!--  Ajout du footer -->
 		<?php
             require("footer.php");
         ?>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>                                                  <!--squelette pour en-tÃªte et bas de page -->
+<html>                                                  
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
@@ -7,9 +7,9 @@
 </head>
 <body>
 
-	<header>
+	<header>							<!--  Ajout du header  -->
 		<?php
-            require("en_tete_connexion.php"); //php
+            require("en_tete_connexion.php"); 
         ?>
 	</header>
 	<article >
@@ -21,7 +21,7 @@
 						Administrateur	
 				</p>
 			</aside>
-			<section id="conteneur6">
+			<section id="conteneur6">		<!--  Connexion à la bdd et selecion de toutes les questions et reponses existante -->
 				<?php 
        		    include('../modele/config_init.php');
 				
@@ -55,7 +55,7 @@
 			</aside>
 		</section>
 	</article>
-	<footer>						
+	<footer>						<!--  Ajout du footer -->
 		<?php
             require("footer.php");
         ?>
