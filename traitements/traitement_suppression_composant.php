@@ -16,42 +16,36 @@ $id=$_SESSION['ID'];
 $idmaison = $_SESSION['maisonselect'];
 $piece = $_SESSION['piececomposant'];
 
-
 $reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur= "'. $id .'"');
 $maisons = $reponse->fetchAll();
 $maison = $maisons[0]['IDmaison'];
 
-$composant = $_POST['composant'];
-$notif=$composant.' a bien &eacute;t&eacute; supprim&eacute;e';
+$data = $_POST['composant'];
+list($idcomposant, $idtype) = explode("/", $data);
 
 $requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $maison .'") ');
 $piece = $requetepiece ->fetch();
 $piece = $piece['IDpiece'];
 
-$reqid1 = $bdd->query('SELECT type FROM capteur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'" ');
-$idtype=$reqid1->fetch();
-$idtype= $idtype['type'];
-
-if($idtype == NULL)
-
-{
-    $reqid1 = $bdd->query('SELECT type FROM actionneur WHERE nom= "'. $composant .'" AND IDutilisateur= "'. $id .'" AND IDpiece = "'. $piece .'"');
-    $idtype=$reqid1->fetch();
-    $idtype= $idtype['type'];
-}
-
-
 if($idtype == 0)
 {
-    $req = $bdd->prepare('DELETE FROM capteur WHERE (nom= :composant AND IDutilisateur = :id AND IDpiece = :piece)');
-    $req->execute(array(':composant' => $composant, ':id' => $id, ':piece' => $piece));
+    $requetecompo = $bdd->query('SELECT * FROM capteur WHERE IDcapteur= "'.$idcomposant.'" ');
+    $composant1 = $requetecompo ->fetch();
+    $composant = $composant1['nom'];
+    $req = $bdd->prepare('DELETE FROM capteur WHERE (IDcapteur= :idcomposant AND IDutilisateur = :id AND IDpiece = :piece)');
+    $req->execute(array(':idcomposant' => $idcomposant, ':id' => $id, ':piece' => $piece));
 }
 
-else
+elseif($idtype == 1)
 { 
-    $req = $bdd->prepare('DELETE FROM actionneur WHERE (nom= :composant AND IDutilisateur = :id AND IDpiece = :piece)');
-    $req->execute(array(':composant' => $composant, ':id' => $id, ':piece' => $piece));  
+    $requetecompo = $bdd->query('SELECT * FROM actionneur WHERE IDactionneur= "'.$idcomposant.'" ');
+    $composant1 = $requetecompo ->fetch();
+    $composant = $composant1['nom'];
+    $req = $bdd->prepare('DELETE FROM actionneur WHERE (IDactionneur= :idcomposant AND IDutilisateur = :id AND IDpiece = :piece)');
+    $req->execute(array(':idcomposant' => $idcomposant, ':id' => $id, ':piece' => $piece));  
 }
+
+$notif=$composant.' a bien &eacute;t&eacute; supprim&eacute;e';
 $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 

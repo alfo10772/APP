@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="../css/style.css">
 <title>Suppression d'un composant</title>
 </head>
@@ -46,14 +46,14 @@
        					while ($donnees = $reponse->fetch())
        					{
        					?>
-       						<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       						<option value="<?php echo $donnees['IDcapteur']."/".$donnees['type']; ?>"><?php echo $donnees['nom'] ?></option>
        					<?php
                         }
                         
                         while ($donnees1 = $reponse1->fetch())
        					{
        					?>
-       						<option value="<?php echo $donnees1['nom']; ?>"><?php echo $donnees1['nom'] ?></option>
+       						<option value="<?php echo $donnees1['IDactionneur']."/".$donnees1['type']; ?>"><?php echo $donnees1['nom'] ?></option>
        					<?php
                         }
                         ?>  
