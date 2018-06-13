@@ -20,7 +20,7 @@
 
 		<?php
 
-            require("en_tete_connexion.php");
+            require("en_tete_connexion.php");       //Affichage du header
 
         ?>
 
@@ -32,14 +32,14 @@
 
 		<?php 
 
-       		include('../modele/config_init.php');
+       		include('../modele/config_init.php');      //Connexion à la BDD
        	?>
 
        	<br>
 
 		<div style="float:left">
 
-			<a href="page_des_composants.php">		
+			<a href="page_des_composants.php">		<!-- Bouton de retour à la page des composants -->
 
 				<input type="submit" id="retour" value="Retour &agrave; la page des composants" />
 
@@ -57,7 +57,7 @@
 
 		<br />
 
-		<form method="post" action="../traitements/supp_composant1.php" enctype="multipart/form-data">
+		<form method="post" action="../traitements/supp_composant1.php" enctype="multipart/form-data">		<!-- Début du formulaire -->
 
 			<div id="conteneur2"> 
 
@@ -67,12 +67,12 @@
 
    					<br />
 
-       				<select name="piece" id="piece"> 
+       				<select name="piece" id="piece"> 	<!-- Menu déroulant pour choisir la pièce dans laquelle l'utilisateur souhaite supprimer un composant -->
 
        					<?php
        					$id=$_SESSION['ID'];
        					$reponse = $bdd->query('SELECT piece.nom FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE maison.selection = 1 AND maison.IDutilisateur= "'. $id .'" ');
-
+                        //S&lection du nom des pièces de la maison sélectionnée
        					while ($donnees = $reponse->fetch())
 
        					{
@@ -98,18 +98,12 @@
 			<br />
 
 			<br />
-
-				
-
-					<input type="submit" id="supprimer" value="Confirmer" />
-
-				
-
+					<input type="submit" id="supprimer" value="Confirmer" />	<!-- Bouton de confirmation -->
 			</div>
 
 		</div>
 
-		</form>
+		</form>		<!-- Fin du formulaire -->
 
 	</article>
 
@@ -117,7 +111,7 @@
 
 			<?php
 
-                require("footer.php");
+                require("footer.php");      //Affichage du footer
 
             ?>
 
