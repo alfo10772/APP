@@ -1,8 +1,8 @@
 <?php 
 require_once '../modele/config_init.php'; //Connexion à la bdd
 
-$question = $_POST['question'];
-$reponse = $_POST['reponse'];
+$question = htmlspecialchars($_POST['question']);
+$reponse = htmlspecialchars($_POST['reponse']);
 
 $req = $bdd->prepare('INSERT INTO reponse(reponse, question) 
 VALUES(:reponse, :question)');

@@ -10,9 +10,9 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     $user = $req->fetch(PDO::FETCH_NUM);  // on r�cup�re le premier element dans req
     
    if (!empty($user)){
-        if(password_verify($_POST['password'],$user[1])){
+       if(password_verify(htmlspecialchars($_POST['password']),$user[1])){
         	session_start();
-        	$_SESSION['mail']= $_POST['mail'];
+        	$_SESSION['mail']= htmlspecialchars($_POST['mail']);
         	$_SESSION['ID']= $user[0];
         	$_SESSION['utilisateur']=$user[2];
     	    $_SESSION['principal']=$user[3];
