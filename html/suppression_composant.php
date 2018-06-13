@@ -17,7 +17,7 @@
 		<?php 
        		include('../modele/config_init.php');
        	?>
-       	
+       	<br>
 		<div style="float:left">
 			<a href="page_des_composants.php">		
 				<input type="submit" id="retour" value="Retour &agrave; la page des composants" />
@@ -36,9 +36,20 @@
        				<select name="composant" id="composant"> 
        					<?php 
        					$id=$_SESSION['ID'];
+       					$requeteuser = $bdd->query('SELECT * FROM utilisateur WHERE IDutilisateur= "'. $id. '" ');
+       					$userdata=$requeteuser ->fetch();
+       					$usertype = $userdata['type'];
+       					if($usertype==1)
+       					{
+       					   $id_principal= $userdata['IDprincipal'];
+       					}
+       					if($usertype==0)
+       					{
+       					    $id_principal=$id;
+       					}
        					$idmaison = $_SESSION['maisonselect'];
        					$piece = $_SESSION['piececomposant'];
-       					$requetepiece = $bdd->query('SELECT IDpiece FROM piece WHERE (nom="'. $piece .'" AND IDutilisateur= "'. $id .'" AND IDmaison = "'. $idmaison .'") ');
+       					$requetepiece = $bdd->query('SELECT piece.IDpiece, piece.IDmaison FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE ( maison.IDutilisateur= "'. $id_principal .'" AND maison.selection = 1 AND piece.nom="'. $piece .'") ');
        					$piece = $requetepiece ->fetch();
        					$piece = $piece['IDpiece'];
        					$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');
