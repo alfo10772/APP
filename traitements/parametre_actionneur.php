@@ -10,8 +10,8 @@ $piece=$reqidp->fetch();
 $piece= $piece['IDpiece'];
 $idcompo= $_POST['id'];
 
-$heuredebut=$_POST['heuredebut'];
-$heurefin=$_POST['heurefin'];
+$heuredebut=htmlspecialchars($_POST['heuredebut']);
+$heurefin=htmlspecialchars($_POST['heurefin']);
 
 $req = $bdd ->prepare('UPDATE actionneur SET heuredebut=:heuredebut, heurefin=:heurefin WHERE (IDpiece=:piece AND IDutilisateur=:id AND IDmaison =:idmaison AND IDactionneur =:idcompo)');
 $req-> execute(array(':heuredebut' => $heuredebut, ':heurefin' => $heurefin, ':piece' => $piece, ':id' => $id, ':idmaison' => $idmaison, ':idcompo' => $idcompo));

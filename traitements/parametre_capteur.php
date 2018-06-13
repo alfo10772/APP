@@ -9,8 +9,8 @@ $piece=$reqidp->fetch();
 $piece= $piece['IDpiece'];
 $idcompo= $_POST['id'];
 
-$valeurmin=$_POST['valeurmin'];
-$valeurmax=$_POST['valeurmax'];
+$valeurmin=htmlspecialchars($_POST['valeurmin']);
+$valeurmax=htmlspecialchars($_POST['valeurmax']);
 
 $req = $bdd ->prepare('UPDATE capteur SET valeurmin=:valeurmin, valeurmax=:valeurmax WHERE (IDpiece=:piece AND IDutilisateur=:id AND IDmaison =:idmaison AND IDcapteur =:idcompo)');
 $req-> execute(array(':valeurmin' => $valeurmin, ':valeurmax' => $valeurmax, ':piece' => $piece, ':id' => $id, ':idmaison' => $idmaison, ':idcompo' => $idcompo));

@@ -1,8 +1,8 @@
 <?php 
 require_once '../modele/config_init.php'; // Connexion à la bdd
 
-$pres = $_POST['presentation'];
-$cgu = $_POST['cgu'];
+$pres = htmlspecialchars($_POST['presentation']);
+$cgu = htmlspecialchars($_POST['cgu']);
 
 
 if(!empty($pres) && !empty($cgu)){
