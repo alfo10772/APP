@@ -72,13 +72,28 @@
   				 </div>
 			<br />
 			<br />
-			<div style="float:left">
-				<a href="#confirmation">		
-					<input type="submit" id="supprimer" value="Supprimer" />
-				</a>
+			<div style="float:left">		
+					<input type="button" onclick="toggle_div(this,'confirmation');" id="supprimer" value="Supprimer" />
 			</div>
+			
+			<div id="confirmation" style="display:none;">
+              		<hr width="100%">
+              		<p><font size="+1">Etes-vous sûr de vouloir supprimer ce composant ?</font></p>
+              		<div id="suppression">
+              			<input type="submit" id="suppression" value="Oui" />
+              			<a href="maison.php">
+              				<input type="button" id="suppression" value="Non" />
+              			</a>
+              			
+              		</div>
+              		
+              </div>
 		</div>
 		</form>
+		
+		<script type="text/javascript" src="../javascript/affichage_bloc.js">
+		</script>
+		
 	</article>
 	<footer>
 			<?php
