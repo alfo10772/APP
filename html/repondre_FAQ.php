@@ -12,11 +12,11 @@
 		<div id="article2">
 	
 			<?php 
-	          require("menu_admin.php");
+	          require("menu_admin.php");       //Affichage du menu de l'administrateur
 	        ?>
 			
 			<?php 
-       		   include('../modele/config_init.php');
+       		   include('../modele/config_init.php');       //Connexion à la BDD
        	    ?>
   	
   			<div class="contenu">
@@ -27,10 +27,10 @@
  
  				<div id=conteneurtexte>
  
- 					<form  method="post" action="../traitements/modif_FAQ.php">
+ 					<form  method="post" action="../traitements/modif_FAQ.php">	<!-- Début du formulaire -->
  						<div id="formulaire1">
- 							<input type="admin" name="question" placeholder="Ecrire une question" >
- 							
+ 							<input type="admin" name="question" placeholder="Ecrire une question" >	
+ 							<!-- Texte entée par l'administration pour la question -->
  						</div>
  					
  					
@@ -40,7 +40,7 @@
  					
  						<div id="formulaire1">
  							<input type="admin" name="reponse" placeholder="Ecrire une reponse" >
- 							
+ 							<!-- Texte entée par l'administration pour la réponse de la question entrée au dessus -->
  						</div>
  					
  					
@@ -49,9 +49,9 @@
 
  					
  						<div id="formulaire1">
- 							<input type="submit" id="ajout" value="Enregistrer" />
+ 							<input type="submit" id="ajout" value="Enregistrer" />	<!-- Bouton de confirmation -->
  						</div>
- 					</form>
+ 					</form>		<!-- Fin du formulaire -->
  					
  	  				<br/>
  	 				<br/>
