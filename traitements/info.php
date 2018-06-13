@@ -1,6 +1,6 @@
 <?php
 
-require_once '../modele/config_init.php'; //Conexion à la bdd
+require_once '../modele/config_init.php'; //Connexion à la bdd
 
 $req = $bdd ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = ? ');
 $req->execute([$_SESSION['ID']]);

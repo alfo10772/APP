@@ -37,7 +37,7 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	        header('location: ../html/tableau_de_bord.php');
     	    }
     	    if($user[2]==2){
-    	        header('location: ../html/client.php');
+    	        header('location: ../html/administration.php');
     	    }
     	    
     	    

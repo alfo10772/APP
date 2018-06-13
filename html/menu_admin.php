@@ -7,7 +7,9 @@ if (empty($_SESSION)) {
 
 <div class="menu-vertical">  <!--  Création du menu vertical -->
 		<p>
+			<a href= "../html/administration.php">
 			<img src="../images/Logo4.png" alt="Logo Habilis" width="150">
+			</a>
 		</p>
 		<div class="menu"><a href="client.php">Clients</a></div>
 		<div class="menu"><a href="admin_message.php">Messages</a>
