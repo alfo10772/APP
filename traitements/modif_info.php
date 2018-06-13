@@ -38,10 +38,14 @@ if(!empty($_POST['tel'])){
 
 if(!empty($_POST['password']) && !empty($_POST['mdp'])){
     $mdp = $_POST['password'];
-    $hash1 = password_hash($mdp, PASSWORD_BCRYPT);
-    $req5 = 'UPDATE utilisateur SET motdepasse = :mdp WHERE IDutilisateur = :id';
-    $result = $bdd -> prepare($req5);
-    $result = $result->execute(array(':mdp' => $hash1, ':id'=>$id ));
+    $mdp2 = $_POST['mdp'];
+    if($mdp == $mdp2){
+        $hash1 = password_hash($mdp, PASSWORD_BCRYPT);
+        $req5 = 'UPDATE utilisateur SET motdepasse = :mdp WHERE IDutilisateur = :id';
+        $result = $bdd -> prepare($req5);
+        $result = $result->execute(array(':mdp' => $hash1, ':id'=>$id ));
+    }
+    
     
 }
     

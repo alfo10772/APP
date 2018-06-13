@@ -140,7 +140,7 @@
        		      				<span id='result'> </span>
        		      				<input type="password" name="password" placeholder="Mot de passe" id="password" required />
        		      				<span id='result'> </span>
-       		      				<input type="password" name="confirmed_password" placeholder="Confirmation du mot de passe" id="confirmed_password" required />
+       		      				<input type="password" name="mdp" placeholder="Confirmation du mot de passe" id="confirmed_password" required />
        		      				
        		      				<input type="submit" value="Valider" />	
        		      			</form>

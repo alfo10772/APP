@@ -4,7 +4,7 @@ session_start();
 
 require_once '../modele/config_init.php'; // Connexion à la bdd
 
-$nom = $_POST['nom'];
+$nom = htmlspecialchars($_POST['nom']);
 $iduser=$_SESSION['ID'];
 $notif=$nom.' a bien &eacute;t&eacute; ajout&eacute;e';
 

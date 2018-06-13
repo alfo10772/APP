@@ -1,5 +1,5 @@
 <?php 
-require_once '../html/db.php';
+require_once '../modele/config_init.php'; //Connexion et chargement bdd
 
 
 $ch = curl_init();

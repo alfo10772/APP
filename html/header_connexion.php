@@ -6,7 +6,7 @@
 					Un produit de Domisep
 			</p>
 			<div id="conteneur1">
-				<form  method="post" action="traitement.php">		<!-- début formulaire -->
+				<form  method="post" action="../traitements/traitement.php">		<!-- début formulaire -->
 					<div type="formulaire1">
 					<label for="mail">								<!-- texte adresse mail -->
 						Adresse mail

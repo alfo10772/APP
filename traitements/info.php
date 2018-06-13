@@ -2,7 +2,7 @@
 
 require_once '../modele/config_init.php'; //Conexion à la bdd
 
-$req = $pdo ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = ? ');
+$req = $bdd ->prepare('SELECT * FROM utilisateur WHERE IDutilisateur = ? ');
 $req->execute([$_SESSION['ID']]);
 $info = $req->fetch(PDO::FETCH_NUM);
 $typ=$info[1];
@@ -16,7 +16,7 @@ else{
 $nom = $info[3];
 $_tel = $info[6];
 
-$mail = $_SESSION['mail'];
+$mail = $info[4];
 
 if($_tel == "0") {
     $_tel = "Aucun";
