@@ -31,23 +31,23 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	    
     	
     	    if($user[2]==0){
-    	        header('location: tableau_de_bord.php');
+    	        header('location: ../html/tableau_de_bord.php');
     	    }
     	    if($user[2]==1){
-    	        header('location: tableau_de_bord.php');
+    	        header('location: ../html/tableau_de_bord.php');
     	    }
     	    if($user[2]==2){
-    	        header('location: client.php');
+    	        header('location: ../html/client.php');
     	    }
     	    
     	    
         }
         else{
-            header('location: page_de_connexionbis.php');
+            header('location: ../html/page_de_connexionbis.php');
         }
    }
     else{
-        header('location: page_de_connexionbis.php');
+        header('location: ../html/page_de_connexionbis.php');
     }
 }
 
