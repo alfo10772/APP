@@ -1,23 +1,22 @@
+<?php 
+session_start()
+?>
 <!DOCTYPE html>
 <html>                                                  
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
-	<title>mention légale</title>
+	<title>Mention légale</title>
 </head>
 <body>
 
 	<header>
         <?php
-        //echo count($_SESSION);
-        //echo(empty($_SESSION));
         if(empty($_SESSION)) {
-            //session_unset();
-            //session_destroy();
             require('header_connexion.php');
         }
         else {
-            require('en_tete_connexion.php');
+            include('en_tete_connexionbis.php');
         }
         ?>
 	</header>
