@@ -1,9 +1,9 @@
 <?php
 require_once '../modele/config_init.php'; //Connexion à la bdd
 
-$nom = htmlspecialchars($_POST['nom']);
-$type = htmlspecialchars($_POST['type']);
-$unite = htmlspecialchars($_POST['unite']);
+$nom = htmlspecialchars($_POST['nom']);     //Récupération du nom du comopsant
+$type = htmlspecialchars($_POST['type']);      //Récupération du type de composant
+$unite = htmlspecialchars($_POST['unite']);     //Récupération de l'unité utilisée pour le composant
 
 
 if($type=='capteur'){
@@ -13,9 +13,9 @@ else{
     $id=1;
 }
 
-$req = $bdd->prepare('INSERT INTO typecomposant(nom, type, unite) VALUES(:nom, :type, :unite)');
+$req = $bdd->prepare('INSERT INTO typecomposant(nom, type, unite) VALUES(:nom, :type, :unite)');    //Ajout du nouveau composant dans la table typecomposant
 
 $result = $req->execute(array(':nom' => $nom, ':type' => $id, ':unite' => $unite));
 
-header('location: ../html/modif_article.php');
+header('location: ../html/modif_article.php');  //Redirection sur la page modif_article
 ?>

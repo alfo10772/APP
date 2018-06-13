@@ -94,7 +94,7 @@
 						</form>
 						<?php }
 						if ($donnees['etat']== 1) {?>
-						<form method="post" action="../traitements/etat_off.php">
+						<form method="post" action="../traitements/etat_off.php">		<!--  Début du formulaire -->
 							<input type="submit" name="etat" id="cercleoff" value="off" >	<!--  affichage du bouton "off" si l'etat est "on" -->
 							<input type="hidden" name="source" id="cercleoff" value="1" >	<!--  bouton hidden pour récupérer le numéro source de la page -->
 							<input type="hidden" name="id" value="<?php echo $donnees['IDactionneur'];?>" >	<!--  bouton hidden pour récupérer l'ID de l'actionneur -->
