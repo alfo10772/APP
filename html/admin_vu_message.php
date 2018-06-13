@@ -32,6 +32,7 @@ session_start();
     $reponse->execute(array(':IDclient'=> $idclient));
     $c = $reponse->fetch();
     $client = $c['mail'];
+    $date = $don['date'];
 
 ?>
 <table>
@@ -40,10 +41,10 @@ session_start();
 	<th>
     <?php
     if ($don['envoie'] == $client) {
-        echo "Message de $client vers l'administrateur (vous)";
+        echo "[$date] Message de $client vers l'administrateur (vous)";
     }
     else {
-        echo "Message de l'administrateur (vous) vers $client";
+        echo "[$date] Message de l'administrateur (vous) vers $client";
     }
     ?>
 	</label>

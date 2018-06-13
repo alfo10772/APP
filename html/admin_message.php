@@ -19,24 +19,32 @@
 
 <table>
 <tr>
-	<label for="nom" style="float:left;">
+    
+    <label for="nom" style="float:left;">
 	<th>Boite de réception:</th>
 	</label>
-    <th>
-    <label for="nom" style="float:left">
-	Vos contacts:
+    <label for="nom" style="float:left;">
+	<th>Boite d'envoi</th>
 	</label>
+    
+
+    <th>
+    Vos contacts:
     </th>
+
+
 	</br>
 	
 
 </tr>
 <tr>
-<th>
+
+    <th>
     <form method="post" action="admin_vu_message.php">
     <select name='selectmessage' classe="réponse1" size='30'>
     <?php
-        $rep = $bdd->query('SELECT * FROM message');
+        $rep = $bdd->prepare('SELECT * FROM message WHERE envoie != :emetteur');
+        $rep->execute(array(':emetteur' => 'administrateur'));
         foreach ($rep->fetchAll() as $don) {
             $emetteur = $don['envoie'];
             $objet = $don['Objet'];
@@ -61,7 +69,36 @@
     <input type="submit" value="Voir le message">
     </th>
     </form>
-	</br>
+    <th>
+    <form method="post" action="admin_vu_message.php">
+    <select name='selectmessage' classe="réponse1" size='30'>
+    <?php
+        $rep = $bdd->prepare('SELECT * FROM message WHERE envoie = :emetteur');
+        $rep->execute(array(':emetteur' => 'administrateur'));
+        foreach ($rep->fetchAll() as $don) {
+            $emetteur = $don['envoie'];
+            $objet = $don['Objet'];
+            $date = $don['date'];
+
+            if ($don['etatadmin']) {
+                ?>
+                <option value=<?php echo $don['IDmessage']; ?>> [Non Vu] <?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+            else {
+                ?>
+                <option value=<?php echo $don['IDmessage']; ?>><?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+
+
+        }
+        ?>
+    
+    </select>
+    <input type="submit" value="Voir le message">
+    </th>
+    </form>
     <th>
     <form method="post" action="envoi_admin_vers_client.php">
 	<select name='mail' class="réponse1" size='30'>
@@ -85,9 +122,10 @@
     <input type="submit" value="&Eacute;crire un message">
     </form>
     </th>
+
+    
 </tr>
 </table>
-
 
 </div>
 </div>
