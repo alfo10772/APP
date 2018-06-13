@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <link rel="stylesheet" href="../css/style.css">
 

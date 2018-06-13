@@ -60,12 +60,26 @@
               <br/>
               <br/>
                     
-              <input type="submit" id="supprimer" value="Supprimer" />
+              <input type="button" onclick="toggle_div(this,'confirmation');" id="supprimer" value="Supprimer" />
               
               <br/>
               <br/>
               
-              <input type="submit" id="supprimer" value="Annuler" />
+              <div id="confirmation" style="display:none;">
+              		<hr width="100%">
+              		<p><font size="+1">Etes-vous sûr de vouloir supprimer cette maison ?</font></p>
+              		<div id="suppression">
+              			<input type="submit" id="suppression" value="Oui" />
+              			<a href="maison.php">
+              				<input type="button" id="suppression" value="Non" />
+              			</a>
+              			
+              		</div>
+              		
+              </div>
+              
+              <br/>
+              <br/>
               
          </form>
                     
@@ -74,7 +88,8 @@
    		<br/>
    		<br/>
     
-     
+     	<script type="text/javascript" src="../javascript/affichage_bloc.js">
+		</script>
     
 	
 	</article>

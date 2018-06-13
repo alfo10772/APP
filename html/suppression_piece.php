@@ -44,7 +44,7 @@
 	
 		<form action="../traitements/suppression_piece.php" method="post"> 
 		             
-             <div type="formulaire1">
+             
 			        Piece :
 			        <br />
 			        <select name="nom_piece">
@@ -63,22 +63,34 @@
                 
                     </select>
                     
-              </div> 
-                    
                     <br/>
                     <br/>
                     
-                    <input type="submit" id="supprimer" value="Supprimer" />
-                    <br/>
-					<br/>
-                    <input type="submit" id="supprimer" value="Annuler" />
+                    <input type="button" onclick="toggle_div(this,'confirmation');" id="supprimer" value="Supprimer" />
                     
+                    <br/>
+             		<br/>
+              
+              		<div id="confirmation" style="display:none;">
+              			<hr width="100%">
+              			<p><font size="+1">Etes-vous sûr de vouloir supprimer cette pièce ?</font></p>
+              			<div id="suppression">
+              				<input type="submit" id="suppression" value="Oui" />
+              				<a href="piece.php">
+              					<input type="button" id="suppression" value="Non" />
+              				</a>
+              			</div>
+            		</div>
 		</form>
      </div>
       
      <br/>
      <br/>
 	
+	 <script type="text/javascript" src="../javascript/affichage_bloc.js">
+	 </script>
+	 
+	 
 	</article>
 	<footer>						<!--  dÃ©but du bas de la page -->
 		<?php
