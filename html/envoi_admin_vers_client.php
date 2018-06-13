@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();             // on commence une session
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,27 +10,27 @@ session_start();
 </head>
 <body>
 
-
-<div id='article2'>
-    <?php 
-	   require("menu_admin.php");
-	   include("../modele/config_init.php");
+ 
+<div id='article2'> 
+    <?php  
+	   require("menu_admin.php");                        // on affiche le menu de l'administrateur
+	   include("../modele/config_init.php");			 // on importe la base de données
     ?>
 
     <div class='contenu'>
 
-<form method='post' action='../traitements/traitement_envoi_admin.php'>
+<form method='post' action='../traitements/traitement_envoi_admin.php'>            <!-- formulaire d'envoi du message -->
 <table>
 <tr>
 	<br />
 	<br />
 	<?php 
 	$mail = $_POST['mail'];
-	$_SESSION['envoi'] = $mail;
+	$_SESSION['envoi'] = $mail;                             // on récupère le mail du destinataire
 	echo "Envoi à $mail"; ?>
 	<br />
 	<br />
-<textarea name='objet' placeholder='Objet du Message' style="height:2em; width:60%"></textarea>
+<textarea name='objet' placeholder='Objet du Message' style="height:2em; width:60%"></textarea>           <!-- On entre l'objet du message -->
 
     <br />
 	<br />
@@ -39,14 +39,14 @@ session_start();
 
 </tr>
 <tr>
-<textarea name='message' placeholder='Votre message' style="height:20em; width:60%"></textarea>
+<textarea name='message' placeholder='Votre message' style="height:20em; width:60%"></textarea>           <!-- On entre le message -->
 <br />
 <br />
 <String mail= <?php echo $mail; ?>>
 </tr>
 <tr>
 <div id='conteneur1'>
-<input type='submit' id='envoi' value='Envoyer'>
+<input type='submit' id='envoi' value='Envoyer'>                       <!-- On appuie sur le bouton pour envoyer le message -->
 </div>
 </tr>
 </table>

@@ -10,7 +10,7 @@
 	
 		<header>
 			<?php
-                require("en_tete_connexion.php");
+                require("en_tete_connexion.php");        // on affiche l'en-tête de la page
                 
         	?>
         </header>
@@ -18,25 +18,25 @@
 		<article>
         
         <?php
-        include('../modele/config_init.php');
-        $id=$_SESSION['ID'];
-        $mess = $bdd->prepare('SELECT * FROM message WHERE IDclient = :id');
+        include('../modele/config_init.php');              // on importe la base de données
+        $id=$_SESSION['ID'];                                          // on récupère l'id du client
+        $mess = $bdd->prepare('SELECT * FROM message WHERE IDclient = :id');                               // on prend dans la base de données tous les messages du client
         $mess->execute(array(':id' => $id));
         ?>
 
         <table id='notification'>
-            <tr>
-				<th id="date"> &Eacute;metteur </th>
+            <tr>                                                        <!-- On définit les colonnes du tableau qui sert à afficher les messages -->
+				<th id="date"> &Eacute;metteur </th>           
                 <th id="not"> Objet du Message </th>
                 <th id="date"> date </th>
                 <th id="vu"> Voir le Message </th>
             </tr>
 
-            <?php 
+            <?php                                                         // on affiche dans le tableau chacun des messages
        		        foreach ($mess->fetchAll() as $donnees) {
        		           
        		       ?>
-       		       <form action="vu_message_client.php" method="post">
+       		       <form action="vu_message_client.php" method="post">               <!--formulaire pour accéder au message -->
   					<tr>
 						<td id="not2"><?php echo $donnees['envoie'];?></td>
      					<td id="not2"><?php echo $donnees['Objet'];?></td>
