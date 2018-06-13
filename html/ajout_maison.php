@@ -54,7 +54,7 @@
 						Adresse
 					</label>
 					<br />
-						<input type="text" name="adresse" placeholder="Adresse de la maison" id="maison" required/>
+						<input type="text" name="adresse" placeholder="Adresse de la maison" id="maison" />
 				</div>
 			
 			

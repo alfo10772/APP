@@ -292,7 +292,7 @@ input[id="supprimer"] {
     color: black;
     padding: 10px 20px;
     margin: auto;
-    border: none;
+    border: 2px solid RGB(191, 223, 255);
     border-radius: 4px;
     cursor: pointer;
     display: block;
@@ -873,4 +873,24 @@ input[id="cercleon"]:hover {
 
 input[id="cercleoff"]:hover {
     background-color:RGB(90,90,90);
+}
+
+#suppression {
+	margin: 10px;
+	text-align:center;
+}
+
+input[id="suppression"]{
+	width: 20%;
+    background:RGB(255, 255, 255);
+    color: black;
+    padding: 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid RGB(191, 223, 255);
+    border-radius: 4px;
+}
+
+input[id="suppression"]:hover {
+	background-color : RGB(191, 223, 255);
 }
