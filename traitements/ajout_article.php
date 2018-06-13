@@ -1,9 +1,9 @@
 <?php
 require_once '../modele/config_init.php'; //Connexion à la bdd
 
-$nom = $_POST['nom'];
-$type = $_POST['type'];
-$unite = $_POST['unite'];
+$nom = htmlspecialchars($_POST['nom']);
+$type = htmlspecialchars($_POST['type']);
+$unite = htmlspecialchars($_POST['unite']);
 
 
 if($type=='capteur'){

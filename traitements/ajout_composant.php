@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 include('../modele/config_init.php');
 
 $piece=$_SESSION['nompiece'];
@@ -11,7 +9,7 @@ $type = $_POST['type'];
 $reqid1 = $bdd->query('SELECT type FROM typecomposant WHERE nom= "'. $type .'" ');
 $idtype=$reqid1->fetch();
 $idtype= $idtype['type'];
-$nom = $_POST['nom'];
+$nom = htmlspecialchars($_POST['nom']);
 
 $reponse = $bdd -> query('SELECT IDmaison FROM maison WHERE selection = 1 AND IDutilisateur= "'.$id .'"');
 $maisons = $reponse->fetchAll();
