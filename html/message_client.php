@@ -42,10 +42,19 @@
      					<td id="not2"><?php echo $donnees['Objet'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
      					<input type="hidden" name="ID" value=<?php echo $donnees['IDmessage'] ?>></input>
-     					<td id="not2">       		        	
-       		        	
-       		            <input type="submit" id="vu" value="Voir">
-     					
+     					<td id="not2"> 
+						<?php      		        	
+       		        	if ($donnees['etatclient']) {
+							?>
+						   <input type="submit" id="vu" value="New">
+						   <?php
+						   }
+						   else {
+							   ?>
+							<input type="submit" id="vu" value="Voir">
+							<?php
+						   }
+     					?>
      					</td>
      				</tr>
      				</form>

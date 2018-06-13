@@ -24,6 +24,10 @@
         $mess = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');
         $mess->execute(array(':id' => $idm));
         $don = $mess->fetch();
+        if($don['etatclient']) {
+            $etat = $bdd->prepare('UPDATE message SET etatclient=0 WHERE IDmessage = :id');
+            $etat->execute(array(':id' => $idm));
+        }
 
         ?>
 
