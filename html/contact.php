@@ -1,3 +1,6 @@
+<?php 
+session_start()
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,15 +14,14 @@
 	<body>
 	
 	<header>
-		<p>
-			<a href="tableau_de_bord.php">
-				<img src="../images/LogoHabilis.png" alt="Logo Habilis" width="150">
-			</a>	
-			
-			<br />
-				Un produit de Domisep
-		</p>
-
+		<?php
+        if(empty($_SESSION)) {
+            require('header_connexion.php');
+        }
+        else {
+            include('en_tete_connexionbis.php');
+        }
+        ?>
 	</header>
 	
 	<article>

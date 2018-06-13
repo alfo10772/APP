@@ -11,6 +11,6 @@ $reponse->execute(array(':mail' => $_SESSION['envoi']));
 $IDclient = $reponse->fetch();
 
 $req = $bdd->prepare('INSERT INTO message(IDclient,envoie, message, objet, etatadmin) VALUES(:id,:admin,:message,:objet, :etat)');
-$req->execute(array(':id' => $IDclient['IDutilisateur'], ':admin' => $_SESSION['mail'],':message' => $_POST['message'], ':objet' => $_POST['objet'], ':etat' => 0));
+$req->execute(array(':id' => $IDclient['IDutilisateur'], ':admin' => 'administrateur',':message' => $_POST['message'], ':objet' => $_POST['objet'], ':etat' => 0));
 
 header('location: ../html/admin_message.php');
