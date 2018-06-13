@@ -4,14 +4,8 @@ session_start();
 
 require_once '../modele/config_init.php'; //Connexion et chargement bdd
 
-$id=$_SESSION['ID'];
+$_SESSION['composant'] = $_POST['composant'];   //On met le nom du composant sélectionné dans une variable Session
 
-$idmaison = $_SESSION['maisonselect'];
-
-$_SESSION['composant'] = $_POST['composant'];
-
-
-
-header('location: ../html/parametre_composant2.php');
+header('location: ../html/parametre_composant2.php');   //Redirection vers le dernier formulaire de paramétrage des composants
 
 ?>
