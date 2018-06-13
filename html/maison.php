@@ -7,7 +7,7 @@
 	</head>
 	
 	<body>
-		<header>
+		<header>			<!--  Ajout header -->
 			<?php
         require("en_tete_connexion.php");
         	?>
@@ -16,7 +16,7 @@
 		<article>
 		
 		<h1>Page des maisons</h1>
-		
+									<!--  Connexion à la bdd -->
 		<?php 
        		include('../modele/config_init.php');
        	?>
@@ -28,8 +28,8 @@
 				<input type="submit" id="retour" value="Retour &agrave; la page d'accueil" />
 			</a>
 		</div> 
-		
-		<?php 
+						<!--  Affichage du bouton uniquement pour les utilisateurs principaux  -->
+		<?php             
 		if ($_SESSION['utilisateur']==0){
 		    
 		?>
@@ -46,7 +46,7 @@
 		<br/>
         <br/>
         <br/>
-        
+        								<!--  Récupération du nom des maison de l'utilisateur principal -->
         <?php
         
         $id=$_SESSION['ID'];
@@ -66,7 +66,7 @@
         $selected = $selection->fetch()[0];
         
         ?>
-        
+        							<!--  Affichage de la maison selectionnée en fonction de la bdd -->
         <br />
         
         <h2>La maison s&eacute;lectionn&eacute;e est : <?php echo $selected ?></h2>
@@ -85,7 +85,7 @@
        		foreach ($reponse->fetchAll() as $donnees)
        			{
        			    ?>
-       			    <form action="../traitements/selection_maison.php" method="post"> 
+       			    <form action="../traitements/selection_maison.php" method="post"> 		<!--  Formulaire pour modifier la maison selectionnée -->
        			   
        		        	<input type="hidden" name="id" value=<?php echo $donnees['IDmaison'] ?>></input>
 						<input type="submit" id="bouton" name=<?php echo $donnees['IDmaison'] ?> value="<?php echo $donnees['nom']?>">
@@ -96,7 +96,7 @@
 			
 		    if ($_SESSION['utilisateur']==0){
 		    
-		?>
+		?>									<!--  Bouton qui envoie vers la page d'ajout d'une maison -->
 			<div id="cercle">
 				<a href="ajout_maison.php">
 					<font size="+4"><div id=textecercle>+</div></font>
@@ -111,7 +111,7 @@
 		
 	</article>
 	
-	<footer>						
+	<footer>									<!--  Ajout du footer -->
 		<?php
             require("footer.php");
         ?>

@@ -6,7 +6,7 @@
 					Un produit de Domisep
 			</p>
 			<div id="conteneur1">
-				<form  method="post" action="../traitements/traitement.php">		<!-- dÃ©but formulaire -->
+				<form  method="post" action="../traitements/traitement.php">		<!-- début formulaire -->
 					<div type="formulaire1">
 					<label for="mail">								<!-- texte adresse mail -->
 						Adresse mail
@@ -20,7 +20,7 @@
 					</label>
 					<br />
 						<input type="password" name="password" id="password" required />	<!--  entrer le mot de passe -->
-					<a href="recup_mdp.php">				<!--  lien vers la page de rÃ©cupÃ©ration de mot de passe -->
+					<a href="recup_mdp.php">				<!--  lien vers la page de récupération du mot de passe -->
 					<br />
 						Mot de passe oubliÃ©
 					</a>

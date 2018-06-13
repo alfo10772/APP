@@ -8,7 +8,7 @@
 	
 	<body>
 
-		<header>
+		<header>				<!--  Ajout du header  -->
 			<?php
                 require("en_tete_connexion.php");
 	       ?>
@@ -31,7 +31,7 @@
 			<br />
 			<br />
 			
-			<div id="conteneurinfo">
+			<div id="conteneurinfo">		<!--  Récupération des infos du traitement -->
 				<?php 
 				    require('../traitements/info.php')
 				?>
@@ -48,7 +48,7 @@
        		     
        		     <hr width="100%">
        		     
-       		     <div id="modif_nom" style="display:none;">
+       		     <div id="modif_nom" style="display:none;"> 		<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
        		     		<br />
        		     		<p>Entrer le nouveau nom d'utilisateur</p>
        		     		<div id="conteneur2">
@@ -76,7 +76,7 @@
        		     
        		    <hr width="100%">
        		     
-   				<div id="modif_type" style="display:none;">
+   				<div id="modif_type" style="display:none;">			<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
    						<br />
    						<p>S&eacute;l&eacute;ctionner le type de l'utilisateur</p>
        		        	<div id="conteneur2">
@@ -107,7 +107,7 @@
        		     
        		    <hr width="100%">
        		     
-       		    <div id="modif_mail" style="display:none;">
+       		    <div id="modif_mail" style="display:none;">			<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
        		    		<br />
        		     		<p>Entrer votre nouvelle adresse mail</p>
        		     		<div id="conteneurmodif">
@@ -131,7 +131,7 @@
        		    
        		    <hr width="100%">
        		     
-       		    <div id="modif_mdp" style="display:none;">
+       		    <div id="modif_mdp" style="display:none;">				<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
        		    		<br />
        		     		<p>Entrer votre nouveau mot de passe</p>
        		     		<div id="conteneurmodif">
@@ -160,7 +160,7 @@
 		
 				<hr width="100%">
 				
-				<div id="modif_tel" style="display:none;">
+				<div id="modif_tel" style="display:none;">				<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
        		     		<br />
        		     		<p>Entrer votre nouveau num&eacute;ro de t&eacute;l&eacute;phone</p>
        		     		<div id="conteneur2">
@@ -182,7 +182,7 @@
        		     	</tr>
        		     </table>
 			
-				<div id="modif_photo" style="display:none;">
+				<div id="modif_photo" style="display:none;">				<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
        		    		<hr width="100%">
        		    		<br />
        		     		<p>T&eacute;l&eacute;charger votre photo</p>
@@ -231,12 +231,12 @@ reader.readAsDataURL(file.files[0]);
        		     </div>
 			</div>
 			
-			<script type="text/javascript" src="../javascript/affichage_bloc.js">
+			<script type="text/javascript" src="../javascript/affichage_bloc.js">		<!--  Connexion avec le fichier JS -->
 			</script>
 			
 		</article>
 
-		<footer>						<!--  d&eacute;but du bas de la page -->
+		<footer>						<!--  Ajout footer -->
 			<?php
                 require("footer.php");
             ?>
