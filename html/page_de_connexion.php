@@ -11,18 +11,18 @@
 	</head>
 	<body>
 		<?php 
-       		include('../modele/config_init.php');
+       		include('../modele/config_init.php');      //Connexion bdd
        	?>
 		<header>
 			<?php
-				require('header_connexion.php');
+				require('header_connexion.php');            //ajout du header 
 			?>
 	</header>
 	<article>
 		<br />
 		<br />
 		<div id=conteneurtxt>
-		<?php	
+		<?php	                                //Affichage du texte en fonction de la bdd
             $reponse = $bdd->query('SELECT * FROM texte ');
        		$donnees = $reponse->fetch();	
        		
@@ -33,7 +33,7 @@
 	</article>
 	<footer>
 		<?php
-            require("footer.php");
+            require("footer.php");              //Ajout du footer
         ?>
 	</footer>
 	</body>

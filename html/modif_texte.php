@@ -13,11 +13,11 @@
  		<div id="article2">
 	
 			<?php 
-	          require("menu_admin.php");
+	          require("menu_admin.php");       //Ajout menu vertical 
 	        ?>
 			
 			<?php 
-       		   include('../modele/config_init.php');
+       		   include('../modele/config_init.php');       //Connexion à la bdd
        	    ?>
   	
   			<div class="contenu">
@@ -28,9 +28,9 @@
  
  				<div id=conteneurtexte>
  
- 					<form  method="post" action="../traitements/modif_texte.php">
+ 					<form  method="post" action="../traitements/modif_texte.php">		<!--  Début du formualire  -->
  						<div id="formulaire1">
- 							<input type="admin" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" >
+ 							<input type="admin" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" > 	<!--  Zone pour modifier le texte de présentation  -->
  							<br/>
  							<br/>
  							<input type="submit" id="ajout" value="Enregistrer" />
@@ -43,10 +43,10 @@
 
  					
  						<div id="formulaire1">
- 							<input type="admin" name="cgu" placeholder="Modifier les conditions gÃ©nÃ©rales d'utilisation" >
+ 							<input type="admin" name="cgu" placeholder="Modifier les conditions gÃ©nÃ©rales d'utilisation" >		<!--  Zone pour modifier les CGU  -->
  							<br/>
  							<br/>
- 							<input type="submit" id="ajout" value="Enregistrer" />
+ 							<input type="submit" id="ajout" value="Enregistrer" />		<!--  Envoi du formulaire  -->
  						</div>
  					</form>
  					
