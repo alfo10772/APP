@@ -37,7 +37,7 @@ if ($_SESSION['utilisateur']==2){
 				<a href="notification.php">
 					Notifications	
 					<?php
-					include('../modele/config_init.php');
+					include('../modele/config_init.php');                                                        
 					$id=$_SESSION['ID'];
 					$nom= $bdd->query('SELECT utilisateur.nom FROM utilisateur WHERE IDutilisateur = "'. $id .'" ');
 					$nom= $nom->fetch();
@@ -126,7 +126,7 @@ this.className='box';
 			
 	   				<?php
 	   				
-                         echo $nom;
+                         echo $nom;          //Afficher le nom du client 
                     ?>
 	   		</p>	
 			</div>
