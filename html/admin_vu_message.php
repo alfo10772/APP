@@ -23,6 +23,10 @@ session_start();
     $rep = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');
     $rep->execute(array(':id' => $id));
     $don = $rep->fetch();
+    if($don['etatadmin']) {
+        $etat = $bdd->prepare('UPDATE message SET etatadmin=0 WHERE IDmessage = :id');
+        $etat->execute(array(':id' => $id));
+    }
     $idclient = $don['IDclient'];
     $reponse = $bdd->prepare('SELECT * FROM utilisateur WHERE IDutilisateur =:IDclient');
     $reponse->execute(array(':IDclient'=> $idclient));

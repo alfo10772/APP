@@ -59,6 +59,23 @@ if (empty($_SESSION)) {
 				
 				<a href="message_client.php">
 					Mes Messages
+					<?php
+
+					$rep= $bdd->query('SELECT * FROM message WHERE IDclient = "'. $id .'" ');
+				
+					
+
+					$sum=0;
+					foreach ($rep->fetchAll() as $don) {
+					    $sum+=$don['etatclient'];
+					}
+					if($sum!=0)
+					{
+                    ?>		
+					<img src="../images/alarm2.png" alt="Photo profil" width="18">
+					<?php
+					}
+					?>
 				</a>
 			
 			</div>
