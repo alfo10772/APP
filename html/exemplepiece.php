@@ -38,14 +38,16 @@
 				
 		<div id="conteneurcercle">
 			<?php 
-			$reponse = $bdd->query('SELECT capteur.nom FROM piece JOIN capteur ON (piece.IDpiece = capteur.IDpiece) WHERE capteur.IDpiece = "'.$_SESSION['idpiece'].'"');        //Sélection des noms des capteurs présents dans la pièce sélectionnée uniquement
+			$reponse = $bdd->query('SELECT capteur.nom, capteur.IDcapteur FROM capteur JOIN piece ON (piece.IDpiece = capteur.IDpiece) WHERE capteur.IDpiece = "'.$_SESSION['idpiece'].'"');        //Sélection des noms des capteurs présents dans la pièce sélectionnée uniquement
 			$reponse2 = $bdd->query('SELECT actionneur.nom, actionneur.etat, actionneur.IDactionneur FROM piece JOIN actionneur ON (piece.IDpiece = actionneur.IDpiece) WHERE actionneur.IDpiece = "'.$_SESSION['idpiece'].'"');     //Sélection des noms des actionneurs présents dans la pièce sélectionnée uniquement
 			
-			$req = $bdd->query('SELECT donnees.donnees FROM donnees JOIN capteur ON (capteur.IDcapteur = donnees.IDcomposant) WHERE capteur.IDcapteur = "'. $idcapteur .'"');       //Sélection des données des capteurs présents
-			$rep = $req->fetch();
-			$req2 = $bdd->query('SELECT typecomposant.unite FROM typecomposant JOIN capteur ON (typecomposant.nom = capteur.nomtype) WHERE capteur.IDcapteur = "'. $idcapteur .'"');     //Sélection des unite de type de composant
-			$rep2 = $req2->fetch();foreach ($reponse->fetchAll() as $donnees)
+			foreach ($reponse->fetchAll() as $donnees)
 			{
+			    $idcapteur = $donnees['IDcapteur'];
+			    $req = $bdd->query('SELECT donnees.donnees FROM donnees JOIN capteur ON (capteur.IDcapteur = donnees.IDcomposant) WHERE capteur.IDcapteur = "'. $idcapteur .'"');       //Sélection des données des capteurs présents
+			    $rep = $req->fetch();
+			    $req2 = $bdd->query('SELECT typecomposant.unite FROM typecomposant JOIN capteur ON (typecomposant.nom = capteur.nomtype) WHERE capteur.IDcapteur = "'. $idcapteur .'"');     //Sélection des unite de type de composant
+			    $rep2 = $req2->fetch();
 			?>
 			
 				<div style="width: 150px;" id="conteneurcompo">

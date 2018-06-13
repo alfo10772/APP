@@ -2,26 +2,17 @@
 
 session_start();
 
-$bdd = NULL;
+require_once '../modele/config_init.php'; //Connexion à la bdd
 
-try
-{
-    $bdd = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8','root','',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // A modifier lors de l'hebergement
-}
-catch (Exception $e)
-{
-    die('Erreur :' . $e->getMessage());
-}
-
-$_SESSION['idpiece'] = $_POST['id'];
+$_SESSION['idpiece'] = $_POST['id'];    //Récupération de l'ID de la pièce sélectionnée dans une variable session
 
 $reponse = $bdd->query('SELECT nom FROM piece WHERE IDpiece = "'.$_SESSION['idpiece'].'"');
 $donnees = $reponse->fetch()[0];
-
+//retrouve le nom de la pièce sélectionnée avec l'ID
 
 $_SESSION['nompiece'] = $donnees;
 
 
-header('location: ../html/exemplepiece.php');
+header('location: ../html/exemplepiece.php');   //Redirection sur le page exemplepiece
 
 ?>
