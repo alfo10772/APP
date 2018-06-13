@@ -13,11 +13,11 @@
 		<div id="article2">
 	
 			<?php 
-	          require("menu_admin.php");
+	          require("menu_admin.php");       //Ajout du menu vertical
 	        
-	          include('../modele/config_init.php');
+	          include('../modele/config_init.php');        //Connexion à la bdd
 	          
-	          require('../traitements/info.php');
+	          require('../traitements/info.php');          //Récupération des données du traitement
 	        ?>
 			
 			<div class="contenu">
@@ -28,7 +28,7 @@
 				
 				<div id="conteneurinfo2">
 				
-				<table id="modif2">
+				<table id="modif2">			
 					<tr>
 						<th id="modif2">Nom</th>
 						<td id="modif2"><?php echo $nom; ?></td>

@@ -13,22 +13,22 @@
 		<div id="article2">
 	
 			<?php 
-	          require("menu_admin.php");
+	          require("menu_admin.php");       //Ajout du menu vertical
 	        ?>
 			
 			<?php 
-       		   include('../modele/config_init.php');
+       		   include('../modele/config_init.php');       //connexion à la bdd
        	    ?>
        	    
 			<div class="contenu">
 				<h1>Liste des questions de votre FAQ</h1>
 				<br />
 				
-				<?php 
+				<?php           // Recuperation de toutes les questions et reponses existantes
        		        $reponse = $bdd->query('SELECT * FROM reponse');
        			?>	
        			
-       			<table>
+       			<table>			<!--  Ajout des questions et des réponses dans un tableau -->
        		     	<tr>
        		       		<th>Questions</th>
        		        	<th>R&eacute;ponses</th>
@@ -38,7 +38,7 @@
        		        foreach ($reponse->fetchAll() as $donnees) {
        		        ?>
        		        
-       		        <form action="../traitements/suppression_faq.php" method="post"> 
+       		        <form action="../traitements/suppression_faq.php" method="post"> 	<!--  Début du formulaire qui permet de supprimer une question -->
   						<tr>
      						<td><?php echo $donnees['question'];?></td>
      						<td><?php echo $donnees['reponse'];?></td>
@@ -56,7 +56,7 @@
   				<br />
   				 
     			<a href="repondre_FAQ.php">		
-    				<input type="submit" id="ajout" value="Ajouter une nouvelle question" />
+    				<input type="submit" id="ajout" value="Ajouter une nouvelle question" />		<!--  Bouton qui fait le lien vers la page d'ajout d'un bouton -->
     			</a>
   			 
 			</div>
