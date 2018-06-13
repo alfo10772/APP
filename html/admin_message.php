@@ -11,32 +11,70 @@
 
 <div id='article2'>
 <?php 
-       require("menu_admin.php");
-       include('../modele/config_init.php');
+       require("menu_admin.php");                         //on ajoute le menu de l'administrateur
+       include('../modele/config_init.php');              // on importe la base de données
 	?>
     <div class='contenu'>
 
 
 <table>
-<tr>
-	<label for="nom" style="float:left;">
+<tr>                                            <!-- On définit les colonnes de la table -->
+    
+    <label for="nom" style="float:left;">
 	<th>Boite de réception:</th>
 	</label>
-    <th>
-    <label for="nom" style="float:left">
-	Vos contacts:
+    <label for="nom" style="float:left;">
+	<th>Boite d'envoi</th>
 	</label>
+    
+
+    <th>
+    Vos contacts:
     </th>
+
+
 	</br>
 	
 
 </tr>
 <tr>
-<th>
+
+    <th>
     <form method="post" action="admin_vu_message.php">
-    <select name='selectmessage' classe="réponse1" size='30'>
+    <select name='selectmessage' classe="réponse1" size='30'>                                            <!-- on sélectionne le message à voir dans la boite de réception -->
     <?php
-        $rep = $bdd->query('SELECT * FROM message');
+        $rep = $bdd->prepare('SELECT * FROM message WHERE envoie != :emetteur');                         // on prend dans la base de données tous les messages des clients
+        $rep->execute(array(':emetteur' => 'administrateur'));
+        foreach ($rep->fetchAll() as $don) {                                                            // on va afficher chaque message dans le select
+            $emetteur = $don['envoie'];
+            $objet = $don['Objet'];
+            $date = $don['date'];
+
+            if ($don['etatadmin']) {                                                                      // affichage en fonction de l'état de "vu" ou "non vu" de l'administrateur
+                ?>
+                <option value=<?php echo $don['IDmessage']; ?>> [Non Vu] <?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+            else {
+                ?>
+                <option value=<?php echo $don['IDmessage']; ?>><?php echo "[$date] < $emetteur > $objet";?> </option>
+                <?php
+            }
+
+
+        }
+        ?>
+    
+    </select>                                                                                 
+    <input type="submit" value="Voir le message">                       <!-- bouton pour voir le message sélectionné -->
+    </th>
+    </form>
+    <th>
+    <form method="post" action="admin_vu_message.php">
+    <select name='selectmessage' classe="réponse1" size='30'>                             <!--On sélectionne le message à voir dans la boite d'envoi -->
+    <?php
+        $rep = $bdd->prepare('SELECT * FROM message WHERE envoie = :emetteur');           // on prend dans la base de données tous les messages de l'administrateur
+        $rep->execute(array(':emetteur' => 'administrateur'));
         foreach ($rep->fetchAll() as $don) {
             $emetteur = $don['envoie'];
             $objet = $don['Objet'];
@@ -58,22 +96,21 @@
         ?>
     
     </select>
-    <input type="submit" value="Voir le message">
+    <input type="submit" value="Voir le message">                             <!-- bouton pour voir le message sélectionné -->
     </th>
     </form>
-	</br>
     <th>
-    <form method="post" action="envoi_admin_vers_client.php">
-	<select name='mail' class="réponse1" size='30'>
+    <form method="post" action="envoi_admin_vers_client.php">       
+	<select name='mail' class="réponse1" size='30'>                                        <!-- On sélectionne le client à qui envoyer un message -->
     <?php 
    
-        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');
+        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');                   // on prend dans la base de données tous les clients
            
        	foreach ($reponse->fetchAll() as $donnees) {
 
     ?>	
     
-	<option value=<?php echo $donnees['mail']; ?>><?php echo $donnees['mail'];?></option> 
+	<option value=<?php echo $donnees['mail']; ?>><?php echo $donnees['mail'];?></option>           <!-- On affiche chacun d'entre eux dans le select -->
     
 	
     <?php
@@ -82,12 +119,13 @@
     
 
     </select>
-    <input type="submit" value="&Eacute;crire un message">
+    <input type="submit" value="&Eacute;crire un message">                           <!-- bouton pour écrire un message au client -->
     </form>
     </th>
+
+    
 </tr>
 </table>
-
 
 </div>
 </div>

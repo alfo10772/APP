@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-
+														<!--  Ajout du header  -->
 		<header>
 			<?php
         require("en_tete_connexion.php");
@@ -17,7 +17,7 @@
 	<article>
 		
 		<h1>Ajout d'une maison</h1>
-		
+														<!--  Connexion à la bdd -->
 		<?php 
        		include('../modele/config_init.php');
        	?>
@@ -34,10 +34,10 @@
 		<br />
 		
 		<div id="conteneur2">
-			
+																						<!--  Début du formulaire-->
 			<form  method="post" action="../traitements/ajout_maison.php">		
 				<div id="formulaire1">
-					<label for="maison">								
+					<label for="maison">								<!--  Zone pour ajout nom maison -->
 						Nom
 					</label>
 					<br />
@@ -48,7 +48,7 @@
 			<br />
 			<br />
 			
-			<form  method="post" action="traitement.php">		
+			<form  method="post" action="traitement.php">		<!--  Zone pour ajout adresse -->
 				<div id="formulaire1">
 					<label for="maison">								
 						Adresse
@@ -62,13 +62,13 @@
 			<br />
 			
 			
-			<input type="submit" id="supprimer" value="Ajouter" />
+			<input type="submit" id="supprimer" value="Ajouter" />			<!--  Envoi du formulaire -->
 			</form>
 		</div>
 		
 	</article>
 		
-	<footer>						<!--  d&eacute;but du bas de la page -->
+	<footer>						<!--  Ajout du footer -->
 		<?php
             require("footer.php");
         ?>

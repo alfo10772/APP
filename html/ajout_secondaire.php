@@ -8,7 +8,7 @@
 
 	<body>
 
-		<header>
+		<header>								<!--  Ajout header -->
 			<?php
         require("en_tete_connexion.php");
         	?>
@@ -20,21 +20,21 @@
 		
 		<br />
 		<br />
-		
+													<!--  Connexion à la bdd -->
 		<?php 
        		include('../modele/config_init.php');
        	?>
        	
-       	<div id="conteneur2">
+       	<div id="conteneur2">										<!--  Début du formulaire -->
        		<form method="post" action="../traitements/ajout_secondaire.php">
-       			<p>Nom de l'utilisateur secondaire</p>
+       			<p>Nom de l'utilisateur secondaire</p>						<!--  Zone ajout du nom  -->
        			<input type="text" name="name"  />
        			
 				<br />
 				<br />
 				<br />
        			
-       			<p>Adresse mail de l'utilisateur secondaire</p>
+       			<p>Adresse mail de l'utilisateur secondaire</p>				<!--  Zone ajout de l'adresse mail  -->
        			<input type="text" name="mail"  />
        			
        			<br />
@@ -48,7 +48,7 @@
        			
        			<br />
        			
-       		    <input type="submit" value="Valider" />	
+       		    <input type="submit" value="Valider" />				<!--  Envoi du formulaire -->
        		
        		</form>
        		
@@ -61,7 +61,7 @@
 	</article>
 	
 	
-	<footer>						<!--  d&eacute;but du bas de la page -->
+	<footer>						<!--  Ajout du footer -->
 		<?php
             require("footer.php");
         ?>
