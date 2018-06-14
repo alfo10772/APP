@@ -16,10 +16,10 @@ session_start()
 	<header>
 		<?php
         if(empty($_SESSION)) {
-            require('header_connexion.php');
+            require('header_connexion.php');           //Si aucun utilisateur n'est connecte            
         }
         else {
-            include('en_tete_connexionbis.php');
+            include('en_tete_connexionbis.php');       // Si un utilisateur est deja connectee
         }
         ?>
 	</header>

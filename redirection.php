@@ -1,4 +1,4 @@
-<?php
+<?php                     //Fichier gerant la deconnexion
 session_start();
 ?>
 

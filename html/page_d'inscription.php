@@ -7,13 +7,14 @@
 </head>
 <body>
 	<header>
-		<p>
-			<a href="page_de_connexion.php">
-				<img src="../images/LogoHabilisPetit.png" alt="Logo Habilis" width="150">
-			</a>
-			<br />
-				Un produit de Domisep
-		</p>
+		<?php
+        if(empty($_SESSION)) {
+            require('header_connexion.php');           //Si aucun utilisateur n'est connecte
+        }
+        else {
+            include('en_tete_connexionbis.php');       //Si un utilisateur est connecte
+        }
+        ?>
 	</header>
 	<article>
 	<h1>
@@ -23,7 +24,7 @@
 	<div id="conteneur2">
 		<form name="myForm" method="post" action="traitement_inscription.php" onsubmit="return validateForm()">
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<script src="../javascript/inscription.js"></script>
+			<script src="../javascript/inscription.js"></script>				<!-- Fichier javascript pour sécuriser le mot de passe -->
 					
 			
        		<label for="nom_d'utilisateur">
