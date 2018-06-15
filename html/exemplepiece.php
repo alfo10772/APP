@@ -51,7 +51,7 @@
 			?>
 			
 				<div style="width: 150px;" id="conteneurcompo">
-					<div id="cercle"><?php echo $rep['donnees']. " " . $rep2['unite'];?></div>		<!--  affichage des données suivies de leurs unités à partir de la BDD -->
+					<div id="cercle"><div><?php echo $rep['donnees']. " " . $rep2['unite'];?></div></div>		<!--  affichage des données suivies de leurs unités à partir de la BDD -->
 					<div id="texte"><?php echo $donnees['nom'];?></div>		<!--  affichage du nom du capteur -->
 				</div>
 						
@@ -83,13 +83,18 @@
 						
 			<?php 
 			}
-			?>
-			
+			            
+		    if ($_SESSION['utilisateur']==0){
+		    ?>
 			<div id="cercle">
 				<a href="ajout_composant2.php">
 					<font size="+4"><div id=textecercle>+</div></font>		<!--  bouton d'ajout de capteur -->
 				</a>
 			</div>
+			
+			<?php 
+		    }
+			?>
 		</div>
 	
 		

@@ -60,41 +60,6 @@
        		      		</div>
        		      		<hr width="100%">
        		      </div>
-       		       
-       		    <?php 
-		          if ($_SESSION['utilisateur']==0){
-		    
-		          ?>   
-       		    <table id="modif" >      		        
-       		    	<tr>
-       		        	<th id="modif">Type de l'utilisateur</th>
-       		        	<td id="modif"><?php echo $type; ?></td>
-       		        	<input type="hidden" name="id" value=<?php echo $type ?>></input>
-       		        	<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_type');" id="modif" name=<?php echo $type ;?> value="Modifier" /></td>
-       		        </tr>
-       		    </table>
-       		     
-       		    <hr width="100%">
-       		     
-   				<div id="modif_type" style="display:none;">			<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
-   						<br />
-   						<p>S&eacute;l&eacute;ctionner le type de l'utilisateur</p>
-       		        	<div id="conteneur2">
-       		     			<form action="../traitements/modif_info.php" method="post">
-       		     				<select name="type" id="type">
-       		     					<option value="principal">Utilisateur principal</option>
-       		     					<option value="secondaire">Utilisateur secondaire</option>
-       		     				</select>
-       		     				<input type="submit" value="Valider" />
-       		     			</form>
-       		     			<br />
-       		     		</div>
-       		        	<hr width="100%">
-       		    </div>
-       		     
-       		     <?php 
-		          }
-       		     ?>  
        		        
        		    <table id="modif" >          		        
        		        <tr>

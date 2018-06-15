@@ -168,6 +168,16 @@ form{
   	padding:0%;
 }
 
+#conteneur3bis
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+  	margin-right: 2%;
+  	margin-top:6%;
+  	padding:0%;
+}
+
 #conteneurcercle
 {
 	font-size: 1em;
