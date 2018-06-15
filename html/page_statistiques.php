@@ -83,9 +83,12 @@ WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "
 		}
 		?>
 		<?php
-		$nom_capteur = $bdd->query('SELECT capteur.nom FROM capteur
+		$ID_capteur = $bdd->query$bdd->query('SELECT IDcapteur FROM capteur
 JOIN maison ON (piece.IDmaison = maison.IDmaison)
-WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" 
+AND piece.nom = "'.$temp.'"
+AND capteur.nom = "'.$name.'" ');
+		
 		
 try
 {
@@ -97,13 +100,9 @@ catch (Exception $e)
 }
 ?>
 		<?php 
-		//selection de l'ID de la piece sélectionnée par l'utilisateur
-		$heat = $bdd->query('SELECT IDcapteur FROM capteur
-WHERE IDpiece= "'.$room_t.'" AND nomtype = Capteur de température ');
-// selection de l'ID du capteur de température de la pièce	
 		$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sqlQuery = 'SELECT month(dates) AS mois, avg(donnees) AS moyennetemp FROM donnees 
-WHERE IDcapteur = "'.$heat.'"
+WHERE IDcapteur = "'.$ID_capteur.'"
 GROUP BY mois ORDER BY mois asC';
 // selection des données
 $sth = $conexion->prepare($sqlQuery, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
