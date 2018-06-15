@@ -10,7 +10,7 @@
 	
 		<header>
 			<?php
-                require("en_tete_connexion.php");
+                require("en_tete_connexion.php");           // on affiche l'en-tête de la page
                 
         	?>
         </header>
@@ -18,20 +18,20 @@
 		<article>
         
         <?php 
-        include('../modele/config_init.php');
-        $id=$_SESSION['ID'];
-        $idm = $_POST['ID'];
-        $mess = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');
+        include('../modele/config_init.php');               // on charge la base de données
+        $id=$_SESSION['ID'];                                // on récupère l'id du client
+        $idm = $_POST['ID'];                                // on récupère l'id du message
+        $mess = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');            // on récupère depuis la base de données le message grâce à l'id
         $mess->execute(array(':id' => $idm));
         $don = $mess->fetch();
-        if($don['etatclient']) {
+        if($don['etatclient']) {                                                                    // update état vu
             $etat = $bdd->prepare('UPDATE message SET etatclient=0 WHERE IDmessage = :id');
             $etat->execute(array(':id' => $idm));
         }
 
         ?>
 
-        <table id='notification'>
+        <table id='notification'>                           <!-- création de la table de vu du message -->
             <tr>
                 <th id="date"> &Eacute;metteur </th>
                 <th id="not"> Objet du Message </th>
@@ -50,7 +50,7 @@
                 <th id="not"> Message </th>
             </tr>
             <tr>
-                <td id="not2"><?php echo $don['message'];?></td>
+                <td id="not2"><?php echo $don['message'];?></td>                <!-- On affiche le message -->
             </tr>
         </table>
             
@@ -61,7 +61,7 @@
                             
 		<footer>
     		<?php
-				require('footer.php');
+				require('footer.php');                          // on affiche le bas de page
     		?>
 		</footer>
 
