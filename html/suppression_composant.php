@@ -76,10 +76,10 @@
 			<div style="float:left">		
 					<input type="button" onclick="toggle_div(this,'confirmation');" id="supprimer" value="Supprimer" />		<!-- Bouton de confirmation du formulaire -->
 			</div>
-			
+			<br>
 			<div id="confirmation" style="display:none;">	<!-- bloc de confirmation de suppression dès qu'on clique sur le bouton du dessous -->
               		<hr width="100%">
-              		<p><font size="+1">Etes-vous sûr de vouloir supprimer ce composant ?</font></p>
+              		<p><font size="+1">Etes-vous s&ucirc;r de vouloir supprimer ce composant ?</font></p>
               		<div id="suppression">
               			<input type="submit" id="suppression" value="Oui" />	<!-- Bouton de confirmation -->
               			<a href="maison.php">

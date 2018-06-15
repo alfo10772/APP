@@ -20,7 +20,7 @@
 		<?php 
        		include('../modele/config_init.php');
        	?>
-		
+		<br>
 		<div style="float:left">
 			<a href="page_des_composants.php">		
 				<input type="submit" id="retour" value="Retour &agrave; la page des composants" />
