@@ -28,7 +28,6 @@ session_start()
 		<h1> Conditions g&eacute;n&eacute;rales d'utilisation </h1>
 
 		<br />
-		<br />
 		
 		<?php 
        		include('../modele/config_init.php');
