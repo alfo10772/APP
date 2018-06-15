@@ -6,7 +6,7 @@ $ch = curl_init();
 curl_setopt(
 $ch,
 CURLOPT_URL,
-"http://projets-tomcat.isep.fr:8080/appService?ACTION=GETLOG&TEAM=007A");
+"http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=007A&TRAME=1007A1301002B012544");
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $data = curl_exec($ch);
@@ -34,7 +34,7 @@ echo("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
 
 $table = array($t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec);
 
-$req=$pdo->prepare('INSERT INTO donnees(IDcomposant,donnees) VALUES(:id, :donnees)');
+/*$req=$pdo->prepare('INSERT INTO donnees(IDcomposant,donnees) VALUES(:id, :donnees)');
 $donnees= hexdec($table[5]);
-$result = $req->execute(array(':id'=>intval($table[3]), ':donnees'=>$donnees)); 
+$result = $req->execute(array(':id'=>intval($table[3]), ':donnees'=>$donnees)); */
 ?>
