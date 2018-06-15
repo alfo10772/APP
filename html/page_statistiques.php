@@ -112,10 +112,28 @@ ass&egrave;chement des muqueuses.">
 				$humid = $_POST['piece_h'];
 			}
 		?>
+		<?php
+try
+{
+	$conexion = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8', 'root', '');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+?>
 		<?php 
+		$room_t = $bdd->query('SELECT piece.IDpiece FROM piece 
+JOIN maison ON (piece.IDmaison = maison.IDmaison) 
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
+
+		$heat = $bdd->query('SELECT IDcapteur FROM capteur
+WHERE IDpiece= "'.$room_t.'" AND nomtype = Capteur de température ');
+		
 		$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sqlQuery = "select month(dates) as mois, avg(donnee) as moyennetemp from donnee join piece
-where nom="'.$temp.'"  GROUP BY mois ORDER BY mois ASC";
+$sqlQuery = 'SELECT month(dates) AS mois, avg(donnees) AS moyennetemp FROM donnees 
+WHERE IDcapteur = "'.$heat.'"
+GROUP BY mois ORDER BY mois asC';
 $sth = $conexion->prepare($sqlQuery, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $sth->execute(array(':year' => 2018));
 
@@ -206,9 +224,9 @@ $j=-1;
  //Position de la première mois de vente
  $pasX=90;
  //Parcourir le tableau pour le traçage de la diagramme
- foreach ($resultat as $mois => $quantite) {
+ foreach ($resultat as $mois => $donnees) {
    //calculer la hateur du point par rapport à sa valeur
-   $y=($hauteur) -(($quantite -$min) * ($echelleY/$py))-$absis;
+   $y=($hauteur) -(($donnees -$min) * ($echelleY/$py))-$absis;
    //dessiner le point
    imagefilledellipse($courbe, $pasX, $y, 6, 6, $rouge);
    //Afficher le mois en français avec une inclinaison de 315°
@@ -221,8 +239,8 @@ $j=-1;
       imageline($courbe,($pasX-$echelleX),$yprev,$pasX,$y,$noir);
     }
     //Afficher la valeur au dessus du point
-   imagestring($courbe, 2, $pasX-15,$y-14 , $quantite, $bleu);
-   $j=$quantite;
+   imagestring($courbe, 2, $pasX-15,$y-14 , $donnees, $bleu);
+   $j=$donnees;
    //enregister la hauteur du point actuel pour la liaison avec la suivante
    $yprev=$y;
    //Decaller l'abscisse suivante par rapport à son echelle
@@ -235,9 +253,18 @@ imagedestroy($courbe);
 	?>
 
 	<?php 
+	$room_h = $bdd->query('SELECT piece.IDpiece FROM piece
+JOIN maison ON (piece.IDmaison = maison.IDmaison)
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$humid.'" ');
+	
+	$water = $bdd->query('SELECT IDcapteur FROM capteur
+WHERE IDpiece= "'.$room_h.'" AND nomtype = Capteur de humidité ');
+	
 	$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sqlQuery = "select month(dates) as mois, avg(donnee) as moyennehumid from donnee join piece
-	where nom="'.$humid.'"   GROUP BY mois ORDER BY mois ASC";
+	$sqlQuery = 'SELECT month(dates) AS mois, avg(donnees) AS moyennehumid FROM donnees
+WHERE IDcapteur = "'.$water.'"
+GROUP BY mois ORDER BY mois asC';
+	
 	$sth = $conexion->prepare($sqlQuery, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 	$sth->execute(array(':year' => 2018,));
 	
@@ -327,23 +354,23 @@ $j=-1;
  //Position de la première mois de vente
  $pasX=90;
  //Parcourir le tableau pour le traçage de la diagramme
- foreach ($resultat as $mois => $quantite) {
+ foreach ($resultat as $mois => $donnees) {
    //calculer la hateur du point par rapport à sa valeur
-   $y=($hauteur) -(($quantite -$min) * ($echelleY/$py))-$absis;
+   $y=($hauteur) -(($donnees -$min) * ($echelleY/$py))-$absis;
    //dessiner le point
    imagefilledellipse($courbe, $pasX, $y, 6, 6, $rouge);
    //Afficher le mois en français avec une inclinaison de 315°
    imagefttext($courbe, 10, 315, $pasX, $hauteur-$absis+20, $noir, $font_file, $moisFr[$mois-1]);
-   //Tacer une ligne veticale de l'axe de l'abscisse vers le point
+   //Tracer une ligne verticale de l'axe de l'abscisse vers le point
    imageline($courbe, $pasX, $hauteur-$absis+$a, $pasX,$y, $noir);
    if($j!==-1)
     {
-      //liée le point actuel avec la précédente
+      //lier le point actuel avec la précédente
       imageline($courbe,($pasX-$echelleX),$yprev,$pasX,$y,$noir);
     }
     //Afficher la valeur au dessus du point
-   imagestring($courbe, 2, $pasX-15,$y-14 , $quantite, $bleu);
-   $j=$quantite;
+   imagestring($courbe, 2, $pasX-15,$y-14 , $donnees, $bleu);
+   $j=$donnees;
    //enregister la hauteur du point actuel pour la liaison avec la suivante
    $yprev=$y;
    //Decaller l'abscisse suivante par rapport à son echelle
