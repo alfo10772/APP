@@ -62,10 +62,31 @@
 			
 		?>
 		<?php 
-		$
+		$room_t = $bdd->query('SELECT piece.IDpiece FROM piece
+JOIN maison ON (piece.IDmaison = maison.IDmaison)
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
+		
+		$nom_capteur = $bdd->query('SELECT capteur.nom FROM capteur
+JOIN maison ON (piece.IDmaison = maison.IDmaison)
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
 		
 		?>
+		<select classe="réponse1" name="nom_capteur">
+			<option >
+		    			<?php echo $nom_capteur ; ?>
+		    </option>
+		</select>
+		<?php 
+		if(!empty($_POST['nom_capteur']))
+		{
+			$name = $_POST['nom_capteur'];
+		}
+		?>
 		<?php
+		$nom_capteur = $bdd->query('SELECT capteur.nom FROM capteur
+JOIN maison ON (piece.IDmaison = maison.IDmaison)
+WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
+		
 try
 {
 	$conexion = new PDO('mysql:host=localhost;dbname=bdd_a;charset=utf8', 'root', '');
@@ -76,10 +97,7 @@ catch (Exception $e)
 }
 ?>
 		<?php 
-		$room_t = $bdd->query('SELECT piece.IDpiece FROM piece 
-JOIN maison ON (piece.IDmaison = maison.IDmaison) 
-WHERE maison.selection = 1 AND maison.IDutilisateur= "'.$id.'" AND piece.nom = "'.$temp.'" ');
-//selection de l'ID de la piece sélectionnée par l'utilisateur
+		//selection de l'ID de la piece sélectionnée par l'utilisateur
 		$heat = $bdd->query('SELECT IDcapteur FROM capteur
 WHERE IDpiece= "'.$room_t.'" AND nomtype = Capteur de température ');
 // selection de l'ID du capteur de température de la pièce	
