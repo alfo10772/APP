@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();          // on démarre une session
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,22 +13,22 @@ session_start();
 
 <div id='article2'>
 <?php 
-       require("menu_admin.php");
-       include('../modele/config_init.php');
+       require("menu_admin.php");                                  // on affiche le menu de l'administrateur
+       include('../modele/config_init.php');                       // on charge la base de données
        
 	?>
     <div class='contenu'>
 <?php 
-    $id = $_POST['selectmessage'];
-    $rep = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');
+    $id = $_POST['selectmessage'];                                             // on récupère l'id du message
+    $rep = $bdd->prepare('SELECT * FROM message WHERE IDmessage = :id');       // on récupère ensuite le message grâce à son id
     $rep->execute(array(':id' => $id));
     $don = $rep->fetch();
-    if($don['etatadmin']) {
+    if($don['etatadmin']) {                                                                         // met à jour l'etat de vision de l'administrateur
         $etat = $bdd->prepare('UPDATE message SET etatadmin=0 WHERE IDmessage = :id');
         $etat->execute(array(':id' => $id));
     }
     $idclient = $don['IDclient'];
-    $reponse = $bdd->prepare('SELECT * FROM utilisateur WHERE IDutilisateur =:IDclient');
+    $reponse = $bdd->prepare('SELECT * FROM utilisateur WHERE IDutilisateur =:IDclient');             // on récupère les données de l'utilisateur
     $reponse->execute(array(':IDclient'=> $idclient));
     $c = $reponse->fetch();
     $client = $c['mail'];
@@ -54,7 +54,7 @@ session_start();
     <tr>
     <th>
     <label for="nom" style="float:left">
-	Objet : "<?php echo $don['Objet'];?>" 
+	Objet : "<?php echo $don['Objet'];?>"              <!-- On affiche l'objet du message -->
 	</label>
     </th>
 	</br>
@@ -63,7 +63,7 @@ session_start();
     <tr>
     <th>
     <label for="nom" style="float:left">
-    <?php echo $don['message'];?>
+    <?php echo $don['message'];?>                             <!-- On affiche le message -->
     </label>
     </th>
     <tr />
