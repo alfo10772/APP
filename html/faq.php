@@ -1,3 +1,6 @@
+<?php 
+session_start()
+?>
 <!DOCTYPE html>
 <html>                                                  
 <head>
@@ -9,7 +12,12 @@
 
 	<header>							<!--  Ajout du header  -->
 		<?php
-            require("en_tete_connexion.php"); 
+        if(empty($_SESSION)) {
+            require('header_connexion.php');           //Si aucun utilisateur n'est connecte
+        }
+        else {
+            include('en_tete_connexionbis.php');       //Si un utilisateur est connecte
+        }
         ?>
 	</header>
 	<article >
