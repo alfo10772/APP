@@ -40,8 +40,16 @@
 		$requetepiece = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (piece.nom="'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection=1) '); //requête qui permet de retrouver l'ID de la pièce
 		$piece = $requetepiece ->fetch();
 		$piece = $piece['IDpiece'];
+		$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');  //Sélectionne tous les capteurs présents dans la pièce sélectionnée
 		$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');  //Sélectionne tous les actionneurs présents dans la pièce sélectionnée
-		while ($donnees1 = $reponse1->fetch())
+		while ($donnees = $reponse->fetch())
+		{
+		    ?>
+       			<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       		<?php
+                }
+        //Affiche tous les capteurs de la pièce
+        while ($donnees1 = $reponse1->fetch())
         {
        		?>
        			<option value="<?php echo $donnees1['nom']; ?>"><?php echo $donnees1['nom'] ?></option>

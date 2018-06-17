@@ -38,13 +38,13 @@
        		       ?>
        		       <form action="vu_message_client.php" method="post">               <!--formulaire pour accéder au message -->
   					<tr>
-						<td id="not2"><?php echo $donnees['envoie'];?></td>            <!--affichage de chaque message avec son objet, date et emetteur -->
+						<td id="not2"><?php echo $donnees['envoie'];?></td>
      					<td id="not2"><?php echo $donnees['Objet'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
      					<input type="hidden" name="ID" value=<?php echo $donnees['IDmessage'] ?>></input>
      					<td id="not2"> 
 						<?php      		        	
-       		        	if ($donnees['etatclient']) {                                     // On affiche le bouton pour voir le message, qui change si le client a vu ou non le message
+       		        	if ($donnees['etatclient']) {
 							?>
 						   <input type="submit" id="vu" value="New">
 						   <?php
@@ -65,7 +65,7 @@
         <br />
         <br />
         <div id='conteneur2'>
-            <form action="envoi_client_vers_admin.php" method="post">	                                 <!-- formulaire qui mène à la page pour envoyer un message à l'administrateur-->
+            <form action="envoi_client_vers_admin.php" method="post">	
 				<input type="submit" value="Envoyer un message à l'administrateur" />	
 			</form>
 		</div>
@@ -76,7 +76,7 @@
 
 		<footer>
     		<?php
-				require('footer.php');           // on affiche le bas-de-page de la page
+				require('footer.php');
     		?>
 		</footer>
 
