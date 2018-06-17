@@ -21,7 +21,7 @@
 	<?php 
        		include('../modele/config_init.php');      //Connexion à la BDD
        	?>
-       	
+    <br>	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="maison.php">		<!-- Bouton de retour -->
 				<input type="submit" id="retour" value="Retour &agrave; la page des maisons" />
