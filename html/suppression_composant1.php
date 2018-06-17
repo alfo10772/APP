@@ -63,7 +63,7 @@
 
    				<div type="formulaire1">
 
-   					<label for="piece">S&egrave;lectionnez la pi&egrave;ce dans laquelle vous voulez supprimer un composant</label><br />
+   					<label for="piece">S&eacute;lectionnez la pi&egrave;ce dans laquelle vous voulez supprimer un composant</label><br />
 
    					<br />
 

@@ -621,7 +621,7 @@ table#notification{
 }
 
 th#not{
-	width: 80%;
+	width: 75%;
 	padding: 5px;
 	height: 70px;
 	background:RGB(22, 85, 150);
@@ -750,8 +750,9 @@ input[id="vu"] {
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
-    padding:20% 15% 20% 20%;
+    padding:13% 10% 10% 10%;
     font-size: 15px;
+    margin-left:27%;
 }
 
 input[id="vu"]:hover {

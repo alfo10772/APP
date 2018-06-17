@@ -39,12 +39,45 @@
 		$piece= $piece['IDpiece'];
 		//Récupère l'ID de la pièce
 		
-		$reqid1 = $bdd->query('SELECT actionneur.type, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.nom= "'. $composant .'" AND actionneur.IDutilisateur= "'. $id .'" AND actionneur.IDpiece = "'. $piece .'" AND maison.selection = 1');
+		$reqid1 = $bdd->query('SELECT capteur.type, capteur.IDcapteur FROM capteur JOIN maison ON (capteur.IDmaison = maison.IDmaison) WHERE capteur.nom= "'. $composant .'" AND capteur.IDutilisateur= "'. $id .'" AND capteur.IDpiece = "'. $piece .'" AND maison.selection = 1');
 		$compo=$reqid1->fetch();
 		$idtype= $compo['type'];
-		$idcompo= $compo['IDactionneur'];
-		//Cherche l'ID et le type du composant en fonction du nom, de la pièce et de la maison, dans la table actionneur
+		$idcompo= $compo['IDcapteur'];
+		//Cherche l'ID et le type du composant en fonction du nom, de la pièce et de la maison, dans la table capteur
 		
+		if($idtype == NULL) //Si le type est NULL c'est que le composant n'a pas été trouvé dans la table capteur, c'est donc un actionneur
+		
+		{
+		    $reqid1 = $bdd->query('SELECT actionneur.type, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.nom= "'. $composant .'" AND actionneur.IDutilisateur= "'. $id .'" AND actionneur.IDpiece = "'. $piece .'" AND maison.selection = 1');
+		    $compo=$reqid1->fetch();
+		    $idtype= $compo['type'];
+		    $idcompo= $compo['IDactionneur'];
+		    //Cherche l'ID et le type du composant en fonction du nom, de la pièce et de la maison, dans la table actionneur
+		}
+		
+		if($idtype==0)    //Si le type est 0 alors c'est un capteur donc on affiche le formulaire pour les paramètres des capteurs
+		{
+		?>
+			<form action="../traitements/parametre_capteur.php" method="post"> <!-- Début du formulaire de paramètres pour un capteur -->
+				<div id="conteneur2">
+					<label for="composant">S&eacute;lectionnez vos param&egrave;tres</label><br />
+						<label for="valeurmin">Valeur minimale</label>
+						<input type="number" name="valeurmin">
+						<br>
+						<br>
+						<label for="valeurmin">Valeur maximale</label>
+						<input type="number" name="valeurmax">
+						<br>
+						<br>
+						<input type="hidden" name="id" value=<?php echo $idcompo ?>>
+						<input type="submit" id="supprimer" value="Confirmer" />	<!-- Bouton de validation -->
+				</div>
+			</form>
+						
+		<?php
+		}
+		elseif($idtype==1)    //Si le type est 1 alors c'est un actionneur donc on affiche le formulaire pour les paramètres des actionneurs
+		{
 		?>
 		    <form action="../traitements/parametre_actionneur.php" method="post">	<!-- Début du formulaire de paramètres pour un actionneur -->
 		    	<div id="conteneur2">
@@ -61,6 +94,11 @@
 		    			<input type="submit" id="supprimer" value="Confirmer" />	<!-- Bouton de validation -->
 		    	</div>
 		    </form>
+		<?php
+		}
+		
+		
+		    ?>
 	</article>
 	<footer>
 			<?php
