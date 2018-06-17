@@ -967,3 +967,11 @@ input[type=msg]{
     box-sizing: border-box;
     height:200px;
 }
+
+#info_admin
+{
+	text-align: center;
+	font-size:1em;
+	text-decoration: underline;
+	color: RGB(107, 107, 107);
+}
