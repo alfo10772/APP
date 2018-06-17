@@ -45,7 +45,7 @@
 							Type du composant
 							<select name="type" type="admin">
 								<option value="capteur">Capteur</option>
-								<option value="effecteur">Effecteur</option>
+								<option value="effecteur">Actionneur</option>
 							
 							</select>
 			

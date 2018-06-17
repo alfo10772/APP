@@ -955,3 +955,14 @@ input[id="suppression"]{
 input[id="suppression"]:hover {
 	background-color : RGB(191, 223, 255);
 }
+
+input[type=msg]{
+	width: 100%;
+    padding: 10px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height:200px;
+}
