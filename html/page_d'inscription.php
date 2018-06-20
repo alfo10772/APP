@@ -87,7 +87,7 @@
        				</em>
        				</p>
        			</label>
-       			<input type="checkbox" name="accept_use_condition" id="accept_use_condition" />
+       			<input type="checkbox" name="accept_use_condition" id="accept_use_condition" required />
 				<br />
        		<input type="submit" value="Valider" />	
 		</form>

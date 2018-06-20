@@ -104,7 +104,7 @@
 	<select name='mail' class="réponse1" size='30'>                                        <!-- On sélectionne le client à qui envoyer un message -->
     <?php 
    
-        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');                   // on prend dans la base de données tous les clients
+        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type = 0');                   // on prend dans la base de données tous les clients
            
        	foreach ($reponse->fetchAll() as $donnees) {
 
