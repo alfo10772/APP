@@ -5,6 +5,10 @@ require_once '../modele/config_init.php'; //Connexion à la bdd
 $id= $_SESSION['ID'];
 
 
+$typ = $bdd -> query('SELECT type FROM utilisateur WHERE IDutilisateur = "'. $id .'"');
+$type = $typ -> fetchAll();
+
+
 
 
 if(!empty($_POST['name'])){     //Si un nouveau nom est entré
@@ -67,7 +71,18 @@ if(!empty($_POST['tel_sav2'])){
     $result = $result->execute(array(':numero' => htmlspecialchars($_POST['tel_sav2'])));
 }
 
-header("location: ../html/informations.php");
+
+if($type[0][0]==0){
+    header("location: ../html/informations.php");
+}
+
+if($type[0][0]==1){
+    header("location: ../html/informations.php");
+}
+
+if($type[0][0]==2){
+    header("location: ../html/administration.php");
+}
 ?>
 
 
