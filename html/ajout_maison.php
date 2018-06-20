@@ -21,7 +21,7 @@
 		<?php 
        		include('../modele/config_init.php');
        	?>
-       	
+       	<br>
 		<div style="float:left">
 			<a href="maison.php">		
 				<input type="submit" id="retour" value="Retour &agrave; la page des maisons" />

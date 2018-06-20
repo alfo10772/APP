@@ -621,7 +621,7 @@ table#notification{
 }
 
 th#not{
-	width: 80%;
+	width: 75%;
 	padding: 5px;
 	height: 70px;
 	background:RGB(22, 85, 150);
@@ -750,8 +750,9 @@ input[id="vu"] {
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
-    padding:20% 15% 20% 20%;
+    padding:13% 10% 10% 10%;
     font-size: 15px;
+    margin-left:27%;
 }
 
 input[id="vu"]:hover {
@@ -954,4 +955,23 @@ input[id="suppression"]{
 
 input[id="suppression"]:hover {
 	background-color : RGB(191, 223, 255);
+}
+
+input[type=msg]{
+	width: 100%;
+    padding: 10px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height:200px;
+}
+
+#info_admin
+{
+	text-align: center;
+	font-size:1em;
+	text-decoration: underline;
+	color: RGB(107, 107, 107);
 }

@@ -5,7 +5,7 @@
 
 		<link rel="stylesheet" href="../css/style.css">		
 
-		<title>edition de la FAQ</title>
+		<title>FAQ</title>
 	</head>
 	
 	<body>

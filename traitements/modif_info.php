@@ -5,6 +5,12 @@ require_once '../modele/config_init.php'; //Connexion à la bdd
 $id= $_SESSION['ID'];
 
 
+$typ = $bdd -> query('SELECT type FROM utilisateur WHERE IDutilisateur = "'. $id .'"');
+$type = $typ -> fetchAll();
+
+
+
+
 if(!empty($_POST['name'])){     //Si un nouveau nom est entré
     $req1 = 'UPDATE utilisateur SET nom = :nom WHERE IDutilisateur = :id';      //On le modifie à la bdd
     $result = $bdd ->prepare($req1);
@@ -45,11 +51,38 @@ if(!empty($_POST['password']) && !empty($_POST['mdp'])){        //Si un nouveau 
         $result = $bdd -> prepare($req5);
         $result = $result->execute(array(':mdp' => $hash1, ':id'=>$id ));
     }
-    
-    
 }
-    
-header("location: ../html/informations.php");
+  
+if(!empty($_POST['tel_sav'])){ 
+    $req6 = 'UPDATE contact SET numero =:numero WHERE IDcontact = 1';
+    $result = $bdd ->prepare($req6);
+    $result = $result->execute(array(':numero' => htmlspecialchars($_POST['tel_sav'])));
+}
+
+if(!empty($_POST['mail2'])){     //Si un nouveau mail est entré
+    $req7 = 'UPDATE contact SET mail = :mail WHERE IDcontact = 1';            //On le modifie dans la bdd
+    $result = $bdd ->prepare($req7);
+    $result = $result->execute(array(':mail' => htmlspecialchars($_POST['mail2'])));
+}
+
+if(!empty($_POST['tel_sav2'])){
+    $req6 = 'UPDATE contact SET sav =:numero WHERE IDcontact = 1';
+    $result = $bdd ->prepare($req6);
+    $result = $result->execute(array(':numero' => htmlspecialchars($_POST['tel_sav2'])));
+}
+
+
+if($type[0][0]==0){
+    header("location: ../html/informations.php");
+}
+
+if($type[0][0]==1){
+    header("location: ../html/informations.php");
+}
+
+if($type[0][0]==2){
+    header("location: ../html/administration.php");
+}
 ?>
 
 

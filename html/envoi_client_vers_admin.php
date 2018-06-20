@@ -18,13 +18,14 @@
 		<article>
 			<h1> Envoi d'un Message &agrave; l'administrateur <h1>
 
+			<br />
 			<section class='conteneur2'>
 			<div id='conteneur2'>
 				<form action='../traitements/traitement_message_client.php' method='post'>
 					<input type='text' name='objet' placeholder='Objet du message'>
 					<br/>
 					<br/>
-					<textarea name='message' placeholder='Votre message' style="height:100%; width:100%"></textarea>
+					<input type="msg" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" > 	<!--  Zone pour entrer le message  -->
 					<br/>
 					<br/>
 					<input type='submit' id='envoi' value='Envoyer'>
