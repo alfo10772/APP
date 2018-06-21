@@ -11,8 +11,8 @@ $rep->execute(array(':mail' => $mail));
 $don = $rep -> fetch();
 
 if ($don['reinitialisation'] == $code) {
-    header('location: ../html/entrer_new_mdp.php');
+    header('location: ../vues/entrer_new_mdp.php');
 }
 else {
-    header('location: ../html/entrer_code_mdp.php');
+    header('location: ../vues/entrer_code_mdp.php');
 }

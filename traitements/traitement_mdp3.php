@@ -9,4 +9,4 @@ $hash = password_hash($mdp, PASSWORD_BCRYPT);
 $req = $bdd->prepare('UPDATE utilisateur SET reinitialisation = :code, motdepasse = :mdp WHERE mail =:mail');
 $req->execute(array(':code' => 0, ':mdp' => $hash, ':mail' => $mail));
 
-header('location: ../html/page_de_connexion.php');
+header('location: ../vues/page_de_connexion.php');

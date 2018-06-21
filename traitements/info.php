@@ -18,8 +18,11 @@ $nom = $info[3];    //Récupération du nom de l'utilisateur connecté
 $_tel = $info[6];   //Récupération du numéro de téléphone de l'utilisateur connecté
 $mail = $info[4];   //Récupération de l'adresse mail de l'utilisateur connecté
 
-if($_tel == "0") {
-    $_tel = "Aucun";
-}
-//S'il n'ya pas de numéro de téléphone dans la BDD, on affiche un message
+$requete = $bdd -> query('SELECT * FROM contact WHERE IDcontact = 1');
+$contact = $requete->fetch();
+
+$telephone = $contact[1];
+$mailsav = $contact[2];
+$telsav = $contact[3];
+
 ?>

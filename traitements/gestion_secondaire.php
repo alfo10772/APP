@@ -18,6 +18,6 @@ elseif($type==1)
 }
 //Si l'utilisateur est secondaire, il devient principal
 
-header('location: ../html/gestion_secondaire.php');     //Redirection vers la page de gestion des utilisateurs secondaires
+header('location: ../vues/gestion_secondaire.php');     //Redirection vers la page de gestion des utilisateurs secondaires
 
 ?>

@@ -12,7 +12,7 @@ $req = 'UPDATE utilisateur SET reinitialisation = :code WHERE mail =:mail' ;
 $result = $bdd ->prepare($req);
 $result = $result->execute(array(':code' => $code,':mail' => $mail));
 
-header('location: ../html/entrer_code_mdp.php');
+header('location: ../vues/entrer_code_mdp.php');
 
 
 ?>

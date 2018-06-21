@@ -12,15 +12,15 @@ $req-> execute(array(':id' => $id));
 //Redirection selon le numéro source de la page
 if($source==1)
 {
-    header('location: ../html/page_des_composants.php');
+    header('location: ../vues/page_des_composants.php');
 }
 elseif($source==2)
 {
-    header('location: ../html/exemplepiece.php');
+    header('location: ../vues/exemplepiece.php');
 }
 elseif($source==3)
 {
-    header('location: ../html/tableau_de_bord.php');
+    header('location: ../vues/tableau_de_bord.php');
 }
 
 

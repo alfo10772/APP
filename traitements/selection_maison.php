@@ -20,6 +20,6 @@ $req2 = 'UPDATE maison SET selection = :selection WHERE IDmaison= "'.$_SESSION['
 $resultat = $bdd ->prepare($req2);
 $resultat = $resultat->execute(array(':selection' => $selected));
 
-header('location: ../html/maison.php');
+header('location: ../vues/maison.php');
 
 ?>

@@ -49,7 +49,7 @@
      					    echo '<p>Capteur</p>';
      					}
      					else{
-     					    echo '<p>Effecteur</p>';
+     					    echo '<p>Actionneur</p>';
      					}
      					?></td>
      					<td><?php echo $donnees['unite'];?>

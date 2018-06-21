@@ -17,6 +17,6 @@ $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:no
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 //Ajout du message de confirmations dans la table des notifications
 
-header('location: ../html/maison.php');     //Redirection vers la page des maisons
+header('location: ../vues/maison.php');     //Redirection vers la page des maisons
 
 ?>

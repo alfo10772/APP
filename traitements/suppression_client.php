@@ -9,6 +9,6 @@ $req = $bdd ->prepare('DELETE FROM utilisateur WHERE IDutilisateur = :id');     
 
 $req-> execute(array(':id' => $id));
 
-header('location: ../html/client.php');
+header('location: ../vues/client.php');
 
 ?>

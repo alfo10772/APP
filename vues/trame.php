@@ -6,7 +6,7 @@ $ch = curl_init();
 curl_setopt(
 $ch,
 CURLOPT_URL,
-"http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=007A&TRAME=1007A1301002B012544");
+"http://projets-tomcat.isep.fr:8080/appService?ACTION=COMMAND&TEAM=007A&TRAME=1007A2301002a000a44");
 curl_setopt($ch, CURLOPT_HEADER, FALSE);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $data = curl_exec($ch);

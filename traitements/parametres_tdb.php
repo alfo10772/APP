@@ -46,4 +46,4 @@ if(!empty($_POST['checkbox2'])){
 //Si des actionneurs sont sélectionnés, on change leur sélection pour le tdb à 1
 
 
-header('location: ../html/tableau_de_bord.php');    //Redirection vers le tableau de bord
+header('location: ../vues/tableau_de_bord.php');    //Redirection vers le tableau de bord

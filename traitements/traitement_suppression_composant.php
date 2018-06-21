@@ -48,5 +48,5 @@ $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 //Ajoute le message de confirmation de suppression dans la BDD
 
 
-header('location: ../html/page_des_composants.php');    //Redirection vers la page des composants
+header('location: ../vues/page_des_composants.php');    //Redirection vers la page des composants
 ?>

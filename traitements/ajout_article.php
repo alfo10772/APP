@@ -13,9 +13,17 @@ else{
     $id=1;
 }
 
-$req = $bdd->prepare('INSERT INTO typecomposant(nom, type, unite) VALUES(:nom, :type, :unite)');    //Ajout du nouveau composant dans la table typecomposant
+if($type=='capteur'){           //Si on a un capteur, on tient compte de l'unite
+    $req = $bdd->prepare('INSERT INTO typecomposant(nom, type, unite) VALUES(:nom, :type, :unite)');    //Ajout du nouveau composant dans la table typecomposant
 
-$result = $req->execute(array(':nom' => $nom, ':type' => $id, ':unite' => $unite));
+    $result = $req->execute(array(':nom' => $nom, ':type' => $id, ':unite' => $unite));
+}
 
-header('location: ../html/modif_article.php');  //Redirection sur la page modif_article
+else{           //Si on a un actionneur, on ne tient pas compte de l'unite
+    $req = $bdd->prepare('INSERT INTO typecomposant(nom, type) VALUES(:nom, :type)');    //Ajout du nouveau composant dans la table typecomposant
+    
+    $result = $req->execute(array(':nom' => $nom, ':type' => $id));
+}
+
+header('location: ../vues/modif_article.php');  //Redirection sur la page modif_article
 ?>

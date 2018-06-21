@@ -21,7 +21,7 @@
 	<?php 
        		include('../modele/config_init.php');      //Connexion à la BDD
        	?>
-       	
+    <br>	
 	<div style="float:left;width:250px;height:10px;">
 			<a href="maison.php">		<!-- Bouton de retour -->
 				<input type="submit" id="retour" value="Retour &agrave; la page des maisons" />
@@ -67,7 +67,7 @@
               
               <div id="confirmation" style="display:none;">		<!-- bloc de confirmation de suppression dès qu'on clique sur le bouton du dessous -->
               		<hr width="100%">
-              		<p><font size="+1">Etes-vous sûr de vouloir supprimer cette maison ?</font></p>
+              		<p><font size="+1">Etes-vous s&ucirc;r de vouloir supprimer cette maison ?</font></p>
               		<div id="suppression">
               			<input type="submit" id="suppression" value="Oui" />	<!-- Bouton de confirmation -->
               			<a href="maison.php">
