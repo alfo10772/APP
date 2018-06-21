@@ -27,7 +27,7 @@
         <table id='notification'>
             <tr>                                                        <!-- On définit les colonnes du tableau qui sert à afficher les messages -->
 				<th id="date"> &Eacute;metteur </th>           
-                <th id="not"> Objet du Message </th>
+                <th id="obj"> Objet du Message </th>
                 <th id="date"> date </th>
                 <th id="vu"> Voir le Message </th>
             </tr>

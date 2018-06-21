@@ -1,15 +1,22 @@
 <?php
 require_once '../modele/config_init.php'; //Connexion et chargement bdd
 
-$reponse = $bdd->query('SELECT * FROM notification');   //Sélection les données de la table notification
+$reponse = $bdd->query('SELECT * FROM notification');   //Sï¿½lection les donnï¿½es de la table notification
 $donnees = $reponse->fetch();
 
-$id = $_POST['ID'];     //récupère l'ID de la notification sélectionnée
+
+if ($_POST['ID'] !=0) {
+$id = $_POST['ID'];     //rï¿½cupï¿½re l'ID de la notification sï¿½lectionnï¿½e
 
 $req = $bdd ->prepare('UPDATE notification SET etat=0 WHERE IDnotification = :ID');
-//Change l'état de la notification sélectionnée dans la BDD
+//Change l'ï¿½tat de la notification sï¿½lectionnï¿½e dans la BDD
 
 $req-> execute(array(':ID' => $id));
+}
+else {
+    $req = $bdd ->prepare('UPDATE notification SET etat=0');
+    $req-> execute();
+}
 
 header('location: ../vues/notification.php');   //Redirection sur la page des notifications
 
