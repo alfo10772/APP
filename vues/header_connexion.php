@@ -7,7 +7,7 @@
 			</p>
 			<div id="conteneur1">
 				<form  method="post" action="../traitements/traitement.php">		<!-- début formulaire -->
-					<div type="formulaire1">
+					
 					<label for="mail">								<!-- texte adresse mail -->
 						Adresse mail
 					</label>
@@ -20,18 +20,13 @@
 					</label>
 					<br />
 						<input type="password" name="password" id="password" required />	<!--  entrer le mot de passe -->
-					<a href="recup_mdp.php">				<!--  lien vers la page de récupération du mot de passe -->
-					<br />
-						Mot de passe oubliÃ©
-					</a>
+					
 					<br />
 					<a href="tableau_de_bord.php">					<!--  lien pour la page de tableau de bord -->
 						<input type="submit" value="Connexion" />	<!--  bouton pour se connecter -->
 					</a>
-					
-					</div>	
-				</form>
-				<a href="page_d'inscription.php">				<!--  lien vers la page d'incription -->
-						<input type="submit" value="Inscription" />	<!--  bouton pour aller Ã  la page de connexion -->
+					<a href="page_d'inscription.php">				<!--  lien vers la page d'incription -->
+						<input type="button" value="Inscription" />	<!--  bouton pour aller Ã  la page de connexion -->
 				</a>
+				</form>
 			</div>

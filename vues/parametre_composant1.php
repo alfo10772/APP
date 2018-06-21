@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>                                                  <!--squelette pour en-tête et bas de page -->
+<html>                                                  <!--squelette pour en-tï¿½te et bas de page -->
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="../css/style.css">
@@ -17,37 +17,53 @@
 	
 	<br />
 		<?php 
-		include('../modele/config_init.php');     //Connexion à la BDD
+		include('../modele/config_init.php');     //Connexion ï¿½ la BDD
        	?>
 	
 		<div style="float:left">
+<<<<<<< HEAD
 			<a href="parametre_composant.php">		
+=======
+			<a href="../vues/parametre_composant.php">		
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 				<input type="submit" id="retour" value="Retour &agrave; la s&eacute;lection de la pi&egrave;ce" />
-				<!-- Bouton de retour à la page précédente -->
+				<!-- Bouton de retour ï¿½ la page prï¿½cï¿½dente -->
 			</a>
 		</div>
 	<br>
 	<br>
 	<br>
 	<br>
-	<form action="../traitements/parametre_composant1.php" method="post">		<!-- Début du formulaire -->
+	<form action="../traitements/parametre_composant1.php" method="post">		<!-- Dï¿½but du formulaire -->
 	<div id="conteneur2">
 		<label for="composant">S&eacute;lectionnez le composant que vous voulez param&eacute;trer</label><br /> 
-		<select name="composant" id="composant">		<!-- Menu déroulant pour sélectionner un composant à paramétrer -->
+		<select name="composant" id="composant">		<!-- Menu dï¿½roulant pour sï¿½lectionner un composant ï¿½ paramï¿½trer -->
 		<?php
 		$id=$_SESSION['ID'];
-		$piece = $_SESSION['piececomposant'];     //récupère la valeur du nom de la pièce qui a été sélectionnée dans la page précédente
-		$requetepiece = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (piece.nom="'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection=1) '); //requête qui permet de retrouver l'ID de la pièce
+		$piece = $_SESSION['piececomposant'];     //rï¿½cupï¿½re la valeur du nom de la piï¿½ce qui a ï¿½tï¿½ sï¿½lectionnï¿½e dans la page prï¿½cï¿½dente
+		$requetepiece = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (piece.nom="'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection=1) '); //requï¿½te qui permet de retrouver l'ID de la piï¿½ce
 		$piece = $requetepiece ->fetch();
 		$piece = $piece['IDpiece'];
+<<<<<<< HEAD
 		$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');  //Sélectionne tous les actionneurs présents dans la pièce sélectionnée
+=======
+		$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');  //Sï¿½lectionne tous les capteurs prï¿½sents dans la piï¿½ce sï¿½lectionnï¿½e
+		$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');  //Sï¿½lectionne tous les actionneurs prï¿½sents dans la piï¿½ce sï¿½lectionnï¿½e
+		while ($donnees = $reponse->fetch())
+		{
+		    ?>
+       			<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
+       		<?php
+                }
+        //Affiche tous les capteurs de la piï¿½ce
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
         while ($donnees1 = $reponse1->fetch())
         {
        		?>
        			<option value="<?php echo $donnees1['nom']; ?>"><?php echo $donnees1['nom'] ?></option>
        		<?php
         }
-        //Affiche tous les actionneurs de la pièce
+        //Affiche tous les actionneurs de la piï¿½ce
             ?>
        	</select>
        	<div style="float:left">

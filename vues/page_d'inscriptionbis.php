@@ -80,7 +80,7 @@
 				
 				<label for="accept_use_condition">
 					<p>
-						<a href="condition_d'utilisation.html">
+						<a href="CGU.php">
        						J'accepte les conditions g&eacute;n&eacute;rales d'utilisation
        					</a>
        				<em>

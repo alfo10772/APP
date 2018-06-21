@@ -5,9 +5,9 @@ if (empty($_SESSION)) {
 }
 ?>
 
-<div class="menu-vertical">  <!--  Création du menu vertical -->
+<div class="menu-vertical">  <!--  Crï¿½ation du menu vertical -->
 		<p>
-			<a href= "../html/administration.php">
+			<a href= "../vues/administration.php">
 			<img src="../images/Logo4.png" alt="Logo Habilis" width="150">
 			</a>
 		</p>
@@ -15,7 +15,7 @@ if (empty($_SESSION)) {
 		<a href="admin_message.php"><div class="menu">Messages
 									
 		<?php
-				include('../modele/config_init.php');          //Connexion à la bdd 
+				include('../modele/config_init.php');          //Connexion ï¿½ la bdd 
 				$rep= $bdd->query('SELECT * FROM message');
 				
 					
