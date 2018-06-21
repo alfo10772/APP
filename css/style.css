@@ -62,6 +62,21 @@ input[type=submit]:hover {
     background:RGB(22, 85, 183);
 }
 
+input[type=button] {
+    width: 100%;
+    background:RGB(90, 150, 250);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background:RGB(22, 85, 183);
+}
+
 input[type=admin]{
 	width: 100%;
     padding: 10px 20px;

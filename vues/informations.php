@@ -123,9 +123,10 @@
 					</tr>
 				</table>
 		
-				<hr width="100%">
+				
 				
 				<div id="modif_tel" style="display:none;">				<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
+       		     		<hr width="100%">
        		     		<br />
        		     		<p>Entrer votre nouveau num&eacute;ro de t&eacute;l&eacute;phone</p>
        		     		<div id="conteneur2">
@@ -136,63 +137,9 @@
        		      			</form>
        		      			<br />
        		      		</div>
-       		      		<hr width="100%">
+       		      		
        		     </div>
        		     
-       		     <table id="modif">
-       		     	<tr>
-       		     		<th id="modif">Photo</th>
-       		     		<td id="modif"><p>Votre photo actuelle</p></td>
-       		     		<td id="modif"><input type="submit" onclick="toggle_div(this,'modif_photo');" id="modif" name=<?php echo $_tel ;?> value="Modifier" /></td>
-       		     	</tr>
-       		     </table>
-			
-				<div id="modif_photo" style="display:none;">				<!--  Div caché qui s'affiche si l'utilisateur clique sur modifier -->
-       		    		<hr width="100%">
-       		    		<br />
-       		     		<p>T&eacute;l&eacute;charger votre photo</p>
-       		     		
-       		     		
-       		     		
-       		     		
-       		      		
-       		     		
-            <div class="modifphoto">
-            <form action="../traitements/traitement_photo.php" method="post">
-           <input name="photo" type="file" onchange="uploadImg(this,'imgBox')"  />
-           <span class="a" id="imgOrder_a" style="display: none;"></span>
-           <input type="submit" value="Valider" />	
-           </form>
-           </div>
-
-       		      			
- <script>
-function uploadImg(file,imgNum){
-var widthImg = 150; //width
-var heightImg = 155; //height
-var div = document.getElementById(imgNum);
-if (file.files && file.files[0]){
-div.innerHTML ='<img id="upImg">'; //
-var img = document.getElementById('upImg'); //
-img.onload = function(){
-img.width = widthImg;
-img.height = heightImg;
-}
-var reader = new FileReader(); //
-reader.onload = function(evt){
-if(reader.readyState === 2){ //
-img.src = evt.target.result;
-}
-}
-reader.readAsDataURL(file.files[0]); 
-}
-}
-</script>
-       		      			
-       		      			
-       		      			
-       		      			<br />
-       		      		</div>
        		     </div>
 			</div>
 			

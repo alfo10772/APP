@@ -36,20 +36,16 @@
 					</label>
 					<br />
 						<input type="password" name="password" id="password" required />	<!--  entrer le mot de passe -->
-					<a href="recup_mdp.php">				<!--  lien vers la page de récupération de mot de passe -->
-					<br />
-						Mot de passe oublié
-					</a>
 					<br />
 					<a href="tableau_de_bord.php">					<!--  lien pour la page de tableau de bord -->
 						<input type="submit" value="Connexion" />	<!--  bouton pour se connecter -->
 					</a>
-					
+					<a href="page_d'inscription.php">				<!--  lien vers la page d'incription -->
+						<input type="button" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
+					</a>
 					</div>	
 				</form>
-				<a href="page_d'inscription.php">				<!--  lien vers la page d'incription -->
-						<input type="submit" value="Inscription" />	<!--  bouton pour aller à la page de connexion -->
-				</a>
+			
 				<span> Adresse mail ou Mot de passe incorrect, veuillez r&eacute;essayer !</span>
 			</div>
 	</header>
