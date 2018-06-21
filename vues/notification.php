@@ -20,30 +20,32 @@
 		<?php 
        		include('../modele/config_init.php');
 
-       		$id=$_SESSION['ID'];       //récupération de l'ID de l'utilisateur
-       		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")  ORDER BY IDnotification DESC');     //sélection du texte, de la date, de l'ID et de l'état des notifcations rangées dans l'ordre DECROISSANT selon l'ID
+       		$id=$_SESSION['ID'];       //rï¿½cupï¿½ration de l'ID de l'utilisateur
+       		$not = $bdd->query('SELECT notification.texte, notification.date, notification.IDnotification, notification.etat FROM notification INNER JOIN utilisateur ON notification.IDutilisateur=utilisateur.IDutilisateur WHERE(utilisateur.IDutilisateur= "'.$id.'")  ORDER BY IDnotification DESC');     //sï¿½lection du texte, de la date, de l'ID et de l'ï¿½tat des notifcations rangï¿½es dans l'ordre DECROISSANT selon l'ID
        		?>
        		<br>
        		<br>
        		    <table id="notification">		<!-- Tableau des notifications (de 3 colonnes) -->
        		     	<tr>
        		       		<th id="not">Notifications</th>
-       		        	<th id="date">Date</th>
-       		       		<th id="vu"></th>
+						<th id="date">Date</th>
+						<th id="vu">
+						
+       		       		</th>
       	    		</tr>
        		        
        		      <?php 
        		        foreach ($not->fetchAll() as $donnees) {
        		           
        		       ?>
-       		       <form action="../traitements/traitement_vu.php" method="post">		<!-- Début du formulaire -->
+       		       <form action="../traitements/traitement_vu.php" method="post">		<!-- Dï¿½but du formulaire -->
   					<tr>
      					<td id="not2"><?php echo $donnees['texte'];?></td>
      					<td id="not2"><?php echo $donnees['date'];?></td>
-     					<input type="hidden" name="ID" value=<?php echo $donnees['IDnotification'] ?>></input>	<!-- Bouton hidden qui récupère l'ID de la notification -->
+     					<input type="hidden" name="ID" value=<?php echo $donnees['IDnotification'] ?>></input>	<!-- Bouton hidden qui rï¿½cupï¿½re l'ID de la notification -->
      					<td id="not2">       		        	
        		        	<?php
-       		        	if($donnees['etat'])      //l'etat d'une notification est à 0 si elle a été vue, et à 1 sinon
+       		        	if($donnees['etat'])      //l'etat d'une notification est ï¿½ 0 si elle a ï¿½tï¿½ vue, et ï¿½ 1 sinon
        		        	{
        		            ?>
        		            <input type="submit" id="vu" value="Vu">
@@ -55,7 +57,19 @@
      				</form>		<!-- Fin du formulaire -->
   					<?php
                         }
-                    ?>
+					?>
+					<tr>
+						<td id="not2"></td>
+						<td id="not2"></td>
+						<td id="not2">
+						<form action="../traitements/traitement_vu.php" method="post">
+						<input type="hidden" name="ID" value="0"></input>
+						<input type="submit" id="toutvu" value="J'ai tout vu">
+						
+						</input>
+						</form>
+					</td>
+
   				</table>
        	
     </article>
