@@ -108,51 +108,16 @@ if ($_SESSION['utilisateur']==2){
 		    }
 			?>
 			
-			
-			
-			
-			
-			
-			
-<style>
-*{ margin:0; padding:0}
-.box{ height:155px; width:155px; position:relative;padding:20px;}
-.mask{ position:absolute; height:45px; width:150px; top:5; left:20px; background:#000; opacity:.3; display:none}
-.sub{ position:absolute;top:5; left:20px; padding:22px; color:#fff; font-size:15px; line-height:2; display:none}
-.txtShow .mask,.txtShow .sub{ display:block;}
-</style>
 
+		<div id="imgBox" class="box">
+			<a href="informations.php">
+				<img src="../images/photo.png" alt="Photo profil" height="155" width="150">
+			</a>
 
-<script>
-window.onload=function(){
-var oDiv=document.getElementById('imgBox');
-
-oDiv.onmouseover=function(){
-this.className='box txtShow';
-};
-oDiv.onmouseout=function(){
-this.className='box';
-}
-
-
-}
-</script>
-<div id="imgBox" class="box">
-<a href="informations.php">
-<img src="../images/photo.png" alt="Photo profil" height="155" width="150"></a>
-				
-    <div class="mask"></div> 
-    <p class="sub">Changer la photo</p>
-
-			
-			
-		
 		<p>
-			
-	   				<?php
+	   	<?php
 	   				
-                         echo $nom;          //Afficher le nom du client 
-                    ?>
-	   		</p>	
-			</div>
-  
+            echo $nom;          //Afficher le nom du client 
+         ?>
+	   	</p>	
+		</div>

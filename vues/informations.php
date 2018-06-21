@@ -18,16 +18,7 @@
 		
 			<h1>Mes informations</h1>
 			
-			<br />
 			
-			<div style="float:left">
-				<a href="tableau_de_bord.php">		
-					<input type="submit" id="retour" value="Retour &agrave; la page d'accueil" />
-				</a>
-			</div> 
-			
-			<br />
-			<br />
 			<br />
 			<br />
 			
