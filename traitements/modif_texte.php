@@ -27,5 +27,5 @@ elseif (empty($pres) && !empty($cgu)) {     //Si le CGU sont renseignées
 }
 
 
-header('location: ../html/modif_texte.php');
+header('location: ../vues/modif_texte.php');
 ?>

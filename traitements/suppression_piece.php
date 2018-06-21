@@ -16,6 +16,6 @@ $req = $bdd ->prepare('DELETE FROM piece WHERE IDpiece = :idpiece ');           
 $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');        //Ajout de la notification 
 $req-> execute(array(':idpiece' => $idpiece));
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
-header('location: ../html/piece.php');
+header('location: ../vues/piece.php');
 
 ?>

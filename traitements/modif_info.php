@@ -73,15 +73,15 @@ if(!empty($_POST['tel_sav2'])){
 
 
 if($type[0][0]==0){
-    header("location: ../html/informations.php");
+    header("location: ../vues/informations.php");
 }
 
 if($type[0][0]==1){
-    header("location: ../html/informations.php");
+    header("location: ../vues/informations.php");
 }
 
 if($type[0][0]==2){
-    header("location: ../html/administration.php");
+    header("location: ../vues/administration.php");
 }
 ?>
 

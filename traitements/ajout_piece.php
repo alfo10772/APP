@@ -21,5 +21,5 @@ $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:no
 $result2 = $req2->execute(array(':notif' => $notif, ':iduser' => $iduser));
 //Ajout du texte de confirmation dans les notifications
 
-header('location: ../html/piece.php');  //Redirection sur la page des pièces
+header('location: ../vues/piece.php');  //Redirection sur la page des pièces
 ?>

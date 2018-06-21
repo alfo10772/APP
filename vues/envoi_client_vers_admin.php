@@ -25,7 +25,7 @@
 					<input type='text' name='objet' placeholder='Objet du message'>
 					<br/>
 					<br/>
-					<input type="msg" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" > 	<!--  Zone pour entrer le message  -->
+					<input type="msg" name="message" placeholder="Entrer votre message" > 	<!--  Zone pour entrer le message  -->
 					<br/>
 					<br/>
 					<input type='submit' id='envoi' value='Envoyer'>

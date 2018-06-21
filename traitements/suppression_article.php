@@ -12,6 +12,6 @@ $req = $bdd ->prepare('DELETE FROM typecomposant WHERE IDtypeComposant = :id'); 
 
 $req-> execute(array(':id' => $id));
 
-header('location: ../html/modif_article.php');
+header('location: ../vues/modif_article.php');
 
 ?>

@@ -25,5 +25,5 @@ else{           //Si on a un actionneur, on ne tient pas compte de l'unite
     $result = $req->execute(array(':nom' => $nom, ':type' => $id));
 }
 
-header('location: ../html/modif_article.php');  //Redirection sur la page modif_article
+header('location: ../vues/modif_article.php');  //Redirection sur la page modif_article
 ?>

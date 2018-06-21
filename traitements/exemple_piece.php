@@ -13,6 +13,6 @@ $donnees = $reponse->fetch()[0];
 $_SESSION['nompiece'] = $donnees;
 
 
-header('location: ../html/exemplepiece.php');   //Redirection sur le page exemplepiece
+header('location: ../vues/exemplepiece.php');   //Redirection sur le page exemplepiece
 
 ?>
