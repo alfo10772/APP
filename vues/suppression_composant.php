@@ -83,7 +83,7 @@
               		<p><font size="+1">Etes-vous s&ucirc;r de vouloir supprimer ce composant ?</font></p>
               		<div id="suppression">
               			<input type="submit" id="suppression" value="Oui" />	<!-- Bouton de confirmation -->
-              			<a href="maison.php">
+              			<a href="page_des_composants.php">
               				<input type="button" id="suppression" value="Non" />	<!-- Bouton d'annulation -->
               			</a>
               			
