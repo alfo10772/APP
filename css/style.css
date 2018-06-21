@@ -786,6 +786,12 @@ input[id="vu"] {
     margin-left:27%;
 }
 
+input[id="toutvu"] {
+	background:RGB(22, 85, 250);
+    color: white;
+    
+}
+
 input[id="vu"]:hover {
     background:RGB(90, 150, 250);
 }
