@@ -11,6 +11,6 @@ $req = $bdd ->prepare('UPDATE notification SET etat=0 WHERE IDnotification = :ID
 
 $req-> execute(array(':ID' => $id));
 
-header('location: ../html/notification.php');   //Redirection sur la page des notifications
+header('location: ../vues/notification.php');   //Redirection sur la page des notifications
 
 ?>

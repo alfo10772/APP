@@ -20,6 +20,6 @@ $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:no
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
 //Ajout du message de confirmations dans la table des notifications dans la BDD
 
-header('location: ../html/gestion_secondaire.php');    //Redirection vers la page de gestion des utilisateurs secondaires
+header('location: ../vues/gestion_secondaire.php');    //Redirection vers la page de gestion des utilisateurs secondaires
 
 ?>

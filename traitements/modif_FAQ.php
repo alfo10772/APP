@@ -12,5 +12,5 @@ $req->execute(array(
 		'question' => $question,
 ));
 
-header('location: ../html/vu_faq.php');
+header('location: ../vues/vu_faq.php');
 ?>

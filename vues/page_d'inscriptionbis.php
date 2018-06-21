@@ -22,9 +22,9 @@
 	</h1>
 	<section class="conteneur2">
 	<div id="conteneur2">
-		<form name="myForm" method="post" action="traitement_inscription.php" onsubmit="return validateForm()">
+		<form name="myForm" method="post" action="traitement_inscription.php" onsubmit="return validateForm()">      
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-			<script src="../javascript/inscription.js"></script>				<!-- Fichier javascript pour sécuriser le mot de passe -->
+			<script src="../javascript/inscription.js"></script>       <!-- Fichier javascript pour sécuriser le mot de passe -->
 					
 			
        		<label for="nom_d'utilisateur">
@@ -66,6 +66,7 @@
        				</em>
        			</label>
        			<br />
+       			<span> Cet email existe d&eacute;j&agrave;, veuillez utiliser un autre </span>
        				<input type="email" name="mail" id="mail" required />
        			<br />
        			<br />
@@ -79,7 +80,7 @@
 				
 				<label for="accept_use_condition">
 					<p>
-						<a href="condition_d'utilisation.html">
+						<a href="CGU.php">
        						J'accepte les conditions g&eacute;n&eacute;rales d'utilisation
        					</a>
        				<em>

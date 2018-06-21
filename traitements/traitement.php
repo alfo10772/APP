@@ -31,23 +31,23 @@ if (!empty($_POST)) {   // les données du formulaires ont été complétées, o
     	    
     	
     	    if($user[2]==0){                   //Redirection en fonction du type de l'utilisateur
-    	        header('location: ../html/tableau_de_bord.php');
+    	        header('location: ../vues/tableau_de_bord.php');
     	    }
     	    if($user[2]==1){
-    	        header('location: ../html/tableau_de_bord.php');
+    	        header('location: ../vues/tableau_de_bord.php');
     	    }
     	    if($user[2]==2){
-    	        header('location: ../html/administration.php');
+    	        header('location: ../vues/administration.php');
     	    }
     	    
     	    
         }
         else{       //Si le mdp ne correspond pas, retour � la page de connexion
-            header('location: ../html/page_de_connexionbis.php');
+            header('location: ../vues/page_de_connexionbis.php');
         }
    }
     else{
-        header('location: ../html/page_de_connexionbis.php');
+        header('location: ../vues/page_de_connexionbis.php');
     }
 }
 

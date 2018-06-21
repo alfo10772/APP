@@ -25,6 +25,6 @@ $req = $bdd ->prepare('UPDATE actionneur SET heuredebut=:heuredebut, heurefin=:h
 $req-> execute(array(':heuredebut' => $heuredebut, ':heurefin' => $heurefin, ':piece' => $piece, ':id' => $id, ':idmaison' => $idmaison, ':idcompo' => $idcompo));
 //On modifie les nouvelles valeurs dans la BDD
 
-header('location: ../html/page_des_composants.php');    //Redirection vers la page des composants
+header('location: ../vues/page_des_composants.php');    //Redirection vers la page des composants
 
 ?>

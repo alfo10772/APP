@@ -8,5 +8,5 @@
     
     $req-> execute(array(':id' => $id_question));
     
-    header('location: ../html/vu_faq.php');
+    header('location: ../vues/vu_faq.php');
 ?>

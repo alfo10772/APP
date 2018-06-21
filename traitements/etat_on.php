@@ -10,6 +10,7 @@ $req-> execute(array(':id' => $id));
 
 //Redirection selon le numéro source de la page
 if($source == 1){
+<<<<<<< HEAD
     //include '../html/trame.php';
     $ch = curl_init();
     curl_setopt(
@@ -24,9 +25,13 @@ if($source == 1){
         echo("$data");
     header('location: ../html/page_des_composants.php');
     
+=======
+    header('location: ../vues/page_des_composants.php');
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 }
 
 if($source == 2){
+<<<<<<< HEAD
     $ch = curl_init();
     curl_setopt(
         $ch,
@@ -39,9 +44,13 @@ if($source == 2){
         echo "Raw Data:<br />";
         echo("$data");
     header('location: ../html/exemplepiece.php');
+=======
+    header('location: ../vues/exemplepiece.php');
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 }
 
 if($source == 3){
+<<<<<<< HEAD
     $ch = curl_init();
     curl_setopt(
         $ch,
@@ -54,5 +63,8 @@ if($source == 3){
         echo "Raw Data:<br />";
         echo("$data");
    header('location: ../html/tableau_de_bord.php');
+=======
+   header('location: ../vues/tableau_de_bord.php');
+>>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 }
 ?>

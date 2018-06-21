@@ -17,6 +17,6 @@ $req = $bdd ->prepare('DELETE FROM maison WHERE IDmaison = :idmaison ');        
 $req2 = $bdd->prepare('INSERT INTO notification(texte, IDutilisateur) VALUES(:notif, :id)');        //Ajout de la notification en fonction du nom de la maison
 $req-> execute(array(':idmaison' => $idmaison));
 $result2 = $req2->execute(array(':notif' => $notif, ':id' => $id));
-header('location: ../html/maison.php');
+header('location: ../vues/maison.php');
 
 ?>

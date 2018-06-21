@@ -10,7 +10,7 @@
 	
 		<header>
 			<?php
-                require("en_tete_connexion.php");
+                require("en_tete_connexion.php");    // on affiche l'en-tête de la page
                 
         	?>
         </header>
@@ -21,11 +21,11 @@
 			<br />
 			<section class='conteneur2'>
 			<div id='conteneur2'>
-				<form action='../traitements/traitement_message_client.php' method='post'>
+				<form action='../traitements/traitement_message_client.php' method='post'>       <!-- formulaire pour envoyer le message à l'administrateur avec l'objet du message et le message-->
 					<input type='text' name='objet' placeholder='Objet du message'>
 					<br/>
 					<br/>
-					<input type="msg" name="presentation" placeholder="Modifier le texte de pr&eacute;sentation de l'entreprise" > 	<!--  Zone pour entrer le message  -->
+					<input type="msg" name="message" placeholder="Entrer votre message" > 	<!--  Zone pour entrer le message  -->
 					<br/>
 					<br/>
 					<input type='submit' id='envoi' value='Envoyer'>
@@ -39,9 +39,10 @@
 
 	<footer>
 		<?php
-			require("footer.php");
+			require("footer.php");                                          // on affiche le footer de la page
 		?>
 	</footer>
 
 </html>
         
+

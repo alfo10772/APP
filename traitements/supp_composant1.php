@@ -10,6 +10,6 @@ $idmaison = $_SESSION['maisonselect'];
 
 $_SESSION['piececomposant'] = $_POST['piece'];  //Recuperation de la piece séléctionnée
 
-header('location: ../html/suppression_composant.php');
+header('location: ../vues/suppression_composant.php');
 
 ?>

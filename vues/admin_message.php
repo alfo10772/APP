@@ -20,15 +20,14 @@
 <table>
 <tr>                                            <!-- On définit les colonnes de la table -->
     
-    <label for="nom" style="float:left;">
-	<th>Boite de réception:</th>
-	</label>
-    <label for="nom" style="float:left;">
-	<th>Boite d'envoi</th>
-	</label>
+    
+	<th id="nom3">Boite de réception:</th>
+
+  
+	<th id="nom3">Boite d'envoi</th>
     
 
-    <th>
+    <th id="nom2">
     Vos contacts:
     </th>
 
@@ -39,7 +38,7 @@
 </tr>
 <tr>
 
-    <th>
+    <th id="nom2">
     <form method="post" action="admin_vu_message.php">
     <select name='selectmessage' classe="réponse1" size='30'>                                            <!-- on sélectionne le message à voir dans la boite de réception -->
     <?php
@@ -69,7 +68,9 @@
     <input type="submit" value="Voir le message">                       <!-- bouton pour voir le message sélectionné -->
     </th>
     </form>
-    <th>
+
+
+    <th id="nom3">
     <form method="post" action="admin_vu_message.php">
     <select name='selectmessage' classe="réponse1" size='30'>                             <!--On sélectionne le message à voir dans la boite d'envoi -->
     <?php
@@ -99,12 +100,14 @@
     <input type="submit" value="Voir le message">                             <!-- bouton pour voir le message sélectionné -->
     </th>
     </form>
-    <th>
+
+
+    <th id="nom2">
     <form method="post" action="envoi_admin_vers_client.php">       
 	<select name='mail' class="réponse1" size='30'>                                        <!-- On sélectionne le client à qui envoyer un message -->
     <?php 
    
-        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type != 2');                   // on prend dans la base de données tous les clients
+        $reponse = $bdd->query('SELECT * FROM utilisateur WHERE type = 0');                   // on prend dans la base de données tous les clients
            
        	foreach ($reponse->fetchAll() as $donnees) {
 

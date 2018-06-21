@@ -62,6 +62,21 @@ input[type=submit]:hover {
     background:RGB(22, 85, 183);
 }
 
+input[type=button] {
+    width: 100%;
+    background:RGB(90, 150, 250);
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background:RGB(22, 85, 183);
+}
+
 input[type=admin]{
 	width: 100%;
     padding: 10px 20px;
@@ -456,6 +471,7 @@ input[id="admin"]:hover {
 	margin-top:5%;
 	position: fixed;
 	right:0px;
+
 }
 @media screen and (max-width: 1000px)
 {
@@ -569,6 +585,13 @@ td {
 th#nom2 {
 	border: 1px solid black;
 	width: 30%;
+	padding: 7px;
+	background-color: RGB(191, 223, 255);
+}
+
+th#nom3 {
+	border: 1px solid black;
+	width: 39%;
 	padding: 7px;
 	background-color: RGB(191, 223, 255);
 }

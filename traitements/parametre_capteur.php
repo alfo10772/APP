@@ -24,6 +24,6 @@ $req = $bdd ->prepare('UPDATE capteur SET valeurmin=:valeurmin, valeurmax=:valeu
 $req-> execute(array(':valeurmin' => $valeurmin, ':valeurmax' => $valeurmax, ':piece' => $piece, ':id' => $id, ':idmaison' => $idmaison, ':idcompo' => $idcompo));
 //Modification des valeur des valeurs dans la BDD
 
-header('location: ../html/page_des_composants.php');    //Redirection sur la page des composants
+header('location: ../vues/page_des_composants.php');    //Redirection sur la page des composants
 
 ?>
