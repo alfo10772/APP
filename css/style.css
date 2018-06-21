@@ -574,6 +574,13 @@ th#nom2 {
 	background-color: RGB(191, 223, 255);
 }
 
+th#nom3 {
+	border: 1px solid black;
+	width: 39%;
+	padding: 7px;
+	background-color: RGB(191, 223, 255);
+}
+
 th#adresse{
 	border: 1px solid black;
 	width: 50%;
