@@ -15,7 +15,7 @@
         </header>
         
     <article>
-    	<br />
+
         <h1>Param&egrave;tres du tableau de bord<h1>
 
 			  <?php 

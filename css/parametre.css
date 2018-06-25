@@ -21,10 +21,19 @@ footer
 
 }
 
+body
+{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 article
 {
 	background:RGB(22, 85, 250);
 	color: white;
+	padding:1%;
+	margin: 0%;
 }
 
 p
