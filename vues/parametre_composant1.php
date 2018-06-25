@@ -21,11 +21,7 @@
        	?>
 	
 		<div style="float:left">
-<<<<<<< HEAD
-			<a href="parametre_composant.php">		
-=======
-			<a href="../vues/parametre_composant.php">		
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
+			<a href="../vues/parametre_composant.php">
 				<input type="submit" id="retour" value="Retour &agrave; la s&eacute;lection de la pi&egrave;ce" />
 				<!-- Bouton de retour ï¿½ la page prï¿½cï¿½dente -->
 			</a>
@@ -44,19 +40,8 @@
 		$requetepiece = $bdd->query('SELECT piece.IDpiece FROM piece JOIN maison ON (piece.IDmaison = maison.IDmaison) WHERE (piece.nom="'. $piece .'" AND piece.IDutilisateur= "'. $id .'" AND maison.selection=1) '); //requï¿½te qui permet de retrouver l'ID de la piï¿½ce
 		$piece = $requetepiece ->fetch();
 		$piece = $piece['IDpiece'];
-<<<<<<< HEAD
 		$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');  //Sélectionne tous les actionneurs présents dans la pièce sélectionnée
-=======
-		$reponse = $bdd->query('SELECT * FROM capteur WHERE IDpiece = "'. $piece .'" ');  //Sï¿½lectionne tous les capteurs prï¿½sents dans la piï¿½ce sï¿½lectionnï¿½e
-		$reponse1 = $bdd->query('SELECT * FROM actionneur WHERE IDpiece = "'. $piece .'" ');  //Sï¿½lectionne tous les actionneurs prï¿½sents dans la piï¿½ce sï¿½lectionnï¿½e
-		while ($donnees = $reponse->fetch())
-		{
-		    ?>
-       			<option value="<?php echo $donnees['nom']; ?>"><?php echo $donnees['nom'] ?></option>
-       		<?php
-                }
-        //Affiche tous les capteurs de la piï¿½ce
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
+
         while ($donnees1 = $reponse1->fetch())
         {
        		?>

@@ -21,11 +21,8 @@
        	?>
 	
 		<div style="float:left">
-<<<<<<< HEAD
-			<a href="parametre_composant1.php">		<!-- Bouton de retour à la page précédente -->
-=======
+
 			<a href="../vues/parametre_composant1.php">		<!-- Bouton de retour ï¿½ la page prï¿½cï¿½dente -->
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
 				<input type="submit" id="retour" value="Retour &agrave; la s&eacute;lection du composant" />
 			</a>
 		</div>
@@ -45,55 +42,12 @@
 		
 		$reqid1 = $bdd->query('SELECT actionneur.type, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.nom= "'. $composant .'" AND actionneur.IDutilisateur= "'. $id .'" AND actionneur.IDpiece = "'. $piece .'" AND maison.selection = 1');
 		$compo=$reqid1->fetch();
-<<<<<<< HEAD
+
 		$idcompo= $compo['IDactionneur'];
 		//Cherche l'ID du composant en fonction du nom, de la pièce et de la maison, dans la table actionneur
-=======
-		$idtype= $compo['type'];
-		$idcompo= $compo['IDcapteur'];
-		//Cherche l'ID et le type du composant en fonction du nom, de la piï¿½ce et de la maison, dans la table capteur
-		
-		if($idtype == NULL) //Si le type est NULL c'est que le composant n'a pas ï¿½tï¿½ trouvï¿½ dans la table capteur, c'est donc un actionneur
-		
-		{
-		    $reqid1 = $bdd->query('SELECT actionneur.type, actionneur.IDactionneur FROM actionneur JOIN maison ON (actionneur.IDmaison = maison.IDmaison) WHERE actionneur.nom= "'. $composant .'" AND actionneur.IDutilisateur= "'. $id .'" AND actionneur.IDpiece = "'. $piece .'" AND maison.selection = 1');
-		    $compo=$reqid1->fetch();
-		    $idtype= $compo['type'];
-		    $idcompo= $compo['IDactionneur'];
-		    //Cherche l'ID et le type du composant en fonction du nom, de la piï¿½ce et de la maison, dans la table actionneur
-		}
-		
-		if($idtype==0)    //Si le type est 0 alors c'est un capteur donc on affiche le formulaire pour les paramï¿½tres des capteurs
-		{
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
+
 		?>
-<<<<<<< HEAD
-		
-		<form action="../traitements/parametre_actionneur.php" method="post">	<!-- Début du formulaire de paramètres pour un actionneur -->
-=======
-			<form action="../traitements/parametre_capteur.php" method="post"> <!-- Dï¿½but du formulaire de paramï¿½tres pour un capteur -->
-				<div id="conteneur2">
-					<label for="composant">S&eacute;lectionnez vos param&egrave;tres</label><br />
-						<label for="valeurmin">Valeur minimale</label>
-						<input type="number" name="valeurmin">
-						<br>
-						<br>
-						<label for="valeurmin">Valeur maximale</label>
-						<input type="number" name="valeurmax">
-						<br>
-						<br>
-						<input type="hidden" name="id" value=<?php echo $idcompo ?>>
-						<input type="submit" id="supprimer" value="Confirmer" />	<!-- Bouton de validation -->
-				</div>
-			</form>
-						
-		<?php
-		}
-		elseif($idtype==1)    //Si le type est 1 alors c'est un actionneur donc on affiche le formulaire pour les paramï¿½tres des actionneurs
-		{
-		?>
-		    <form action="../traitements/parametre_actionneur.php" method="post">	<!-- Dï¿½but du formulaire de paramï¿½tres pour un actionneur -->
->>>>>>> branch 'master' of https://github.com/alfo10772/APP.git
+	 		<form action="../traitements/parametre_actionneur.php" method="post">	<!-- Dï¿½but du formulaire de paramï¿½tres pour un actionneur -->
 		    	<div id="conteneur2">
 		    		<label for="composant">S&eacute;lectionnez vos param&egrave;tres</label><br />
 		    			<label for="heuredebut">Heure de d&eacute;but d'action</label>
